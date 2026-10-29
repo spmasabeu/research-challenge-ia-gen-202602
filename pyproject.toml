@@ -1,0 +1,10 @@
+[project]
+name = "research-challenge"
+version = "0.1.0"
+description = "Harness y dataset de planificación para un LLM pequeño"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[tool.uv]
+package = false

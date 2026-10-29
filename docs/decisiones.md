@@ -1,0 +1,21 @@
+# Decisiones
+
+## 2026-10-29 · Base del repositorio
+
+- **Autor:** equipo, acuerdo en conversación inicial.
+- **Estado:** acordado como punto de partida.
+- **Problema:** planificación de trabajos con recursos y restricciones.
+- **Objetivo inicial:** encontrar una solución factible; optimización fuera del piloto.
+- **Motivo:** dificultad ajustable y corrección verificable por código.
+- **Alcance:** harness, dataset, datos SFT/DPO y evaluación; entrenamiento posterior.
+- **Validación pendiente:** comprobar que el problema es aprendible para el modelo pequeño.
+
+Para nuevas decisiones: fecha, autor, estado, decisión, motivo y consecuencias.
+
+## 2026-10-29 · Estructura mínima
+
+- **Autor:** equipo, ajuste solicitado en conversación.
+- **Decisión:** mantener solo `src/`, `tests/`, `data/` y `docs/`.
+- **Motivo:** evitar carpetas y configuraciones antes de necesitarlas.
+- **Consecuencia:** resultados en `data/`; informe y propuestas en `docs/`.
+  Crear subdivisiones y configuraciones ejecutables cuando tengan uso real.
