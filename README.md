@@ -19,8 +19,8 @@ para el proyecto posterior.
 ```text
 src/     # código del entorno, generación y evaluación
 tests/   # pruebas, especialmente del generador y verificador
- data/   # tareas, trazas y resultados de experimentos
- docs/   # decisiones, referencias e informe
+data/    # tareas, trazas y resultados de experimentos
+docs/    # decisiones, referencias e informe
 ```
 
 Crear subdivisiones solo cuando haya contenido que las necesite.
@@ -40,8 +40,10 @@ versionar juntos `pyproject.toml` y `uv.lock`. No subir secretos ni pesos de mod
 ## Trabajo del equipo
 
 - Una rama por cambio; revisar antes de integrar.
-- Registrar acuerdos en [docs/decisiones.md](docs/decisiones.md) y preguntas,
-  modelos y referencias en [docs/temas.md](docs/temas.md).
+- Registrar acuerdos en [Decisiones](docs/2026-10-29_093018_decisiones.md) y preguntas,
+  modelos y referencias en [Temas](docs/2026-10-29_093018_temas.md).
+- Nombrar documentos `AAAA-MM-DD_HHMMSS_tema.md` con hora de Santiago. Mantener
+  el nombre al editar; fechar nuevas entradas dentro del documento.
 - Empezar con 50–100 tareas piloto de planificación con restricciones. Ajustar
   dificultad para que el modelo pequeño tenga aciertos y errores.
 - Probar soluciones equivalentes e intentos de engañar al verificador.
