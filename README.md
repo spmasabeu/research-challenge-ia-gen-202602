@@ -6,6 +6,8 @@ pequeño (1–2B). [Enunciado](DesafioInvestigacion-2026.pdf).
 **Estado:** estructura inicial; implementación pendiente. El entrenamiento queda
 para el proyecto posterior.
 
+Spike exploratorio: [problemas cuantitativos con unidades](spikes/units/README.md), con instrucciones para replicar la POC y comparar Qwen3-1.7B, Llama 3.2-1B y Qwen3-8B sobre 30 problemas por modelo. No cambia el tema acordado automáticamente.
+
 ## Entregables
 
 - Harness con prompts, parser y `reward(prompt, completion) -> float`.
@@ -21,6 +23,7 @@ src/     # código del entorno, generación y evaluación
 tests/   # pruebas, especialmente del generador y verificador
 data/    # tareas, trazas y resultados de experimentos
 docs/    # decisiones, referencias e informe
+spikes/  # experimentos autocontenidos, separados del harness principal
 ```
 
 Crear subdivisiones solo cuando haya contenido que las necesite.
