@@ -1,0 +1,31 @@
+{
+  "easy": {
+    "n": 10,
+    "correct": 8,
+    "accuracy": 0.8,
+    "statuses": {
+      "correct": 8,
+      "numeric": 2
+    }
+  },
+  "medium": {
+    "n": 10,
+    "correct": 3,
+    "accuracy": 0.3,
+    "statuses": {
+      "numeric": 6,
+      "correct": 3,
+      "format": 1
+    }
+  },
+  "hard": {
+    "n": 10,
+    "correct": 2,
+    "accuracy": 0.2,
+    "statuses": {
+      "correct": 2,
+      "numeric": 7,
+      "format": 1
+    }
+  }
+}

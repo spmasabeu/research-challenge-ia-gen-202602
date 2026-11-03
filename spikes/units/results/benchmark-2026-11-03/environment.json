@@ -1,0 +1,8 @@
+{
+  "gpu": "NVIDIA RTX 3050 Laptop, 6144 MiB",
+  "driver": "595.71.05",
+  "execution": "sequential",
+  "ollama": {
+    "version": "0.18.0"
+  }
+}
