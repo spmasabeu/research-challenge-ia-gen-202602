@@ -1,0 +1,58 @@
+{
+  "overall": {
+    "tasks": 3,
+    "responses": 3,
+    "statuses": {
+      "unparsed": 3
+    },
+    "coverage": 0.0,
+    "pass_at_k": {
+      "1": 0.0
+    }
+  },
+  "level": {
+    "easy": {
+      "tasks": 1,
+      "responses": 1,
+      "statuses": {
+        "unparsed": 1
+      },
+      "coverage": 0.0,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    },
+    "medium": {
+      "tasks": 1,
+      "responses": 1,
+      "statuses": {
+        "unparsed": 1
+      },
+      "coverage": 0.0,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    },
+    "hard": {
+      "tasks": 1,
+      "responses": 1,
+      "statuses": {
+        "unparsed": 1
+      },
+      "coverage": 0.0,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    }
+  },
+  "cost": {
+    "wall_seconds": 43.41914134699982,
+    "prompt_tokens": 840,
+    "output_tokens": 2718,
+    "truncated_calls": 1,
+    "calls": 3
+  },
+  "distinct_completions_per_task": 1.0,
+  "first_invalid_action": {},
+  "mean_parsed_length": null
+}

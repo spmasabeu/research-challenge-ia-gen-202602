@@ -1,0 +1,97 @@
+{
+  "overall": {
+    "tasks": 3,
+    "responses": 3,
+    "statuses": {
+      "unparsed": 3
+    },
+    "coverage": 0.0,
+    "pass_at_k": {
+      "1": 0.0
+    }
+  },
+  "level": {
+    "easy": {
+      "tasks": 1,
+      "responses": 1,
+      "statuses": {
+        "unparsed": 1
+      },
+      "coverage": 0.0,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    },
+    "medium": {
+      "tasks": 1,
+      "responses": 1,
+      "statuses": {
+        "unparsed": 1
+      },
+      "coverage": 0.0,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    },
+    "hard": {
+      "tasks": 1,
+      "responses": 1,
+      "statuses": {
+        "unparsed": 1
+      },
+      "coverage": 0.0,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    }
+  },
+  "cost": {
+    "wall_seconds": 13.538622996999948,
+    "prompt_tokens": 756,
+    "output_tokens": 817,
+    "truncated_calls": 0,
+    "calls": 3
+  },
+  "distinct_completions_per_task": 1.0,
+  "class": {
+    "segura": {
+      "tasks": 1,
+      "responses": 1,
+      "statuses": {
+        "unparsed": 1
+      },
+      "coverage": 0.0,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    },
+    "mina": {
+      "tasks": 0,
+      "responses": 0,
+      "statuses": {},
+      "coverage": null,
+      "pass_at_k": {}
+    },
+    "indeterminada": {
+      "tasks": 2,
+      "responses": 2,
+      "statuses": {
+        "unparsed": 2
+      },
+      "coverage": 0.0,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    }
+  },
+  "confusion": {
+    "segura": {
+      "unparsed": 1
+    },
+    "mina": {},
+    "indeterminada": {
+      "unparsed": 2
+    }
+  },
+  "majority_baseline": 0.6666666666666666
+}

@@ -1,0 +1,82 @@
+{
+  "overall": {
+    "tasks": 3,
+    "responses": 3,
+    "statuses": {
+      "unnecessary": 3
+    },
+    "coverage": 1.0,
+    "pass_at_k": {
+      "1": 0.0
+    }
+  },
+  "level": {
+    "easy": {
+      "tasks": 1,
+      "responses": 1,
+      "statuses": {
+        "unnecessary": 1
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    },
+    "medium": {
+      "tasks": 1,
+      "responses": 1,
+      "statuses": {
+        "unnecessary": 1
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    },
+    "hard": {
+      "tasks": 1,
+      "responses": 1,
+      "statuses": {
+        "unnecessary": 1
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    }
+  },
+  "cost": {
+    "wall_seconds": 5.629827445000046,
+    "prompt_tokens": 4096,
+    "output_tokens": 348,
+    "truncated_calls": 0,
+    "calls": 8
+  },
+  "distinct_completions_per_task": 1.0,
+  "controls": {
+    "clean": {
+      "tasks": 1,
+      "responses": 1,
+      "statuses": {
+        "unnecessary": 1
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    },
+    "corrupted": {
+      "tasks": 2,
+      "responses": 2,
+      "statuses": {
+        "unnecessary": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    }
+  },
+  "query_errors": 0,
+  "mean_calls_per_trajectory": 2.6666666666666665
+}

@@ -1,0 +1,80 @@
+{
+  "overall": {
+    "tasks": 90,
+    "responses": 270,
+    "statuses": {
+      "correct": 61,
+      "deadline": 34,
+      "unparsed": 105,
+      "overlap": 30,
+      "precedence": 28,
+      "ids": 11,
+      "resource": 1
+    },
+    "coverage": 0.6111111111111112,
+    "pass_at_k": {
+      "1": 0.22592592592592595,
+      "3": 0.35555555555555557
+    }
+  },
+  "level": {
+    "easy": {
+      "tasks": 30,
+      "responses": 90,
+      "statuses": {
+        "correct": 56,
+        "deadline": 11,
+        "unparsed": 6,
+        "overlap": 11,
+        "precedence": 4,
+        "ids": 2
+      },
+      "coverage": 0.9333333333333333,
+      "pass_at_k": {
+        "1": 0.6222222222222222,
+        "3": 0.9333333333333333
+      }
+    },
+    "medium": {
+      "tasks": 30,
+      "responses": 90,
+      "statuses": {
+        "unparsed": 30,
+        "deadline": 15,
+        "overlap": 19,
+        "ids": 5,
+        "precedence": 15,
+        "correct": 5,
+        "resource": 1
+      },
+      "coverage": 0.6666666666666667,
+      "pass_at_k": {
+        "1": 0.055555555555555566,
+        "3": 0.13333333333333333
+      }
+    },
+    "hard": {
+      "tasks": 30,
+      "responses": 90,
+      "statuses": {
+        "unparsed": 69,
+        "ids": 4,
+        "precedence": 9,
+        "deadline": 8
+      },
+      "coverage": 0.23333333333333328,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      }
+    }
+  },
+  "cost": {
+    "wall_seconds": 3613.5347375450024,
+    "prompt_tokens": 93156,
+    "output_tokens": 243217,
+    "truncated_calls": 117,
+    "calls": 270
+  },
+  "distinct_completions_per_task": 3.0
+}

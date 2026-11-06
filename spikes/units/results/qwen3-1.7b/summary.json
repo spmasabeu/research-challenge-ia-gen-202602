@@ -1,0 +1,289 @@
+{
+  "model": "qwen3:1.7b",
+  "automatic": {
+    "overall": {
+      "tasks": 90,
+      "responses": 270,
+      "statuses": {
+        "correct": 191,
+        "numeric": 74,
+        "unparsed": 5
+      },
+      "coverage": 0.9814814814814815,
+      "accuracy_parsed": 0.720754716981132,
+      "pass_at_k": {
+        "1": 0.7074074074074074,
+        "3": 0.8555555555555555
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.7259259259259259,
+        "3": 0.8555555555555555
+      },
+      "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+    },
+    "level": {
+      "easy": {
+        "tasks": 30,
+        "responses": 90,
+        "statuses": {
+          "correct": 75,
+          "numeric": 12,
+          "unparsed": 3
+        },
+        "coverage": 0.9666666666666667,
+        "accuracy_parsed": 0.8620689655172413,
+        "pass_at_k": {
+          "1": 0.8333333333333334,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.8666666666666667,
+          "3": 1.0
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      },
+      "hard": {
+        "tasks": 30,
+        "responses": 90,
+        "statuses": {
+          "correct": 48,
+          "numeric": 41,
+          "unparsed": 1
+        },
+        "coverage": 0.9888888888888889,
+        "accuracy_parsed": 0.5393258426966292,
+        "pass_at_k": {
+          "1": 0.5333333333333333,
+          "3": 0.6666666666666666
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.5444444444444444,
+          "3": 0.6666666666666666
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      },
+      "medium": {
+        "tasks": 30,
+        "responses": 90,
+        "statuses": {
+          "correct": 68,
+          "unparsed": 1,
+          "numeric": 21
+        },
+        "coverage": 0.9888888888888889,
+        "accuracy_parsed": 0.7640449438202247,
+        "pass_at_k": {
+          "1": 0.7555555555555556,
+          "3": 0.9
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.7666666666666667,
+          "3": 0.9
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      }
+    },
+    "family": {
+      "energy": {
+        "tasks": 30,
+        "responses": 90,
+        "statuses": {
+          "correct": 82,
+          "numeric": 7,
+          "unparsed": 1
+        },
+        "coverage": 0.9888888888888889,
+        "accuracy_parsed": 0.9213483146067416,
+        "pass_at_k": {
+          "1": 0.9111111111111111,
+          "3": 0.9666666666666667
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.9222222222222223,
+          "3": 0.9666666666666667
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      },
+      "luminosity": {
+        "tasks": 30,
+        "responses": 90,
+        "statuses": {
+          "correct": 27,
+          "numeric": 59,
+          "unparsed": 4
+        },
+        "coverage": 0.9555555555555556,
+        "accuracy_parsed": 0.313953488372093,
+        "pass_at_k": {
+          "1": 0.3,
+          "3": 0.6333333333333333
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.3444444444444444,
+          "3": 0.6333333333333333
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      },
+      "speed": {
+        "tasks": 30,
+        "responses": 90,
+        "statuses": {
+          "correct": 82,
+          "numeric": 8
+        },
+        "coverage": 1.0,
+        "accuracy_parsed": 0.9111111111111111,
+        "pass_at_k": {
+          "1": 0.9111111111111111,
+          "3": 0.9666666666666667
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.9111111111111111,
+          "3": 0.9666666666666667
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      }
+    }
+  },
+  "final": {
+    "overall": {
+      "tasks": 90,
+      "responses": 270,
+      "statuses": {
+        "correct": 193,
+        "numeric": 77
+      },
+      "coverage": 1.0,
+      "accuracy_parsed": 0.7148148148148148,
+      "pass_at_k": {
+        "1": 0.7148148148148148,
+        "3": 0.8555555555555555
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.7148148148148148,
+        "3": 0.8555555555555555
+      },
+      "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+    },
+    "level": {
+      "easy": {
+        "tasks": 30,
+        "responses": 90,
+        "statuses": {
+          "correct": 76,
+          "numeric": 14
+        },
+        "coverage": 1.0,
+        "accuracy_parsed": 0.8444444444444444,
+        "pass_at_k": {
+          "1": 0.8444444444444444,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.8444444444444444,
+          "3": 1.0
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      },
+      "hard": {
+        "tasks": 30,
+        "responses": 90,
+        "statuses": {
+          "correct": 48,
+          "numeric": 42
+        },
+        "coverage": 1.0,
+        "accuracy_parsed": 0.5333333333333333,
+        "pass_at_k": {
+          "1": 0.5333333333333333,
+          "3": 0.6666666666666666
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.5333333333333333,
+          "3": 0.6666666666666666
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      },
+      "medium": {
+        "tasks": 30,
+        "responses": 90,
+        "statuses": {
+          "correct": 69,
+          "numeric": 21
+        },
+        "coverage": 1.0,
+        "accuracy_parsed": 0.7666666666666667,
+        "pass_at_k": {
+          "1": 0.7666666666666667,
+          "3": 0.9
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.7666666666666667,
+          "3": 0.9
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      }
+    },
+    "family": {
+      "energy": {
+        "tasks": 30,
+        "responses": 90,
+        "statuses": {
+          "correct": 83,
+          "numeric": 7
+        },
+        "coverage": 1.0,
+        "accuracy_parsed": 0.9222222222222223,
+        "pass_at_k": {
+          "1": 0.9222222222222223,
+          "3": 0.9666666666666667
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.9222222222222223,
+          "3": 0.9666666666666667
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      },
+      "luminosity": {
+        "tasks": 30,
+        "responses": 90,
+        "statuses": {
+          "correct": 28,
+          "numeric": 62
+        },
+        "coverage": 1.0,
+        "accuracy_parsed": 0.3111111111111111,
+        "pass_at_k": {
+          "1": 0.31111111111111106,
+          "3": 0.6333333333333333
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.31111111111111106,
+          "3": 0.6333333333333333
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      },
+      "speed": {
+        "tasks": 30,
+        "responses": 90,
+        "statuses": {
+          "correct": 82,
+          "numeric": 8
+        },
+        "coverage": 1.0,
+        "accuracy_parsed": 0.9111111111111111,
+        "pass_at_k": {
+          "1": 0.9111111111111111,
+          "3": 0.9666666666666667
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.9111111111111111,
+          "3": 0.9666666666666667
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      }
+    }
+  },
+  "manual_reviews": 5,
+  "truncated": 0
+}

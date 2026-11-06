@@ -1,0 +1,59 @@
+{
+  "qwen3-1.7b": {
+    "overall": {
+      "tasks": 3,
+      "responses": 3,
+      "statuses": {
+        "unparsed": 2,
+        "deadline": 1
+      },
+      "coverage": 0.33333333333333337,
+      "pass_at_k": {
+        "1": 0.0
+      }
+    },
+    "level": {
+      "easy": {
+        "tasks": 1,
+        "responses": 1,
+        "statuses": {
+          "unparsed": 1
+        },
+        "coverage": 0.0,
+        "pass_at_k": {
+          "1": 0.0
+        }
+      },
+      "medium": {
+        "tasks": 1,
+        "responses": 1,
+        "statuses": {
+          "deadline": 1
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.0
+        }
+      },
+      "hard": {
+        "tasks": 1,
+        "responses": 1,
+        "statuses": {
+          "unparsed": 1
+        },
+        "coverage": 0.0,
+        "pass_at_k": {
+          "1": 0.0
+        }
+      }
+    },
+    "cost": {
+      "wall_seconds": 37.99906479699996,
+      "prompt_tokens": 1041,
+      "output_tokens": 2630,
+      "truncated_calls": 1,
+      "calls": 3
+    },
+    "distinct_completions_per_task": 1.0
+  }
+}

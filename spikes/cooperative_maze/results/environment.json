@@ -1,0 +1,9 @@
+{
+  "platform": "Linux-6.17.0-41-generic-x86_64-with-glibc2.42",
+  "python": "3.12.13",
+  "sqlite": "3.50.4",
+  "ollama": {
+    "version": "0.18.0"
+  },
+  "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 6144 MiB, 595.71.05"
+}

@@ -1,0 +1,74 @@
+{
+  "overall": {
+    "tasks": 90,
+    "responses": 270,
+    "statuses": {
+      "unparsed": 227,
+      "deadline": 5,
+      "resource": 14,
+      "ids": 21,
+      "precedence": 3
+    },
+    "coverage": 0.1592592592592592,
+    "pass_at_k": {
+      "1": 0.0,
+      "3": 0.0
+    }
+  },
+  "level": {
+    "easy": {
+      "tasks": 30,
+      "responses": 90,
+      "statuses": {
+        "unparsed": 78,
+        "deadline": 2,
+        "resource": 7,
+        "ids": 2,
+        "precedence": 1
+      },
+      "coverage": 0.1333333333333333,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      }
+    },
+    "medium": {
+      "tasks": 30,
+      "responses": 90,
+      "statuses": {
+        "unparsed": 71,
+        "ids": 12,
+        "deadline": 3,
+        "resource": 2,
+        "precedence": 2
+      },
+      "coverage": 0.21111111111111114,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      }
+    },
+    "hard": {
+      "tasks": 30,
+      "responses": 90,
+      "statuses": {
+        "unparsed": 78,
+        "resource": 5,
+        "ids": 7
+      },
+      "coverage": 0.1333333333333333,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      }
+    }
+  },
+  "cost": {
+    "wall_seconds": 2199.8974812869947,
+    "prompt_tokens": 92586,
+    "output_tokens": 167610,
+    "truncated_calls": 52,
+    "calls": 270
+  },
+  "distinct_completions_per_task": 3.0
+}

@@ -1,0 +1,12 @@
+{
+  "resumed_utc": "2026-11-06T01:46:18.917865+00:00",
+  "preserved_rows": 180,
+  "prefix_sha256": "91110861691ebeb4bf227d4fe20aaaeff7fc103a612bae3224aadd129968cbb0",
+  "metadata_before_sha256": "88febe546259c973fd4a0483e3454ae8c6545db13af548153555286dd193b629",
+  "snapshot": "spikes/scheduling/interrupted/20261106T014618917865Z",
+  "resume_code_sha256": "44a7f8a372f16cc4c8cbe90de682d752eb8ee5bbba53d9bfebd7ecc5049b70f2",
+  "ollama": {
+    "version": "0.18.0"
+  },
+  "model_digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7"
+}

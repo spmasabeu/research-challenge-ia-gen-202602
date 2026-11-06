@@ -3,10 +3,13 @@
 Construir un harness y dataset reproducibles para mejorar razonamiento de un LLM
 pequeño (1–2B). [Enunciado](DesafioInvestigacion-2026.pdf).
 
-**Estado:** estructura inicial; implementación pendiente. El entrenamiento queda
-para el proyecto posterior.
+**Estado:** cinco spikes nuevos implementados y evaluados; spike de unidades
+validado. El harness principal, las particiones finales y los datos SFT/DPO
+siguen pendientes. El entrenamiento queda para el proyecto posterior.
 
-Spike exploratorio: [problemas cuantitativos con unidades](spikes/units/README.md), con instrucciones para replicar la POC y comparar Qwen3-1.7B, Llama 3.2-1B y Qwen3-8B sobre 30 problemas por modelo. No cambia el tema acordado automáticamente.
+Spike exploratorio: [problemas cuantitativos con unidades](spikes/units/README.md), con instrucciones para comparar Qwen3-1.7B y Llama 3.2-1B sobre 90 tareas con tres intentos por tarea y modelo y comprobar los resultados vigentes. No cambia el tema acordado automáticamente.
+
+[Comparación de los seis temas, resultados y recomendación para el desafío](spikes/README.md).
 
 ## Entregables
 
@@ -37,7 +40,7 @@ uv sync --locked
 uv run python --version
 ```
 
-Todavía no hay comandos de generación o evaluación. Al agregar dependencias,
+Los comandos del spike están en [su README](spikes/units/README.md). Al agregar dependencias,
 versionar juntos `pyproject.toml` y `uv.lock`. No subir secretos ni pesos de modelos.
 
 ## Trabajo del equipo
@@ -47,6 +50,7 @@ versionar juntos `pyproject.toml` y `uv.lock`. No subir secretos ni pesos de mod
   modelos y referencias en [Temas](docs/2026-10-29_093018_temas.md).
 - Nombrar documentos `AAAA-MM-DD_HHMMSS_tema.md` con hora de Santiago. Mantener
   el nombre al editar; fechar nuevas entradas dentro del documento.
+  En `spikes/units/`, conservar los nombres estables `README.md` y `report.md`.
 - Empezar con 50–100 tareas piloto de planificación con restricciones. Ajustar
   dificultad para que el modelo pequeño tenga aciertos y errores.
 - Probar soluciones equivalentes e intentos de engañar al verificador.

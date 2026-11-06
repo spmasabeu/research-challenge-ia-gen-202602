@@ -1,0 +1,12 @@
+{
+  "error": "http.client.RemoteDisconnected: Remote end closed connection without response",
+  "completed_rows": 180,
+  "first_missing": {
+    "id": "hard-00",
+    "sample": 0,
+    "seed": 42
+  },
+  "aborted_call_duration_seconds": null,
+  "aborted_call_tokens": null,
+  "note": "No se recibió respuesta cruda. Los costos agregados incluyen llamadas con respuesta guardada; excluyen esta llamada fallida y el tiempo entre sesiones."
+}

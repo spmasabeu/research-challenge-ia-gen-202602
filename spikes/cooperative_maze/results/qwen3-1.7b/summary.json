@@ -1,0 +1,88 @@
+{
+  "overall": {
+    "tasks": 90,
+    "responses": 270,
+    "statuses": {
+      "unparsed": 186,
+      "bounds": 27,
+      "wall": 45,
+      "correct": 2,
+      "unknown_agent": 1,
+      "locked": 7,
+      "budget": 2
+    },
+    "coverage": 0.3111111111111111,
+    "pass_at_k": {
+      "1": 0.0074074074074074086,
+      "3": 0.022222222222222223
+    }
+  },
+  "level": {
+    "easy": {
+      "tasks": 30,
+      "responses": 90,
+      "statuses": {
+        "unparsed": 55,
+        "bounds": 22,
+        "wall": 10,
+        "correct": 2,
+        "unknown_agent": 1
+      },
+      "coverage": 0.38888888888888884,
+      "pass_at_k": {
+        "1": 0.022222222222222223,
+        "3": 0.06666666666666667
+      }
+    },
+    "medium": {
+      "tasks": 30,
+      "responses": 90,
+      "statuses": {
+        "unparsed": 59,
+        "wall": 22,
+        "locked": 4,
+        "bounds": 5
+      },
+      "coverage": 0.34444444444444444,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      }
+    },
+    "hard": {
+      "tasks": 30,
+      "responses": 90,
+      "statuses": {
+        "unparsed": 72,
+        "locked": 3,
+        "wall": 13,
+        "budget": 2
+      },
+      "coverage": 0.19999999999999996,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      }
+    }
+  },
+  "cost": {
+    "wall_seconds": 3343.151351888002,
+    "prompt_tokens": 75537,
+    "output_tokens": 253771,
+    "truncated_calls": 150,
+    "calls": 270
+  },
+  "distinct_completions_per_task": 3.0,
+  "first_invalid_action": {
+    "2": 15,
+    "1": 22,
+    "0": 32,
+    "3": 5,
+    "6": 1,
+    "7": 1,
+    "8": 2,
+    "4": 1,
+    "10": 1
+  },
+  "mean_parsed_length": 9.44047619047619
+}
