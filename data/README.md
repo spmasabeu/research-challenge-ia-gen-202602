@@ -1,11 +1,17 @@
-# Datos y resultados
+# Datos
 
-Guardar aquí tareas, trazas SFT/DPO y resultados de evaluación. Crear subcarpetas
-cuando se generen los primeros artefactos, separando train/eval/test.
+- `units-v1/`: `train.jsonl` (900), `eval.jsonl` (270), `test.jsonl` (270) y
+  `manifest.json` con sha256. Generado con
+  `PYTHONPATH=src python3 -m challenge.generator --out data/units-v1` (idempotente;
+  se niega a sobrescribir un split distinto). Una nueva versión del generador va
+  en otra carpeta (`units-v2/`), nunca encima.
+- `units-v1/derived/`: `sft.jsonl` y `dpo.jsonl` exportados con `challenge.derive`,
+  solo desde train.
 
-Incluir IDs, dificultad, semilla y procedencia; las referencias no se envían al
-modelo. SFT/DPO se derivan exclusivamente de train.
+Cada tarea incluye `id`, `instance_id`, `split`, `family`, `level`, `base`, `spec`,
+`prompt`, `requested_unit` y `answer` (la referencia; no se envía al modelo,
+y el bloque `DATOS` del prompt no la contiene).
 
-Cada ejecución debe conservar respuestas, métricas y los metadatos de
-reproducibilidad del README raíz. No sobrescribir resultados usados en el informe.
-Para artefactos grandes, acordar almacenamiento y registrar ubicación y checksum.
+`test` está congelado: no ajustar nada mirando sus resultados. Las ejecuciones
+de modelos van en `runs/` (no versionado); copiar aquí o a `docs/` solo los
+resúmenes que use el informe.

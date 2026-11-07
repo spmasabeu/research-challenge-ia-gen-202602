@@ -1,8 +1,10 @@
 # Spike: razonamiento cuantitativo con unidades
 
+> **Congelado (2026-11-07).** El entorno principal vive en `src/challenge/` (ver README raíz); allí se corrigieron el separador de miles, el hedge JSON, los alias de unidades y la unidad pedida. Para el informe, usar la vista **automática** (Qwen pass@1 70.74%), no la `final` con revisiones manuales: el verificador será la recompensa.
+
 Evaluar si Qwen3-1.7B tiene aciertos y errores cuantitativos reales en tareas con fórmulas y conversiones explícitas. Comparación local con Llama 3.2-1B sobre 90 tareas y tres intentos por tarea. [Informe y resultados](report.md).
 
-Este spike aporta evidencia para elegir y calibrar el problema del desafío; el entorno principal y los datos de entrenamiento siguen pendientes. El tema acordado por el equipo permanece en [Decisiones](../../docs/2026-10-29_093018_decisiones.md).
+Este spike aporta evidencia para elegir y calibrar el problema del desafío; el entorno principal y los datos de entrenamiento siguen pendientes. El tema elegido quedó registrado en [Decisiones](../../docs/2026-10-29_093018_decisiones.md).
 
 ## Archivos
 

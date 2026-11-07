@@ -1,0 +1,24 @@
+{
+  "version": "units-v1",
+  "seed": 0,
+  "splits": {
+    "train": {
+      "file": "train.jsonl",
+      "instances_per_family": 100,
+      "tasks": 900,
+      "sha256": "e03a44ceaecc68a9b04ef091d3424b981ba4b659308932cd74e1b7da2e29a631"
+    },
+    "eval": {
+      "file": "eval.jsonl",
+      "instances_per_family": 30,
+      "tasks": 270,
+      "sha256": "96909a6d6e0de5813d0bdf8e4cea00973aaf132c09772139ef4c3813e2964c08"
+    },
+    "test": {
+      "file": "test.jsonl",
+      "instances_per_family": 30,
+      "tasks": 270,
+      "sha256": "959ce51a1768b49ca756696a36ecb34d61c12e28af7cbd8b364baa4cee8ba404"
+    }
+  }
+}
