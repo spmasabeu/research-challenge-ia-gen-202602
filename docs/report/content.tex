@@ -1,0 +1,377 @@
+% Contenido integrado por main.tex usando el template suministrado por el usuario.
+% Integrar desde docs/report/; requiere graphicx para las dos figuras.
+% Estado: resultados locales pendientes de completar C6; frontera pendiente.
+\section{Problema y alcance}
+Construimos un entorno de razonamiento cuantitativo con unidades en español
+para preparar el entrenamiento posterior de un modelo pequeño. En este desafío
+no se realiza entrenamiento SFT, DPO ni RL. Cada problema se responde en un
+turno, sin calculadora, intérprete ni otras herramientas. El prompt proporciona
+la fórmula, el valor de $\pi$ cuando corresponde y las equivalencias necesarias;
+la tarea exige aplicar operaciones y conversiones, no recordar física.
+
+El objetivo es Qwen3-1.7B. Se comparan Llama 3.2-1B y
+SmolLM2-1.7B-Instruct. Qwen3-8B genera las respuestas de entrenamiento y se
+evalúa como modelo abierto mayor; no se presenta como modelo de frontera.
+La aclaración docente exige al menos tres pequeños y admite justificar por
+recursos la omisión de modelos mayores. La ampliación con DeepSeek-V4-Pro-0813 se ejecuta mediante OpenRouter,
+con presupuesto autorizado de USD 5 y proveedor DeepInfra FP8 fijado.
+Los resultados se obtienen por inferencia; no se usa la credencial OpenAI.
+
+\section{Entorno y generación}
+Las familias son velocidad, $v=d/t$; energía cinética, $E=mv^2/2$; y luminosidad,
+$L=4\pi d^2F$. Cada familia admite un dato directo o la suma de dos componentes
+positivos: distancias, masas o flujos, respectivamente. Esta composición,
+las variantes físicas agrupadas y la verificación dimensional constituyen
+el aporte acotado del diseño. No se reclama originalidad por cambiar números.
+La generación procedural y su verificación tienen antecedentes en Reasoning
+Gym~\cite{reasoninggym}; la sensibilidad a variantes tiene antecedentes en
+GSM-Symbolic~\cite{gsmsymbolic}.
+
+El generador final \texttt{units-3} usa distancias de velocidad entre 101 y
+9999 m y tiempos entre 7 y 199 s; masas y velocidades entre 1,1 y 49,9 en
+kg y m/s. Para luminosidad usa distancias enteras entre 2 y 30 m y flujos
+entre 0,01 y 0,99 W/m$^2$. Las componentes de una suma son positivas y su
+fracción se encuentra entre 0,2 y 0,8. Los datos visibles se representan con
+hasta 15 cifras significativas. Se excluyen cero, valores negativos e
+incertidumbres físicas.
+
+Cada problema físico origina tres variantes. Fácil no requiere conversiones;
+media requiere una; difícil requiere tres en velocidad y energía, y dos en
+luminosidad, cuya salida se solicita en W. Se registran también estructura,
+operaciones y representación decimal o científica. Estas etiquetas describen
+el diseño; no demuestran una dificultad estrictamente ordenada ni permiten
+atribuir causalmente los errores solo a las conversiones.
+
+Se generan 20 grupos por familia con semilla 4301 y se particionan por grupo
+con semilla 4302. Cada grupo mantiene juntas sus tres variantes. La identidad
+física se define por familia y magnitudes agregadas en SI, incluso cuando
+cambia la estructura o la unidad. Se excluyen 95 identidades observadas en
+spike, pilotos y controles. Las particiones contienen 90 tareas de train,
+36 de eval y 54 de test: respectivamente 10, 4 y 6 grupos por familia.
+Cada celda familia/nivel tiene 10, 4 o 6 tareas; las dos estructuras están
+balanceadas. Hay 180 tareas, pero solo 60 problemas físicos distintos.
+
+Las referencias son calculadas por código, nunca por el profesor. Un segundo
+cálculo interpreta los datos efectivamente impresos en el prompt y comprueba
+la referencia con tolerancia relativa $10^{-10}$. Los archivos públicos
+omiten las referencias y la clave física; al modelo solo se envía el texto
+del prompt. Las plantillas se comparten entre particiones, por lo que el test
+evalúa nuevas magnitudes y combinaciones, no generalización a nuevos tipos de
+problemas o lenguaje arbitrario.
+
+Por ejemplo, la tarea de train \texttt{14c34d569bd092efd278-medium}
+proporciona $d_1=4{,}08$ km, $d_2=1{,}02$ km y $t=88$ s, pide
+$v=(d_1+d_2)/t$ y explicita $1$ km$=1000$ m y $1$ m/s$=3{,}6$ km/h.
+La referencia privada es $5100/88=57{,}954545\ldots$ m/s. Un resultado
+terminal \texttt{57.95 m/s} recibe recompensa; \texttt{0 m/s} no. El prompt
+completo pide hasta 80 palabras de explicación en español y un único resultado,
+en JSON o cantidad/unidad, sin alternativas. Este ejemplo procede de train,
+no fue añadido tras observar test.
+
+\section{Recompensa y robustez}
+La interfaz es \texttt{reward(prompt, completion) -> float}. El consumidor carga
+un registro privado de prompts exactos; un prompt desconocido produce error
+de entrada. El extractor no recibe la referencia. Acepta un único resultado
+terminal inequívoco en JSON con \texttt{value} y \texttt{unit}, o como cantidad
+y unidad terminal, permitiendo un desarrollo anterior. No ejecuta expresiones.
+
+Se convierte el resultado a SI y se comprueba dimensión, finitud y
+$|y-y^*|\leq0{,}01|y^*|$. La tolerancia relativa del 1\% admite redondeo y es
+distinta de la usada para verificar la generación. Se aceptan m/s y km/h;
+J, kJ y erg; W, kW, erg/s y luminosidades solares. Una unidad equivalente
+puede recibir recompensa aunque difiera de la solicitada. Las pruebas incluyen
+22 m/s frente a 79,2 km/h, 9 J y $4\pi$ W con referencias fijadas de forma
+independiente del generador.
+
+Se rechazan resultados terminales contradictorios, alternativas, claves JSON
+duplicadas, valores no finitos y unidades incompatibles. No se rescata un
+número previo porque coincida con la referencia. Las etiquetas son
+\texttt{correct}, \texttt{numeric}, \texttt{unit} y \texttt{unparsed}.
+La última indica que falta un resultado admitido e inequívoco; no demuestra
+un error matemático. Truncamiento y respuesta incompleta del backend son
+marcas separadas, conservadas en el denominador.
+
+El verificador final es \texttt{verifier-9}, congelado antes de la primera
+inferencia de test. La versión 9 añadió etiquetas terminales con signo igual
+y la unidad Watts observadas en controles de desarrollo de SmolLM2. En esos
+controles convirtió dos casos de no interpretados a numéricamente incorrectos;
+no añadió aciertos. No cambió etiquetas del piloto consolidado ni de las
+fuentes SFT/DPO. Se conservan ambas versiones, hashes, respuestas e IDs
+afectados: una mejora del evaluador no se presenta como mejora del modelo.
+
+Persisten límites: ciertas frases compactas con LaTeX, expresiones finales sin
+evaluar y representaciones de miles no están cubiertas. Tras observar test
+no se amplió el parser. Se informa cobertura y una cota optimista que trata
+todas las no interpretadas como correctas; no es un intervalo de confianza.
+Un valor final aceptado tampoco certifica la coherencia de la explicación.
+
+\section{Calibración y protocolo experimental}
+El piloto inicial, independiente de los datos finales, mostró que luminosidad
+quedaba cerca del suelo. Se redujeron sus magnitudes y después se eliminó la
+conversión de salida difícil. Se preservaron las respuestas y versiones de
+cada piloto; se repitió inferencia cuando cambió el problema y solo se
+recalificaron respuestas cuando cambió el evaluador. El piloto consolidado
+comprende 90 tareas y 270 respuestas del objetivo: 132 correctas, 126
+numéricas incorrectas y 12 no interpretadas; pass@1 de 48,89\%, pass@3 de
+65,56\% y cobertura de 95,56\%. Hubo tres truncamientos, uno en
+luminosidad difícil; se conservaron en las métricas y respuestas originales.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.85\linewidth]{final-v2/figures/calibration.pdf}
+\caption{Piloto consolidado del objetivo, previo al congelamiento. Hay 30
+respuestas por celda; son variantes relacionadas, no ensayos físicos independientes.}
+\end{figure}
+
+Luminosidad difícil permaneció en 2/30 aciertos y se retuvo como estrato de
+estrés. Velocidad fácil alcanzó 30/30 y se conservó como control; el nivel
+difícil de esa familia tuvo 19/30. Fácil y media no se separaron estrictamente
+en el promedio global (57,78\% y 60,00\%).
+El núcleo presenta aciertos y errores aprovechables, sin afirmar calibración
+suficiente de todas las celdas ni prometer mejora mediante entrenamiento.
+
+El equipo real es Intel Core 5 210H, 12 CPU lógicas, 30,47 GiB de RAM y
+NVIDIA RTX 3050 Laptop con 6144 MiB. Driver 595.71.05; NVIDIA-SMI anuncia
+compatibilidad máxima CUDA 13.2, que no identifica el runtime usado por
+Ollama. El backend es Ollama 0.18.0; Python 3.12.13. Los pesos son GGUF:
+Qwen3-1.7B y Qwen3-8B Q4\_K\_M, Llama Q8\_0 y SmolLM2 Q4\_K\_M.
+El catálogo conserva digest, licencia, template y metadata efectivamente
+observados. Los tamaños del backend (2,0B, 8,2B, 1,2B y 1,7B) difieren de
+algunas etiquetas comerciales. Qwen y SmolLM2 declaran Apache-2.0; Llama usa
+su Community License~\cite{qwen17,qwen8,llama,smol}.
+
+Se usa un único proceso de inferencia local a la vez. Los parámetros enviados
+son temperatura 0,7; top-p 0,9; top-k 40; min-p 0; contexto 2048;
+batch 128; solicitud de 99 capas GPU; máximo 1024 tokens; y
+\texttt{think=false}. Cada solicitud tiene un mensaje de usuario, sin esquema
+JSON forzado. Las semillas son 42, 43 y 44 para la línea base y 42--45 para
+train del profesor. Se registran residencia en GPU, duración, tokens y
+respuesta completa. Los defaults no controlados se identifican por backend y
+template; no se afirma equivalencia de todas las opciones internas.
+Los servicios persistentes guardan cada respuesta con sincronización a disco
+y reanudan solo claves faltantes con configuración idéntica.
+
+\section{Datos derivados para entrenamiento posterior}
+Qwen3-8B produjo cuatro respuestas por cada una de las 90 tareas de train:
+360 intentos, 193 aceptados por resultado, 154 errores numéricos y 13 no
+interpretados. Tras deduplicar texto por tarea salvo diferencias de espacios,
+hubo 178 candidatas correctas distintas. Se seleccionaron cinco candidatas por
+familia/nivel con semilla 4303, o todas si había menos. Un defecto obligó a
+ampliar la revisión a toda la celda. Además se revisaron todas las candidatas
+restantes; finalmente las 178 tienen juicio individual: 121 retenidas y 57
+descartadas por calidad contextual. Esta auditoría fue realizada por un
+agente auxiliar y contrastada con los artefactos por el agente principal;
+no equivale a certificación humana ni a validación por el profesor.
+
+Se conservan 121 trazas SFT de 46 tareas y 20 problemas físicos. Para DPO se emparejan respuestas
+retenidas con errores explícitos del mismo prompt, por orden de muestra,
+con máximo dos pares por tarea y sin reutilizar chosen ni rejected. No se usa
+producto cartesiano. Para completar negativos se consultó al objetivo tres
+veces sobre 38 tareas exactas de train: 114 respuestas, 19 errores numéricos
+y 6 no interpretadas, que no se usan como negativas. El resultado es 35
+pares de 25 tareas y 17 problemas físicos: 22 rechazadas proceden del profesor y 13 del objetivo.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{llrr}
+Familia & Dificultad & SFT & DPO \\
+\midrule
+Velocidad & Fácil & 27 & 3 \\
+Velocidad & Media & 25 & 4 \\
+Velocidad & Difícil & 22 & 11 \\
+Energía & Fácil & 13 & 1 \\
+Energía & Media & 10 & 5 \\
+Energía & Difícil & 1 & 1 \\
+Luminosidad & Fácil & 11 & 3 \\
+Luminosidad & Media & 11 & 6 \\
+Luminosidad & Difícil & 1 & 1 \\
+\midrule
+Total & & 121 & 35 \\
+\end{tabular}
+\caption{Datos retenidos por familia y nivel. SFT fácil/media/difícil:
+51/46/24; DPO: 7/15/13. Cobertura no equivale a balance suficiente.}
+\end{table}
+
+Las cantidades están lejos de las metas orientativas de 4000 SFT y 2000 DPO.
+Se priorizó obtener datos trazables y revisar coherencia sin duplicarlos.
+La inferencia del profesor tomó 2537,21 s y generó 56563 tokens; media
+7,05 s por respuesta. A la retención observada, 4000 SFT proyectarían unas
+23,30 horas solo de profesor, sin garantizar igual calidad o diversidad.
+Se eligió una escala local acotada antes de congelar los splits. La existencia
+de una sola traza en energía y luminosidad difíciles es una limitación material
+para el proyecto posterior. No se afirma que estos datos basten para entrenar
+con éxito ni que el hardware haga imposible una generación más larga.
+
+\section{Línea base y análisis cualitativo}
+El test contiene 54 tareas de 18 problemas físicos, con tres muestras por
+modelo. Para una tarea con $c$ aciertos en $n=3$ intentos se usa
+$\widehat{\mathrm{pass@}k}=1-\binom{n-c}{k}/\binom{n}{k}$ y se promedia entre
+tareas. pass@1 es $c/3$; pass@3 indica al menos un acierto observado. Las
+tablas usan porcentajes y se generan de las respuestas guardadas con la misma
+versión final del verificador, sin nuevas inferencias. Los tríos no son
+observaciones independientes; no se reportan intervalos binomiales que ignoren
+esa dependencia.
+
+\input{final-v2/tables.tex}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{final-v2/figures/baseline.pdf}
+\caption{Evaluación con verificador común por dificultad; 18 tareas y 54 respuestas
+por modelo y nivel. Ver cobertura y categorías antes de interpretar diferencias.}
+\end{figure}
+
+En el objetivo, pass@1 es 62,96\% en fácil, 55,56\% en media y 37,04\% en
+difícil; por familia es 87,04\% en velocidad, 55,56\% en energía y 12,96\%
+en luminosidad. La mezcla global no debe ocultar la concentración de dificultad
+en la última familia. No hubo truncamientos ni intentos incompletos del backend
+en Qwen3-1.7B ni en Llama. SmolLM2 tuvo diez truncamientos y un intento
+incompleto, conservados entre sus 162 respuestas; su cobertura fue 23,46\%.
+Por ello, su pass@1 automático de 3,09\% es una medida del sistema completo
+bajo este contrato, no una estimación fiable de exactitud matemática aislada.
+Su cota optimista alcanza 79,63\%, ilustrando la incertidumbre de extracción.
+SmolLM2 no tiene aciertos automáticos en energía ni en luminosidad; los cinco
+proceden de velocidad. Los ejemplos conservados incluyen el único intento
+con \texttt{done=false} y una respuesta que alcanza el límite de 1024 tokens.
+Qwen3-8B obtuvo 82 aciertos, 74 errores numéricos y seis no interpretadas:
+pass@1 de 50,62\%, pass@3 de 72,22\% y cobertura de 96,30\%, sin truncamientos
+ni intentos incompletos. Qwen3-1.7B tuvo 84 aciertos y pass@3 de 68,52\%.
+Estas diferencias sobre una muestra pequeña y relacionada no demuestran
+superioridad estadística de uno sobre otro. El profesor mayor no garantiza
+mejores respuestas ni datos automáticamente coherentes.
+
+Las 648 respuestas locales de test sumaron 2788,28 segundos de solicitudes
+y 153259 tokens de salida reportados. Un intento incompleto de SmolLM2 no
+informó conteo de tokens; no se le asigna un conteo observado de cero. Por modelo, Qwen3-1.7B consumió 435,12 s y
+31521 tokens; Llama, 395,58 s y 26414; SmolLM2, 869,42 s y 71009; y
+Qwen3-8B, 1088,16 s y 24315. El costo de API local es cero y no incluye
+electricidad. La memoria de modelo reportada por Ollama residió completamente
+en GPU en las 162 observaciones de cada modelo; no se atribuye esa cifra
+al tamaño de los pesos en disco ni a toda la memoria del proceso.
+
+En Qwen3-1.7B, una respuesta suma 2,936 y 0,734 km, convierte a 3670 m y
+divide por 150 s para obtener 24,47 m/s correctamente. Otra trata 0,25 min
+como 0,25 s y produce un resultado 60 veces mayor. En energía, 1022,27 J
+recibe aceptación frente a 1016,452 J por quedar dentro del 1\%, aunque
+la multiplicación descrita es incorrecta. En luminosidad, una respuesta
+termina correctamente en 30,7876 W pero afirma falsamente que
+1 W equivale a 1000 erg/s: el número final no certifica razonamiento dimensional.
+Un párrafo con cálculo y redondeo coherentes termina en una estructura
+LaTeX no admitida y permanece \texttt{unparsed}; no se modifica su etiqueta.
+
+Los ejemplos cualitativos conservan ID, índice de muestra, hash y juicio
+automático. Son ilustraciones seleccionadas, no una estimación de frecuencia
+de causas ni una corrección manual de las métricas. La baja cobertura de
+Llama, particularmente en luminosidad, impide atribuir todos sus fallos
+automáticos a capacidad matemática. Cuantizaciones y templates distintos,
+el idioma español y la configuración de pensamiento limitan la atribución
+causal de las diferencias a parámetros o familias de modelos.
+
+\section{Referencia externa mediante OpenRouter}
+Se eligió DeepSeek-V4-Pro-0813~\cite{deepseek}, el candidato fechado disponible
+que cabe en el presupuesto autorizado de USD 5. La ruta efectiva se fijó en
+DeepInfra FP8, sin fallback ni cambio automático de modelo. El catálogo y la
+lista de endpoints públicos se conservaron con sus precios y parámetros.
+El proveedor nativo DeepSeek fue excluido por la política de privacidad de
+la cuenta antes de generar el primer control; no se modificó esa política.
+La ruta DeepInfra completó cinco controles de desarrollo fuera de test:
+tres aceptados y dos no interpretados, sin truncamientos, por USD 0,0029965.
+No se ajustó el parser a estos resultados.
+
+Se usan los mismos 54 prompts congelados, tres respuestas por tarea, máximo
+1024 tokens, temperatura 0,7, top-p 0,9, top-k 40, min-p 0 y semillas 42--44.
+Se solicita razonamiento desactivado, sin herramientas ni JSON forzado.
+La API anuncia contexto de 1048576 tokens, distinto del buffer local de 2048;
+los prompts cortos son idénticos. Los defaults y la implementación del muestreo
+son propios del servicio; igualdad de parámetros no implica equivalencia de
+motor ni reproducibilidad bit a bit. La revisión remota se identifica por
+modelo fechado y proveedor, sin un digest de pesos observable. FP8 procede
+del catálogo del endpoint, no de una inspección de sus pesos en ejecución.
+
+La tarifa capturada de esa ruta es USD 1,30/2,60 por millón de tokens de
+entrada/salida. Se aplican caps de 1,32/3,96 y se reserva conservadoramente
+USD 0,02 antes de cada intento, también si falla, con un registro global que
+impide superar USD 5 reservados. Los prompts están limitados a 2048 bytes;
+la reserva cubre un margen de 6144 tokens de entrada y 1024 de salida a esos
+caps. El costo observado se conserva en cada respuesta. La política de precios
+y selección de rutas está documentada por OpenRouter~\cite{routing,pricing}.
+La reserva no es el importe facturado y los cargos por comprar créditos
+preceden a esta ejecución; no se hizo ninguna compra adicional.
+
+El test externo produjo 133 respuestas aceptadas y 29 no interpretadas:
+pass@1 de 82,10\%, pass@3 de 90,74\% y cobertura de 82,10\%. No hubo
+respuestas clasificadas como numéricamente incorrectas, unidades incompatibles,
+truncamientos ni intentos incompletos. Esto no demuestra exactitud matemática
+perfecta: las 29 no interpretadas permanecen sin resolución automática y dan
+una cota optimista de 100\% para ambas métricas. Fácil/media/difícil tuvieron
+pass@1 de 77,78/79,63/88,89\%; la inversión nominal refuerza que los niveles
+no son una escala universal de capacidad. La revisión contextual y sus
+limitaciones se conservan separadas de las etiquetas. Por ejemplo, una respuesta
+convierte 0,9 min a 0,015 h y obtiene 410,6 km/h correctamente, pero la frase
+previa que aclara que pi no se usa activa una guardia conservadora de negación.
+Otra termina con un JSON numéricamente correcto tras un marcador narrativo sin
+cantidad en esa línea. Ambas permanecen no interpretadas: son falsos negativos
+de extracción observados, no errores matemáticos demostrados ni motivos para
+retocar el verificador después de test.
+
+Las 162 solicitudes externas consumieron 25377 tokens de entrada y 22125 de
+salida, con cero tokens de razonamiento reportados; sumaron 341,14 s y
+USD 0,0905151. Con los cinco controles, el costo reportado fue USD 0,0935116.
+Se registraron 168 intentos incluyendo el rechazo previo a generar: reserva
+conservadora total de USD 3,36, por debajo del máximo autorizado. Todas las
+respuestas y costos son verificables sin repetir llamadas pagadas.
+
+La revisión independiente encontró que cambiar accidentalmente la ruta del
+registro presupuestario podía reiniciar el contador al reanudar una corrida.
+Se vinculó esa ruta a la configuración y se añadió una regresión simulada.
+El código exacto de la inferencia anterior permanece en su snapshot; el
+recálculo con el adaptador corregido produjo etiquetas y métricas idénticas.
+Los cuatro módulos normativos, el verificador 9 y los prompts no cambiaron.
+
+\section{Reproducción y límites}
+El código central usa la biblioteca estándar. Las pruebas incluyen fixtures
+independientes, equivalencias, ataques al parser, referencias visibles,
+disjunción de grupos, reanudación y procedencia SFT/DPO. Los manifiestos
+SHA-256 fijan datos, configuración y cuatro módulos normativos. Se conservan
+versiones anteriores y registros de recálculo. Las figuras usan Matplotlib
+3.11.2 en un grupo de dependencias opcional fijado en el lockfile.
+
+La reproducción sin inferencia comprueba hashes, regenera las particiones,
+reconstruye SFT/DPO y vuelve a calcular etiquetas y métricas. No requiere
+Ollama, pesos ni credenciales. Repetir inferencia sí requiere los modelos y
+backend documentados; igualdad de semillas no garantiza igualdad bit a bit
+entre hardware o versiones. El costo API local es cero; electricidad no
+medida. La referencia externa usa la API autorizada de OpenRouter; no se realizó
+ningún entrenamiento.
+
+El informe usa el template suministrado por el usuario, conservado en
+\texttt{template/} junto a sus huellas. El paquete reúne los cuatro entregables:
+entorno y tareas; descripción del diseño; datos SFT/DPO; e informe de línea
+base, robustez y calibración. Se acompaña de comandos, manifiesto y mapa de
+evidencia para contrastar contenido y resultados desde una copia aislada,
+sin archivos del repositorio original. La entrega por correo al profesor queda
+a cargo del equipo; no se realizó envío automático.
+
+\begingroup\raggedright
+\begin{thebibliography}{9}
+\bibitem{reasoninggym} Stojanovski et al. Reasoning Gym: Reasoning Environments
+for Reinforcement Learning with Verifiable Rewards. arXiv:2505.24760, 2025.
+\bibitem{gsmsymbolic} Mirzadeh et al. GSM-Symbolic: Understanding the Limitations
+of Mathematical Reasoning in Large Language Models. arXiv:2410.05229, 2024.
+\bibitem{qwen17} Qwen. Qwen3-1.7B, model card oficial. Hugging Face,
+\texttt{Qwen/Qwen3-1.7B}. Consulta: 7 de noviembre de 2026.
+\bibitem{qwen8} Qwen. Qwen3-8B, model card oficial. Hugging Face,
+\texttt{Qwen/Qwen3-8B}. Consulta: 7 de noviembre de 2026.
+\bibitem{llama} Meta. Llama-3.2-1B-Instruct, model card oficial. Hugging Face,
+\texttt{meta-llama/Llama-3.2-1B-Instruct}. Consulta: 7 de noviembre de 2026.
+\bibitem{smol} Hugging Face. SmolLM2-1.7B-Instruct, model card oficial.
+\texttt{HuggingFaceTB/SmolLM2-1.7B-Instruct}. Consulta: 7 de noviembre de 2026.
+\bibitem{deepseek} DeepSeek / OpenRouter. DeepSeek V4 Pro 0813.
+\url{https://openrouter.ai/deepseek/deepseek-v4-pro-20260813}.
+Consulta: 7 de noviembre de 2026.
+\bibitem{routing} OpenRouter. Provider Routing.
+\url{https://openrouter.ai/docs/guides/routing/provider-selection}.
+Consulta: 7 de noviembre de 2026.
+\bibitem{pricing} OpenRouter. Pricing.
+\url{https://openrouter.ai/pricing}. Consulta: 7 de noviembre de 2026.
+\end{thebibliography}
+\endgroup
