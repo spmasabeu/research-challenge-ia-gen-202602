@@ -24,5 +24,7 @@
   "snapshot": "deliveries/challenge",
   "zip": "deliveries/challenge-2026-11-07.zip",
   "single_definitive_version": true,
-  "zip_sha256": "1a68ee7eadc65b2cb67d8a2ce5bec4d9d8533a43147880b57c85abc2b6fe5228"
+  "zip_sha256": "ddcb45ba8e4887d692f59826f9ef4d9751ca390dd8f2d1c8cffa714628c50b78",
+  "package_documentation_update": "README ampliado y REPRODUCING.md; ver reproduction-docs.json",
+  "snapshot_files": 211
 }

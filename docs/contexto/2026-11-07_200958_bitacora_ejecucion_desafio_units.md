@@ -348,3 +348,11 @@ previa de hacer commits; no autoriza enviar mensajes a terceros ni entrenar.
 - 9a87385125a1796b94c4de0ce4fa32860e2f7e17: build(delivery): package reproducible challenge
 
 Trece pruebas pasan. Las evidencias crudas conservan espacios originales; git diff --check se aplica a código, no a logs de hardware. ProyectoCurso-2026.pdf queda sin añadir, ajeno al desafío actual. Mensaje guiado preparado en docs/contexto/2026-11-08_093607_guia_revision_equipo.md. No se envió a terceros. Se publicará la rama de revisión para habilitar URLs, sin merge a main.
+
+Publicación completada: rama implement-units-challenge-20261107 en origin,
+sin merge a main. Serie de ocho commits temáticos y mensaje guiado9b83643.
+Verificación posterior:211 archivos de entrega, manifiesto y ZIP coincidentes;
+solo ProyectoCurso-2026.pdf permanece sin seguimiento, por estar fuera del desafío.
+Se concilia el hash del ZIP del registro de formato tras ampliar documentación;
+los registros C7 previos conservan sus hashes originales como evidencia histórica.
+No se enviaron mensajes a colegas.

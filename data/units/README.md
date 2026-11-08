@@ -119,6 +119,6 @@ configuración y fuentes: cambiar de ledger en una corrida nueva ya iniciada
 produce error. No se entregan credenciales ni pesos. Trece pruebas actuales;
 las evidencias anteriores de once pruebas conservan la versión histórica.
 
-Snapshot final: `deliveries/challenge/`, 209 archivos sin pesos/secretos/entornos; ZIP `deliveries/challenge-2026-11-07.zip`. Validación final en `validation/c7-delivery-isolated.json`: entorno nuevo, trece pruebas, regeneración 15 archivos de tareas y 8 derivados, métricas/etiquetas/figuras/tablas y PDF idénticos byte a byte.
+Snapshot final: `deliveries/challenge/`, 211 archivos sin pesos/secretos/entornos; ZIP `deliveries/challenge-2026-11-07.zip`. Validación final en `validation/c7-delivery-isolated.json`: entorno nuevo, trece pruebas, regeneración 15 archivos de tareas y 8 derivados, métricas/etiquetas/figuras/tablas y PDF idénticos byte a byte.
 
 Formato definitivo actualizado y reconciliado en los nombres originales; validación vigente de maquetación y ZIP en `validation/report-format.json`. La evidencia C7 previa documenta contenido y resultados, que permanecen idénticos.
