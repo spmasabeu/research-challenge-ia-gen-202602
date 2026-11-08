@@ -1,0 +1,16 @@
+{
+  "reason": "auditoria C2: contradicciones multilinea, alternativas, SI finito, dimensiones de entradas",
+  "responses_sha256": "42d9aa290589cc642f6a9d5df5144d5f9fad9c6ddccb82e27a2395a4c69262f1",
+  "responses": 37,
+  "before": {
+    "correct": 33,
+    "unparsed": 2,
+    "numeric": 2
+  },
+  "after": {
+    "correct": 33,
+    "unparsed": 2,
+    "numeric": 2
+  },
+  "changes": []
+}

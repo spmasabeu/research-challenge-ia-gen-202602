@@ -1,0 +1,50 @@
+{
+  "reason": "rechazar JSON negado en última línea no vacía del prefijo; contraejemplos del auxiliar y pruebas",
+  "corpus": "v7/responses.jsonl",
+  "corpus_sha256": "9b007707f3cf20b66e13f5a27b557c0c509a3ccfcec274c3cf6d058b05f3f32d",
+  "before": {
+    "tasks": 90,
+    "responses": 270,
+    "n": 3,
+    "statuses": {
+      "correct": 125,
+      "numeric": 134,
+      "unparsed": 11
+    },
+    "coverage": 0.9592592592592593,
+    "pass_at_k": {
+      "1": 0.462962962962963,
+      "3": 0.5888888888888889
+    },
+    "pass_at_k_upper_bound": {
+      "1": 0.5037037037037038,
+      "3": 0.6777777777777778
+    },
+    "backend_incomplete": 1,
+    "truncated": 2
+  },
+  "after": {
+    "tasks": 90,
+    "responses": 270,
+    "n": 3,
+    "statuses": {
+      "correct": 125,
+      "numeric": 134,
+      "unparsed": 11
+    },
+    "coverage": 0.9592592592592593,
+    "pass_at_k": {
+      "1": 0.462962962962963,
+      "3": 0.5888888888888889
+    },
+    "pass_at_k_upper_bound": {
+      "1": 0.5037037037037038,
+      "3": 0.6777777777777778
+    },
+    "backend_incomplete": 1,
+    "truncated": 2
+  },
+  "changed_responses": [],
+  "verifier_before_sha256": "494c087d84f0b92cbf1e098f97082d7bd0464d78742cb47c8ec98ec0129df249",
+  "verifier_after_sha256": "eceb705148f639884ded47a114bc41adb036329e06e6e472927de215c03a65d8"
+}

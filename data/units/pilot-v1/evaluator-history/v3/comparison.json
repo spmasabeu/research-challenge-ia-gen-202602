@@ -1,0 +1,106 @@
+{
+  "reason": "frase terminal boxed observada en piloto; unidad desconocida no demuestra incompatibilidad",
+  "responses_sha256": "d45b642102095f3856a9c510c6751b92525fcbdf7b2e6457c821779437a924ab",
+  "responses": 120,
+  "before": {
+    "correct": 90,
+    "unparsed": 6,
+    "numeric": 24
+  },
+  "after": {
+    "correct": 92,
+    "numeric": 28
+  },
+  "changes": [
+    {
+      "task_id": "993b6e039152337def7a-hard",
+      "sample_index": 0,
+      "before": {
+        "status": "unparsed",
+        "reward": 0.0
+      },
+      "after": {
+        "status": "numeric",
+        "reward": 0.0,
+        "value": 1.5526,
+        "unit": "km/h",
+        "value_si": 0.4312777777777778
+      }
+    },
+    {
+      "task_id": "993b6e039152337def7a-hard",
+      "sample_index": 2,
+      "before": {
+        "status": "unparsed",
+        "reward": 0.0
+      },
+      "after": {
+        "status": "numeric",
+        "reward": 0.0,
+        "value": 1.553,
+        "unit": "km/h",
+        "value_si": 0.4313888888888889
+      }
+    },
+    {
+      "task_id": "5a4dd20f687ad7c06634-easy",
+      "sample_index": 2,
+      "before": {
+        "status": "unparsed",
+        "reward": 0.0
+      },
+      "after": {
+        "status": "correct",
+        "reward": 1.0,
+        "value": 104.0,
+        "unit": "m/s",
+        "value_si": 104.0
+      }
+    },
+    {
+      "task_id": "5a4dd20f687ad7c06634-medium",
+      "sample_index": 1,
+      "before": {
+        "status": "unparsed",
+        "reward": 0.0
+      },
+      "after": {
+        "status": "correct",
+        "reward": 1.0,
+        "value": 104.0,
+        "unit": "m/s",
+        "value_si": 104.0
+      }
+    },
+    {
+      "task_id": "5a4dd20f687ad7c06634-hard",
+      "sample_index": 0,
+      "before": {
+        "status": "unparsed",
+        "reward": 0.0
+      },
+      "after": {
+        "status": "numeric",
+        "reward": 0.0,
+        "value": 6.24,
+        "unit": "km/h",
+        "value_si": 1.7333333333333334
+      }
+    },
+    {
+      "task_id": "5a4dd20f687ad7c06634-hard",
+      "sample_index": 2,
+      "before": {
+        "status": "unparsed",
+        "reward": 0.0
+      },
+      "after": {
+        "status": "numeric",
+        "reward": 0.0,
+        "value": 6.24,
+        "unit": "km/h",
+        "value_si": 1.7333333333333334
+      }
+    }
+  ]
+}

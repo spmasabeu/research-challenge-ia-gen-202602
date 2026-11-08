@@ -1,0 +1,383 @@
+{
+  "all": {
+    "tasks": 90,
+    "responses": 270,
+    "n": 3,
+    "statuses": {
+      "correct": 132,
+      "numeric": 126,
+      "unparsed": 12
+    },
+    "coverage": 0.9555555555555556,
+    "pass_at_k": {
+      "1": 0.4888888888888889,
+      "3": 0.6555555555555556
+    },
+    "pass_at_k_upper_bound": {
+      "1": 0.5333333333333333,
+      "3": 0.7111111111111111
+    },
+    "backend_incomplete": 0,
+    "truncated": 3
+  },
+  "family": {
+    "energy": {
+      "tasks": 30,
+      "responses": 90,
+      "n": 3,
+      "statuses": {
+        "correct": 41,
+        "numeric": 46,
+        "unparsed": 3
+      },
+      "coverage": 0.9666666666666667,
+      "pass_at_k": {
+        "1": 0.4555555555555556,
+        "3": 0.6333333333333333
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.48888888888888893,
+        "3": 0.6666666666666666
+      },
+      "backend_incomplete": 0,
+      "truncated": 2
+    },
+    "luminosity": {
+      "tasks": 30,
+      "responses": 90,
+      "n": 3,
+      "statuses": {
+        "numeric": 69,
+        "correct": 13,
+        "unparsed": 8
+      },
+      "coverage": 0.9111111111111111,
+      "pass_at_k": {
+        "1": 0.14444444444444446,
+        "3": 0.36666666666666664
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.23333333333333336,
+        "3": 0.5
+      },
+      "backend_incomplete": 0,
+      "truncated": 1
+    },
+    "speed": {
+      "tasks": 30,
+      "responses": 90,
+      "n": 3,
+      "statuses": {
+        "correct": 78,
+        "numeric": 11,
+        "unparsed": 1
+      },
+      "coverage": 0.9888888888888889,
+      "pass_at_k": {
+        "1": 0.8666666666666667,
+        "3": 0.9666666666666667
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.8777777777777778,
+        "3": 0.9666666666666667
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  },
+  "level": {
+    "easy": {
+      "tasks": 30,
+      "responses": 90,
+      "n": 3,
+      "statuses": {
+        "correct": 52,
+        "numeric": 35,
+        "unparsed": 3
+      },
+      "coverage": 0.9666666666666667,
+      "pass_at_k": {
+        "1": 0.5777777777777777,
+        "3": 0.7
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.611111111111111,
+        "3": 0.7333333333333333
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "hard": {
+      "tasks": 30,
+      "responses": 90,
+      "n": 3,
+      "statuses": {
+        "correct": 26,
+        "numeric": 57,
+        "unparsed": 7
+      },
+      "coverage": 0.9222222222222223,
+      "pass_at_k": {
+        "1": 0.2888888888888889,
+        "3": 0.5
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.36666666666666664,
+        "3": 0.6
+      },
+      "backend_incomplete": 0,
+      "truncated": 3
+    },
+    "medium": {
+      "tasks": 30,
+      "responses": 90,
+      "n": 3,
+      "statuses": {
+        "correct": 54,
+        "unparsed": 2,
+        "numeric": 34
+      },
+      "coverage": 0.9777777777777777,
+      "pass_at_k": {
+        "1": 0.6,
+        "3": 0.7666666666666667
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.6222222222222222,
+        "3": 0.8
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  },
+  "structure": {
+    "direct": {
+      "tasks": 45,
+      "responses": 135,
+      "n": 3,
+      "statuses": {
+        "correct": 62,
+        "unparsed": 5,
+        "numeric": 68
+      },
+      "coverage": 0.962962962962963,
+      "pass_at_k": {
+        "1": 0.4592592592592593,
+        "3": 0.6444444444444445
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.49629629629629635,
+        "3": 0.6666666666666666
+      },
+      "backend_incomplete": 0,
+      "truncated": 1
+    },
+    "sum": {
+      "tasks": 45,
+      "responses": 135,
+      "n": 3,
+      "statuses": {
+        "correct": 70,
+        "numeric": 58,
+        "unparsed": 7
+      },
+      "coverage": 0.9481481481481482,
+      "pass_at_k": {
+        "1": 0.5185185185185186,
+        "3": 0.6666666666666666
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.5703703703703704,
+        "3": 0.7555555555555555
+      },
+      "backend_incomplete": 0,
+      "truncated": 2
+    }
+  },
+  "family_level": {
+    "energy/easy": {
+      "tasks": 10,
+      "responses": 30,
+      "n": 3,
+      "statuses": {
+        "correct": 18,
+        "numeric": 11,
+        "unparsed": 1
+      },
+      "coverage": 0.9666666666666667,
+      "pass_at_k": {
+        "1": 0.6,
+        "3": 0.7
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.6333333333333334,
+        "3": 0.7
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "energy/hard": {
+      "tasks": 10,
+      "responses": 30,
+      "n": 3,
+      "statuses": {
+        "numeric": 23,
+        "correct": 5,
+        "unparsed": 2
+      },
+      "coverage": 0.9333333333333333,
+      "pass_at_k": {
+        "1": 0.16666666666666669,
+        "3": 0.4
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.23333333333333334,
+        "3": 0.5
+      },
+      "backend_incomplete": 0,
+      "truncated": 2
+    },
+    "energy/medium": {
+      "tasks": 10,
+      "responses": 30,
+      "n": 3,
+      "statuses": {
+        "numeric": 12,
+        "correct": 18
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.6,
+        "3": 0.8
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.6,
+        "3": 0.8
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "luminosity/easy": {
+      "tasks": 10,
+      "responses": 30,
+      "n": 3,
+      "statuses": {
+        "numeric": 24,
+        "correct": 4,
+        "unparsed": 2
+      },
+      "coverage": 0.9333333333333333,
+      "pass_at_k": {
+        "1": 0.13333333333333336,
+        "3": 0.4
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.2,
+        "3": 0.5
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "luminosity/hard": {
+      "tasks": 10,
+      "responses": 30,
+      "n": 3,
+      "statuses": {
+        "numeric": 23,
+        "unparsed": 5,
+        "correct": 2
+      },
+      "coverage": 0.8333333333333334,
+      "pass_at_k": {
+        "1": 0.06666666666666668,
+        "3": 0.2
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.23333333333333334,
+        "3": 0.4
+      },
+      "backend_incomplete": 0,
+      "truncated": 1
+    },
+    "luminosity/medium": {
+      "tasks": 10,
+      "responses": 30,
+      "n": 3,
+      "statuses": {
+        "correct": 7,
+        "numeric": 22,
+        "unparsed": 1
+      },
+      "coverage": 0.9666666666666667,
+      "pass_at_k": {
+        "1": 0.23333333333333334,
+        "3": 0.5
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.2666666666666667,
+        "3": 0.6
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "speed/easy": {
+      "tasks": 10,
+      "responses": 30,
+      "n": 3,
+      "statuses": {
+        "correct": 30
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0,
+        "3": 1.0
+      },
+      "pass_at_k_upper_bound": {
+        "1": 1.0,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "speed/hard": {
+      "tasks": 10,
+      "responses": 30,
+      "n": 3,
+      "statuses": {
+        "correct": 19,
+        "numeric": 11
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.6333333333333334,
+        "3": 0.9
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.6333333333333334,
+        "3": 0.9
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "speed/medium": {
+      "tasks": 10,
+      "responses": 30,
+      "n": 3,
+      "statuses": {
+        "correct": 29,
+        "unparsed": 1
+      },
+      "coverage": 0.9666666666666667,
+      "pass_at_k": {
+        "1": 0.9666666666666666,
+        "3": 1.0
+      },
+      "pass_at_k_upper_bound": {
+        "1": 1.0,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  }
+}

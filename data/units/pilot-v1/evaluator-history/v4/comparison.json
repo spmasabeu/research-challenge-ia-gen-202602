@@ -1,0 +1,106 @@
+{
+  "reason": "prefijos explicitos de respuesta, alternativas numericas y negacion de JSON",
+  "responses_sha256": "1d6b42bd9e19d5f9ffb668bc2c310cf05f1245a50bfd306ca9ef1828af9088e6",
+  "responses": 155,
+  "before": {
+    "correct": 107,
+    "numeric": 48
+  },
+  "after": {
+    "correct": 106,
+    "numeric": 43,
+    "unparsed": 6
+  },
+  "changes": [
+    {
+      "task_id": "ad8a5e025c91bdb86554-easy",
+      "sample_index": 2,
+      "before": {
+        "status": "correct",
+        "reward": 1.0,
+        "value": 95.619,
+        "unit": "m/s",
+        "value_si": 95.619
+      },
+      "after": {
+        "status": "unparsed",
+        "reward": 0.0
+      }
+    },
+    {
+      "task_id": "03f4915340ca4a3be97b-medium",
+      "sample_index": 0,
+      "before": {
+        "status": "numeric",
+        "reward": 0.0,
+        "value": 29323.5,
+        "unit": "J",
+        "value_si": 29323.5
+      },
+      "after": {
+        "status": "unparsed",
+        "reward": 0.0
+      }
+    },
+    {
+      "task_id": "33149f0b92371fa8ad33-easy",
+      "sample_index": 0,
+      "before": {
+        "status": "numeric",
+        "reward": 0.0,
+        "value": 2280.5,
+        "unit": "J",
+        "value_si": 2280.5
+      },
+      "after": {
+        "status": "unparsed",
+        "reward": 0.0
+      }
+    },
+    {
+      "task_id": "33149f0b92371fa8ad33-medium",
+      "sample_index": 0,
+      "before": {
+        "status": "numeric",
+        "reward": 0.0,
+        "value": 2121.3,
+        "unit": "J",
+        "value_si": 2121.3
+      },
+      "after": {
+        "status": "unparsed",
+        "reward": 0.0
+      }
+    },
+    {
+      "task_id": "f3eaf9d66245ecfe22be-medium",
+      "sample_index": 1,
+      "before": {
+        "status": "numeric",
+        "reward": 0.0,
+        "value": 40360.0,
+        "unit": "J",
+        "value_si": 40360.0
+      },
+      "after": {
+        "status": "unparsed",
+        "reward": 0.0
+      }
+    },
+    {
+      "task_id": "f3eaf9d66245ecfe22be-medium",
+      "sample_index": 2,
+      "before": {
+        "status": "numeric",
+        "reward": 0.0,
+        "value": 40400.0,
+        "unit": "J",
+        "value_si": 40400.0
+      },
+      "after": {
+        "status": "unparsed",
+        "reward": 0.0
+      }
+    }
+  ]
+}

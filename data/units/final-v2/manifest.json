@@ -1,0 +1,24 @@
+{
+  "files": {
+    "exclusions.json": "61a825f9ea52bfcb7d3797cc18e6b6a67f3f1f17b97570466eb47c02f3ea079b",
+    "frozen-code/evaluate.py": "f812a6ec550daccfb881ffc51ee48d28cf9baa10e98370dd8eb4013f2a4c83e2",
+    "frozen-code/generator.py": "2024de418b06c428ca156f42e5e67717ac51da541759dbfb9ce5e0b6946c1752",
+    "frozen-code/models.py": "7eb35194601764d84e6d48f8d53c3b73555a4c96152a974e0b476f144ff59c15",
+    "frozen-code/verifier.py": "051c6382ff91ea271fe045da2686450be08f695d59f62f685bfbe349ea43df50",
+    "models.json": "212e06e9be492dc34bd27eaed2baec5ab16c1e4cc064f5dac207d7ea9aacea60",
+    "private/eval.jsonl": "5121edd001aeb2cd5798b67dc5d0559822f0e2558434d8712b7c7c0f692b56a8",
+    "private/test.jsonl": "a43cb708c74d20b89c399762b881d39eaea402e64b7f9077730eee9bca490344",
+    "private/train.jsonl": "d29b5a7462ae381b9b5d3cb57ed0cb0d2dea64bf7572953c0344cf5fe14ed1fd",
+    "protocol.json": "00b1ec3f89f48a795a0f5739293d97636ea5e08dbc701f109b9d280d7102cfc2",
+    "public/eval.jsonl": "c9d0dc163d06a55bf3f4462a48330167679811068fd395eedf9f84ebeb583105",
+    "public/test.jsonl": "932079eedce54cff163b6ca4fc7443857e4cd83cc2d6668f39c88e034badd14c",
+    "public/train.jsonl": "ea13f30b42fa8fc54e68e169b25617d81b0f9f03b5f383b5a8a52ecf27cc80c6",
+    "units.json": "406d896b3f8efc0b1841ad7f41fac603b58699ce4f62a2a4e1f643d86ad05584"
+  },
+  "code": {
+    "generator.py": "2024de418b06c428ca156f42e5e67717ac51da541759dbfb9ce5e0b6946c1752",
+    "verifier.py": "051c6382ff91ea271fe045da2686450be08f695d59f62f685bfbe349ea43df50",
+    "evaluate.py": "f812a6ec550daccfb881ffc51ee48d28cf9baa10e98370dd8eb4013f2a4c83e2",
+    "models.py": "7eb35194601764d84e6d48f8d53c3b73555a4c96152a974e0b476f144ff59c15"
+  }
+}

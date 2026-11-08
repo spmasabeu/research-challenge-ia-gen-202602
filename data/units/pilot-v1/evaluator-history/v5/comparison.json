@@ -1,0 +1,47 @@
+{
+  "reason": "v4 rechazo frases aproximadamente y latex aprox ya observadas; corregir sin consultar referencia",
+  "responses_sha256": "e924d5cdf5bc3cc2fb53f6c81aa5529368cce029a095089e96b744fa651e3254",
+  "responses": 167,
+  "before": {
+    "correct": 113,
+    "numeric": 47,
+    "unparsed": 7
+  },
+  "after": {
+    "correct": 114,
+    "numeric": 48,
+    "unparsed": 5
+  },
+  "changes": [
+    {
+      "task_id": "ad8a5e025c91bdb86554-easy",
+      "sample_index": 2,
+      "before": {
+        "status": "unparsed",
+        "reward": 0.0
+      },
+      "after": {
+        "status": "correct",
+        "reward": 1.0,
+        "value": 95.619,
+        "unit": "m/s",
+        "value_si": 95.619
+      }
+    },
+    {
+      "task_id": "f3eaf9d66245ecfe22be-medium",
+      "sample_index": 1,
+      "before": {
+        "status": "unparsed",
+        "reward": 0.0
+      },
+      "after": {
+        "status": "numeric",
+        "reward": 0.0,
+        "value": 40360.0,
+        "unit": "J",
+        "value_si": 40360.0
+      }
+    }
+  ]
+}
