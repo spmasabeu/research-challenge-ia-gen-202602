@@ -10,3 +10,15 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 spikes/queue/
+temp/
+personal/
+sandbox/
+
+# Archivos auxiliares de compilación; conservar el PDF del informe.
+docs/report/build/**/*.aux
+docs/report/build/**/*.fdb_latexmk
+docs/report/build/**/*.fls
+docs/report/build/**/*.log
+docs/report/build/**/*.out
+docs/report/build/**/*.toc
+docs/report/build/**/*.synctex.gz
