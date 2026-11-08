@@ -1,0 +1,129 @@
+{
+  "llama3.2:1b": {
+    "samples": 5,
+    "seconds_mean": 5.184920036199765,
+    "tokens_mean": 281.4,
+    "truncated": 0,
+    "disk_bytes": 10867,
+    "memory": {
+      "models": [
+        {
+          "name": "llama3.2:1b",
+          "model": "llama3.2:1b",
+          "size": 1741072384,
+          "digest": "baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "llama",
+            "families": [
+              "llama"
+            ],
+            "parameter_size": "1.2B",
+            "quantization_level": "Q8_0"
+          },
+          "expires_at": "2026-11-07T20:17:14.027830439-03:00",
+          "size_vram": 1741072384,
+          "context_length": 4096
+        }
+      ]
+    }
+  },
+  "qwen3:1.7b": {
+    "samples": 5,
+    "seconds_mean": 5.797643853400222,
+    "tokens_mean": 341.4,
+    "truncated": 0,
+    "disk_bytes": 10190,
+    "memory": {
+      "models": [
+        {
+          "name": "qwen3:1.7b",
+          "model": "qwen3:1.7b",
+          "size": 1917466752,
+          "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "2.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-11-07T20:16:47.74731415-03:00",
+          "size_vram": 1917466752,
+          "context_length": 4096
+        }
+      ]
+    }
+  },
+  "qwen3:8b": {
+    "samples": 5,
+    "seconds_mean": 25.00553878020073,
+    "tokens_mean": 259.2,
+    "truncated": 0,
+    "disk_bytes": 9192,
+    "memory": {
+      "models": [
+        {
+          "name": "qwen3:8b",
+          "model": "qwen3:8b",
+          "size": 6005854336,
+          "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "8.2B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-11-07T20:20:44.149169861-03:00",
+          "size_vram": 5136883840,
+          "context_length": 4096
+        }
+      ]
+    }
+  },
+  "smollm2:1.7b-instruct-q4_K_M": {
+    "samples": 5,
+    "seconds_mean": 16.936432890000287,
+    "tokens_mean": 378.8,
+    "truncated": 0,
+    "disk_bytes": 10762,
+    "memory": {
+      "models": [
+        {
+          "name": "smollm2:1.7b-instruct-q4_K_M",
+          "model": "smollm2:1.7b-instruct-q4_K_M",
+          "size": 2152736768,
+          "digest": "8ea75f835db9a9b29bb19d2740ea8217e3027e687e5f66b42fd44ff9cbaa4cb9",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "llama",
+            "families": [
+              "llama"
+            ],
+            "parameter_size": "1.7B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-11-07T20:18:38.833939797-03:00",
+          "size_vram": 2152736768,
+          "context_length": 4096
+        }
+      ]
+    }
+  },
+  "expected_si": [
+    10.538461538461538,
+    591.5,
+    2.2782829923833178e-05,
+    20,
+    128
+  ]
+}

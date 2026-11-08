@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/src/challenge/frontier.py", line 176, in <module>
+    main()
+  File "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/src/challenge/frontier.py", line 170, in main
+    run(args.tasks, args.out, args.samples, args.env_file, args.ledger)
+  File "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/src/challenge/frontier.py", line 113, in run
+    raise RuntimeError(f"OpenRouter HTTP{error.code}; respuesta preservada, sin reintento automático") from None
+RuntimeError: OpenRouter HTTP404; respuesta preservada, sin reintento automático

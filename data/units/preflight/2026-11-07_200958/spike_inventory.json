@@ -1,0 +1,38 @@
+{
+  "spikes/units/results/environment.json": {
+    "bytes": 229,
+    "sha256": "3deac0c66dc5e21fdf52291512717ebed7d307db3f3f92463b1f469943aec02f"
+  },
+  "spikes/units/results/tasks.jsonl": {
+    "bytes": 37324,
+    "sha256": "3e8b6e1f43f7e1616cd99cc8df284cc2f202ed15ffb16b2e7469a5d54db25f9e"
+  },
+  "spikes/units/results/comparison.json": {
+    "bytes": 3031,
+    "sha256": "d7be3ed11baf95bb8effff55c57e532944f42f1a183abe4737991ac815fbd2ae"
+  },
+  "spikes/units/results/llama3.2-1b/metadata.json": {
+    "bytes": 54220,
+    "sha256": "9b5adb92f421fd63dff7779be847c49d80bde4d146f9b0c36ea4681881dd4cb8"
+  },
+  "spikes/units/results/llama3.2-1b/responses.jsonl": {
+    "bytes": 243021,
+    "sha256": "3ec3397a53858d934ee699a1968eb0636977153e1ad9874ee048c6414f676d3d"
+  },
+  "spikes/units/results/llama3.2-1b/summary.json": {
+    "bytes": 8914,
+    "sha256": "7b64e6881b2ebe34145ff6dae1eeec8771a37317e4884715d295b3f79000fbfa"
+  },
+  "spikes/units/results/qwen3-1.7b/metadata.json": {
+    "bytes": 72744,
+    "sha256": "e3463a3f6082aacf865c2a908ea03f481afb60786705205cfcaff8dcddda4297"
+  },
+  "spikes/units/results/qwen3-1.7b/responses.jsonl": {
+    "bytes": 243029,
+    "sha256": "5c31df86825fcbd69761967fa062c88877112c29bb66bd186978b82c6c6ece2f"
+  },
+  "spikes/units/results/qwen3-1.7b/summary.json": {
+    "bytes": 8550,
+    "sha256": "f5f34f555bb767d87570765a14eda7f6d2a9ba760c8cf3d95de5fd2ff40c0099"
+  }
+}

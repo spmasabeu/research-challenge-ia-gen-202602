@@ -1,0 +1,5 @@
+$ rtk proxy free -b
+exit=0
+               total        used        free      shared  buff/cache   available
+Mem:     32722059264 22506651648   403275776  1645965312 11934875648 10215407616
+Swap:     8589930496      630784  8589299712
