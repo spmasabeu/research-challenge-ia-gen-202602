@@ -335,3 +335,16 @@ actualizados; evidencia reproduction-docs.json.
 El usuario autoriza ahora commits separados por responsabilidad/carpeta y un
 mensaje guiado para colegas con URLs. Esta autorización sustituye la prohibición
 previa de hacer commits; no autoriza enviar mensajes a terceros ni entrenar.
+
+## Commits por responsabilidad autorizados, 2026-11-08
+
+- 4bcdb87f6f3df7480d0086a899d59658b6d843fa: chore(repo): ignore local build artifacts
+- d76143f449b96f8f2c7f140e8a8a21c6aec57a98: feat(challenge): add units harness and tests
+- aa1cb1624feac824c21a9808382fc7e9561da597: feat(data): freeze calibrated task splits
+- aad74c897d4c2761a816a7771dbf177157cccb40: feat(eval): add local and frontier baselines
+- bfeead033c9c4e93bdd995f4ca97615dce4ebe97: feat(data): add audited SFT and DPO sets
+- 3503ffde755f55498beaec4f36203a32ec541c15: docs(report): add validated challenge report
+- 810fa3af4c25f483318644c480c6cde283caf577: docs(context): record plan and execution
+- 9a87385125a1796b94c4de0ce4fa32860e2f7e17: build(delivery): package reproducible challenge
+
+Trece pruebas pasan. Las evidencias crudas conservan espacios originales; git diff --check se aplica a código, no a logs de hardware. ProyectoCurso-2026.pdf queda sin añadir, ajeno al desafío actual. Mensaje guiado preparado en docs/contexto/2026-11-08_093607_guia_revision_equipo.md. No se envió a terceros. Se publicará la rama de revisión para habilitar URLs, sin merge a main.

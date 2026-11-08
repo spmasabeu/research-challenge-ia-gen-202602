@@ -82,3 +82,5 @@ Entrega autocontenida: [README y comandos](deliveries/challenge/README.md), [PDF
 Formato definitivo reconciliado (2026-11-08): una sola entrega en `deliveries/challenge/` y su ZIP con el nombre original. Incluye el espaciado corregido del encabezado y tablas; [validación de formato](data/units/validation/report-format.json).
 
 Guía para colegas: [repetir inferencias locales, auditorías y OpenRouter](deliveries/challenge/REPRODUCING.md). El README de la entrega distingue recálculo offline de una corrida nueva.
+
+[Guía de revisión por commits para el equipo](docs/contexto/2026-11-08_093607_guia_revision_equipo.md).
