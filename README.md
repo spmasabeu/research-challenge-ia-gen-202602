@@ -84,3 +84,5 @@ Formato definitivo reconciliado (2026-11-08): una sola entrega en `deliveries/ch
 Guía para colegas: [repetir inferencias locales, auditorías y OpenRouter](deliveries/challenge/REPRODUCING.md). El README de la entrega distingue recálculo offline de una corrida nueva.
 
 [Guía de revisión por commits para el equipo](docs/contexto/2026-11-08_093607_guia_revision_equipo.md).
+
+Estándar de colaboración: [ramas, Conventional Commits y PR de cuatro partes](CONTRIBUTING.md).

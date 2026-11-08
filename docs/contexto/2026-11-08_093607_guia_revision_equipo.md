@@ -2,7 +2,7 @@
 
 Hola equipo, dejé implementado y validado el Desafío de Investigación de unidades.
 Lo separé por responsabilidad para que podamos revisarlo sin recorrer un commit gigante.
-Está en la rama [implement-units-challenge-20261107](https://github.com/spmasabeu/research-challenge-ia-gen-202602/tree/implement-units-challenge-20261107).
+Está en la rama [feat/units-research-challenge](https://github.com/spmasabeu/research-challenge-ia-gen-202602/tree/feat/units-research-challenge).
 
 Les propongo este recorrido:
 
@@ -20,14 +20,14 @@ Les propongo este recorrido:
    [análisis del desafío](https://github.com/spmasabeu/research-challenge-ia-gen-202602/commit/3503ffde755f55498beaec4f36203a32ec541c15).
 6. **Seguimiento y decisiones** — `docs/contexto/` y `docs/plans/`:
    [requisitos, acuerdos y ejecución](https://github.com/spmasabeu/research-challenge-ia-gen-202602/commit/810fa3af4c25f483318644c480c6cde283caf577).
-   En particular, [plan C0–C7](https://github.com/spmasabeu/research-challenge-ia-gen-202602/blob/implement-units-challenge-20261107/docs/plans/2026-11-07_130305_ejecucion_desafio_units.md)
-   y [bitácora con comandos, cambios y evidencia](https://github.com/spmasabeu/research-challenge-ia-gen-202602/blob/implement-units-challenge-20261107/docs/contexto/2026-11-07_200958_bitacora_ejecucion_desafio_units.md).
+   En particular, [plan C0–C7](https://github.com/spmasabeu/research-challenge-ia-gen-202602/blob/feat/units-research-challenge/docs/plans/2026-11-07_130305_ejecucion_desafio_units.md)
+   y [bitácora con comandos, cambios y evidencia](https://github.com/spmasabeu/research-challenge-ia-gen-202602/blob/feat/units-research-challenge/docs/contexto/2026-11-07_200958_bitacora_ejecucion_desafio_units.md).
 7. **Entrega para reproducir o enviar** — una sola versión, en `deliveries/challenge/`:
    [paquete y validaciones](https://github.com/spmasabeu/research-challenge-ia-gen-202602/commit/9a87385125a1796b94c4de0ce4fa32860e2f7e17).
-   Empezar por el [README](https://github.com/spmasabeu/research-challenge-ia-gen-202602/blob/implement-units-challenge-20261107/deliveries/challenge/README.md) y la
-   [guía de reinferencia](https://github.com/spmasabeu/research-challenge-ia-gen-202602/blob/implement-units-challenge-20261107/deliveries/challenge/REPRODUCING.md).
-   También están el [PDF final](https://github.com/spmasabeu/research-challenge-ia-gen-202602/blob/implement-units-challenge-20261107/deliveries/challenge/report/informe.pdf)
-   y el [ZIP](https://github.com/spmasabeu/research-challenge-ia-gen-202602/blob/implement-units-challenge-20261107/deliveries/challenge-2026-11-07.zip).
+   Empezar por el [README](https://github.com/spmasabeu/research-challenge-ia-gen-202602/blob/feat/units-research-challenge/deliveries/challenge/README.md) y la
+   [guía de reinferencia](https://github.com/spmasabeu/research-challenge-ia-gen-202602/blob/feat/units-research-challenge/deliveries/challenge/REPRODUCING.md).
+   También están el [PDF final](https://github.com/spmasabeu/research-challenge-ia-gen-202602/blob/feat/units-research-challenge/deliveries/challenge/report/informe.pdf)
+   y el [ZIP](https://github.com/spmasabeu/research-challenge-ia-gen-202602/blob/feat/units-research-challenge/deliveries/challenge-2026-11-07.zip).
 8. **Archivos locales y compilación**:
    [reglas de exclusión](https://github.com/spmasabeu/research-challenge-ia-gen-202602/commit/4bcdb87f6f3df7480d0086a899d59658b6d843fa).
 

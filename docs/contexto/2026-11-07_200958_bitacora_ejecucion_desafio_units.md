@@ -356,3 +356,13 @@ solo ProyectoCurso-2026.pdf permanece sin seguimiento, por estar fuera del desaf
 Se concilia el hash del ZIP del registro de formato tras ampliar documentación;
 los registros C7 previos conservan sus hashes originales como evidencia histórica.
 No se enviaron mensajes a colegas.
+
+## Estándar de PR y nombre de rama, 2026-11-08
+
+Usuario solicita PR a main, Conventional Commits y esquema de cuatro partes,
+además de rama con prefijo feat/. Se adopta feat/units-research-challenge;
+se actualizan enlaces activos de la guía y se preserva la rama histórica en
+metadata de inferencia (no modifica datos/hashes). Se añaden CONTRIBUTING.md
+y .github/pull_request_template.md con Problema/ Cambios/ Validación/ Limitaciones.
+Los diez commits anteriores cumplen el formato convencional; no se reescriben.
+La rama anterior se retira del remoto solo después de publicar el nuevo nombre.
