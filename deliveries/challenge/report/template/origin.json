@@ -1,0 +1,9 @@
+{
+  "provided_by": "usuario, mensaje con ruta local",
+  "received_local_date": "2026-11-07",
+  "files": {
+    "escudo-uc.png": "f02c5b9ca32401acb05c9da43eb43d4cd5f1d49316c89e24eeeca6f447d3f780",
+    "main.tex": "4fcfea1d0d772f0c33d39b43f3d19d347a0ea48562d8f0a9d67f992cf61fa120"
+  },
+  "adaptation": "main.tex conserva clase, paquetes, geometría, cabecera y estilo; sustituye campos y secciones del proyecto por contenido del desafío; original preservado"
+}

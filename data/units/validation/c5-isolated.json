@@ -1,0 +1,65 @@
+{
+  "outside_repo": true,
+  "copied_only": [
+    "src",
+    "tests",
+    "final-v1",
+    "derived-v1",
+    "teacher/negative metadata+responses",
+    "negative-tasks.jsonl"
+  ],
+  "models_or_network_required_for_check": false,
+  "commands": [
+    {
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--isolated",
+        "--python",
+        "3.12",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "exit_code": 0,
+      "stdout": "1a585df3e4c87c24268c-easy 0 None None 0.0\n1a585df3e4c87c24268c-easy 1 None None 0.0\n1a585df3e4c87c24268c-easy 2 None None 0.0\n1a585df3e4c87c24268c-easy 0 4 stop 0.0\n1a585df3e4c87c24268c-easy 1 4 stop 0.0\n1a585df3e4c87c24268c-easy 2 4 stop 0.0\n",
+      "stderr": "----------------------------------------------------------------------\nRan 11 tests in 0.077s\n\nOK\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--isolated",
+        "--python",
+        "3.12",
+        "python",
+        "-m",
+        "challenge.harness",
+        "check-derived",
+        "--dataset",
+        "dataset",
+        "--teacher",
+        "train-teacher-v1",
+        "--audits",
+        "derived/audits/audit-speed.jsonl",
+        "derived/audits/audit-energy.jsonl",
+        "derived/audits/audit-luminosity.jsonl",
+        "--negative-tasks",
+        "negative-tasks.jsonl",
+        "--negative-run",
+        "train-negatives-v1",
+        "--out",
+        "derived"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"sft\": 122, \"dpo\": 35}\n",
+      "stderr": ""
+    }
+  ]
+}

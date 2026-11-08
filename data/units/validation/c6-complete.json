@@ -1,0 +1,33 @@
+{
+  "dataset": "final-v2",
+  "verifier": "verifier-9",
+  "local_matrix": "runs/baseline-v1/comparison-v9.json",
+  "comparison_sha256": "2bcc22475bbef886ca14a86557202fab9931eccd6980a1212ba0caad0e993033",
+  "models": {
+    "qwen17": {
+      "responses": 162,
+      "qualitative_examples": 7,
+      "qualitative_sha256": "8421dabe171f9a71ec2aecd062eeaf04e8e27b5638b47a69d7edb1e6658732fd"
+    },
+    "llama": {
+      "responses": 162,
+      "qualitative_examples": 7,
+      "qualitative_sha256": "6f4bef5dddcab2b1b839f75f4b9331db4f0ac5a61b54a15f12b5569511e825e3"
+    },
+    "smol": {
+      "responses": 162,
+      "qualitative_examples": 6,
+      "qualitative_sha256": "7221c078449170a5c4b77ae2eb4e1fb85847e420ce592ea62c25d93bc8b58d64"
+    },
+    "qwen8": {
+      "responses": 162,
+      "qualitative_examples": 7,
+      "qualitative_sha256": "499b9cdbdf032d9281222c50e0877e5c5fc5821dda29046969a081f7ff6df2fc"
+    }
+  },
+  "checks": [
+    "harness compare reconstruye etiquetas y métricas, configurações, huellas, completitud y memoria",
+    "ejemplos cualitativos cotejados con respuestas crudas y scores v9"
+  ],
+  "inference_completed": true
+}

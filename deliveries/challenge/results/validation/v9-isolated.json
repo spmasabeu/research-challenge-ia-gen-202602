@@ -1,0 +1,84 @@
+{
+  "outside_repo": true,
+  "dataset": "final-v2",
+  "derived": "derived-v3",
+  "dataset_files_identical": 15,
+  "models_or_network_required": false,
+  "commands": [
+    {
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--isolated",
+        "--python",
+        "3.12",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "exit_code": 0,
+      "stdout": "1a585df3e4c87c24268c-easy 0 None None 0.0\n1a585df3e4c87c24268c-easy 1 None None 0.0\n1a585df3e4c87c24268c-easy 2 None None 0.0\n1a585df3e4c87c24268c-easy 0 4 stop 0.0\n1a585df3e4c87c24268c-easy 1 4 stop 0.0\n1a585df3e4c87c24268c-easy 2 4 stop 0.0\n",
+      "stderr": "----------------------------------------------------------------------\nRan 11 tests in 0.196s\n\nOK\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--isolated",
+        "--python",
+        "3.12",
+        "python",
+        "-m",
+        "challenge.harness",
+        "check-derived",
+        "--dataset",
+        "dataset",
+        "--teacher",
+        "train-teacher-v1",
+        "--audits",
+        "derived/audits/audit-speed.jsonl",
+        "derived/audits/audit-speed-extra.jsonl",
+        "derived/audits/audit-energy.jsonl",
+        "derived/audits/audit-luminosity.jsonl",
+        "--negative-tasks",
+        "negative-tasks.jsonl",
+        "--negative-run",
+        "train-negatives-v1",
+        "--out",
+        "derived"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"sft\": 121, \"dpo\": 35}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--isolated",
+        "--python",
+        "3.12",
+        "python",
+        "-m",
+        "challenge.harness",
+        "freeze",
+        "--out",
+        "regenerated",
+        "--exclusions",
+        "dataset/exclusions.json",
+        "--models",
+        "dataset/models.json"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}
