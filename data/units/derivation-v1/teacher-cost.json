@@ -1,0 +1,11 @@
+{
+  "teacher_samples": 360,
+  "seconds": 2537.2148018029548,
+  "mean_seconds": 7.047818893897096,
+  "output_tokens": 56563,
+  "missing_output_token_counts": 0,
+  "raw_bytes": 868387,
+  "api_cost_usd": 0,
+  "electricity_not_measured": true,
+  "conditional_hours_for_4000_sft_at_observed_retention": 23.107602930810152
+}

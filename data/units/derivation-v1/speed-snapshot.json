@@ -1,0 +1,217 @@
+{
+  "raw_rows": 120,
+  "unique_correct": 79,
+  "required_sample": 15,
+  "source_sha256": "8a34d9d4fe38c19475a05029dca91a1abd0545e70dc4ee423f75799429cd51fc",
+  "candidates_sha256": "db4baee28fa8c41533d5525e0344e9883b97fb35060e2446b6128fd129cfa312",
+  "summary": {
+    "all": {
+      "tasks": 30,
+      "responses": 120,
+      "n": 4,
+      "statuses": {
+        "correct": 90,
+        "numeric": 30
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.75,
+        "3": 0.8916666666666667
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.75,
+        "3": 0.8916666666666667
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "family": {
+      "speed": {
+        "tasks": 30,
+        "responses": 120,
+        "n": 4,
+        "statuses": {
+          "correct": 90,
+          "numeric": 30
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.75,
+          "3": 0.8916666666666667
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.75,
+          "3": 0.8916666666666667
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      }
+    },
+    "level": {
+      "easy": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "correct": 33,
+          "numeric": 7
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.825,
+          "3": 0.9
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.825,
+          "3": 0.9
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "hard": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "numeric": 15,
+          "correct": 25
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.625,
+          "3": 0.875
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.625,
+          "3": 0.875
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "medium": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "correct": 32,
+          "numeric": 8
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.8,
+          "3": 0.9
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.8,
+          "3": 0.9
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      }
+    },
+    "structure": {
+      "direct": {
+        "tasks": 15,
+        "responses": 60,
+        "n": 4,
+        "statuses": {
+          "correct": 49,
+          "numeric": 11
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.8166666666666667,
+          "3": 0.9333333333333333
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.8166666666666667,
+          "3": 0.9333333333333333
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "sum": {
+        "tasks": 15,
+        "responses": 60,
+        "n": 4,
+        "statuses": {
+          "numeric": 19,
+          "correct": 41
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.6833333333333333,
+          "3": 0.85
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.6833333333333333,
+          "3": 0.85
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      }
+    },
+    "family_level": {
+      "speed/easy": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "correct": 33,
+          "numeric": 7
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.825,
+          "3": 0.9
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.825,
+          "3": 0.9
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "speed/hard": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "numeric": 15,
+          "correct": 25
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.625,
+          "3": 0.875
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.625,
+          "3": 0.875
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "speed/medium": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "correct": 32,
+          "numeric": 8
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.8,
+          "3": 0.9
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.8,
+          "3": 0.9
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      }
+    }
+  }
+}

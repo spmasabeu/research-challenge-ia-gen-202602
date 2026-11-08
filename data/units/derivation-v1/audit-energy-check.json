@@ -1,0 +1,21 @@
+{
+  "candidates": 67,
+  "reviewed": 67,
+  "rejected": 43,
+  "expanded_cells": [
+    [
+      "energy",
+      "easy"
+    ],
+    [
+      "energy",
+      "hard"
+    ],
+    [
+      "energy",
+      "medium"
+    ]
+  ],
+  "audit_sha256": "026a47c52f3ddc46db10cbd57cba068816b63153defad4c2cae65aebe3064d61",
+  "passed": true
+}

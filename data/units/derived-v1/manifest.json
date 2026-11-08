@@ -1,0 +1,8 @@
+{
+  "audits/audit-energy.jsonl": "026a47c52f3ddc46db10cbd57cba068816b63153defad4c2cae65aebe3064d61",
+  "audits/audit-luminosity.jsonl": "022db516fdc5117c7aa23981647430540e7162f2ea8e96803bfb2f4c7d3f577c",
+  "audits/audit-speed.jsonl": "59eae484ef20264fffcd09604a0b47115e30f72484f25d9ab2e07a7f93d0f63c",
+  "dpo.jsonl": "2db9d6420a949f5c7fe46c8778ddc52c9c93924dbc592402e22ff3726de6312b",
+  "sft.jsonl": "308ea866abb01bd78211145101889f962a17b362f2a94b6328d8c0cfe5dca271",
+  "stats.json": "db87b9b9bcc5f872351d8fb5286058bd6d76bfb8a0fac0ea0c3f09c3930a0db4"
+}

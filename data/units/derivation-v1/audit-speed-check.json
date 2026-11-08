@@ -1,0 +1,17 @@
+{
+  "candidates": 79,
+  "reviewed": 61,
+  "rejected": 4,
+  "expanded_cells": [
+    [
+      "speed",
+      "easy"
+    ],
+    [
+      "speed",
+      "medium"
+    ]
+  ],
+  "audit_sha256": "59eae484ef20264fffcd09604a0b47115e30f72484f25d9ab2e07a7f93d0f63c",
+  "passed": true
+}
