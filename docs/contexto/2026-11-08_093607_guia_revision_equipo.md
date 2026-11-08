@@ -1,8 +1,29 @@
 # Mensaje sugerido para el equipo
 
-Hola equipo, dejé implementado y validado el Desafío de Investigación de unidades.
-Lo separé por responsabilidad para que podamos revisarlo sin recorrer un commit gigante.
-Está en la rama [feat/units-research-challenge](https://github.com/spmasabeu/research-challenge-ia-gen-202602/tree/feat/units-research-challenge).
+Hola equipo, ya está listo el [PR del desafío](https://github.com/spmasabeu/research-challenge-ia-gen-202602/pull/3)
+para que lo revisemos. Dejé código, resultados y entrega reproducible separados por carpetas:
+
+- `src/challenge/` y `tests/`: generador, referencias, verificador, inferencia y pruebas.
+- `data/units/`: tareas, respuestas crudas, métricas y auditorías. Su README distingue datos vigentes e historial.
+- `docs/contexto/`: requisitos, decisiones y bitácora; `docs/plans/`: checklist C0–C7.
+- `docs/report/`: fuentes LaTeX, figuras, tablas y PDF del informe.
+- `deliveries/challenge/`: paquete definitivo autocontenido, con README y guía de reproducción; el ZIP está junto a esa carpeta.
+- `docs/README.md`: índice de todos los documentos. Ambos enunciados están en la raíz.
+
+El checklist técnico está cerrado y vinculado a evidencia de los cuatro entregables.
+Hay 180 tareas,121trazas SFT y35pares DPO. El informe explica el volumen menor
+que las metas orientativas y los límites de extracción; unparsed no significa error matemático.
+
+Les propongo partir por el README de la entrega y repetir los recálculos con los
+outputs guardados: no hace falta GPU ni API. También pueden generar respuestas
+nuevas siguiendo REPRODUCING.md, con modelos/recursos propios y presupuesto si
+usan OpenRouter; las respuestas nuevas requieren otra auditoría.
+
+Revisemos implementación, supuestos, informe y si obtenemos las mismas métricas.
+Podemos dejar observaciones en el PR antes de coordinar el envío al profesor.
+No se entrenaron modelos: eso corresponde al proyecto posterior.
+
+## Recorrido detallado por commits
 
 Les propongo este recorrido:
 

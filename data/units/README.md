@@ -5,6 +5,28 @@ Estado y decisiones: [bitácora](../../docs/contexto/2026-11-07_200958_bitacora_
 respuestas y mediciones. `pilot-v1/` y `runs/pilot-v1-qwen/` contienen el piloto
 independiente y sus respuestas incrementales; no son train ni test finales.
 
+## Datos vigentes e historial
+
+Hay una sola entrega definitiva: `deliveries/challenge/` y su ZIP. Las versiones
+conservadas aquí son evidencia de desarrollo; no se deben mezclar sus resultados.
+
+| Ruta | Estado y función |
+| --- | --- |
+| `final-v2/` | **Vigente:** tareas congeladas y verificador 9; train/eval/test 90/36/54. |
+| `derived-v3/` | **Vigente:** 121 SFT y 35 DPO con auditorías completas y verificador 9. |
+| `runs/baseline-v1/` | **Vigente:** respuestas y métricas de los cuatro modelos locales. El sufijo identifica la corrida, no una entrega obsoleta. |
+| `runs/frontier-v1/test/scores/v9-adapter3/` | **Vigente:** referencia externa final; respuestas crudas en la carpeta de la corrida. |
+| `pilot-calibrated/` | Calibración consolidada de desarrollo; excluida del conjunto final independiente. |
+| `final-v1/` | Histórico: mismas particiones físicas, protocolo previo con verificador 8. |
+| `derived-v1/`, `derived-v2/` | Históricos: resultados antes de ampliar auditoría y actualizar evaluador; reemplazados por `derived-v3/`. |
+| `pilot-v1/`, `pilot-v2/`, `pilot-v3/` y sus corridas | Históricos: cambios de rangos/conversiones para estudiar techo/suelo; no son test final. |
+| `derivation-v1/`, `runs/train-*` | Procedencia, respuestas originales del profesor/objetivo, auditorías y decisiones de filtrado. |
+| `preflight/`, `freeze-inputs/`, `verifier-v8-v9/`, `validation/` | Recursos reales, insumos de congelamiento, diferencias de evaluador y comprobaciones. |
+
+Se preserva el historial para justificar cambios y cantidades retenidas sin
+sobrescribir respuestas. Para consumo directo, usar exclusivamente los datos
+vigentes o el paquete autocontenido de `deliveries/challenge/`.
+
 Desde raíz, con Python 3.12 (`uv sync --locked`):
 
 ```bash

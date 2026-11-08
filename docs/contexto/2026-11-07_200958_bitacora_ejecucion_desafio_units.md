@@ -366,3 +366,13 @@ metadata de inferencia (no modifica datos/hashes). Se añaden CONTRIBUTING.md
 y .github/pull_request_template.md con Problema/ Cambios/ Validación/ Limitaciones.
 Los diez commits anteriores cumplen el formato convencional; no se reescriben.
 La rama anterior se retira del remoto solo después de publicar el nuevo nombre.
+
+## Referencias compartidas y explicación del historial, 2026-11-08
+
+El usuario pide compartir toda la documentación y aclarar versiones de data/units.
+Verificación Git: todos los documentos de docs/ ya estaban en el PR; solo se
+ignoran auxiliares regenerables de LaTeX. Faltaba ProyectoCurso-2026.pdf, antes
+excluido por alcance. Se añade como referencia documental, sin iniciar proyecto
+ni entrenamiento. docs/README.md indexa seguimiento; data/units/README.md separa
+final-v2/derived-v3 vigentes de pilotos y derivados históricos. Se conserva
+evidencia cruda y una única entrega definitiva.

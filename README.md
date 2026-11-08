@@ -86,3 +86,5 @@ Guía para colegas: [repetir inferencias locales, auditorías y OpenRouter](deli
 [Guía de revisión por commits para el equipo](docs/contexto/2026-11-08_093607_guia_revision_equipo.md).
 
 Estándar de colaboración: [ramas, Conventional Commits y PR de cuatro partes](CONTRIBUTING.md).
+
+[Índice de toda la documentación](docs/README.md) · [Mapa de datos vigentes e históricos](data/units/README.md#datos-vigentes-e-historial). Ambos enunciados se comparten como referencia; la implementación entregada corresponde al desafío.
