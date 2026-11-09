@@ -13,7 +13,8 @@ Para comprobar requisitos contra archivos: [mapa de evidencia](report/evidence.m
 Proyecto, entrega 1: [requisitos y decisiones](contexto/2026-11-09_202333_requisitos_entrega_1_proyecto.md),
 [plan de ejecución](plans/2026-11-09_202333_entrega_1_proyecto.md) y
 [propuesta PDF y fuentes](../deliveries/project-1-proposal/README.md).
-Estado: propuesta redactada y validada, tres páginas de contenido más referencias.
+Estado: propuesta redactada y validada, tres páginas de contenido más referencias;
+[PR #4 a main](https://github.com/spmasabeu/research-challenge-ia-gen-202602/pull/4) abierto para revisión.
 
 Los enunciados están en la raíz: [Desafío](../DesafioInvestigacion-2026.pdf) y
 [Proyecto posterior](../ProyectoCurso-2026.pdf). El segundo se comparte como

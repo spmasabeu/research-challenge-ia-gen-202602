@@ -155,5 +155,6 @@ no parámetros de experimentos ya ejecutados.
 
 El usuario solicita un PR separado a main. Rama: `docs/project-1-proposal`,
 creada desde `origin/main` después de comprobar que el desafío ya estaba
-integrado mediante el commit e99f9e9. El PR incluirá requisitos, plan y propuesta
-PDF/fuentes, siguiendo Conventional Commits y las cuatro secciones del repositorio.
+integrado mediante el commit e99f9e9. El [PR #4](https://github.com/spmasabeu/research-challenge-ia-gen-202602/pull/4) incluye
+requisitos, plan y propuesta PDF/fuentes, siguiendo Conventional Commits y las
+cuatro secciones del repositorio. Está abierto para revisión, sin merge automático.

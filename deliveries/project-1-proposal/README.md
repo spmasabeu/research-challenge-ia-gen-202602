@@ -40,3 +40,5 @@ Los auxiliares se generan fuera de la entrega. Si se editan las fuentes, revisar
 el nuevo PDF y copiarlo a `propuesta.pdf` después de validar su contenido.
 
 No se ejecutaron entrenamientos ni inferencias nuevas para elaborar la propuesta.
+
+Revisión del cambio: [PR #4 a main](https://github.com/spmasabeu/research-challenge-ia-gen-202602/pull/4).
