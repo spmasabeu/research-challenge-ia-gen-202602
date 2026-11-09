@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-09",
+  "change": "all documented file paths resolve inside challenge; general repository link only for optional access to complementary study detail",
+  "files": 35,
+  "offline_blocks": 5,
+  "tests": 13,
+  "task_regeneration_identical": true,
+  "sft_dpo_verification_passed": true,
+  "repository_access_needed_for_documented_commands": false,
+  "historical_file_paths_removed_from_exclusions": true,
+  "exclusion_keys_unchanged": true,
+  "code_and_scientific_data_unchanged": true,
+  "pdf_pages": 7,
+  "latex_warnings": 0,
+  "visual_review_page": 7,
+  "zip_bytes": 474352,
+  "zip_sha256": "13a91c6a1cd2e2c6e2c25bf6241a205a37eae35a5275c4fa397e430c6e385a40",
+  "new_inferences": 0
+}

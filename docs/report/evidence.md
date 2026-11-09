@@ -57,7 +57,8 @@ Comprobaciones de cantidades y artefactos: `data/units/validation/report-clarity
 
 Entrega mínima vigente: `deliveries/challenge-clean/challenge.zip`. Mantiene
 el mismo dataset y textos SFT/DPO con rutas limpias y métricas documentadas en
-el informe. Las corridas y generaciones originales se consultan en el respaldo
-del repositorio enlazado desde README, y no forman parte del ZIP. Los registros
+el informe. Las rutas de uso apuntan a archivos incluidos en `challenge/`. README
+e informe ofrecen acceso al repositorio como consulta complementaria opcional,
+sin remitir a rutas internas ni necesitarlo para los comandos documentados. Los registros
 anteriores corresponden a sus snapshots históricos; la verificación actual está
-en `data/units/validation/minimal-delivery.json`.
+en `data/units/validation/self-contained-delivery.json`.

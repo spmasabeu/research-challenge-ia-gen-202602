@@ -97,8 +97,11 @@ están en `data/training/audits/` y su alcance se explica en el informe.
 
 El ZIP permite usar estos datos, pero no reconstruir su selección desde todas
 las respuestas generadas ni recalcular las métricas experimentales originales.
-Para ello se necesita el respaldo del repositorio enlazado desde README.
 Un `diff` sin salida y con retorno cero en el paso 2 indica regeneración idéntica.
+
+Todas las rutas de estas instrucciones parten de la carpeta `challenge/`
+extraída. Para antecedentes adicionales del estudio, README indica cómo
+solicitar acceso al repositorio de trabajo del equipo.
 
 ## Inferencias nuevas, opcionales
 

@@ -96,13 +96,6 @@
     "speed:950:25",
     "speed:986:29"
   ],
-  "sources": {
-    "spikes/units/results/tasks.jsonl": "3e8b6e1f43f7e1616cd99cc8df284cc2f202ed15ffb16b2e7469a5d54db25f9e",
-    "data/units/pilot-v1/tasks.jsonl": "a99473ef6add7987c68f2a39e2d7e065083611e1abfd4230fa258e9d2556c1ab",
-    "data/units/pilot-v2/all-generated.jsonl": "3576627e73a02a56814e0ff28877987d2c269bd22e0cd57be0dee70efacf7c06",
-    "data/units/pilot-v3/all-generated.jsonl": "3deed58846b9789d945e4dd42543e384f31224befc9544970bee064f00c50b2d",
-    "data/units/pilot-calibrated/controls.jsonl": "137bb852cabede55784a5b419c70b300d9e53477fdc0c6c464e32e2ef5abc903"
-  },
   "preflight_physics": [
     [
       "speed",
@@ -130,5 +123,5 @@
       8
     ]
   ],
-  "note": "Incluye todos los pilotos generados, controles y spike; clave física agregada en SI, independiente de estructura/unidades"
+  "note": "Claves físicas de problemas de desarrollo excluidos; este archivo contiene toda la información necesaria para regenerar el dataset."
 }

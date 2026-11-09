@@ -1,7 +1,7 @@
 {
   "files": {
-    "README.md": "0b1466e7e7504a39990f7fa348b352d3f765b19cdfa92fb168d521664871cf6b",
-    "REPRODUCING.md": "03fc9769cbdbe907c8cab8e78e3413668418c135c1cda9851288208e0b82adef",
+    "README.md": "7b57d2a5e587ca7c6cc38b39652bfc69002a54efeb42ea50bfdf3134cd41b9f3",
+    "REPRODUCING.md": "fb23581e7f5cac48e07060a761067211a07e88d9071d0bcb1a9a102498879b86",
     "code/src/challenge/__init__.py": "02f1632a912b802498264c62f062274c290e4a852a2d5691b4712de5023c9068",
     "code/src/challenge/derive.py": "22cc94ac3eabe3b54ffc6295873897b563e4dfff9a25d8d838e0b483a3160a31",
     "code/src/challenge/evaluate.py": "f812a6ec550daccfb881ffc51ee48d28cf9baa10e98370dd8eb4013f2a4c83e2",
@@ -12,8 +12,8 @@
     "code/src/challenge/verifier.py": "051c6382ff91ea271fe045da2686450be08f695d59f62f685bfbe349ea43df50",
     "code/tests/test_challenge.py": "b0252aa8978480b5ddf97365bec8bfec6ceb0dbc6e48f1eabf44fc841e644f49",
     "code/tests/test_frontier.py": "aafdc7758f165db05cd0bef33718502c1a8e3fd82c79f55c0327596152787598",
-    "data/tasks/exclusions.json": "61a825f9ea52bfcb7d3797cc18e6b6a67f3f1f17b97570466eb47c02f3ea079b",
-    "data/tasks/manifest.json": "a0867dfaef054d9fc239288cbaf20a2d8f6b42bfe731a6467701fd5b0d3aab20",
+    "data/tasks/exclusions.json": "4ef334ceb48f3b0629256341496407dd89e330cc2943f6ef41f639deb718be37",
+    "data/tasks/manifest.json": "4f6c0cb74a9e31c9566f5130ebd36f76fa206525e15d9a5c6b92658ef3342f39",
     "data/tasks/models.json": "212e06e9be492dc34bd27eaed2baec5ab16c1e4cc064f5dac207d7ea9aacea60",
     "data/tasks/private/eval.jsonl": "5121edd001aeb2cd5798b67dc5d0559822f0e2558434d8712b7c7c0f692b56a8",
     "data/tasks/private/test.jsonl": "a43cb708c74d20b89c399762b881d39eaea402e64b7f9077730eee9bca490344",
@@ -31,7 +31,7 @@
     "data/training/manifest.json": "3f6ca700eb7ee3a28fe96a6466612b39332222ed3a08c025ac5accdf4adb4c0b",
     "data/training/sft.jsonl": "8eee9eba1e17c56cffa9987ce0f12a8323b04f756d3e91db4573919625e7c2d2",
     "data/training/stats.json": "bcbcaf239c3b86933ef209bdcf0381d12f869c12d5bad42afacee6ea82b179ac",
-    "informe.pdf": "54e5989d7a0d518e075a2bb0940af7c79b24569af28d59c89f494ebd1aba638a",
+    "informe.pdf": "d911df7f96b57de389057d56c0ad55e1670f6fd5d21ebe235eda3894101ea657",
     "pyproject.toml": "2fecacc161092e60ac25ac487dfdd4ad4a37bf95b8618efd293cb3aa24b23e44",
     "uv.lock": "bf0cb17a34eef91bd5f9a70f55c788e014f562355d1099f15f041a14649e6977"
   }

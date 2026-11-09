@@ -70,7 +70,9 @@ presupuesto externo, identificación del evaluador y reproducción; las rutas de
 informe corresponden a `data/tasks/` y `data/training/`. Se entregan únicamente
 el PDF, código/pruebas, datos y guías. Las fuentes LaTeX,
 figuras y el paquete anterior se conservan en el repositorio. Validación vigente:
-`data/units/validation/minimal-delivery.json`. Las corridas experimentales y
+`data/units/validation/self-contained-delivery.json`. Las corridas experimentales y
 `validation.json` se retiraron del ZIP. El informe y REPRODUCING explican que
-recalcular las métricas originales o reconstruir SFT/DPO desde todas las
-generaciones requiere el respaldo del repositorio, enlazado desde README.
+las instrucciones del ZIP se limitan al uso, regeneración de tareas y
+comprobación de datos finales. Las rutas parten de `challenge/`; README e informe
+solo ofrecen el enlace general del repositorio como consulta complementaria
+para solicitar al equipo más detalle de iteraciones y resultados.
