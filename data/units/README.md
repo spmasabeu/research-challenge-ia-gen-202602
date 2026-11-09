@@ -7,8 +7,10 @@ independiente y sus respuestas incrementales; no son train ni test finales.
 
 ## Datos vigentes e historial
 
-Hay una sola entrega definitiva: `deliveries/challenge/` y su ZIP. Las versiones
-conservadas aquí son evidencia de desarrollo; no se deben mezclar sus resultados.
+La entrega a enviar es `deliveries/challenge-clean/challenge.zip`, con su carpeta
+extraída junto al ZIP. El paquete anterior de `deliveries/challenge/` se conserva
+intacto. Las versiones de trabajo aquí son evidencia de desarrollo y no deben
+mezclarse sus resultados.
 
 | Ruta | Estado y función |
 | --- | --- |
@@ -25,7 +27,7 @@ conservadas aquí son evidencia de desarrollo; no se deben mezclar sus resultado
 
 Se preserva el historial para justificar cambios y cantidades retenidas sin
 sobrescribir respuestas. Para consumo directo, usar exclusivamente los datos
-vigentes o el paquete autocontenido de `deliveries/challenge/`.
+vigentes o el paquete autocontenido de `deliveries/challenge-clean/challenge/`.
 
 Desde raíz, con Python 3.12 (`uv sync --locked`):
 

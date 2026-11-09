@@ -1,7 +1,8 @@
 # Mapa de evidencia del desafío
 
 Rutas relativas a la raíz del repositorio. Este mapa describe la evidencia de trabajo; la entrega autocontenida y validada
-está en `deliveries/challenge/`, con su propio README, mapa y manifiesto.
+está en `deliveries/challenge-clean/challenge/`, con mapa de contenidos en su
+README y manifiesto. `deliveries/challenge/` conserva el paquete anterior.
 
 | Entregable / requisitos | Evidencia concreta | Comprobación |
 | --- | --- | --- |
@@ -53,3 +54,9 @@ evidencia actual: `data/units/validation/report-concision.json`.
 Revisión posterior de claridad: misma extensión de siete páginas, con tabla
 explícita de particiones y definiciones para lectores sin contexto del repositorio.
 Comprobaciones de cantidades y artefactos: `data/units/validation/report-clarity.json`.
+
+Entrega mínima vigente: `deliveries/challenge-clean/challenge.zip`. Mantiene
+el mismo dataset, textos SFT/DPO y métricas con rutas limpias y evidencia final
+seleccionada. Las referencias de procedencia apuntan a las nuevas carpetas de
+generación. Los registros anteriores corresponden a sus snapshots históricos;
+la verificación actual está en `data/units/validation/clean-delivery.json`.

@@ -86,7 +86,7 @@ del modelo y devuelve 1 si la considera correcta o 0 en caso contrario. Los
 resultados esperados se calculan mediante las fórmulas del generador y se
 comprueban con un segundo cálculo que interpreta los datos impresos en el
 enunciado, usando tolerancia relativa $10^{-10}$. Se guardan por separado en
-\path{data/final-v2/private/}: son referencias de evaluación que el modelo no
+\path{data/tasks/private/}: son referencias de evaluación que el modelo no
 recibe. Antes de llamar a \texttt{reward}, el programa
 consumidor lee esos archivos y registra las tareas con \texttt{load\_tasks},
 función incluida en \path{code/src/challenge/verifier.py}. Un enunciado no
@@ -110,9 +110,8 @@ respuestas que el extractor logra interpretar. También se registran las salidas
 cortadas por el límite de generación y los intentos incompletos, sin excluirlos
 del cálculo de resultados.
 
-La versión utilizada, identificada como \texttt{verifier-9} en los metadatos del
-paquete, es la novena revisión del código de verificación. Se fijó antes de
-iniciar test y no se modificó al observar sus respuestas. Las pruebas incluyen
+El código de verificación entregado se fijó antes de iniciar test y no se
+modificó al observar sus respuestas. Las pruebas incluyen
 cantidades equivalentes como 22 m/s y 79,2 km/h y rechazos de alternativas,
 resultados contradictorios, unidades incompatibles, claves JSON duplicadas y
 números no finitos, sin rescatar un valor previo por coincidir con la solución.
@@ -127,11 +126,9 @@ superíndices y expresiones LaTeX quedan sin interpretar. Tercero, aunque la
 inferencia limita la salida a 1024 tokens, la función de recompensa no impone
 su propio máximo de longitud.
 
-También se observaron líneas intermedias que invalidan un JSON final
-numéricamente correcto. Comprobar solo ese JSON añadiría tres aciertos al
-objetivo y cuatro al profesor, pasando de 84/162 a 87/162 y de 82/162 a 86/162.
-Este diagnóstico posterior a test no cambia las métricas publicadas ni valida
-el razonamiento. Para mostrar cuánto podría afectar la extracción, las tablas
+También se confirmaron siete falsos negativos entre el objetivo y el profesor
+por líneas intermedias que invalidan un JSON final numéricamente correcto.
+Este diagnóstico posterior a test no cambia las métricas ni valida el razonamiento. Para mostrar cuánto podría afectar la extracción, las tablas
 incluyen una cota optimista que supone correctas todas las respuestas no
 interpretadas, sin presentarla como intervalo de confianza. Antes de entrenar
 será necesario ampliar las pruebas y precisar las reglas de formato y unidad,
@@ -176,11 +173,9 @@ Core 5 210H con 12 CPU lógicas, 30,47 GiB de RAM y GPU RTX 3050 Laptop de
 6 GiB, usando Ollama 0.18.0 y Python 3.12.13. Se utilizaron pesos en formato
 GGUF con cuantización Q4\_K\_M para ambos Qwen y SmolLM2, y Q8\_0 para
 Llama, formatos que reducen la memoria necesaria con distinta precisión
-numérica. El archivo \path{data/final-v2/models.json} identifica los pesos por
-su huella digital y conserva licencias y configuración de conversación. Qwen y
-SmolLM2 declaran Apache-2.0 y Llama su Community License~\cite{qwen17,qwen8,llama,smol}.
-Estas son las condiciones efectivas del experimento, no requisitos mínimos
-universales de hardware.
+numérica. Las huellas de los pesos y sus licencias están en
+\path{data/tasks/models.json}: Apache-2.0 para Qwen y SmolLM2 y Community
+License para Llama~\cite{qwen17,qwen8,llama,smol}.
 
 Para obtener respuestas variadas se usó temperatura 0,7 con top-p 0,9,
 top-k 40 y min-p 0. El contexto fue de 2048 tokens y el máximo de salida
@@ -352,29 +347,22 @@ Las 162 solicitudes consumieron 25377 tokens de entrada y 22125 de salida,
 sin tokens de razonamiento reportados, en 341,14 s. El test costó USD 0,0905151
 y el total con controles fue USD 0,0935116. La tarifa capturada era
 USD 1,30/2,60 por millón de tokens de entrada/salida~\cite{routing,pricing}.
-Para controlar el gasto, un registro global reserva USD 0,02 antes de cada
-intento, incluso fallido, con topes de tarifa 1,32/3,96 y límites conservadores
-de 6144 tokens de entrada y 1024 de salida para enunciados de hasta 2048 bytes.
-Los 168 intentos, incluido un rechazo previo a generar, reservaron USD 3,36,
-una previsión distinta del importe facturado. El registro queda vinculado a la
-configuración para impedir reinicios accidentales del contador, con una prueba
-de regresión que confirmó resultados idénticos tras corregir esa protección.
+El gasto efectivo quedó por debajo del presupuesto autorizado de USD 5.
 
 \section{Reproducción}
-El paquete autocontenido incluye código, pruebas, tareas, SFT/DPO, respuestas,
-metadatos e informe. El núcleo usa la biblioteca estándar de Python y las
-figuras requieren Matplotlib 3.11.2 con dependencias fijadas. Los manifiestos
-SHA-256 permiten comprobar la integridad de datos, configuración y código,
-y las pruebas cubren referencias independientes, equivalencias, ataques,
-separación de grupos, reanudación y procedencia SFT/DPO.
+El paquete incluye el informe, código y pruebas, tareas en \path{data/tasks/}
+y soluciones SFT y pares DPO en \path{data/training/}. Las respuestas y
+configuraciones de \path{results/} permiten recalcular la línea base y la
+calibración, mientras las generaciones originales y auditorías permiten
+reconstruir la selección SFT/DPO. Se conservan estos resultados como evidencia
+necesaria para contrastar las cifras, sin incluir el historial de desarrollo.
 
-El archivo README y la guía REPRODUCING del paquete explican cómo comprobar
-esas huellas, regenerar particiones, reconstruir SFT/DPO y recalcular métricas
-y PDF desde una copia aislada sin pesos ni credenciales. Repetir inferencia
-requiere los modelos y motores identificados, sin garantía de respuestas
-idénticas entre versiones o hardware aun usando las mismas semillas. Esta
-reproducción permite contrastar los resultados presentados sin realizar el
-entrenamiento reservado para la siguiente etapa.
+README explica el contenido y el uso inicial, y REPRODUCING detalla cómo
+comprobar integridad, regenerar tareas y reproducir datos derivados y métricas
+desde una copia aislada. El código usa la biblioteca estándar de Python 3.12
+y no requiere pesos ni credenciales para estas comprobaciones. Una nueva
+inferencia sí necesita los modelos y motores identificados y puede dar respuestas
+distintas aun con las mismas semillas, sin equivaler al recálculo aquí descrito.
 
 \begingroup\raggedright
 \begin{thebibliography}{9}

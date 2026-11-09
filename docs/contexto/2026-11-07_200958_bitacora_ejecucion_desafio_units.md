@@ -450,3 +450,35 @@ clicables y compilación aislada idéntica. Evidencia actual:
 data/units/validation/report-clarity.json y copia en el paquete.
 ZIP/manifiesto regenerados con 215 entradas idénticas a la carpeta.
 SHA-256 ZIP: d38264245e2778ff326609f8cf107192f41f3b35f3c77895ea0c90f4c2d0407c. Cero inferencias nuevas.
+
+## Entrega mínima reproducible con nombres limpios, 2026-11-09
+
+Usuario autoriza recortes del informe y un ZIP nuevo agrupado dentro de deliveries,
+sin alterar el paquete anterior. Entrega vigente: deliveries/challenge-clean/,
+con challenge.zip y su carpeta challenge/. Se usan data/tasks, data/training y
+results/baseline, reference, calibration y generation. README integra el mapa
+de evidencia y REPRODUCING contiene comandos comprobados. Se retiran logs,
+historial, fuentes LaTeX, template, enunciados y copias redundantes de código.
+Se conservan respuestas finales, configuración y auditorías para reconstruir
+datos y resultados. Los metadatos de procedencia SFT/DPO apuntan a teacher y
+negatives, manteniendo idénticos prompts, soluciones y preferencias.
+
+Solo el harness de empaquetado cambia formato de carpetas: scores plano y una
+sola copia de fuentes. Generador, verificador, métricas y runner local son
+idénticos a los originales; la API y políticas de verificación no cambian.
+Protocolos y manifiestos se regeneran para el snapshot limpio. Los identificadores
+técnicos del algoritmo y de modelos se conservan en los metadatos para trazabilidad.
+
+Informe recortado en detalles de presupuesto, evaluador y condiciones de cómputo,
+con rutas coherentes y propósito explícito de results/. Siete páginas, sin
+advertencias, revisadas visualmente y con enlaces de papers comprobados.
+Se ejecutaron los siete bloques offline de REPRODUCING desde una copia aislada
+y entorno nuevo: 13 pruebas, tareas y SFT/DPO idénticos, métricas locales/externas,
+calibración y costos coincidentes. Ruff y MyPy pasan; Bandit sin medios/altos.
+Evidencia: data/units/validation/clean-delivery.json y log; resumen en validation.json
+del paquete. Código no científico adaptado validado mediante estos recálculos.
+
+ZIP: 74 archivos frente a 215 del paquete anterior; 860118 bytes.
+SHA-256: 3be5f0e9948a3006332c5b6440bbd8afbc6e83107cde60ad0f835e8e853cf999. Verificación CRC y comparación byte a byte con la carpeta.
+Los 216 archivos protegidos del paquete anterior y su ZIP permanecen intactos.
+No se realizaron inferencias nuevas ni llamadas pagadas.

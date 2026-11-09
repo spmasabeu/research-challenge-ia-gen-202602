@@ -14,7 +14,9 @@ Los enunciados están en la raíz: [Desafío](../DesafioInvestigacion-2026.pdf) 
 [Proyecto posterior](../ProyectoCurso-2026.pdf). El segundo se comparte como
 referencia; en esta entrega no se ejecutaron entrenamientos del proyecto.
 
-La versión que se revisa y entrega está en [deliveries/challenge](../deliveries/challenge/README.md).
+La entrega vigente está en [deliveries/challenge-clean](../deliveries/challenge-clean/README.md),
+con ZIP mínimo reproducible y nombres de carpetas sin versiones. El paquete
+anterior se conserva intacto en `deliveries/challenge/`.
 El historial de experimentos está en [data/units](../data/units/README.md).
 Los directorios `derived-v1`, `pilot-v1`, etc. preservan intentos, ajustes y
 filtrado; no son otras entregas finales. Su estado se identifica en ese README.

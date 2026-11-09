@@ -32,7 +32,7 @@ Ningún comando anterior realiza inferencia ni necesita credenciales o pesos.
 Herramientas: Python 3.12.13, uv 0.11.16, Matplotlib 3.11.2 opcional; latexmk
 4.88, pdfTeX 1.40.29/TeX Live 2026, lmodern, graphicx, amsmath, booktabs, hyperref y
 babel-spanish con hyphen-spanish. PDF vigente: `build/final-v5/main.pdf`, siete páginas, sin advertencias finales
-de LaTeX, revisado y copiado a `deliveries/challenge/report/informe.pdf`.
+de LaTeX, revisado y copiado a `deliveries/challenge-clean/challenge/informe.pdf`.
 C7 cerrado tras reproducción completa aislada y revisión independiente. El PDF de vista previa aportado
 en sandbox no es el informe.
 
@@ -63,3 +63,11 @@ criptográficos y explicación de SI, recompensa, carga de referencias y versió
 del evaluador. Se explican el propósito de calibración, pass@1/pass@3, cobertura
 y el origen de los volúmenes SFT/DPO, conectando secciones sin cambiar resultados.
 PDF y paquete vigentes: `data/units/validation/report-clarity.json`.
+
+Entrega mínima reproducible: `deliveries/challenge-clean/challenge/` y
+`deliveries/challenge-clean/challenge.zip`. Se recortan detalles operativos del
+presupuesto externo, identificación del evaluador y reproducción; las rutas del
+informe corresponden a `data/tasks/` y `data/training/`. Se entregan únicamente
+el PDF, código/pruebas, datos, resultados finales y guías. Las fuentes LaTeX,
+figuras y el paquete anterior se conservan en el repositorio. Validación vigente:
+`data/units/validation/clean-delivery.json`.

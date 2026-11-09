@@ -167,3 +167,14 @@ Se recompilan PDF y ZIP y se verifica integridad y reproducción offline;
 no se reabren inferencias ni se cambia el test. Las mejoras del verificador
 quedan para antes del entrenamiento del proyecto, con versión nueva y pruebas.
 Evidencia de esta revisión: `data/units/validation/pr3-feedback.json`.
+
+## Empaquetado mínimo autorizado, 2026-11-09
+
+La entrega vigente es `deliveries/challenge-clean/challenge.zip`; el paquete
+anterior se conserva sin cambios. Los nombres `data/tasks` y `data/training`
+identifican los únicos conjuntos entregados, y README integra el mapa de evidencia.
+Las fuentes LaTeX, figuras, enunciados y el historial quedan en el repositorio.
+La aceptación del paquete consiste en reproducir tareas, SFT/DPO, métricas y
+costos desde sus archivos, sin requerir recompilar el PDF ni repetir inferencias.
+Los siete bloques offline documentados y las 13 pruebas pasan desde una copia
+aislada con entorno nuevo. Evidencia: `data/units/validation/clean-delivery.json`.

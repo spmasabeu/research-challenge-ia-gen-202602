@@ -76,12 +76,12 @@ versionar juntos `pyproject.toml` y `uv.lock`. No subir secretos ni pesos de mod
 
 Informe con el template aportado y comparación de cinco modelos: [fuentes y reproducción](docs/report/README.md). Referencia externa DeepSeek-V4-Pro-0813 vía OpenRouter/DeepInfra FP8: costo reportado USD 0,0935116, bajo el tope autorizado USD 5. No se entrenaron modelos.
 
-Entrega autocontenida: [README y comandos](deliveries/challenge/README.md), [PDF](deliveries/challenge/report/informe.pdf), [ZIP para compartir](deliveries/challenge-2026-11-07.zip). Segunda reproducción aislada con entorno nuevo, 13 pruebas y datos/métricas/figuras/PDF idénticos; [evidencia](data/units/validation/c7-delivery-isolated.json). Correo a cargo del equipo, no enviado automáticamente.
+Entrega mínima reproducible para enviar: [README](deliveries/challenge-clean/challenge/README.md), [PDF](deliveries/challenge-clean/challenge/informe.pdf), [ZIP](deliveries/challenge-clean/challenge.zip). Incluye código, tareas, SFT/DPO y resultados finales necesarios para reproducirlos; [validación aislada](data/units/validation/clean-delivery.json). El paquete anterior se conserva en `deliveries/challenge/` y `deliveries/challenge-2026-11-07.zip`.
 
 
-Formato definitivo reconciliado (2026-11-08): una sola entrega en `deliveries/challenge/` y su ZIP con el nombre original. Incluye el espaciado corregido del encabezado y tablas; [validación de formato](data/units/validation/report-format.json).
+Revisión anterior de formato (2026-11-08): paquete conservado en `deliveries/challenge/` y su ZIP. Incluye el espaciado corregido del encabezado y tablas; [registro histórico](data/units/validation/report-format.json).
 
-Guía para colegas: [repetir inferencias locales, auditorías y OpenRouter](deliveries/challenge/REPRODUCING.md). El README de la entrega distingue recálculo offline de una corrida nueva.
+Guía de la entrega vigente: [recalcular datos y métricas, y generar respuestas nuevas](deliveries/challenge-clean/challenge/REPRODUCING.md). El README distingue recálculo offline de una corrida nueva.
 
 [Guía de revisión por commits para el equipo](docs/contexto/2026-11-08_093607_guia_revision_equipo.md).
 
