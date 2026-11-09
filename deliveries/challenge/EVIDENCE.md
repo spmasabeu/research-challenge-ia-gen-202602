@@ -11,3 +11,9 @@
 Auditorías contextuales de agentes identificadas, no certificación humana.
 No se realizó entrenamiento. El PDF explica cantidades menores que metas
 orientativas4000/2000,desbalance y posibles falsos negativos del parser.
+
+Revisión documental del PR #3, 2026-11-09: PDF de ocho páginas con límites
+confirmados, diagnóstico de extracción y decisión de conservar verifier-9.
+Resultados oficiales y SFT/DPO sin cambios; mejoras previstas antes del
+entrenamiento del proyecto. Validación: `results/validation/pr3-feedback.json`.
+Los registros de validación anteriores conservan sus paquetes y fechas originales.

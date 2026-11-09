@@ -59,6 +59,29 @@ contienen pasos incorrectos; la tolerancia del 1% no valida explicaciones.
 Tríos y plantillas compartidas limitan independencia y generalización.
 Qwen3-8B es profesor abierto mayor, no modelo de frontera. No se entrenó.
 
+## Decisión tras revisión del equipo, 9 de noviembre
+
+Se mantiene `verifier-9`, las tareas, respuestas, métricas y los 121 SFT/35 DPO.
+El informe amplía las limitaciones confirmadas en el PR #3: registro previo de
+prompts, unidad equivalente distinta de la solicitada, ambigüedad decimal/miles,
+ausencia de tope propio de longitud y formatos equivalentes no reconocidos.
+También documenta tres falsos negativos del objetivo y cuatro del profesor
+cuyo JSON terminal pasa la comprobación numérica; no se cambian sus etiquetas
+oficiales ni se certifica la coherencia de sus explicaciones.
+
+Esta revisión es documental: se recompilan PDF y paquete, sin repetir inferencias
+ni seleccionar de nuevo SFT/DPO. Evidencia: `results/validation/pr3-feedback.json`.
+Las mejoras del verificador se abordarán antes del entrenamiento del proyecto
+como una versión nueva, con pruebas de equivalencias y contradicciones. Cualquier
+recálculo sobre este test se declarará como análisis posterior; una evaluación
+independiente del verificador ajustado necesita un nuevo test reservado.
+
+Antes de usar `reward`, cargar con `load_tasks` todas las tareas que se evaluarán
+y pasar su prompt exacto, sin el envoltorio del chat template. Un prompt desconocido
+es un error de integración, no una respuesta matemática incorrecta del modelo.
+
+## Configuración y costo de la ejecución original
+
 Hardware: Intel Core 5 210H, 12 CPU lógicas, RAM 30,47GiB, RTX3050 Laptop6144MiB,
 driver595.71.05, Ollama0.18.0. CUDA13.2 es compatibilidad anunciada por NVIDIA-SMI,
 no versión del runtime comprobada. GGUF/digests/templates/licencias en metadata.

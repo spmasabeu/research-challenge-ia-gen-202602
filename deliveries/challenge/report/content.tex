@@ -1,6 +1,6 @@
 % Contenido integrado por main.tex usando el template suministrado por el usuario.
 % Integrar desde docs/report/; requiere graphicx para las dos figuras.
-% Estado: resultados locales pendientes de completar C6; frontera pendiente.
+% Estado: C0--C7 cerrados; limitaciones ampliadas tras revisión del PR #3.
 \section{Problema y alcance}
 Construimos un entorno de razonamiento cuantitativo con unidades en español
 para preparar el entrenamiento posterior de un modelo pequeño. En este desafío
@@ -104,6 +104,59 @@ evaluar y representaciones de miles no están cubiertas. Tras observar test
 no se amplió el parser. Se informa cobertura y una cota optimista que trata
 todas las no interpretadas como correctas; no es un intervalo de confianza.
 Un valor final aceptado tampoco certifica la coherencia de la explicación.
+
+\subsection{Limitaciones confirmadas en la revisión del equipo}
+La revisión del PR 3 se contrastó con código y respuestas guardadas, sin nuevas
+inferencias. Se mantiene \texttt{verifier-9}, los splits, SFT/DPO y todas las
+métricas publicadas. Esta ampliación documental no corrige etiquetas de test.
+
+\begin{center}
+\small
+\begin{tabular}{p{.23\linewidth}p{.68\linewidth}}
+\toprule
+Caso & Comportamiento y alcance \\
+\midrule
+Prompt desconocido & \texttt{reward} requiere \texttt{load\_tasks} con los prompts
+exactos; lanza \texttt{ValueError} si no están registrados. El consumidor debe
+validar esta precondición antes de evaluar o entrenar. \\
+Unidad solicitada & Se premia una cantidad físicamente equivalente aunque use
+otra unidad. Por ello, la recompensa no exige completar la conversión de salida
+que describe ciertos niveles difíciles. \\
+Decimal o miles & Se interpreta coma o punto como decimal:
+\texttt{1,000 J} es 1 J y \texttt{3.380 J} es 3,38 J. El prompt no fija una
+convención de separadores de miles. \\
+Longitud & La inferencia se limita a 1024 tokens, pero \texttt{reward} no impone
+un máximo propio de caracteres; no debe reutilizarse como protección de longitud
+en RL. \\
+Formatos equivalentes & Alias como \texttt{joule}, \texttt{kph} y
+\texttt{Km/h}, números en palabras y ciertos superíndices quedan sin interpretar.
+La aceptación de equivalencias se limita al catálogo documentado. \\
+Resultado intermedio & Una línea marcada como resultado que el parser no
+interpreta puede invalidar un JSON terminal numéricamente correcto, aun sin
+alternativas contradictorias. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Se confirmaron tres casos del último tipo en Qwen3-1.7B y cuatro en Qwen3-8B:
+al comprobar solo su JSON terminal, el valor pasa el 1\%. Esto daría 87/162
+(53,70\%) y 86/162 (53,09\%) respectivamente, pero es un diagnóstico posterior
+al test, no una nueva evaluación ni una validación del desarrollo. Las cifras
+oficiales siguen siendo 84/162 y 82/162. Ejemplos: tarea
+\texttt{a6b709dd46414cbe8a02-hard}, muestra 2, del objetivo, y
+\texttt{2db7c9328fe1065496fc-hard}, muestra 2, del profesor.
+También se confirmó una respuesta de Llama aceptada en km/h cuando se pedía
+m/s; exigir la unidad solicitada reduciría sus aciertos de cuatro a tres.
+
+Antes del entrenamiento del proyecto se prevé una versión 10 con pruebas de
+formatos equivalentes y contradicciones, convención numérica explícita, política
+de unidad de salida y límites de longitud e integración definidos. Se evaluarán
+las mejoras del PR 2 por separado, preservando la evidencia de la versión 9.
+Devolver cero ante cualquier error de integración podría ocultar un registro
+mal cargado; no se adopta como solución automática. Una recalificación futura
+de las respuestas conservadas se identificará como análisis posterior al test;
+evaluar de forma independiente un verificador ajustado con esos casos requiere
+un nuevo test reservado.
 
 \section{Calibración y protocolo experimental}
 El piloto inicial, independiente de los datos finales, mostró que luminosidad

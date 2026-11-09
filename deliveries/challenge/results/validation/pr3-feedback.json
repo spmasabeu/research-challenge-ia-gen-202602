@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-09",
+  "decision": "documentation only; retain verifier-9 and official metrics; verifier-10 before project training",
+  "sources": [
+    "https://github.com/spmasabeu/research-challenge-ia-gen-202602/pull/3#issuecomment-6725033495",
+    "https://github.com/spmasabeu/research-challenge-ia-gen-202602/pull/3#issuecomment-6725122740"
+  ],
+  "new_inferences": 0,
+  "paid_calls": 0,
+  "protected_original_files_unchanged": 136,
+  "official_local_metrics": {
+    "qwen17": {
+      "tasks": 54,
+      "responses": 162,
+      "n": 3,
+      "statuses": {
+        "correct": 84,
+        "unparsed": 7,
+        "numeric": 71
+      },
+      "coverage": 0.9567901234567902,
+      "pass_at_k": {
+        "1": 0.5185185185185185,
+        "3": 0.6851851851851852
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.5617283950617284,
+        "3": 0.7407407407407407
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "qwen8": {
+      "tasks": 54,
+      "responses": 162,
+      "n": 3,
+      "statuses": {
+        "correct": 82,
+        "numeric": 74,
+        "unparsed": 6
+      },
+      "coverage": 0.962962962962963,
+      "pass_at_k": {
+        "1": 0.5061728395061729,
+        "3": 0.7222222222222222
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.54320987654321,
+        "3": 0.7777777777777778
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "llama": {
+      "tasks": 54,
+      "responses": 162,
+      "n": 3,
+      "statuses": {
+        "numeric": 68,
+        "unparsed": 90,
+        "correct": 4
+      },
+      "coverage": 0.4444444444444444,
+      "pass_at_k": {
+        "1": 0.02469135802469136,
+        "3": 0.07407407407407407
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.5802469135802469,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "smol": {
+      "tasks": 54,
+      "responses": 162,
+      "n": 3,
+      "statuses": {
+        "unparsed": 124,
+        "numeric": 33,
+        "correct": 5
+      },
+      "coverage": 0.23456790123456794,
+      "pass_at_k": {
+        "1": 0.030864197530864203,
+        "3": 0.07407407407407407
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.7962962962962963,
+        "3": 1.0
+      },
+      "backend_incomplete": 1,
+      "truncated": 10
+    }
+  },
+  "diagnostic_only_json_terminal_passes": {
+    "qwen17": [
+      {
+        "task_id": "a6b709dd46414cbe8a02-hard",
+        "sample_index": 2,
+        "completion_sha256": "b7b4a2068157ca39e256ae2dea62c690534b3c3e273d4b05684b3979599c33b2"
+      },
+      {
+        "task_id": "1b6221ea92cf76e3eac5-easy",
+        "sample_index": 2,
+        "completion_sha256": "1a462c9cb83af0c6f2a966c7a687306b9a66e5a59edc48aa94392148d3793d4e"
+      },
+      {
+        "task_id": "93c067c3d407b2baed17-medium",
+        "sample_index": 0,
+        "completion_sha256": "7d744330b8b18bc0046b6b32db069f49fc9a1d6191a72e9fe1df14dcb35a3832"
+      }
+    ],
+    "qwen8": [
+      {
+        "task_id": "2db7c9328fe1065496fc-hard",
+        "sample_index": 2,
+        "completion_sha256": "c58dbfb7a6b7d9b15178362648b116a70d34481a4c634ed79f454726bdae5eb3"
+      },
+      {
+        "task_id": "81140b28d26f24db989b-hard",
+        "sample_index": 1,
+        "completion_sha256": "088198e48f9fa540b5f19484f4656606ec2620d6cdbe317674858acfa81e0be4"
+      },
+      {
+        "task_id": "81140b28d26f24db989b-hard",
+        "sample_index": 2,
+        "completion_sha256": "7a5093123e6b0c5ccd88c62e221254817e4afd6d936f3137f201f5b7ba609bbe"
+      },
+      {
+        "task_id": "3e5fe8559dffe17bc6b9-hard",
+        "sample_index": 0,
+        "completion_sha256": "cbeb39a65ab41c76adf3e88b99e68d6698c9faefdea7b2ef1d6e86fa6fbc0e80"
+      }
+    ],
+    "llama": [],
+    "smol": []
+  },
+  "diagnostic_method": "For original unparsed responses, verify only the suffix starting at the last JSON object. No official label changed; not a reasoning audit or independent evaluation.",
+  "accepted_unit_differs_from_requested": [
+    {
+      "model": "llama",
+      "task_id": "12d939e054f5342990d2-easy",
+      "sample_index": 1,
+      "actual_unit": "km/h",
+      "requested_unit": "m/s"
+    }
+  ],
+  "isolated_checks": [
+    "isolated_unittest_13",
+    "isolated_dataset_check",
+    "isolated_generate",
+    "isolated_local_metrics",
+    "isolated_frontier_metrics",
+    "isolated_derive",
+    "isolated_pdf"
+  ],
+  "isolated_pdf_bytes_identical": true,
+  "pdf_pages": 8,
+  "latex_warnings": 0,
+  "pdf_sha256": "5b6b054dc33e8ad51bf36a55de35fd0d3e81c04f0dfcebb223acb5a7fcaa76c5"
+}
