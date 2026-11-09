@@ -400,3 +400,15 @@ actuales identifican la revisión documental. Cero inferencias nuevas y llamadas
 pagadas. Pendiente de proyecto: versión 10 con pruebas, políticas de formato,
 unidad, longitud e integración; evaluación independiente sobre nuevo test
 reservado si se ajusta el evaluador con los casos actuales.
+
+## Referencias completas, 2026-11-09
+
+Usuario solicita autores y URL de papers. Reasoning Gym y GSM-Symbolic incluyen
+todos sus autores (inicial y apellido), citas narrativas autor/año y URL de arXiv,
+con autoría y orden contrastados con las fichas oficiales. Fuentes de trabajo
+y entrega sincronizadas; PDF de ocho páginas sin advertencias, enlaces clicables
+comprobados y recompilación aislada idéntica. Datos, código y métricas sin cambios.
+Evidencia: data/units/validation/references.json y copia dentro del paquete.
+Manifiesto renovado y ZIP con 213 entradas verificadas byte a byte.
+SHA-256 ZIP: 5303e08cef53bf0b58eb456f3d3b955c1cffdaa4a02ac6ccf342826d0d13497d. Cero inferencias nuevas. Los registros
+anteriores conservan los hashes de sus revisiones históricas del informe.

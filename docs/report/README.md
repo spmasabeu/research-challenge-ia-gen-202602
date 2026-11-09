@@ -46,3 +46,7 @@ Los diagnósticos posteriores al test se distinguen de los resultados oficiales.
 Sin nuevas inferencias. PDF y paquete reconstruidos; comprobaciones en
 `data/units/validation/pr3-feedback.json`. Las mejoras del verificador se
 reservan para antes del entrenamiento del proyecto.
+
+Referencias revisadas 2026-11-09: autores completos en formato de iniciales y
+apellidos, citas narrativas con autor/año y URL de arXiv para Reasoning Gym y
+GSM-Symbolic. Autoría y orden contrastados con las fichas oficiales de arXiv.

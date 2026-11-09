@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-09",
+  "change": "complete paper author lists, narrative author/year citations and clickable paper URLs",
+  "author_order_sources": [
+    "https://arxiv.org/abs/2505.24760",
+    "https://arxiv.org/abs/2410.05229"
+  ],
+  "pdf_pages": 8,
+  "pdf_sha256": "613ae010561196ebb1fde9ac7e7f0eab27b9b694751c9ba447a4d78ba71cd64d",
+  "clickable_paper_urls_verified": true,
+  "isolated_pdf_bytes_identical": true,
+  "latex_warnings": 0,
+  "previous_package_files_unchanged_except": [
+    "report/content.tex",
+    "report/informe.pdf"
+  ],
+  "new_inferences": 0,
+  "previous_validation_records": "Historical records retain the PDF hashes from their original revisions."
+}
