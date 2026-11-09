@@ -1,0 +1,43 @@
+{
+  "documented_offline_bash_blocks": 7,
+  "isolated_environment": true,
+  "tests": 13,
+  "dataset_regenerated_identical": true,
+  "sft_dpo_reconstructed_identical": true,
+  "local_metrics_identical": true,
+  "reference_metrics_identical": true,
+  "calibration_identical": true,
+  "costs_verified": true,
+  "new_inferences": 0,
+  "ruff": "passed",
+  "mypy": "passed",
+  "bandit_medium_high": 0,
+  "pdf_pages": 7,
+  "pdf_sha256": "e8be1c71ea3c027efa41165ff6247dabe6b80eac0e427ce724eb005c20e619eb",
+  "latex_warnings": 0,
+  "visual_review_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "paper_links_verified": true,
+  "previous_delivery_files_unchanged": 216,
+  "scientific_modules_identical": [
+    "generator.py",
+    "verifier.py",
+    "evaluate.py",
+    "models.py"
+  ],
+  "packaging_code_changes": [
+    "harness stores scores in a single unversioned directory",
+    "dataset manifest points to one source copy rather than duplicating frozen source",
+    "score command omits duplicate source copies"
+  ],
+  "sft_dpo_texts_unchanged": true,
+  "source_references_match_packaged_directories": true,
+  "files": 74
+}

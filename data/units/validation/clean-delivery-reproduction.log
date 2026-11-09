@@ -1,0 +1,27 @@
+Integridad correcta
+Using CPython 3.12.13
+Creating virtual environment at: .venv
+Resolved 1 package in 1ms
+Checked in 0.01ms
+.1a585df3e4c87c24268c-easy 0 None None 0.0
+1a585df3e4c87c24268c-easy 1 None None 0.0
+1a585df3e4c87c24268c-easy 2 None None 0.0
+.....1a585df3e4c87c24268c-easy 0 4 stop 0.0
+1a585df3e4c87c24268c-easy 1 4 stop 0.0
+1a585df3e4c87c24268c-easy 2 4 stop 0.0
+.....8d48f42b0e71f3dc9f07-easy 0 8 0.001
+8d48f42b0e71f3dc9f07-easy 1 8 0.001
+8d48f42b0e71f3dc9f07-easy 2 8 0.001
+.8d48f42b0e71f3dc9f07-easy 0 None 0
+.
+----------------------------------------------------------------------
+Ran 13 tests in 0.137s
+
+OK
+{"train": 90, "eval": 36, "test": 54}
+{"sft": 121, "dpo": 35}
+{"sft": 121, "dpo": 35}
+{"llama3.2:1b": {"tasks": 54, "responses": 162, "n": 3, "statuses": {"numeric": 68, "unparsed": 90, "correct": 4}, "coverage": 0.4444444444444444, "pass_at_k": {"1": 0.02469135802469136, "3": 0.07407407407407407}, "pass_at_k_upper_bound": {"1": 0.5802469135802469, "3": 1.0}, "backend_incomplete": 0, "truncated": 0}, "qwen3:1.7b": {"tasks": 54, "responses": 162, "n": 3, "statuses": {"correct": 84, "unparsed": 7, "numeric": 71}, "coverage": 0.9567901234567902, "pass_at_k": {"1": 0.5185185185185185, "3": 0.6851851851851852}, "pass_at_k_upper_bound": {"1": 0.5617283950617284, "3": 0.7407407407407407}, "backend_incomplete": 0, "truncated": 0}, "smollm2:1.7b-instruct-q4_K_M": {"tasks": 54, "responses": 162, "n": 3, "statuses": {"unparsed": 124, "numeric": 33, "correct": 5}, "coverage": 0.23456790123456794, "pass_at_k": {"1": 0.030864197530864203, "3": 0.07407407407407407}, "pass_at_k_upper_bound": {"1": 0.7962962962962963, "3": 1.0}, "backend_incomplete": 1, "truncated": 10}, "qwen3:8b": {"tasks": 54, "responses": 162, "n": 3, "statuses": {"correct": 82, "numeric": 74, "unparsed": 6}, "coverage": 0.962962962962963, "pass_at_k": {"1": 0.5061728395061729, "3": 0.7222222222222222}, "pass_at_k_upper_bound": {"1": 0.54320987654321, "3": 0.7777777777777778}, "backend_incomplete": 0, "truncated": 0}}
+{"tasks": 54, "responses": 162, "n": 3, "statuses": {"unparsed": 29, "correct": 133}, "coverage": 0.8209876543209876, "pass_at_k": {"1": 0.8209876543209877, "3": 0.9074074074074074}, "pass_at_k_upper_bound": {"1": 1.0, "3": 1.0}, "backend_incomplete": 0, "truncated": 0}
+Calibración: {'1': 0.4888888888888889, '3': 0.6555555555555556}
+Costo USD, test + controles: 0.0935116
