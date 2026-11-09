@@ -430,3 +430,23 @@ data/units/validation/report-concision.json y copia en el paquete.
 Manifiesto/ZIP regenerados, 214 entradas idénticas a la carpeta.
 SHA-256 ZIP: 4d8b90fa504d74ac8154bc339677550fd57d90cad9e14ed911eefe845de31e95. Registros de validación anteriores
 conservan las cifras y hashes históricos de cada revisión.
+
+## Informe autocontenido y continuidad narrativa, 2026-11-09
+
+Usuario solicita explicar términos, diseño y origen de cifras para lectores sin
+contexto del repositorio. Se reescriben introducción y transiciones, definición
+de familias y SI, tabla de particiones, carga de referencias y verificador,
+calibración y métricas pass@1/pass@3/cobertura. Se explica el muestreo 90×4
+del profesor y 38×3 del objetivo para negativos DPO, contrastado con fuentes.
+Se eliminan nombres internos no explicados e identificadores opacos de ejemplos.
+Se conserva un ejemplo breve de entrada y salida, comprobado contra train y
+revisado en PDF para evitar que babel interprete las comillas JSON como acentos.
+
+Se mantienen siete páginas con la misma tipografía, márgenes y bibliografía.
+Verificación de cantidades por partición/familia/nivel y de denominadores del
+piloto, recálculo local coincidente y artefactos de código/datos/resultados sin
+cambios. PDF sin advertencias, siete páginas revisadas visualmente, enlaces
+clicables y compilación aislada idéntica. Evidencia actual:
+data/units/validation/report-clarity.json y copia en el paquete.
+ZIP/manifiesto regenerados con 215 entradas idénticas a la carpeta.
+SHA-256 ZIP: d38264245e2778ff326609f8cf107192f41f3b35f3c77895ea0c90f4c2d0407c. Cero inferencias nuevas.

@@ -49,3 +49,7 @@ sus paquetes históricos; el manifiesto actual identifica el paquete revisado.
 Síntesis editorial posterior: PDF vigente de siete páginas, sin contexto interno
 del repositorio. Se conservan límites confirmados, especificación y resultados;
 evidencia actual: `data/units/validation/report-concision.json`.
+
+Revisión posterior de claridad: misma extensión de siete páginas, con tabla
+explícita de particiones y definiciones para lectores sin contexto del repositorio.
+Comprobaciones de cantidades y artefactos: `data/units/validation/report-clarity.json`.

@@ -20,3 +20,7 @@ Los registros de validación anteriores conservan sus paquetes y fechas original
 
 Informe vigente: siete páginas tras síntesis editorial, con los mismos datos,
 métricas y límites técnicos. Validación: `results/validation/report-concision.json`.
+
+Revisión de claridad: siete páginas con diseño y términos explicados, tabla de
+particiones y origen de las cifras SFT/DPO y de evaluación. Resultados intactos.
+Validación vigente: `results/validation/report-clarity.json`.

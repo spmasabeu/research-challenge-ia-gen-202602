@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-09",
+  "change": "self-contained explanation of dataset, reward, calibration, sampling, SFT/DPO and baseline metrics",
+  "pdf_pages": 7,
+  "layout_and_bibliography_unchanged": true,
+  "dataset_counts_verified": {
+    "train": {
+      "physical_problems": 30,
+      "tasks": 90,
+      "tasks_per_family": 30,
+      "tasks_per_family_level": 10
+    },
+    "eval": {
+      "physical_problems": 12,
+      "tasks": 36,
+      "tasks_per_family": 12,
+      "tasks_per_family_level": 4
+    },
+    "test": {
+      "physical_problems": 18,
+      "tasks": 54,
+      "tasks_per_family": 18,
+      "tasks_per_family_level": 6
+    }
+  },
+  "teacher_attempts": 360,
+  "teacher_attempts_per_family_level": 40,
+  "sft_retained": 121,
+  "dpo_pairs": 35,
+  "additional_negative_tasks": 38,
+  "additional_negative_attempts": 114,
+  "pilot_tasks": 90,
+  "pilot_responses": 270,
+  "pilot_physical_problems": 30,
+  "pilot_metric_denominators_verified": true,
+  "sample_json_reward_verified": true,
+  "sample_json_rendered_correctly": true,
+  "official_local_metrics_reproduced": true,
+  "prior_package_files_unchanged_except": [
+    "EVIDENCE.md",
+    "report/content.tex",
+    "report/informe.pdf"
+  ],
+  "pdf_sha256": "274800694f4e79091001d8d06f12fb0b04dcc1e34a6ddcaf339686a57cf04b6b",
+  "isolated_pdf_bytes_identical": true,
+  "latex_warnings": 0,
+  "visual_review_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "clickable_paper_urls_verified": true,
+  "new_inferences": 0
+}

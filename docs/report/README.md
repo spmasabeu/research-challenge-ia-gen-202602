@@ -56,3 +56,10 @@ cambiar tipografía ni márgenes. Se condensan contrato y limitaciones, se integ
 la referencia externa en la línea base y se elimina contexto interno de PR,
 template y envío. Se conservan protocolo, resultados, diagnósticos y bibliografía.
 Evidencia vigente del PDF y paquete: `data/units/validation/report-concision.json`.
+
+Revisión de claridad 2026-11-09: introducción del diseño experimental, definición
+de familias y variables, tabla de particiones, ejemplo sin identificadores
+criptográficos y explicación de SI, recompensa, carga de referencias y versión
+del evaluador. Se explican el propósito de calibración, pass@1/pass@3, cobertura
+y el origen de los volúmenes SFT/DPO, conectando secciones sin cambiar resultados.
+PDF y paquete vigentes: `data/units/validation/report-clarity.json`.
