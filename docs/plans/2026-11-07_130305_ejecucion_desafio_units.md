@@ -158,3 +158,12 @@ Fuentes: [aclaración docente compartida](../contexto/2026-11-07_193927_aclaraci
 
 **Éxito C7:** cuatro entregables completos, PDF compilado y snapshot validado sin archivos externos; cualquier recurso externo de inferencia queda declarado. Si falta template o evidencia, mantener la fase abierta y no crear una entrega aparente.
 **Fuera de alcance:** entrenamiento SFT/DPO/RL, comparación de cinco caminos, paper/poster/video del proyecto. En este desafío sí se entregan datos SFT/DPO.
+
+## Revisión posterior del PR #3, 2026-11-09
+
+C0–C7 conservan su cierre técnico. Se incorpora el feedback como límites
+explícitos del informe y del paquete, preservando verifier-9, métricas y SFT/DPO.
+Se recompilan PDF y ZIP y se verifica integridad y reproducción offline;
+no se reabren inferencias ni se cambia el test. Las mejoras del verificador
+quedan para antes del entrenamiento del proyecto, con versión nueva y pruebas.
+Evidencia de esta revisión: `data/units/validation/pr3-feedback.json`.

@@ -27,7 +27,7 @@ error matemático. El informe debe conservar cobertura y cotas optimistas junto
 con pass@1/pass@3. Las variantes relacionadas reducen independencia estadística.
 
 C7 cerrado técnicamente: template y autoría recibidos, inferencias externas
-completas, PDF de siete páginas revisado y paquete reproducido desde segunda
+completas, PDF original de siete páginas revisado y paquete reproducido desde segunda
 copia aislada con entorno nuevo. Evidencia `data/units/validation/c7-delivery-isolated.json`.
 Referencia: 162 respuestas, 133 correctas y 29 unparsed; costo con controles
 USD0,0935116. No se entrenó ni se enviaron correos.
@@ -38,3 +38,10 @@ no coincide con esa fecha (jueves); se registra la fecha numérica explícita.
 Canal previsto informado por el usuario: correo al profesor, envío a cargo del equipo.
 
 Reconciliación de formato 2026-11-08: única entrega definitiva `deliveries/challenge/` y `challenge-2026-11-07.zip`; PDF con espaciado revisado. Validación de esta revisión: `data/units/validation/report-format.json`.
+
+Revisión documental 2026-11-09, feedback del PR #3: PDF vigente de ocho páginas,
+tabla de límites confirmados y diagnósticos separados de las métricas oficiales.
+Verificador 9, tareas, respuestas, SFT/DPO, tablas y figuras sin cambios;
+sin nuevas inferencias. Evidencia de recálculo, integridad y recompilación aislada:
+`data/units/validation/pr3-feedback.json`. Los registros C7 anteriores describen
+sus paquetes históricos; el manifiesto actual identifica el paquete revisado.

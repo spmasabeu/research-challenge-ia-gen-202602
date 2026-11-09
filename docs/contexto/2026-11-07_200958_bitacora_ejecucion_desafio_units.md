@@ -376,3 +376,27 @@ excluido por alcance. Se añade como referencia documental, sin iniciar proyecto
 ni entrenamiento. docs/README.md indexa seguimiento; data/units/README.md separa
 final-v2/derived-v3 vigentes de pilotos y derivados históricos. Se conserva
 evidencia cruda y una única entrega definitiva.
+
+## Feedback del PR #3 incorporado, 2026-11-09
+
+Usuario confirma cierre documental para el desafío y mejoras del verificador
+antes del entrenamiento del proyecto; autoriza responder al colega con citas.
+Se amplían informe, README, mapa de evidencia, decisiones y plan. Verifier-9,
+tareas, particiones, respuestas, métricas, tablas/figuras y 121 SFT/35 DPO se
+conservan. Diagnóstico posterior separado: tres JSON finales del objetivo y
+cuatro del profesor pasan la tolerancia, pero las respuestas completas siguen
+unparsed; una respuesta Llama correcta usa otra unidad equivalente. No se
+convierten esos casos en nuevas métricas oficiales ni se certifican sus pasos.
+
+Validación: 13 pruebas, referencias/splits, regeneración idéntica, reconstrucción
+SFT/DPO y métricas de los cinco modelos desde copia aislada. Código/datos y
+resultados originales: 136 archivos protegidos idénticos. PDF de ocho páginas,
+sin advertencias, recompilación aislada idéntica; tabla nueva revisada visualmente.
+Evidencia: data/units/validation/pr3-feedback.json y copia en el paquete.
+Manifiesto renovado: 211 archivos, ZIP: 212 entradas verificadas byte a byte.
+SHA-256 ZIP actual: 4f2e66249eb327672bdfe99e0c0a376d10af0f79590dabcabe39e9d793cae7b8.
+Registros C7/formato previos conservan sus hashes históricos; manifiesto y ZIP
+actuales identifican la revisión documental. Cero inferencias nuevas y llamadas
+pagadas. Pendiente de proyecto: versión 10 con pruebas, políticas de formato,
+unidad, longitud e integración; evaluación independiente sobre nuevo test
+reservado si se ajusta el evaluador con los casos actuales.

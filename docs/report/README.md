@@ -31,7 +31,7 @@ Ningún comando anterior realiza inferencia ni necesita credenciales o pesos.
 
 Herramientas: Python 3.12.13, uv 0.11.16, Matplotlib 3.11.2 opcional; latexmk
 4.88, pdfTeX 1.40.29/TeX Live 2026, lmodern, graphicx, amsmath, booktabs, hyperref y
-babel-spanish con hyphen-spanish. PDF vigente: `build/final-v5/main.pdf`, siete páginas, sin advertencias finales
+babel-spanish con hyphen-spanish. PDF vigente: `build/final-v5/main.pdf`, ocho páginas, sin advertencias finales
 de LaTeX, revisado y copiado a `deliveries/challenge/report/informe.pdf`.
 C7 cerrado tras reproducción completa aislada y revisión independiente. El PDF de vista previa aportado
 en sandbox no es el informe.
@@ -39,3 +39,10 @@ en sandbox no es el informe.
 [Mapa de evidencia](evidence.md) y [bitácora](../contexto/2026-11-07_200958_bitacora_ejecucion_desafio_units.md).
 
 Revisión 2026-11-08: separación 6/8pt alrededor de la primera regla del encabezado, 6pt antes de la última; filas de tablas1,15x y reglas booktabs con espacio superior/inferior. PDF siete páginas, sin advertencias; recompilación aislada idéntica byte a byte. Código/datos/figuras/CSV sin cambios y entrega reconciliada con el nombre original.
+
+Revisión 2026-11-09 tras feedback del PR #3: informe ampliado a ocho páginas con
+limitaciones confirmadas y decisión de conservar verifier-9, métricas y SFT/DPO.
+Los diagnósticos posteriores al test se distinguen de los resultados oficiales.
+Sin nuevas inferencias. PDF y paquete reconstruidos; comprobaciones en
+`data/units/validation/pr3-feedback.json`. Las mejoras del verificador se
+reservan para antes del entrenamiento del proyecto.
