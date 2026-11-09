@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-09",
+  "change": "standalone concise report; integrate external reference into baseline; condense verifier contract, limitations and reproduction",
+  "pages_before": 8,
+  "pages_after": 7,
+  "source_words_before": 3815,
+  "source_words_after": 3120,
+  "layout_unchanged": true,
+  "bibliography_unchanged": true,
+  "prior_package_files_unchanged_except": [
+    "EVIDENCE.md",
+    "report/content.tex",
+    "report/informe.pdf"
+  ],
+  "pdf_sha256": "70d8f6424c23f8afa970c28104d58bda6c4c3cd5f29ba0848975bbda5afa3552",
+  "isolated_pdf_bytes_identical": true,
+  "latex_warnings": 0,
+  "visual_review_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "clickable_paper_urls_verified": true,
+  "new_inferences": 0,
+  "official_metrics_unchanged": true
+}

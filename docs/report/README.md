@@ -31,7 +31,7 @@ Ningún comando anterior realiza inferencia ni necesita credenciales o pesos.
 
 Herramientas: Python 3.12.13, uv 0.11.16, Matplotlib 3.11.2 opcional; latexmk
 4.88, pdfTeX 1.40.29/TeX Live 2026, lmodern, graphicx, amsmath, booktabs, hyperref y
-babel-spanish con hyphen-spanish. PDF vigente: `build/final-v5/main.pdf`, ocho páginas, sin advertencias finales
+babel-spanish con hyphen-spanish. PDF vigente: `build/final-v5/main.pdf`, siete páginas, sin advertencias finales
 de LaTeX, revisado y copiado a `deliveries/challenge/report/informe.pdf`.
 C7 cerrado tras reproducción completa aislada y revisión independiente. El PDF de vista previa aportado
 en sandbox no es el informe.
@@ -50,3 +50,9 @@ reservan para antes del entrenamiento del proyecto.
 Referencias revisadas 2026-11-09: autores completos en formato de iniciales y
 apellidos, citas narrativas con autor/año y URL de arXiv para Reasoning Gym y
 GSM-Symbolic. Autoría y orden contrastados con las fichas oficiales de arXiv.
+
+Síntesis editorial 2026-11-09: informe reducido de ocho a siete páginas, sin
+cambiar tipografía ni márgenes. Se condensan contrato y limitaciones, se integra
+la referencia externa en la línea base y se elimina contexto interno de PR,
+template y envío. Se conservan protocolo, resultados, diagnósticos y bibliografía.
+Evidencia vigente del PDF y paquete: `data/units/validation/report-concision.json`.

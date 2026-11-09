@@ -90,5 +90,5 @@ Estándar de colaboración: [ramas, Conventional Commits y PR de cuatro partes](
 [Índice de toda la documentación](docs/README.md) · [Mapa de datos vigentes e históricos](data/units/README.md#datos-vigentes-e-historial). Ambos enunciados se comparten como referencia; la implementación entregada corresponde al desafío.
 
 Revisión del PR #3 (2026-11-09): [decisión y limitaciones](docs/report/README.md).
-Informe ampliado a ocho páginas; verifier-9, datos y métricas originales conservados.
+Informe vigente de siete páginas tras síntesis editorial; verifier-9, datos y métricas originales conservados.
 Sin nuevas inferencias; mejoras del verificador previstas antes de entrenar en el proyecto.

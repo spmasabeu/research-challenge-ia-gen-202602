@@ -1,6 +1,6 @@
 {
   "files": {
-    "EVIDENCE.md": "1dc908179c4a85c139c71c4151e381e92d185f93391ab8808fd3c6ecef7d1f7d",
+    "EVIDENCE.md": "9875fa7e196cb99a1d5e9f43366da191846a71ea933e66ff542d4fe5e1e67c57",
     "README.md": "3c4a47a3402218eb8fb7ae8652ab849f3be21cc456d197ad53c0ed39757fe1c2",
     "REPRODUCING.md": "74a26afeee8e4bf4b41a5a56e6d250ad44aa08b5226b6051974aab1feb40b31c",
     "code/src/challenge/__init__.py": "02f1632a912b802498264c62f062274c290e4a852a2d5691b4712de5023c9068",
@@ -38,7 +38,7 @@
     "data/final-v2/units.json": "406d896b3f8efc0b1841ad7f41fac603b58699ce4f62a2a4e1f643d86ad05584",
     "data/negative-tasks.jsonl": "cd365bc03f105bb74250e037d770f36ce4c42e4f165bf62c3a28c8282faf8f4a",
     "pyproject.toml": "94b7b94f526d3fe719d0b3f333c0e79e033769fad3cc2e85a9ce940228d8e076",
-    "report/content.tex": "f3cfdddc5ce5638280ab1c83083f6110887778e032dda581fac78d7905d34046",
+    "report/content.tex": "dbe07be5b84ed8686b5d2d0473e5b6c8503ec4d857813222194ec67bbc02d170",
     "report/final-v2/baseline.csv": "a541fa971f67c0098a7b4904022d0228b7bb957883fc40c35be580e7760d2c48",
     "report/final-v2/derived.csv": "96e9fae382efd720e5fe9076bc99630e4db1d9b2c4d9e251e2ffd44992f78316",
     "report/final-v2/figures/baseline.pdf": "15976b81f67244b8996d109521baa6e70288aff751dadd3a7c6b766f5bf27668",
@@ -47,7 +47,7 @@
     "report/final-v2/figures/calibration.png": "034b9b6e250834f4c9a23b643f27789310791d11dc944a04376deba8dc5a944b",
     "report/final-v2/render-metadata.json": "d7f12bbb76091f5b6cc2849624ebdc107965e6957bc3a4018e62282afde76fa8",
     "report/final-v2/tables.tex": "c7b2dd346ab5e39ae2ad2c66545051a44037ee7f38f7d07f5c7f1a75a5f8c846",
-    "report/informe.pdf": "613ae010561196ebb1fde9ac7e7f0eab27b9b694751c9ba447a4d78ba71cd64d",
+    "report/informe.pdf": "70d8f6424c23f8afa970c28104d58bda6c4c3cd5f29ba0848975bbda5afa3552",
     "report/main.tex": "82208cabb2a27cada2757a08e0a5a2b0d837268e22185d0cec88407472e8db3a",
     "report/render.py": "cf1fd8b02905f4082276cf73514d4b5947690c76e1a659b337d589055ff22122",
     "report/sources/DesafioInvestigacion-2026.pdf": "a5880df51de0f284541c15b462d25f574e6c4511b8a8126d054c6cac3b8e6642",
@@ -208,6 +208,7 @@
     "results/validation/pr3-feedback.json": "1d161847fce4e101740e916f227174ff2f527bc41434309fd1bea805345591ba",
     "results/validation/quality-tools.json": "184608b7e85b8c8acd9d90f243646095a1f202bd63e68430d724953dea8407fb",
     "results/validation/references.json": "451eef9c1b30594982e193d6114fbf9c6f8795cf72dfdd5751d7643e1c5a61bd",
+    "results/validation/report-concision.json": "560d74e921767525d983fc94468bd5ddf7271dbd9ca601116572391cb21a9fd7",
     "results/validation/report-format.json": "3b13b90d554d2ccb28ad32438b1ab4b23081bdc8eea269244fbdd7cea404120b",
     "results/validation/reproduction-docs.json": "61dd71d107354d20a36125ea2470795766a8b5f3c8abbac10fe5bd28e56faa32",
     "results/validation/v9-isolated.json": "08e7b740e5903e70ea0c0f9d91bd9e7f26afa4dccbdd7838ed2d56560ff3449b",

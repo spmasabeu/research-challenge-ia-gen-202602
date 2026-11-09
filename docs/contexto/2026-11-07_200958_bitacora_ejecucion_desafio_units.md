@@ -412,3 +412,21 @@ Evidencia: data/units/validation/references.json y copia dentro del paquete.
 Manifiesto renovado y ZIP con 213 entradas verificadas byte a byte.
 SHA-256 ZIP: 5303e08cef53bf0b58eb456f3d3b955c1cffdaa4a02ac6ccf342826d0d13497d. Cero inferencias nuevas. Los registros
 anteriores conservan los hashes de sus revisiones históricas del informe.
+
+## Síntesis editorial del informe, 2026-11-09
+
+Usuario solicita un informe autocontenido y conciso, sin referencias al PR.
+Se condensa recompensa/robustez, se integra referencia externa como subsección
+de línea base y se reduce reproducción; se eliminan detalles internos de PR,
+credenciales ajenas, template y correo. 3815 a 3120 palabras de fuente;
+ocho a siete páginas sin cambiar tipografía, márgenes ni bibliografía. Se
+conservan especificación, protocolo, métricas, ejemplos y límites confirmados.
+La evidencia operativa detallada sigue disponible en las guías y metadatos.
+
+Compilación sin advertencias; revisión visual de siete páginas, enlaces
+clicables y recompilación aislada idéntica. Código, datos, respuestas y métricas
+sin cambios; cero inferencias nuevas. Evidencia vigente del PDF:
+data/units/validation/report-concision.json y copia en el paquete.
+Manifiesto/ZIP regenerados, 214 entradas idénticas a la carpeta.
+SHA-256 ZIP: 4d8b90fa504d74ac8154bc339677550fd57d90cad9e14ed911eefe845de31e95. Registros de validación anteriores
+conservan las cifras y hashes históricos de cada revisión.

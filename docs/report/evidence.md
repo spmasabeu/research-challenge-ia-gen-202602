@@ -39,9 +39,13 @@ Canal previsto informado por el usuario: correo al profesor, envío a cargo del 
 
 Reconciliación de formato 2026-11-08: única entrega definitiva `deliveries/challenge/` y `challenge-2026-11-07.zip`; PDF con espaciado revisado. Validación de esta revisión: `data/units/validation/report-format.json`.
 
-Revisión documental 2026-11-09, feedback del PR #3: PDF vigente de ocho páginas,
+Revisión documental 2026-11-09, feedback del PR #3: PDF entonces de ocho páginas,
 tabla de límites confirmados y diagnósticos separados de las métricas oficiales.
 Verificador 9, tareas, respuestas, SFT/DPO, tablas y figuras sin cambios;
 sin nuevas inferencias. Evidencia de recálculo, integridad y recompilación aislada:
 `data/units/validation/pr3-feedback.json`. Los registros C7 anteriores describen
 sus paquetes históricos; el manifiesto actual identifica el paquete revisado.
+
+Síntesis editorial posterior: PDF vigente de siete páginas, sin contexto interno
+del repositorio. Se conservan límites confirmados, especificación y resultados;
+evidencia actual: `data/units/validation/report-concision.json`.

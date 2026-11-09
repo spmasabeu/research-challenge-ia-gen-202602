@@ -1,6 +1,6 @@
 % Contenido integrado por main.tex usando el template suministrado por el usuario.
 % Integrar desde docs/report/; requiere graphicx para las dos figuras.
-% Estado: C0--C7 cerrados; limitaciones ampliadas tras revisión del PR #3.
+% Informe autocontenido: protocolo, resultados, límites y reproducción.
 \section{Problema y alcance}
 Construimos un entorno de razonamiento cuantitativo con unidades en español
 para preparar el entrenamiento posterior de un modelo pequeño. En este desafío
@@ -12,10 +12,8 @@ la tarea exige aplicar operaciones y conversiones, no recordar física.
 El objetivo es Qwen3-1.7B. Se comparan Llama 3.2-1B y
 SmolLM2-1.7B-Instruct. Qwen3-8B genera las respuestas de entrenamiento y se
 evalúa como modelo abierto mayor; no se presenta como modelo de frontera.
-La aclaración docente exige al menos tres pequeños y admite justificar por
-recursos la omisión de modelos mayores. La ampliación con DeepSeek-V4-Pro-0813 se ejecuta mediante OpenRouter,
-con presupuesto autorizado de USD 5 y proveedor DeepInfra FP8 fijado.
-Los resultados se obtienen por inferencia; no se usa la credencial OpenAI.
+DeepSeek-V4-Pro-0813 aporta una referencia externa mediante OpenRouter,
+con ruta DeepInfra FP8 y presupuesto de USD 5.
 
 \section{Entorno y generación}
 Las familias son velocidad, $v=d/t$; energía cinética, $E=mv^2/2$; y luminosidad,
@@ -65,98 +63,61 @@ $v=(d_1+d_2)/t$ y explicita $1$ km$=1000$ m y $1$ m/s$=3{,}6$ km/h.
 La referencia privada es $5100/88=57{,}954545\ldots$ m/s. Un resultado
 terminal \texttt{57.95 m/s} recibe recompensa; \texttt{0 m/s} no. El prompt
 completo pide hasta 80 palabras de explicación en español y un único resultado,
-en JSON o cantidad/unidad, sin alternativas. Este ejemplo procede de train,
-no fue añadido tras observar test.
+en JSON o cantidad/unidad, sin alternativas. El ejemplo procede de train y
+se usa para ilustrar el contrato de respuesta.
 
 \section{Recompensa y robustez}
-La interfaz es \texttt{reward(prompt, completion) -> float}. El consumidor carga
-un registro privado de prompts exactos; un prompt desconocido produce error
-de entrada. El extractor no recibe la referencia. Acepta un único resultado
-terminal inequívoco en JSON con \texttt{value} y \texttt{unit}, o como cantidad
-y unidad terminal, permitiendo un desarrollo anterior. No ejecuta expresiones.
+La interfaz \texttt{reward(prompt, completion) -> float} usa referencias privadas.
+Se cargan mediante \texttt{load\_tasks}; un prompt no registrado produce
+\texttt{ValueError}. El extractor no recibe la referencia ni ejecuta
+expresiones. Admite desarrollo previo y un resultado terminal inequívoco en
+JSON con \texttt{value}/\texttt{unit}, o como cantidad y unidad.
 
-Se convierte el resultado a SI y se comprueba dimensión, finitud y
-$|y-y^*|\leq0{,}01|y^*|$. La tolerancia relativa del 1\% admite redondeo y es
-distinta de la usada para verificar la generación. Se aceptan m/s y km/h;
-J, kJ y erg; W, kW, erg/s y luminosidades solares. Una unidad equivalente
-puede recibir recompensa aunque difiera de la solicitada. Las pruebas incluyen
-22 m/s frente a 79,2 km/h, 9 J y $4\pi$ W con referencias fijadas de forma
-independiente del generador.
+El resultado se convierte a SI y recibe recompensa 1 si su dimensión es
+compatible, es finito y satisface $|y-y^*|\leq0{,}01|y^*|$; en otro caso,
+recibe 0. La tolerancia del 1\% admite redondeo, pero no certifica los pasos.
+Se aceptan m/s y km/h; J, kJ y erg; W, kW, erg/s y luminosidades solares,
+aunque la unidad difiera de la solicitada. Por tanto, la recompensa no exige
+completar la conversión de salida de ciertos niveles difíciles. En test, una
+respuesta de Llama aceptada usa km/h donde se pedía m/s; exigir esa unidad
+reduciría sus aciertos de cuatro a tres.
 
-Se rechazan resultados terminales contradictorios, alternativas, claves JSON
-duplicadas, valores no finitos y unidades incompatibles. No se rescata un
-número previo porque coincida con la referencia. Las etiquetas son
-\texttt{correct}, \texttt{numeric}, \texttt{unit} y \texttt{unparsed}.
-La última indica que falta un resultado admitido e inequívoco; no demuestra
-un error matemático. Truncamiento y respuesta incompleta del backend son
-marcas separadas, conservadas en el denominador.
+Se rechazan alternativas, resultados terminales contradictorios, claves JSON
+duplicadas, valores no finitos y unidades incompatibles, sin rescatar números
+previos que coincidan con la referencia. Las pruebas usan referencias
+independientes: 22 m/s y 79,2 km/h, 9 J y $4\pi$ W. Las etiquetas son
+\texttt{correct}, \texttt{numeric}, \texttt{unit} y \texttt{unparsed}; esta última
+indica fallo de extracción, no error matemático demostrado. Truncamientos e
+intentos incompletos se registran por separado y permanecen en el denominador.
 
-El verificador final es \texttt{verifier-9}, congelado antes de la primera
-inferencia de test. La versión 9 añadió etiquetas terminales con signo igual
-y la unidad Watts observadas en controles de desarrollo de SmolLM2. En esos
-controles convirtió dos casos de no interpretados a numéricamente incorrectos;
-no añadió aciertos. No cambió etiquetas del piloto consolidado ni de las
-fuentes SFT/DPO. Se conservan ambas versiones, hashes, respuestas e IDs
-afectados: una mejora del evaluador no se presenta como mejora del modelo.
+El evaluador \texttt{verifier-9} se congeló antes del test. Incorporó etiquetas
+terminales con signo igual y Watts observados en controles de desarrollo:
+dos casos pasaron de no interpretados a numéricamente incorrectos, sin nuevos
+aciertos ni cambios en piloto o SFT/DPO. Se conservan versiones, hashes e IDs
+para distinguir cambios del evaluador de cambios del modelo.
 
-Persisten límites: ciertas frases compactas con LaTeX, expresiones finales sin
-evaluar y representaciones de miles no están cubiertas. Tras observar test
-no se amplió el parser. Se informa cobertura y una cota optimista que trata
-todas las no interpretadas como correctas; no es un intervalo de confianza.
-Un valor final aceptado tampoco certifica la coherencia de la explicación.
+Persisten límites de formato: coma y punto se interpretan como decimales
+(\texttt{1,000 J}=1 J; \texttt{3.380 J}=3,38 J), sin convención explícita de
+miles en el prompt. Alias como \texttt{joule}, \texttt{kph} y \texttt{Km/h},
+números en palabras, ciertos superíndices, LaTeX y expresiones sin evaluar
+quedan sin interpretar. La inferencia limita la salida a 1024 tokens, pero
+\texttt{reward} no impone un máximo propio de longitud.
 
-\subsection{Limitaciones confirmadas en la revisión del equipo}
-La revisión del PR 3 se contrastó con código y respuestas guardadas, sin nuevas
-inferencias. Se mantiene \texttt{verifier-9}, los splits, SFT/DPO y todas las
-métricas publicadas. Esta ampliación documental no corrige etiquetas de test.
+Una línea intermedia marcada como resultado y no interpretable puede invalidar
+un JSON terminal numéricamente correcto. Se confirmaron tres casos en
+Qwen3-1.7B y cuatro en Qwen3-8B. Comprobar solo esos JSON daría 87/162
+(53,70\%) y 86/162 (53,09\%), frente a los 84/162 y 82/162 oficiales.
+Es un diagnóstico posterior al test, no una validación del razonamiento ni
+una corrección de las métricas. Ejemplos: \texttt{a6b709dd46414cbe8a02-hard}
+y \texttt{2db7c9328fe1065496fc-hard}, ambos muestra 2.
 
-\begin{center}
-\small
-\begin{tabular}{p{.23\linewidth}p{.68\linewidth}}
-\toprule
-Caso & Comportamiento y alcance \\
-\midrule
-Prompt desconocido & \texttt{reward} requiere \texttt{load\_tasks} con los prompts
-exactos; lanza \texttt{ValueError} si no están registrados. El consumidor debe
-validar esta precondición antes de evaluar o entrenar. \\
-Unidad solicitada & Se premia una cantidad físicamente equivalente aunque use
-otra unidad. Por ello, la recompensa no exige completar la conversión de salida
-que describe ciertos niveles difíciles. \\
-Decimal o miles & Se interpreta coma o punto como decimal:
-\texttt{1,000 J} es 1 J y \texttt{3.380 J} es 3,38 J. El prompt no fija una
-convención de separadores de miles. \\
-Longitud & La inferencia se limita a 1024 tokens, pero \texttt{reward} no impone
-un máximo propio de caracteres; no debe reutilizarse como protección de longitud
-en RL. \\
-Formatos equivalentes & Alias como \texttt{joule}, \texttt{kph} y
-\texttt{Km/h}, números en palabras y ciertos superíndices quedan sin interpretar.
-La aceptación de equivalencias se limita al catálogo documentado. \\
-Resultado intermedio & Una línea marcada como resultado que el parser no
-interpreta puede invalidar un JSON terminal numéricamente correcto, aun sin
-alternativas contradictorias. \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-Se confirmaron tres casos del último tipo en Qwen3-1.7B y cuatro en Qwen3-8B:
-al comprobar solo su JSON terminal, el valor pasa el 1\%. Esto daría 87/162
-(53,70\%) y 86/162 (53,09\%) respectivamente, pero es un diagnóstico posterior
-al test, no una nueva evaluación ni una validación del desarrollo. Las cifras
-oficiales siguen siendo 84/162 y 82/162. Ejemplos: tarea
-\texttt{a6b709dd46414cbe8a02-hard}, muestra 2, del objetivo, y
-\texttt{2db7c9328fe1065496fc-hard}, muestra 2, del profesor.
-También se confirmó una respuesta de Llama aceptada en km/h cuando se pedía
-m/s; exigir la unidad solicitada reduciría sus aciertos de cuatro a tres.
-
-Antes del entrenamiento del proyecto se prevé una versión 10 con pruebas de
-formatos equivalentes y contradicciones, convención numérica explícita, política
-de unidad de salida y límites de longitud e integración definidos. Se evaluarán
-las mejoras del PR 2 por separado, preservando la evidencia de la versión 9.
-Devolver cero ante cualquier error de integración podría ocultar un registro
-mal cargado; no se adopta como solución automática. Una recalificación futura
-de las respuestas conservadas se identificará como análisis posterior al test;
-evaluar de forma independiente un verificador ajustado con esos casos requiere
-un nuevo test reservado.
+Se publica cobertura y una cota optimista que trata todas las no interpretadas
+como correctas; no es un intervalo de confianza. Antes del entrenamiento se
+requieren pruebas adicionales de equivalencias y contradicciones, y políticas
+explícitas de unidad, formato numérico, longitud e integración. Una evaluación
+independiente de un evaluador ajustado con estos casos requiere un nuevo test
+reservado; las recalificaciones sobre las respuestas actuales son análisis
+posteriores al test.
 
 \section{Calibración y protocolo experimental}
 El piloto inicial, independiente de los datos finales, mostró que luminosidad
@@ -319,90 +280,56 @@ automáticos a capacidad matemática. Cuantizaciones y templates distintos,
 el idioma español y la configuración de pensamiento limitan la atribución
 causal de las diferencias a parámetros o familias de modelos.
 
-\section{Referencia externa mediante OpenRouter}
-Se eligió DeepSeek-V4-Pro-0813~\cite{deepseek}, el candidato fechado disponible
-que cabe en el presupuesto autorizado de USD 5. La ruta efectiva se fijó en
-DeepInfra FP8, sin fallback ni cambio automático de modelo. El catálogo y la
-lista de endpoints públicos se conservaron con sus precios y parámetros.
-El proveedor nativo DeepSeek fue excluido por la política de privacidad de
-la cuenta antes de generar el primer control; no se modificó esa política.
-La ruta DeepInfra completó cinco controles de desarrollo fuera de test:
-tres aceptados y dos no interpretados, sin truncamientos, por USD 0,0029965.
-No se ajustó el parser a estos resultados.
+\subsection{Referencia externa}
+DeepSeek-V4-Pro-0813~\cite{deepseek} se evaluó mediante OpenRouter con ruta
+DeepInfra FP8 fija, sin fallback, bajo un presupuesto de USD 5. El catálogo
+conserva precios y parámetros; el proveedor nativo quedó excluido por la
+política de privacidad de la cuenta. Cinco controles ajenos a test produjeron
+tres aciertos y dos no interpretadas, sin truncamientos, por USD 0,0029965;
+no se ajustó el parser a sus resultados.
 
-Se usan los mismos 54 prompts congelados, tres respuestas por tarea, máximo
-1024 tokens, temperatura 0,7, top-p 0,9, top-k 40, min-p 0 y semillas 42--44.
-Se solicita razonamiento desactivado, sin herramientas ni JSON forzado.
-La API anuncia contexto de 1048576 tokens, distinto del buffer local de 2048;
-los prompts cortos son idénticos. Los defaults y la implementación del muestreo
-son propios del servicio; igualdad de parámetros no implica equivalencia de
-motor ni reproducibilidad bit a bit. La revisión remota se identifica por
-modelo fechado y proveedor, sin un digest de pesos observable. FP8 procede
-del catálogo del endpoint, no de una inspección de sus pesos en ejecución.
+Se usaron los mismos 54 prompts, tres muestras, máximo 1024 tokens,
+temperatura 0,7, top-p 0,9, top-k 40, min-p 0 y semillas 42--44; razonamiento
+desactivado, sin herramientas ni JSON forzado. El contexto anunciado es
+1048576 tokens, frente a 2048 locales. El modelo fechado y proveedor identifican
+la revisión remota, sin digest de pesos observable; FP8 procede del catálogo.
+Estos motores y sus defaults impiden asumir equivalencia de muestreo o
+reproducibilidad bit a bit.
 
-La tarifa capturada de esa ruta es USD 1,30/2,60 por millón de tokens de
-entrada/salida. Se aplican caps de 1,32/3,96 y se reserva conservadoramente
-USD 0,02 antes de cada intento, también si falla, con un registro global que
-impide superar USD 5 reservados. Los prompts están limitados a 2048 bytes;
-la reserva cubre un margen de 6144 tokens de entrada y 1024 de salida a esos
-caps. El costo observado se conserva en cada respuesta. La política de precios
-y selección de rutas está documentada por OpenRouter~\cite{routing,pricing}.
-La reserva no es el importe facturado y los cargos por comprar créditos
-preceden a esta ejecución; no se hizo ninguna compra adicional.
+El test produjo 133 aciertos y 29 no interpretadas: pass@1 de 82,10\%,
+pass@3 de 90,74\% y cobertura de 82,10\%. No hubo errores numéricos ni de
+unidad clasificados, truncamientos o intentos incompletos. Las no interpretadas
+impiden concluir exactitud matemática perfecta y elevan ambas cotas optimistas
+a 100\%. Fácil/media/difícil alcanzaron 77,78/79,63/88,89\% en pass@1;
+los niveles no ordenan universalmente la capacidad. Entre los falsos negativos,
+una respuesta obtiene 410,6 km/h correctamente, pero mencionar que pi no se usa
+activa la guardia de negación; otra presenta JSON correcto tras un marcador
+narrativo sin cantidad. Se conservan sus etiquetas automáticas.
 
-El test externo produjo 133 respuestas aceptadas y 29 no interpretadas:
-pass@1 de 82,10\%, pass@3 de 90,74\% y cobertura de 82,10\%. No hubo
-respuestas clasificadas como numéricamente incorrectas, unidades incompatibles,
-truncamientos ni intentos incompletos. Esto no demuestra exactitud matemática
-perfecta: las 29 no interpretadas permanecen sin resolución automática y dan
-una cota optimista de 100\% para ambas métricas. Fácil/media/difícil tuvieron
-pass@1 de 77,78/79,63/88,89\%; la inversión nominal refuerza que los niveles
-no son una escala universal de capacidad. La revisión contextual y sus
-limitaciones se conservan separadas de las etiquetas. Por ejemplo, una respuesta
-convierte 0,9 min a 0,015 h y obtiene 410,6 km/h correctamente, pero la frase
-previa que aclara que pi no se usa activa una guardia conservadora de negación.
-Otra termina con un JSON numéricamente correcto tras un marcador narrativo sin
-cantidad en esa línea. Ambas permanecen no interpretadas: son falsos negativos
-de extracción observados, no errores matemáticos demostrados ni motivos para
-retocar el verificador después de test.
+Las 162 solicitudes consumieron 25377 tokens de entrada y 22125 de salida,
+sin tokens de razonamiento reportados: 341,14 s y USD 0,0905151; con controles,
+USD 0,0935116. La tarifa capturada fue USD 1,30/2,60 por millón de tokens
+entrada/salida~\cite{routing,pricing}. Un registro global reserva USD 0,02 por
+intento, incluso fallido, con caps de tarifa 1,32/3,96, prompts de hasta 2048
+bytes y margen de 6144 tokens de entrada/1024 de salida. Los 168 intentos,
+incluido un rechazo previo a generar, reservaron USD 3,36; reserva y facturación
+son magnitudes distintas. La ruta del registro queda vinculada a la
+configuración para impedir reinicios accidentales del contador. Su corrección,
+probada por regresión simulada, no cambió etiquetas, métricas ni verificador.
 
-Las 162 solicitudes externas consumieron 25377 tokens de entrada y 22125 de
-salida, con cero tokens de razonamiento reportados; sumaron 341,14 s y
-USD 0,0905151. Con los cinco controles, el costo reportado fue USD 0,0935116.
-Se registraron 168 intentos incluyendo el rechazo previo a generar: reserva
-conservadora total de USD 3,36, por debajo del máximo autorizado. Todas las
-respuestas y costos son verificables sin repetir llamadas pagadas.
+\section{Reproducción}
+El paquete autocontenido incluye código, pruebas, tareas, SFT/DPO, respuestas,
+metadatos e informe. El núcleo usa biblioteca estándar; Matplotlib 3.11.2 y sus
+dependencias están fijados para generar figuras. Los manifiestos SHA-256
+identifican datos, configuración y código; se preservan versiones y recálculos.
+Las pruebas cubren referencias independientes, equivalencias, ataques,
+separación de grupos, reanudación y procedencia SFT/DPO.
 
-La revisión independiente encontró que cambiar accidentalmente la ruta del
-registro presupuestario podía reiniciar el contador al reanudar una corrida.
-Se vinculó esa ruta a la configuración y se añadió una regresión simulada.
-El código exacto de la inferencia anterior permanece en su snapshot; el
-recálculo con el adaptador corregido produjo etiquetas y métricas idénticas.
-Los cuatro módulos normativos, el verificador 9 y los prompts no cambiaron.
-
-\section{Reproducción y límites}
-El código central usa la biblioteca estándar. Las pruebas incluyen fixtures
-independientes, equivalencias, ataques al parser, referencias visibles,
-disjunción de grupos, reanudación y procedencia SFT/DPO. Los manifiestos
-SHA-256 fijan datos, configuración y cuatro módulos normativos. Se conservan
-versiones anteriores y registros de recálculo. Las figuras usan Matplotlib
-3.11.2 en un grupo de dependencias opcional fijado en el lockfile.
-
-La reproducción sin inferencia comprueba hashes, regenera las particiones,
-reconstruye SFT/DPO y vuelve a calcular etiquetas y métricas. No requiere
-Ollama, pesos ni credenciales. Repetir inferencia sí requiere los modelos y
-backend documentados; igualdad de semillas no garantiza igualdad bit a bit
-entre hardware o versiones. El costo API local es cero; electricidad no
-medida. La referencia externa usa la API autorizada de OpenRouter; no se realizó
-ningún entrenamiento.
-
-El informe usa el template suministrado por el usuario, conservado en
-\texttt{template/} junto a sus huellas. El paquete reúne los cuatro entregables:
-entorno y tareas; descripción del diseño; datos SFT/DPO; e informe de línea
-base, robustez y calibración. Se acompaña de comandos, manifiesto y mapa de
-evidencia para contrastar contenido y resultados desde una copia aislada,
-sin archivos del repositorio original. La entrega por correo al profesor queda
-a cargo del equipo; no se realizó envío automático.
+La guía incluida permite comprobar hashes, regenerar particiones, reconstruir
+SFT/DPO y recalcular etiquetas, métricas y PDF desde una copia aislada, sin
+pesos ni credenciales. Repetir inferencia requiere los modelos y backends
+identificados; igual semilla no garantiza idénticas respuestas entre versiones
+o hardware. El costo local excluye electricidad. No se realizó entrenamiento.
 
 \begingroup\raggedright
 \begin{thebibliography}{9}
