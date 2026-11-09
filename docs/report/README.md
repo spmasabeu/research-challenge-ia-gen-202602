@@ -64,10 +64,13 @@ del evaluador. Se explican el propósito de calibración, pass@1/pass@3, cobertu
 y el origen de los volúmenes SFT/DPO, conectando secciones sin cambiar resultados.
 PDF y paquete vigentes: `data/units/validation/report-clarity.json`.
 
-Entrega mínima reproducible: `deliveries/challenge-clean/challenge/` y
+Entrega mínima: `deliveries/challenge-clean/challenge/` y
 `deliveries/challenge-clean/challenge.zip`. Se recortan detalles operativos del
 presupuesto externo, identificación del evaluador y reproducción; las rutas del
 informe corresponden a `data/tasks/` y `data/training/`. Se entregan únicamente
-el PDF, código/pruebas, datos, resultados finales y guías. Las fuentes LaTeX,
+el PDF, código/pruebas, datos y guías. Las fuentes LaTeX,
 figuras y el paquete anterior se conservan en el repositorio. Validación vigente:
-`data/units/validation/clean-delivery.json`.
+`data/units/validation/minimal-delivery.json`. Las corridas experimentales y
+`validation.json` se retiraron del ZIP. El informe y REPRODUCING explican que
+recalcular las métricas originales o reconstruir SFT/DPO desde todas las
+generaciones requiere el respaldo del repositorio, enlazado desde README.

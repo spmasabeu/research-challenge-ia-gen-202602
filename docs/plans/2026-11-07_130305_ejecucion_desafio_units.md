@@ -178,3 +178,13 @@ La aceptación del paquete consiste en reproducir tareas, SFT/DPO, métricas y
 costos desde sus archivos, sin requerir recompilar el PDF ni repetir inferencias.
 Los siete bloques offline documentados y las 13 pruebas pasan desde una copia
 aislada con entorno nuevo. Evidencia: `data/units/validation/clean-delivery.json`.
+
+## Restricción al mínimo del enunciado, 2026-11-09
+
+Por instrucción del usuario, `challenge-clean` excluye `results/` y
+`validation.json`. La aceptación del ZIP se limita a instalación/pruebas,
+regeneración de tareas y comprobación de SFT/DPO, con cinco bloques offline
+validados desde copia aislada. Las métricas quedan en el informe y su recálculo
+requiere el respaldo del repositorio enlazado en README. Este alcance sustituye
+la reproducción completa descrita en el apartado anterior. Evidencia de trabajo,
+fuera de la entrega: `data/units/validation/minimal-delivery.json`.

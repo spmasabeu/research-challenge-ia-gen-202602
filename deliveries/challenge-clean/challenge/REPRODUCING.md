@@ -1,8 +1,8 @@
 # Reproducción de la entrega
 
-Trabajar desde la carpeta `challenge/` extraída. Los pasos 1–5 usan archivos
+Trabajar desde la carpeta `challenge/` extraída. Los pasos 1–3 usan archivos
 incluidos y no realizan inferencias. Las nuevas salidas se guardan en un
-directorio temporal para conservar intacta la evidencia entregada.
+directorio temporal para conservar intacta la datos entregados.
 
 ## 1. Comprobar integridad y preparar Python
 
@@ -57,63 +57,48 @@ uv run --no-sync python -m challenge.harness generate --seed 5000 --groups 10 --
 `--groups 10` genera diez problemas por cada familia, con tres variantes cada
 uno, es decir, 90 tareas. Esos datos nuevos no reemplazan el test entregado.
 
-## 3. Reconstruir SFT y DPO
+## 3. Cargar y comprobar SFT/DPO
 
-```bash
-uv run --no-sync python -m challenge.harness check-derived --dataset data/tasks --teacher results/generation/teacher --audits data/training/audits/*.jsonl --negative-tasks results/generation/negatives/tasks.jsonl --negative-run results/generation/negatives --out data/training
-uv run --no-sync python -m challenge.harness derive --dataset data/tasks --teacher results/generation/teacher --audits data/training/audits/*.jsonl --negative-tasks results/generation/negatives/tasks.jsonl --negative-run results/generation/negatives --out "$units_check_dir/training"
-diff -qr data/training "$units_check_dir/training"
-```
-
-Se esperan 121 soluciones SFT y 35 pares DPO, idénticos a los entregados,
-incluidas sus auditorías y procedencia. Las respuestas nuevas necesitarían
-auditorías nuevas; los juicios existentes solo corresponden a los textos cuyos
-identificadores y huellas están registrados.
-
-## 4. Recalcular la línea base local y la referencia externa
-
-```bash
-uv run --no-sync python -m challenge.harness compare --dataset data/tasks --runs results/baseline --out "$units_check_dir/comparison.json"
-cmp results/baseline/comparison.json "$units_check_dir/comparison.json"
-uv run --no-sync python -m challenge.frontier score --tasks data/tasks/private/test.jsonl --run results/reference --out "$units_check_dir/reference"
-diff -qr results/reference/scores "$units_check_dir/reference"
-```
-
-La comparación local comprueba configuración, integridad y las etiquetas y
-métricas guardadas de los cuatro modelos. La evaluación externa verifica los
-162 intentos y vuelve a calcular etiquetas, métricas y costo de test. Ninguno
-de estos comandos se conecta con un proveedor.
-
-## 5. Recalcular calibración y costos
+Estos archivos contienen los datos finales. Se pueden cargar y verificar contra
+las tareas de train sin acceder a las generaciones originales:
 
 ```bash
 uv run --no-sync python - <<'PY'
 import json
 from pathlib import Path
-from challenge.evaluate import summarize
 from challenge.models import read_rows
+from challenge.verifier import verify
 
-root = Path("results/calibration")
-labels, summary = summarize(read_rows(root / "tasks.jsonl"),
-                            read_rows(root / "responses.jsonl"))
-assert labels == read_rows(root / "scores/labels.jsonl")
-assert summary == json.loads((root / "scores/summary.json").read_text())
-print("Calibración:", summary["all"]["pass_at_k"])
+train = {row["id"]: row for row in read_rows(Path("data/tasks/private/train.jsonl"))}
+sft = read_rows(Path("data/training/sft.jsonl"))
+dpo = read_rows(Path("data/training/dpo.jsonl"))
+stats = json.loads(Path("data/training/stats.json").read_text())
+assert len(sft) == stats["sft"] == 121
+assert len(dpo) == stats["dpo"] == 35
 
-reference = Path("results/reference")
-test = read_rows(reference / "responses.jsonl")
-controls = read_rows(reference / "controls.jsonl")
-test_cost = sum(row["result"]["usage"]["cost"] for row in test)
-control_cost = sum(row["result"]["usage"]["cost"] for row in controls)
-assert abs(test_cost - 0.0905151) < 1e-10
-assert abs(control_cost - 0.0029965) < 1e-10
-print("Costo USD, test + controles:", test_cost + control_cost)
+for row in sft:
+    task = train[row["task_id"]]
+    assert row["prompt"] == task["prompt"]
+    assert verify(task, row["completion"])["reward"] == 1.0
+
+for row in dpo:
+    task = train[row["task_id"]]
+    assert row["prompt"] == task["prompt"]
+    assert verify(task, row["chosen"])["reward"] == 1.0
+    assert verify(task, row["rejected"])["status"] in {"numeric", "unit"}
+
+print("121 soluciones SFT y 35 pares DPO válidos, todos de train")
 PY
 ```
 
-La calibración debe reproducir pass@1 = 48,89%, pass@3 = 65,56% y cobertura
-95,56%. El costo externo total es USD 0,0935116. Un `diff` o `cmp` sin salida
-y con retorno cero indica igualdad.
+La comprobación confirma pertenencia a train y clasificación del resultado final,
+no la coherencia de todos los pasos del razonamiento. Las revisiones registradas
+están en `data/training/audits/` y su alcance se explica en el informe.
+
+El ZIP permite usar estos datos, pero no reconstruir su selección desde todas
+las respuestas generadas ni recalcular las métricas experimentales originales.
+Para ello se necesita el respaldo del repositorio enlazado desde README.
+Un `diff` sin salida y con retorno cero en el paso 2 indica regeneración idéntica.
 
 ## Inferencias nuevas, opcionales
 
@@ -132,5 +117,5 @@ se registran, pero las respuestas pueden variar entre motores o hardware.
 
 La inferencia externa requiere una credencial OpenRouter y presupuesto propios.
 Su interfaz se describe con `python -m challenge.frontier run --help`; usar un
-destino y registro presupuestario nuevos para una ejecución nueva. Los archivos
-incluidos se utilizan únicamente para recalcular y no para reanudar llamadas.
+destino y registro presupuestario nuevos para una ejecución nueva. Las generaciones nuevas deben mantenerse separadas de los datos entregados y
+requieren su propia evaluación y auditoría.

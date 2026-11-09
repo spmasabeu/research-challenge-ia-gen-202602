@@ -349,20 +349,19 @@ y el total con controles fue USD 0,0935116. La tarifa capturada era
 USD 1,30/2,60 por millón de tokens de entrada/salida~\cite{routing,pricing}.
 El gasto efectivo quedó por debajo del presupuesto autorizado de USD 5.
 
-\section{Reproducción}
+\section{Uso y reproducción de tareas}
 El paquete incluye el informe, código y pruebas, tareas en \path{data/tasks/}
-y soluciones SFT y pares DPO en \path{data/training/}. Las respuestas y
-configuraciones de \path{results/} permiten recalcular la línea base y la
-calibración, mientras las generaciones originales y auditorías permiten
-reconstruir la selección SFT/DPO. Se conservan estos resultados como evidencia
-necesaria para contrastar las cifras, sin incluir el historial de desarrollo.
+y soluciones SFT y pares DPO en \path{data/training/}, con sus metadatos de
+procedencia y selección. README explica el contenido y el uso inicial, mientras
+REPRODUCING permite comprobar integridad, regenerar las particiones y verificar
+las respuestas de los datos derivados con Python 3.12, sin pesos ni credenciales.
 
-README explica el contenido y el uso inicial, y REPRODUCING detalla cómo
-comprobar integridad, regenerar tareas y reproducir datos derivados y métricas
-desde una copia aislada. El código usa la biblioteca estándar de Python 3.12
-y no requiere pesos ni credenciales para estas comprobaciones. Una nueva
-inferencia sí necesita los modelos y motores identificados y puede dar respuestas
-distintas aun con las mismas semillas, sin equivaler al recálculo aquí descrito.
+Las métricas de línea base y calibración se presentan en este informe. Su
+recálculo, al igual que reconstruir la selección SFT/DPO desde todas las
+generaciones, requiere las respuestas originales conservadas en el repositorio
+del estudio, enlazado desde README. Una nueva inferencia necesita los modelos
+y motores identificados y puede producir respuestas distintas aun con las
+mismas semillas.
 
 \begingroup\raggedright
 \begin{thebibliography}{9}

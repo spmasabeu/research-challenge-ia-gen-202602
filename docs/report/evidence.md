@@ -56,7 +56,8 @@ explícita de particiones y definiciones para lectores sin contexto del reposito
 Comprobaciones de cantidades y artefactos: `data/units/validation/report-clarity.json`.
 
 Entrega mínima vigente: `deliveries/challenge-clean/challenge.zip`. Mantiene
-el mismo dataset, textos SFT/DPO y métricas con rutas limpias y evidencia final
-seleccionada. Las referencias de procedencia apuntan a las nuevas carpetas de
-generación. Los registros anteriores corresponden a sus snapshots históricos;
-la verificación actual está en `data/units/validation/clean-delivery.json`.
+el mismo dataset y textos SFT/DPO con rutas limpias y métricas documentadas en
+el informe. Las corridas y generaciones originales se consultan en el respaldo
+del repositorio enlazado desde README, y no forman parte del ZIP. Los registros
+anteriores corresponden a sus snapshots históricos; la verificación actual está
+en `data/units/validation/minimal-delivery.json`.

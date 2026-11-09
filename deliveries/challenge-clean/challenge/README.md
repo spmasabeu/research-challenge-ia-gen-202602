@@ -5,7 +5,7 @@ Fernando Fajardo, Sebastian Palma, Benjamin Prieto y Rodrigo Ugarte.
 
 El [informe](informe.pdf) describe el problema, la generación del dataset, sus
 particiones y niveles, los resultados y las limitaciones. Este paquete contiene
-los archivos necesarios para usar el entorno y comprobar esos resultados.
+los archivos necesarios para usar el entorno y los datos derivados.
 
 | Contenido | Ubicación |
 | --- | --- |
@@ -16,7 +16,7 @@ los archivos necesarios para usar el entorno y comprobar esos resultados.
 | Semillas, parámetros, unidades y modelos | `data/tasks/{protocol,units,models}.json` |
 | 121 soluciones SFT y 35 pares DPO | `data/training/{sft,dpo}.jsonl` |
 | Revisión de soluciones y cantidades por familia/nivel | `data/training/audits/`, `data/training/stats.json` |
-| Instrucciones y comprobación de la entrega | `REPRODUCING.md`, `validation.json`, `manifest.json` |
+| Instrucciones e integridad | `REPRODUCING.md`, `manifest.json` |
 
 Las 180 tareas representan 60 problemas físicos, cada uno con tres niveles.
 Train/eval/test contienen 90/36/54 tareas. Para usar el entorno solo se necesita
@@ -52,24 +52,20 @@ Al modelo se envía únicamente `task["prompt"]`. `answer_si` es el resultado
 esperado en el Sistema Internacional y se reserva para evaluar. Un prompt no
 registrado con `load_tasks` produce un error de integración.
 
-## Por qué se incluye `results/`
-
-| Carpeta | Qué permite comprobar |
-| --- | --- |
-| `baseline/` | Recalcular la línea base de los cuatro modelos locales a partir de sus respuestas y configuración. |
-| `reference/` | Recalcular la referencia externa y comprobar los costos de test y controles sin llamadas pagadas. |
-| `calibration/` | Recalcular las métricas de las pruebas preliminares del modelo objetivo. |
-| `generation/` | Reconstruir SFT/DPO a partir de las respuestas originales del profesor y del objetivo y las auditorías. |
-
-Cada corrida conserva respuestas, metadatos y los resultados finales pertinentes.
-En la referencia externa se incluye `runner.py` para verificar la huella del
-ejecutor que produjo las respuestas. No es un segundo evaluador.
+## Datos derivados y alcance
 
 SFT contiene `task_id`, `prompt`, `completion` y procedencia. DPO contiene
 `task_id`, `prompt`, `chosen`, `rejected` y procedencia de ambas respuestas.
-Los identificadores de tarea enlazan con train, y las fuentes `teacher` y
-`negatives` remiten a las carpetas homónimas de `results/generation/`.
+Los identificadores enlazan con las tareas de train. El modelo generador,
+filtrado, auditorías y cantidades se describen en el informe y en
+`data/training/stats.json`.
 
-Las instrucciones completas están en [REPRODUCING.md](REPRODUCING.md).
-Recalcular reproduce las cifras incluidas; generar respuestas nuevas puede
-producir resultados distintos y requiere nuevas auditorías. No se entrenaron modelos.
+[REPRODUCING.md](REPRODUCING.md) permite regenerar tareas, evaluar respuestas
+y comprobar los SFT/DPO entregados. Las respuestas originales de los experimentos
+se conservan como [respaldo en el repositorio](https://github.com/spmasabeu/research-challenge-ia-gen-202602/tree/33074714d1dada71269c6de57badc06279b30f9c/deliveries/challenge-clean/challenge/results),
+incluidas las fuentes `teacher` y `negatives` citadas en la procedencia. Ese
+respaldo se necesita para recalcular la línea base original o reconstruir la
+selección SFT/DPO desde todas las generaciones.
+
+La entrega incluye los datasets finales y el informe de resultados, sin las
+corridas experimentales. No se entrenaron modelos.

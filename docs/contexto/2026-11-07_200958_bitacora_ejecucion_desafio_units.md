@@ -482,3 +482,24 @@ ZIP: 74 archivos frente a 215 del paquete anterior; 860118 bytes.
 SHA-256: 3be5f0e9948a3006332c5b6440bbd8afbc6e83107cde60ad0f835e8e853cf999. Verificación CRC y comparación byte a byte con la carpeta.
 Los 216 archivos protegidos del paquete anterior y su ZIP permanecen intactos.
 No se realizaron inferencias nuevas ni llamadas pagadas.
+
+## ZIP limitado al enunciado, 2026-11-09
+
+Usuario pide retirar results/ y validation.json de challenge-clean y mantener
+únicamente informe, código y datasets con instrucciones. Se actualizan README,
+REPRODUCING y sección final del informe: el paquete permite instalar, probar,
+regenerar tareas y comprobar SFT/DPO, mientras el recálculo de métricas y la
+reconstrucción desde generaciones originales requieren el respaldo del
+repositorio. README enlaza el commit inmutable que conserva esas corridas.
+
+No se modifican código ni datos. Pasan los cinco bloques offline documentados
+desde copia aislada y entorno nuevo, incluidas 13 pruebas, regeneración idéntica
+y comprobación de las 121 SFT y 35 DPO contra train. PDF de siete páginas sin
+advertencias y sección revisada visualmente. Evidencia fuera del paquete:
+data/units/validation/minimal-delivery.json y log correspondiente.
+
+ZIP actual: 35 archivos, 474469 bytes; CRC, extracción,
+manifest y comparación byte a byte con la carpeta correctos. SHA-256:
+3066116975de405a5c084d2ad6448aa1aa8ff77875d2b1956b7d18ed8dbf0ecb. results/ y validation.json no aparecen en el ZIP.
+El paquete antiguo deliveries/challenge/ y su ZIP permanecen intactos.
+Cero inferencias nuevas y cero llamadas pagadas.
