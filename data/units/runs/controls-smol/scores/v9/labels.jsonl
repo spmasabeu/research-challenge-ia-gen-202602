@@ -1,0 +1,5 @@
+{"task_id": "1a585df3e4c87c24268c-hard", "sample_index": 0, "family": "speed", "level": "hard", "structure": "direct", "status": "numeric", "reward": 0.0, "value": 2.45872, "unit": "km/h", "value_si": 0.6829777777777778, "backend_incomplete": false, "truncated": false}
+{"task_id": "03f4915340ca4a3be97b-hard", "sample_index": 0, "family": "energy", "level": "hard", "structure": "direct", "status": "unparsed", "reward": 0.0, "backend_incomplete": false, "truncated": false}
+{"task_id": "c98ae04b6100baef7091-easy", "sample_index": 0, "family": "luminosity", "level": "easy", "structure": "direct", "status": "numeric", "reward": 0.0, "value": 4.685936, "unit": "W", "value_si": 4.685936, "backend_incomplete": false, "truncated": false}
+{"task_id": "c98ae04b6100baef7091-medium", "sample_index": 0, "family": "luminosity", "level": "medium", "structure": "direct", "status": "unparsed", "reward": 0.0, "backend_incomplete": false, "truncated": false}
+{"task_id": "c98ae04b6100baef7091-hard", "sample_index": 0, "family": "luminosity", "level": "hard", "structure": "direct", "status": "unparsed", "reward": 0.0, "backend_incomplete": false, "truncated": false}

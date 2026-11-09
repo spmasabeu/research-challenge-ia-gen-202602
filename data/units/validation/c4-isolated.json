@@ -1,0 +1,74 @@
+{
+  "copied_only": [
+    "src",
+    "tests",
+    "final-v1"
+  ],
+  "outside_repo": true,
+  "commands": [
+    {
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--isolated",
+        "--python",
+        "3.12",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "1a585df3e4c87c24268c-easy 0 None None 0.0\n1a585df3e4c87c24268c-easy 1 None None 0.0\n1a585df3e4c87c24268c-easy 2 None None 0.0\n1a585df3e4c87c24268c-easy 0 4 stop 0.0\n1a585df3e4c87c24268c-easy 1 4 stop 0.0\n1a585df3e4c87c24268c-easy 2 4 stop 0.0\n",
+      "stderr": "test_attacks_and_ambiguity (test_challenge.ChallengeTests.test_attacks_and_ambiguity) ... ok\ntest_backend_incomplete_and_memory_error_preserve_attempts (test_challenge.ChallengeTests.test_backend_incomplete_and_memory_error_preserve_attempts) ... ok\ntest_determinism_pairing_and_reference_from_visible_data (test_challenge.ChallengeTests.test_determinism_pairing_and_reference_from_visible_data) ... ok\ntest_equivalences_and_tolerance (test_challenge.ChallengeTests.test_equivalences_and_tolerance) ... ok\ntest_fixed_references (test_challenge.ChallengeTests.test_fixed_references) ... ok\ntest_frozen_dataset_regenerates_and_detects_tampering (test_challenge.ChallengeTests.test_frozen_dataset_regenerates_and_detects_tampering) ... ok\ntest_incremental_run_resume_and_refuse_changed_config (test_challenge.ChallengeTests.test_incremental_run_resume_and_refuse_changed_config) ... ok\ntest_known_metrics_keep_unparsed_separate (test_challenge.ChallengeTests.test_known_metrics_keep_unparsed_separate) ... ok\ntest_reward_registration (test_challenge.ChallengeTests.test_reward_registration) ... ok\ntest_splits_keep_physical_groups_and_structures (test_challenge.ChallengeTests.test_splits_keep_physical_groups_and_structures) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.108s\n\nOK\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--isolated",
+        "--python",
+        "3.12",
+        "python",
+        "-m",
+        "challenge.harness",
+        "check",
+        "--dataset",
+        "dataset"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"train\": 90, \"eval\": 36, \"test\": 54}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--isolated",
+        "--python",
+        "3.12",
+        "python",
+        "-m",
+        "challenge.harness",
+        "freeze",
+        "--out",
+        "regenerated",
+        "--exclusions",
+        "dataset/exclusions.json",
+        "--models",
+        "dataset/models.json"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "byte_identical_files": 15,
+  "models_or_network_required_for_check": false
+}

@@ -1,0 +1,77 @@
+% Compilar con pdfLaTeX (dos pasadas para resolver las citas).
+\documentclass[10pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\IfFileExists{spanish.ldf}{\usepackage[spanish]{babel}}{}
+\usepackage[left=2.65cm,right=2.2cm,top=1.55cm,bottom=2.2cm]{geometry}
+\usepackage{graphicx,xcolor}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\pagestyle{plain}
+\newcommand{\campo}[1]{\textcolor[gray]{0.36}{\textit{[#1]}}}
+
+% Datos de la entrega: editar aquí.
+\newcommand{\universidad}{Pontificia Universidad Católica de Chile}
+\newcommand{\escuela}{Escuela de Ingeniería}
+\newcommand{\curso}{IIC-3694 Inteligencia Artificial Generativa}
+\newcommand{\titulo}{\campo{Título del proyecto}}
+\newcommand{\entrega}{Entrega 1 --- Propuesta inicial}
+\newcommand{\autores}{\campo{Nombre y apellido de cada integrante}}
+\newcommand{\fecha}{\campo{día de mes de año}}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{minipage}[c]{1.95cm}
+  \centering\includegraphics[height=2.4cm]{escudo-uc.png}
+\end{minipage}\hspace{0.35cm}%
+\begin{minipage}[c]{\dimexpr\linewidth-2.4cm\relax}
+  \universidad\\
+  \escuela\\
+  \curso
+\end{minipage}
+
+\begin{center}
+  {\large \titulo\par}
+  \hrule
+  \vspace{5pt}
+  \entrega\par
+  \autores\enspace$\cdot$\enspace\fecha\par
+  \vspace{3pt}
+  \hrule
+\end{center}
+
+\section{Introducción y pregunta de investigación}
+\campo{Describe el problema y por qué vale la pena estudiarlo. Formula una pregunta que puedas responder con los experimentos del proyecto.}
+
+\section{Revisión bibliográfica}
+\campo{Explica qué problema aborda el primer trabajo}~\cite{trabajo1}.
+\campo{Contrasta su método o sus resultados con los del segundo}~\cite{trabajo2}.
+\campo{Identifica qué aspecto queda abierto y cómo orienta tu propuesta.}
+
+\section{Propuesta de investigación}
+\campo{Plantea una hipótesis tentativa, el objetivo del estudio y el resultado que permitiría apoyar o cuestionar esa hipótesis.}
+
+\section{Entorno y diseño experimental}
+\campo{Describe la tarea, el modelo base, los datos, las particiones y los niveles de dificultad. Indica cómo el verificador determina si una respuesta es correcta.}
+
+\campo{Explica cómo compararás el modelo base, solo SFT, SFT seguido de RL, solo RL y DPO con un presupuesto de cómputo comparable. Define el algoritmo de RL, las semillas y el valor de k para reportar pass@1 y pass@k por dificultad.}
+
+% Para la entrega 2, cambia el campo de entrega y descomenta estas secciones.
+% \section{Implementación inicial}
+% \campo{Describe qué componentes están implementados y cómo reproducir la evaluación.}
+% \section{Resultados preliminares}
+% \campo{Reporta la línea base antes de entrenar. Inserta las primeras curvas de recompensa e interpreta si el entorno entrega señal de aprendizaje.}
+% \section{Iteraciones y próximos pasos}
+% \campo{Documenta un problema observado en las trazas, la corrección y su efecto.}
+
+% Para el paper final, trasladar el contenido al formato que publique el curso.
+% Incluir diagrama de bloques, resultados con el verificador final, auditoría
+% manual de trazas exitosas, ciclo de iteración y conclusiones.
+\renewcommand{\refname}{Referencias}
+\begin{thebibliography}{9}
+  \bibitem{trabajo1} \campo{Autores}. \campo{Título del primer trabajo}. \campo{Revista o conferencia}, \campo{año}.
+  \bibitem{trabajo2} \campo{Autores}. \campo{Título del segundo trabajo}. \campo{Revista o conferencia}, \campo{año}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,4 @@
+$ rtk proxy uv sync --locked
+exit=0
+Resolved 1 package in 2ms
+Checked in 0.01ms

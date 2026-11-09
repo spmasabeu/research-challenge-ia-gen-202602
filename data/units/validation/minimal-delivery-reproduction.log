@@ -1,0 +1,22 @@
+Integridad correcta
+Using CPython 3.12.13
+Creating virtual environment at: .venv
+Resolved 1 package in 4ms
+Checked in 0.00ms
+.1a585df3e4c87c24268c-easy 0 None None 0.0
+1a585df3e4c87c24268c-easy 1 None None 0.0
+1a585df3e4c87c24268c-easy 2 None None 0.0
+.....1a585df3e4c87c24268c-easy 0 4 stop 0.0
+1a585df3e4c87c24268c-easy 1 4 stop 0.0
+1a585df3e4c87c24268c-easy 2 4 stop 0.0
+.....8d48f42b0e71f3dc9f07-easy 0 8 0.001
+8d48f42b0e71f3dc9f07-easy 1 8 0.001
+8d48f42b0e71f3dc9f07-easy 2 8 0.001
+.8d48f42b0e71f3dc9f07-easy 0 None 0
+.
+----------------------------------------------------------------------
+Ran 13 tests in 0.170s
+
+OK
+{"train": 90, "eval": 36, "test": 54}
+121 soluciones SFT y 35 pares DPO válidos, todos de train

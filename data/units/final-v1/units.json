@@ -1,0 +1,38 @@
+{
+  "m/s": [
+    "speed",
+    1
+  ],
+  "km/h": [
+    "speed",
+    0.2777777777777778
+  ],
+  "J": [
+    "energy",
+    1
+  ],
+  "kJ": [
+    "energy",
+    1000
+  ],
+  "erg": [
+    "energy",
+    1e-07
+  ],
+  "W": [
+    "luminosity",
+    1
+  ],
+  "kW": [
+    "luminosity",
+    1000
+  ],
+  "erg/s": [
+    "luminosity",
+    1e-07
+  ],
+  "Lsun": [
+    "luminosity",
+    3.828e+26
+  ]
+}

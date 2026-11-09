@@ -1,0 +1,15 @@
+{
+  "ruff": "0.17.4",
+  "mypy": "2.4.1",
+  "bandit": "1.9.4",
+  "ruff_passed": true,
+  "mypy_passed": true,
+  "bandit_medium_high": 0,
+  "bandit_low": 10,
+  "bandit_exclusions": "dos B310 por URLs fijas, avisos bajos por assert",
+  "commands": [
+    "uvx --from ruff==0.17.4 ruff check code/src/challenge code/tests report/render.py",
+    "uvx --from mypy==2.4.1 mypy --ignore-missing-imports code/src/challenge code/tests report/render.py",
+    "uvx --from bandit==1.9.4 bandit -r code/src/challenge report/render.py -ll"
+  ]
+}

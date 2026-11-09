@@ -1,0 +1,11 @@
+{
+  "source": "../pilot-v1-qwen",
+  "inherited_rows": 219,
+  "inherited_prefix_sha256": "8d78eb2cc1d7bdf7a250865daeefa8512b59dea2fa7e5d7944d47b2364f664a9",
+  "source_runner_sha256": "985702a9d7a9452c3961682cbfa4d0d7f151e1cc31c0762eecfbf073e5c32096",
+  "change": "conservar done:false como backend incompleto, sin inferir error matemático; monitor PS no debe perder respuesta",
+  "diagnostic_inherited_rows": 1,
+  "missing_to_infer": 50,
+  "sampling_changed": false,
+  "first_failed_raw_response_lost": true
+}

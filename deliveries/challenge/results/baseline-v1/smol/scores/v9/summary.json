@@ -1,0 +1,380 @@
+{
+  "all": {
+    "tasks": 54,
+    "responses": 162,
+    "n": 3,
+    "statuses": {
+      "unparsed": 124,
+      "numeric": 33,
+      "correct": 5
+    },
+    "coverage": 0.23456790123456794,
+    "pass_at_k": {
+      "1": 0.030864197530864203,
+      "3": 0.07407407407407407
+    },
+    "pass_at_k_upper_bound": {
+      "1": 0.7962962962962963,
+      "3": 1.0
+    },
+    "backend_incomplete": 1,
+    "truncated": 10
+  },
+  "family": {
+    "energy": {
+      "tasks": 18,
+      "responses": 54,
+      "n": 3,
+      "statuses": {
+        "unparsed": 42,
+        "numeric": 12
+      },
+      "coverage": 0.2222222222222222,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.7777777777777778,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "luminosity": {
+      "tasks": 18,
+      "responses": 54,
+      "n": 3,
+      "statuses": {
+        "numeric": 8,
+        "unparsed": 46
+      },
+      "coverage": 0.14814814814814814,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.8518518518518519,
+        "3": 1.0
+      },
+      "backend_incomplete": 1,
+      "truncated": 8
+    },
+    "speed": {
+      "tasks": 18,
+      "responses": 54,
+      "n": 3,
+      "statuses": {
+        "unparsed": 36,
+        "numeric": 13,
+        "correct": 5
+      },
+      "coverage": 0.33333333333333337,
+      "pass_at_k": {
+        "1": 0.09259259259259262,
+        "3": 0.2222222222222222
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.7592592592592593,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 2
+    }
+  },
+  "level": {
+    "easy": {
+      "tasks": 18,
+      "responses": 54,
+      "n": 3,
+      "statuses": {
+        "unparsed": 41,
+        "numeric": 12,
+        "correct": 1
+      },
+      "coverage": 0.2407407407407407,
+      "pass_at_k": {
+        "1": 0.01851851851851852,
+        "3": 0.05555555555555555
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.7777777777777778,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 1
+    },
+    "hard": {
+      "tasks": 18,
+      "responses": 54,
+      "n": 3,
+      "statuses": {
+        "numeric": 10,
+        "unparsed": 43,
+        "correct": 1
+      },
+      "coverage": 0.20370370370370372,
+      "pass_at_k": {
+        "1": 0.01851851851851852,
+        "3": 0.05555555555555555
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.8148148148148149,
+        "3": 1.0
+      },
+      "backend_incomplete": 1,
+      "truncated": 6
+    },
+    "medium": {
+      "tasks": 18,
+      "responses": 54,
+      "n": 3,
+      "statuses": {
+        "numeric": 11,
+        "unparsed": 40,
+        "correct": 3
+      },
+      "coverage": 0.2592592592592593,
+      "pass_at_k": {
+        "1": 0.05555555555555555,
+        "3": 0.1111111111111111
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.7962962962962963,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 3
+    }
+  },
+  "structure": {
+    "direct": {
+      "tasks": 27,
+      "responses": 81,
+      "n": 3,
+      "statuses": {
+        "unparsed": 62,
+        "numeric": 16,
+        "correct": 3
+      },
+      "coverage": 0.23456790123456794,
+      "pass_at_k": {
+        "1": 0.037037037037037035,
+        "3": 0.07407407407407407
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.8024691358024691,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 5
+    },
+    "sum": {
+      "tasks": 27,
+      "responses": 81,
+      "n": 3,
+      "statuses": {
+        "unparsed": 62,
+        "numeric": 17,
+        "correct": 2
+      },
+      "coverage": 0.23456790123456794,
+      "pass_at_k": {
+        "1": 0.02469135802469136,
+        "3": 0.07407407407407407
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.7901234567901235,
+        "3": 1.0
+      },
+      "backend_incomplete": 1,
+      "truncated": 5
+    }
+  },
+  "family_level": {
+    "energy/easy": {
+      "tasks": 6,
+      "responses": 18,
+      "n": 3,
+      "statuses": {
+        "unparsed": 12,
+        "numeric": 6
+      },
+      "coverage": 0.33333333333333337,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.6666666666666666,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "energy/hard": {
+      "tasks": 6,
+      "responses": 18,
+      "n": 3,
+      "statuses": {
+        "unparsed": 14,
+        "numeric": 4
+      },
+      "coverage": 0.2222222222222222,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.7777777777777778,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "energy/medium": {
+      "tasks": 6,
+      "responses": 18,
+      "n": 3,
+      "statuses": {
+        "unparsed": 16,
+        "numeric": 2
+      },
+      "coverage": 0.11111111111111116,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.888888888888889,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "luminosity/easy": {
+      "tasks": 6,
+      "responses": 18,
+      "n": 3,
+      "statuses": {
+        "numeric": 4,
+        "unparsed": 14
+      },
+      "coverage": 0.2222222222222222,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.7777777777777778,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "luminosity/hard": {
+      "tasks": 6,
+      "responses": 18,
+      "n": 3,
+      "statuses": {
+        "unparsed": 17,
+        "numeric": 1
+      },
+      "coverage": 0.05555555555555558,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.9444444444444445,
+        "3": 1.0
+      },
+      "backend_incomplete": 1,
+      "truncated": 5
+    },
+    "luminosity/medium": {
+      "tasks": 6,
+      "responses": 18,
+      "n": 3,
+      "statuses": {
+        "unparsed": 15,
+        "numeric": 3
+      },
+      "coverage": 0.16666666666666663,
+      "pass_at_k": {
+        "1": 0.0,
+        "3": 0.0
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.8333333333333334,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 3
+    },
+    "speed/easy": {
+      "tasks": 6,
+      "responses": 18,
+      "n": 3,
+      "statuses": {
+        "unparsed": 15,
+        "numeric": 2,
+        "correct": 1
+      },
+      "coverage": 0.16666666666666663,
+      "pass_at_k": {
+        "1": 0.05555555555555556,
+        "3": 0.16666666666666666
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.888888888888889,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 1
+    },
+    "speed/hard": {
+      "tasks": 6,
+      "responses": 18,
+      "n": 3,
+      "statuses": {
+        "numeric": 5,
+        "unparsed": 12,
+        "correct": 1
+      },
+      "coverage": 0.33333333333333337,
+      "pass_at_k": {
+        "1": 0.05555555555555556,
+        "3": 0.16666666666666666
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.7222222222222223,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 1
+    },
+    "speed/medium": {
+      "tasks": 6,
+      "responses": 18,
+      "n": 3,
+      "statuses": {
+        "numeric": 6,
+        "unparsed": 9,
+        "correct": 3
+      },
+      "coverage": 0.5,
+      "pass_at_k": {
+        "1": 0.16666666666666666,
+        "3": 0.3333333333333333
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.6666666666666666,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  }
+}

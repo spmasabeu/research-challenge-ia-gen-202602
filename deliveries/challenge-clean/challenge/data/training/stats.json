@@ -1,0 +1,802 @@
+{
+  "teacher": {
+    "all": {
+      "tasks": 90,
+      "responses": 360,
+      "n": 4,
+      "statuses": {
+        "correct": 193,
+        "numeric": 154,
+        "unparsed": 13
+      },
+      "coverage": 0.9638888888888889,
+      "pass_at_k": {
+        "1": 0.5361111111111111,
+        "3": 0.6805555555555556
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.5722222222222222,
+        "3": 0.7166666666666667
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "family": {
+      "energy": {
+        "tasks": 30,
+        "responses": 120,
+        "n": 4,
+        "statuses": {
+          "correct": 68,
+          "numeric": 40,
+          "unparsed": 12
+        },
+        "coverage": 0.9,
+        "pass_at_k": {
+          "1": 0.5666666666666667,
+          "3": 0.7333333333333333
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.6666666666666666,
+          "3": 0.8333333333333334
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "luminosity": {
+        "tasks": 30,
+        "responses": 120,
+        "n": 4,
+        "statuses": {
+          "correct": 35,
+          "numeric": 84,
+          "unparsed": 1
+        },
+        "coverage": 0.9916666666666667,
+        "pass_at_k": {
+          "1": 0.2916666666666667,
+          "3": 0.4166666666666667
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.3,
+          "3": 0.425
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "speed": {
+        "tasks": 30,
+        "responses": 120,
+        "n": 4,
+        "statuses": {
+          "correct": 90,
+          "numeric": 30
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.75,
+          "3": 0.8916666666666667
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.75,
+          "3": 0.8916666666666667
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      }
+    },
+    "level": {
+      "easy": {
+        "tasks": 30,
+        "responses": 120,
+        "n": 4,
+        "statuses": {
+          "correct": 86,
+          "numeric": 34
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.7166666666666667,
+          "3": 0.8416666666666667
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.7166666666666667,
+          "3": 0.8416666666666667
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "hard": {
+        "tasks": 30,
+        "responses": 120,
+        "n": 4,
+        "statuses": {
+          "numeric": 71,
+          "correct": 36,
+          "unparsed": 13
+        },
+        "coverage": 0.8916666666666666,
+        "pass_at_k": {
+          "1": 0.3,
+          "3": 0.4666666666666667
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.4083333333333333,
+          "3": 0.575
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "medium": {
+        "tasks": 30,
+        "responses": 120,
+        "n": 4,
+        "statuses": {
+          "correct": 71,
+          "numeric": 49
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.5916666666666667,
+          "3": 0.7333333333333333
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.5916666666666667,
+          "3": 0.7333333333333333
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      }
+    },
+    "structure": {
+      "direct": {
+        "tasks": 45,
+        "responses": 180,
+        "n": 4,
+        "statuses": {
+          "correct": 104,
+          "numeric": 67,
+          "unparsed": 9
+        },
+        "coverage": 0.95,
+        "pass_at_k": {
+          "1": 0.5777777777777777,
+          "3": 0.6888888888888889
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.6277777777777778,
+          "3": 0.7388888888888889
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "sum": {
+        "tasks": 45,
+        "responses": 180,
+        "n": 4,
+        "statuses": {
+          "numeric": 87,
+          "correct": 89,
+          "unparsed": 4
+        },
+        "coverage": 0.9777777777777777,
+        "pass_at_k": {
+          "1": 0.49444444444444446,
+          "3": 0.6722222222222223
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.5166666666666667,
+          "3": 0.6944444444444444
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      }
+    },
+    "family_level": {
+      "energy/easy": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "correct": 33,
+          "numeric": 7
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.825,
+          "3": 0.975
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.825,
+          "3": 0.975
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "energy/hard": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "unparsed": 12,
+          "numeric": 18,
+          "correct": 10
+        },
+        "coverage": 0.7,
+        "pass_at_k": {
+          "1": 0.25,
+          "3": 0.45
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.55,
+          "3": 0.75
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "energy/medium": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "numeric": 15,
+          "correct": 25
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.625,
+          "3": 0.775
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.625,
+          "3": 0.775
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "luminosity/easy": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "correct": 20,
+          "numeric": 20
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.5,
+          "3": 0.65
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.5,
+          "3": 0.65
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "luminosity/hard": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "correct": 1,
+          "numeric": 38,
+          "unparsed": 1
+        },
+        "coverage": 0.975,
+        "pass_at_k": {
+          "1": 0.025,
+          "3": 0.075
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.05,
+          "3": 0.1
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "luminosity/medium": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "correct": 14,
+          "numeric": 26
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.35,
+          "3": 0.525
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.35,
+          "3": 0.525
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "speed/easy": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "correct": 33,
+          "numeric": 7
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.825,
+          "3": 0.9
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.825,
+          "3": 0.9
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "speed/hard": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "numeric": 15,
+          "correct": 25
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.625,
+          "3": 0.875
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.625,
+          "3": 0.875
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "speed/medium": {
+        "tasks": 10,
+        "responses": 40,
+        "n": 4,
+        "statuses": {
+          "correct": 32,
+          "numeric": 8
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.8,
+          "3": 0.9
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.8,
+          "3": 0.9
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      }
+    }
+  },
+  "negative_model": {
+    "all": {
+      "tasks": 38,
+      "responses": 114,
+      "n": 3,
+      "statuses": {
+        "correct": 89,
+        "unparsed": 6,
+        "numeric": 19
+      },
+      "coverage": 0.9473684210526316,
+      "pass_at_k": {
+        "1": 0.7807017543859649,
+        "3": 0.9736842105263158
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.8333333333333334,
+        "3": 0.9736842105263158
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "family": {
+      "energy": {
+        "tasks": 10,
+        "responses": 30,
+        "n": 3,
+        "statuses": {
+          "correct": 25,
+          "numeric": 5
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.8333333333333334,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.8333333333333334,
+          "3": 1.0
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "luminosity": {
+        "tasks": 7,
+        "responses": 21,
+        "n": 3,
+        "statuses": {
+          "unparsed": 2,
+          "correct": 9,
+          "numeric": 10
+        },
+        "coverage": 0.9047619047619048,
+        "pass_at_k": {
+          "1": 0.42857142857142855,
+          "3": 0.8571428571428571
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.5238095238095238,
+          "3": 0.8571428571428571
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "speed": {
+        "tasks": 21,
+        "responses": 63,
+        "n": 3,
+        "statuses": {
+          "correct": 55,
+          "unparsed": 4,
+          "numeric": 4
+        },
+        "coverage": 0.9365079365079365,
+        "pass_at_k": {
+          "1": 0.8730158730158729,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.9365079365079365,
+          "3": 1.0
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      }
+    },
+    "level": {
+      "easy": {
+        "tasks": 16,
+        "responses": 48,
+        "n": 3,
+        "statuses": {
+          "correct": 43,
+          "unparsed": 2,
+          "numeric": 3
+        },
+        "coverage": 0.9583333333333334,
+        "pass_at_k": {
+          "1": 0.8958333333333334,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.9375,
+          "3": 1.0
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "hard": {
+        "tasks": 6,
+        "responses": 18,
+        "n": 3,
+        "statuses": {
+          "correct": 11,
+          "unparsed": 1,
+          "numeric": 6
+        },
+        "coverage": 0.9444444444444444,
+        "pass_at_k": {
+          "1": 0.6111111111111112,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.6666666666666666,
+          "3": 1.0
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "medium": {
+        "tasks": 16,
+        "responses": 48,
+        "n": 3,
+        "statuses": {
+          "correct": 35,
+          "unparsed": 3,
+          "numeric": 10
+        },
+        "coverage": 0.9375,
+        "pass_at_k": {
+          "1": 0.7291666666666667,
+          "3": 0.9375
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.7916666666666667,
+          "3": 0.9375
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      }
+    },
+    "structure": {
+      "direct": {
+        "tasks": 22,
+        "responses": 66,
+        "n": 3,
+        "statuses": {
+          "correct": 51,
+          "unparsed": 3,
+          "numeric": 12
+        },
+        "coverage": 0.9545454545454546,
+        "pass_at_k": {
+          "1": 0.7727272727272727,
+          "3": 0.9545454545454546
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.8181818181818182,
+          "3": 0.9545454545454546
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "sum": {
+        "tasks": 16,
+        "responses": 48,
+        "n": 3,
+        "statuses": {
+          "correct": 38,
+          "numeric": 7,
+          "unparsed": 3
+        },
+        "coverage": 0.9375,
+        "pass_at_k": {
+          "1": 0.7916666666666667,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.8541666666666666,
+          "3": 1.0
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      }
+    },
+    "family_level": {
+      "energy/easy": {
+        "tasks": 4,
+        "responses": 12,
+        "n": 3,
+        "statuses": {
+          "correct": 12
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 1.0,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 1.0,
+          "3": 1.0
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "energy/hard": {
+        "tasks": 1,
+        "responses": 3,
+        "n": 3,
+        "statuses": {
+          "correct": 1,
+          "numeric": 2
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.33333333333333337,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.33333333333333337,
+          "3": 1.0
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "energy/medium": {
+        "tasks": 5,
+        "responses": 15,
+        "n": 3,
+        "statuses": {
+          "correct": 12,
+          "numeric": 3
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.8,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.8,
+          "3": 1.0
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "luminosity/easy": {
+        "tasks": 4,
+        "responses": 12,
+        "n": 3,
+        "statuses": {
+          "unparsed": 2,
+          "correct": 7,
+          "numeric": 3
+        },
+        "coverage": 0.8333333333333334,
+        "pass_at_k": {
+          "1": 0.5833333333333334,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.75,
+          "3": 1.0
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "luminosity/medium": {
+        "tasks": 3,
+        "responses": 9,
+        "n": 3,
+        "statuses": {
+          "numeric": 7,
+          "correct": 2
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 0.22222222222222224,
+          "3": 0.6666666666666666
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.22222222222222224,
+          "3": 0.6666666666666666
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "speed/easy": {
+        "tasks": 8,
+        "responses": 24,
+        "n": 3,
+        "statuses": {
+          "correct": 24
+        },
+        "coverage": 1.0,
+        "pass_at_k": {
+          "1": 1.0,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 1.0,
+          "3": 1.0
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "speed/hard": {
+        "tasks": 5,
+        "responses": 15,
+        "n": 3,
+        "statuses": {
+          "correct": 10,
+          "unparsed": 1,
+          "numeric": 4
+        },
+        "coverage": 0.9333333333333333,
+        "pass_at_k": {
+          "1": 0.6666666666666667,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.7333333333333334,
+          "3": 1.0
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      },
+      "speed/medium": {
+        "tasks": 8,
+        "responses": 24,
+        "n": 3,
+        "statuses": {
+          "correct": 21,
+          "unparsed": 3
+        },
+        "coverage": 0.875,
+        "pass_at_k": {
+          "1": 0.875,
+          "3": 1.0
+        },
+        "pass_at_k_upper_bound": {
+          "1": 1.0,
+          "3": 1.0
+        },
+        "backend_incomplete": 0,
+        "truncated": 0
+      }
+    }
+  },
+  "teacher_unique_responses": 344,
+  "correct_unique_before_audit": 178,
+  "audited": 178,
+  "audit_rejected": 57,
+  "expanded_cells": [
+    "energy/easy",
+    "energy/hard",
+    "energy/medium",
+    "luminosity/easy",
+    "luminosity/medium",
+    "speed/easy",
+    "speed/hard",
+    "speed/medium"
+  ],
+  "sft": 121,
+  "dpo": 35,
+  "sft_tasks": 46,
+  "dpo_tasks": 25,
+  "dpo_max_pairs_per_task": 2,
+  "dpo_reused_chosen": 0,
+  "dpo_reused_rejected": 0,
+  "sft_by_cell": {
+    "speed/easy": 27,
+    "speed/medium": 25,
+    "speed/hard": 22,
+    "energy/easy": 13,
+    "energy/medium": 10,
+    "energy/hard": 1,
+    "luminosity/easy": 11,
+    "luminosity/medium": 11,
+    "luminosity/hard": 1
+  },
+  "dpo_by_cell": {
+    "speed/hard": 11,
+    "speed/medium": 4,
+    "speed/easy": 3,
+    "energy/easy": 1,
+    "energy/medium": 5,
+    "energy/hard": 1,
+    "luminosity/medium": 6,
+    "luminosity/hard": 1,
+    "luminosity/easy": 3
+  },
+  "input_hashes": {
+    "train": "d29b5a7462ae381b9b5d3cb57ed0cb0d2dea64bf7572953c0344cf5fe14ed1fd",
+    "teacher_metadata": "24c654002f2e20036eca83c9efa06689bdf80f7b23ff4e47aa11f930ca6b7d64",
+    "teacher_responses": "a55a68d7e76ab0a522ceaa508d5b5728e7adc16f16a7571d9fec8456fe9a2e28",
+    "audits": {
+      "audit-energy.jsonl": "026a47c52f3ddc46db10cbd57cba068816b63153defad4c2cae65aebe3064d61",
+      "audit-luminosity.jsonl": "022db516fdc5117c7aa23981647430540e7162f2ea8e96803bfb2f4c7d3f577c",
+      "audit-speed-extra.jsonl": "67c0aa86c7b3092baad8df0ede0c25665311a8b2f915638e83fe00ae731a217b",
+      "audit-speed.jsonl": "59eae484ef20264fffcd09604a0b47115e30f72484f25d9ab2e07a7f93d0f63c"
+    },
+    "negative_tasks": "cd365bc03f105bb74250e037d770f36ce4c42e4f165bf62c3a28c8282faf8f4a",
+    "negative_metadata": "835df1b055f6ef9c8a1cbd86f3a3a587fb2b4af740a630da088b1cde8838a46b",
+    "negative_responses": "5b0537ad35e1e79c93d97e626dc6541d87d4954a7a711c5765e52be9bddb2458"
+  },
+  "derive_source_sha256": "22cc94ac3eabe3b54ffc6295873897b563e4dfff9a25d8d838e0b483a3160a31",
+  "verifier": {
+    "version": "verifier-9",
+    "sha256": "051c6382ff91ea271fe045da2686450be08f695d59f62f685bfbe349ea43df50"
+  },
+  "deduplication": "task+texto sin diferencias de espacios; fuentes repetidas conservadas; emparejar por orden sin producto cartesiano",
+  "audit_limit": "Muestra por celda sin defectos no certifica todas las trazas; celdas con defectos revisadas completas."
+}

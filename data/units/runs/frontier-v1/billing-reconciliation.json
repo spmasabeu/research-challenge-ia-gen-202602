@@ -1,0 +1,13 @@
+{
+  "authorized_cap_usd": 5,
+  "reserved_usd": 3.36,
+  "attempts": 168,
+  "completed_responses": 167,
+  "reported_cost_usd": 0.0935116,
+  "key_usage_before": 0,
+  "key_usage_after": 0.0935116,
+  "key_usage_delta": 0.0935116,
+  "difference_vs_responses": 0.0,
+  "no_purchase_performed": true,
+  "no_extra_inference": true
+}

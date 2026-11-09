@@ -1,0 +1,43 @@
+{
+  "config": {
+    "model": "deepseek/deepseek-v4-pro-0813",
+    "samples": 1,
+    "tasks_sha256": "137bb852cabede55784a5b419c70b300d9e53477fdc0c6c464e32e2ef5abc903",
+    "parameters": {
+      "model": "deepseek/deepseek-v4-pro-0813",
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "max_tokens": 1024,
+      "top_k": 40,
+      "min_p": 0,
+      "reasoning": {
+        "enabled": false
+      },
+      "stream": false,
+      "usage": {
+        "include": true
+      },
+      "provider": {
+        "only": [
+          "deepinfra"
+        ],
+        "allow_fallbacks": false,
+        "require_parameters": true,
+        "max_price": {
+          "prompt": 1.32,
+          "completion": 3.96
+        }
+      }
+    },
+    "runner_sha256": "7ac178339b052e5f9a793af1fbed8f607bcfdad293b40972efb65b869664d9da",
+    "budget_usd": 5,
+    "reservation_per_attempt_usd": 0.02,
+    "seed_base": 42
+  },
+  "created_unix": 1794102981.6216846,
+  "key_limits": {
+    "limit": 5,
+    "limit_remaining": 5,
+    "usage": 0
+  }
+}

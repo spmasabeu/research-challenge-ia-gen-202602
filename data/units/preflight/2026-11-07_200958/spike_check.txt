@@ -1,0 +1,99 @@
+$ rtk proxy uv run --no-project --isolated --python 3.12 python spikes/units/evaluate.py check spikes/units/results
+exit=0
+{
+  "dataset_sha256": "3e8b6e1f43f7e1616cd99cc8df284cc2f202ed15ffb16b2e7469a5d54db25f9e",
+  "models": {
+    "llama3.2-1b": {
+      "model": "llama3.2:1b",
+      "automatic": {
+        "tasks": 90,
+        "responses": 270,
+        "statuses": {
+          "correct": 32,
+          "numeric": 97,
+          "unparsed": 115,
+          "unit": 26
+        },
+        "coverage": 0.5740740740740741,
+        "accuracy_parsed": 0.2064516129032258,
+        "pass_at_k": {
+          "1": 0.11851851851851851,
+          "3": 0.24444444444444444
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.5444444444444444,
+          "3": 0.8555555555555555
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      },
+      "final": {
+        "tasks": 90,
+        "responses": 270,
+        "statuses": {
+          "correct": 32,
+          "numeric": 97,
+          "unparsed": 115,
+          "unit": 26
+        },
+        "coverage": 0.5740740740740741,
+        "accuracy_parsed": 0.2064516129032258,
+        "pass_at_k": {
+          "1": 0.11851851851851851,
+          "3": 0.24444444444444444
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.5444444444444444,
+          "3": 0.8555555555555555
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      },
+      "manual_reviews": 0,
+      "truncated": 0
+    },
+    "qwen3-1.7b": {
+      "model": "qwen3:1.7b",
+      "automatic": {
+        "tasks": 90,
+        "responses": 270,
+        "statuses": {
+          "correct": 191,
+          "numeric": 74,
+          "unparsed": 5
+        },
+        "coverage": 0.9814814814814815,
+        "accuracy_parsed": 0.720754716981132,
+        "pass_at_k": {
+          "1": 0.7074074074074074,
+          "3": 0.8555555555555555
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.7259259259259259,
+          "3": 0.8555555555555555
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      },
+      "final": {
+        "tasks": 90,
+        "responses": 270,
+        "statuses": {
+          "correct": 193,
+          "numeric": 77
+        },
+        "coverage": 1.0,
+        "accuracy_parsed": 0.7148148148148148,
+        "pass_at_k": {
+          "1": 0.7148148148148148,
+          "3": 0.8555555555555555
+        },
+        "pass_at_k_upper_bound": {
+          "1": 0.7148148148148148,
+          "3": 0.8555555555555555
+        },
+        "note": "pass@k mide éxito verificable; unparsed no demuestra fallo de razonamiento. accuracy_parsed es condicional, no un ranking general."
+      },
+      "manual_reviews": 5,
+      "truncated": 0
+    }
+  },
+  "note": "Las cotas reflejan extracciones pendientes, no intervalos de confianza. La vista final conserva las revisiones contextuales documentadas."
+}

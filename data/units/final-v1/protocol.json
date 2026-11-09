@@ -1,0 +1,28 @@
+{
+  "dataset_version": "units-final-1",
+  "generator_version": "units-3",
+  "verifier_version": "verifier-8",
+  "generation_seed": 4301,
+  "split_seed": 4302,
+  "groups_per_family": 20,
+  "groups": {
+    "train": 10,
+    "eval": 4,
+    "test": 6
+  },
+  "baseline_samples": 3,
+  "teacher_train_samples": 4,
+  "seed_base": 42,
+  "think": false,
+  "options": {
+    "temperature": 0.7,
+    "top_k": 40,
+    "top_p": 0.9,
+    "min_p": 0,
+    "num_ctx": 2048,
+    "num_batch": 128,
+    "num_gpu": 99,
+    "num_predict": 1024
+  },
+  "backend_incomplete_policy": "conservar intento como unparsed; no atribuir error matemático"
+}

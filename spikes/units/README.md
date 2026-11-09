@@ -2,7 +2,7 @@
 
 Evaluar si Qwen3-1.7B tiene aciertos y errores cuantitativos reales en tareas con fórmulas y conversiones explícitas. Comparación local con Llama 3.2-1B sobre 90 tareas y tres intentos por tarea. [Informe y resultados](report.md).
 
-Este spike aporta evidencia para elegir y calibrar el problema del desafío; el entorno principal y los datos de entrenamiento siguen pendientes. El tema acordado por el equipo permanece en [Decisiones](../../docs/2026-10-29_093018_decisiones.md).
+Este spike aporta evidencia para elegir y calibrar el problema del desafío; el entorno principal y los datos derivados ya están implementados en la entrega del desafío. El tema acordado por el equipo permanece en [Decisiones](../../docs/contexto/2026-10-29_093018_decisiones.md).
 
 ## Archivos
 

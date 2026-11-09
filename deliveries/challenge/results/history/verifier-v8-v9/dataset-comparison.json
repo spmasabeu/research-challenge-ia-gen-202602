@@ -1,0 +1,17 @@
+{
+  "task_files_identical": [
+    "private/train.jsonl",
+    "private/eval.jsonl",
+    "private/test.jsonl",
+    "public/train.jsonl",
+    "public/eval.jsonl",
+    "public/test.jsonl"
+  ],
+  "changed_only": [
+    "protocol.verifier_version",
+    "frozen-code/verifier.py",
+    "manifest code/filehashes"
+  ],
+  "test_responses_seen": false,
+  "test_sha256": "a43cb708c74d20b89c399762b881d39eaea402e64b7f9077730eee9bca490344"
+}

@@ -1,0 +1,10 @@
+{
+  "verifier_version": "verifier-9",
+  "verifier_sha256": "051c6382ff91ea271fe045da2686450be08f695d59f62f685bfbe349ea43df50",
+  "metrics_sha256": "f812a6ec550daccfb881ffc51ee48d28cf9baa10e98370dd8eb4013f2a4c83e2",
+  "adapter_sha256": "7ac178339b052e5f9a793af1fbed8f607bcfdad293b40972efb65b869664d9da",
+  "tasks_sha256": "137bb852cabede55784a5b419c70b300d9e53477fdc0c6c464e32e2ef5abc903",
+  "responses_sha256": "a197cf135bf57eb8497b1adf2f54f2c759eee38896aeea1439502cfd62fb3818",
+  "cost_usd": 0.0029965,
+  "seconds": 12.269612340991443
+}

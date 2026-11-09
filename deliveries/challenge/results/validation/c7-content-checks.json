@@ -1,0 +1,9 @@
+{
+  "calibration_labels_metrics_recomputed": true,
+  "reward_public_example_passed": true,
+  "qualitative_examples_hashed": 32,
+  "package_files_scanned": 203,
+  "credential_found": false,
+  "weights_envs_symlinks_found": false,
+  "no_api_calls": true
+}

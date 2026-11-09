@@ -1,0 +1,20 @@
+$ rtk proxy uv run --no-project --isolated --python 3.12 python -m unittest discover -s spikes/units -v
+exit=0
+example sample=0: correct
+example sample=1: correct
+example sample=2: correct
+test_analysis_checks_integrity_and_completeness (test_units.UnitsTests.test_analysis_checks_integrity_and_completeness) ... ok
+test_generator_and_equivalent_units (test_units.UnitsTests.test_generator_and_equivalent_units) ... ok
+test_manual_extraction_keeps_provenance (test_units.UnitsTests.test_manual_extraction_keeps_provenance) ... ok
+test_metrics_keep_unparsed_separate (test_units.UnitsTests.test_metrics_keep_unparsed_separate) ... ok
+test_no_answer_search_or_execution (test_units.UnitsTests.test_no_answer_search_or_execution) ... ok
+test_pairs_have_same_physical_answer (test_units.UnitsTests.test_pairs_have_same_physical_answer) ... ok
+test_reject_invalid_and_ambiguous_answers (test_units.UnitsTests.test_reject_invalid_and_ambiguous_answers) ... ok
+test_run_preserves_prompts_seeds_and_existing_results (test_units.UnitsTests.test_run_preserves_prompts_seeds_and_existing_results) ... ok
+test_saved_results_match_source_of_truth (test_units.UnitsTests.test_saved_results_match_source_of_truth) ... ok
+test_surface_format_does_not_change_correctness (test_units.UnitsTests.test_surface_format_does_not_change_correctness) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.172s
+
+OK

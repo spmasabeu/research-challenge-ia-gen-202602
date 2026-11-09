@@ -1,0 +1,30 @@
+{
+  "change": "espaciado de reglas horizontales y filas de tablas",
+  "header_gaps_pt": [
+    6,
+    8,
+    6
+  ],
+  "arraystretch": 1.15,
+  "table_rules": "booktabs midrule",
+  "pages": 7,
+  "numerical_content_unchanged": true,
+  "figures_csv_unchanged": true,
+  "isolated_pdf_bytes_identical": true,
+  "latex_warnings": 0,
+  "paid_calls": 0,
+  "ruff": "passed",
+  "visual_review_pages": [
+    1,
+    4,
+    5,
+    6,
+    7
+  ],
+  "snapshot": "deliveries/challenge",
+  "zip": "deliveries/challenge-2026-11-07.zip",
+  "single_definitive_version": true,
+  "zip_sha256": "ddcb45ba8e4887d692f59826f9ef4d9751ca390dd8f2d1c8cffa714628c50b78",
+  "package_documentation_update": "README ampliado y REPRODUCING.md; ver reproduction-docs.json",
+  "snapshot_files": 211
+}

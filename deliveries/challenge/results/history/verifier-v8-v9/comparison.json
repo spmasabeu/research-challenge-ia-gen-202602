@@ -1,0 +1,117 @@
+{
+  "reason": "Formatos inequívocos observados en controlesSmol: Valor final = escalar, Watts; antes de primer test",
+  "results": {
+    "teacher": {
+      "responses_sha256": "a55a68d7e76ab0a522ceaa508d5b5728e7adc16f16a7571d9fec8456fe9a2e28",
+      "before": {
+        "correct": 193,
+        "numeric": 154,
+        "unparsed": 13
+      },
+      "after": {
+        "correct": 193,
+        "numeric": 154,
+        "unparsed": 13
+      },
+      "changes": []
+    },
+    "negatives": {
+      "responses_sha256": "5b0537ad35e1e79c93d97e626dc6541d87d4954a7a711c5765e52be9bddb2458",
+      "before": {
+        "correct": 89,
+        "unparsed": 6,
+        "numeric": 19
+      },
+      "after": {
+        "correct": 89,
+        "unparsed": 6,
+        "numeric": 19
+      },
+      "changes": []
+    },
+    "controls-qwen17": {
+      "responses_sha256": "b093884c07f54eef360a3d9c546dc87a95c74f4ecc21af543a208f6de05c3eb4",
+      "before": {
+        "correct": 3,
+        "numeric": 2
+      },
+      "after": {
+        "correct": 3,
+        "numeric": 2
+      },
+      "changes": []
+    },
+    "controls-llama": {
+      "responses_sha256": "09d9db33641c02e1d6c7c266c331b51684d1fb5ad63cca4bfa8a07e569b11461",
+      "before": {
+        "correct": 1,
+        "numeric": 2,
+        "unparsed": 2
+      },
+      "after": {
+        "correct": 1,
+        "numeric": 2,
+        "unparsed": 2
+      },
+      "changes": []
+    },
+    "controls-smol": {
+      "responses_sha256": "7866ed31b7693595acf775fb3c309e04e2685f811ffce6f99e72be50a185a5f5",
+      "before": {
+        "unparsed": 5
+      },
+      "after": {
+        "numeric": 2,
+        "unparsed": 3
+      },
+      "changes": [
+        {
+          "task_id": "1a585df3e4c87c24268c-hard",
+          "sample_index": 0,
+          "before": {
+            "status": "unparsed",
+            "reward": 0.0
+          },
+          "after": {
+            "status": "numeric",
+            "reward": 0.0,
+            "value": 2.45872,
+            "unit": "km/h",
+            "value_si": 0.6829777777777778
+          }
+        },
+        {
+          "task_id": "c98ae04b6100baef7091-easy",
+          "sample_index": 0,
+          "before": {
+            "status": "unparsed",
+            "reward": 0.0,
+            "value": 4.685936,
+            "unit": "Watts",
+            "reason": "unidad no catalogada"
+          },
+          "after": {
+            "status": "numeric",
+            "reward": 0.0,
+            "value": 4.685936,
+            "unit": "W",
+            "value_si": 4.685936
+          }
+        }
+      ]
+    },
+    "controls-qwen8": {
+      "responses_sha256": "19ae56587cb413a8c8ada49f1eaff6527715c5035e3038b2418f27b48f1504ae",
+      "before": {
+        "numeric": 4,
+        "correct": 1
+      },
+      "after": {
+        "numeric": 4,
+        "correct": 1
+      },
+      "changes": []
+    }
+  },
+  "test_inference_started": false
+}

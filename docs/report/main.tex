@@ -1,0 +1,52 @@
+% Compilar con pdfLaTeX (dos pasadas para resolver las citas).
+\documentclass[10pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\IfFileExists{spanish.ldf}{\usepackage[spanish]{babel}}{}
+\usepackage[left=2.65cm,right=2.2cm,top=1.55cm,bottom=2.2cm]{geometry}
+\usepackage{graphicx,xcolor}
+\usepackage{amsmath,booktabs}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\renewcommand{\arraystretch}{1.15}
+\pagestyle{plain}
+\newcommand{\campo}[1]{\textcolor[gray]{0.36}{\textit{[#1]}}}
+
+% Datos de la entrega: editar aquí.
+\newcommand{\universidad}{Pontificia Universidad Católica de Chile}
+\newcommand{\escuela}{Escuela de Ingeniería}
+\newcommand{\curso}{IIC-3694 Inteligencia Artificial Generativa}
+\newcommand{\titulo}{Razonamiento cuantitativo con unidades}
+\newcommand{\entrega}{Desafío de investigación}
+\newcommand{\autores}{Fernando Fajardo, Sebastian Palma, Benjamin Prieto y Rodrigo Ugarte}
+\newcommand{\fecha}{7 de noviembre de 2026}
+
+\hypersetup{pdftitle={Razonamiento cuantitativo con unidades},pdfauthor={Fernando Fajardo, Sebastian Palma, Benjamin Prieto y Rodrigo Ugarte}}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\begin{document}
+\thispagestyle{empty}
+\begin{minipage}[c]{1.95cm}
+  \centering\includegraphics[width=\linewidth,height=2.4cm,keepaspectratio]{template/escudo-uc.png}
+\end{minipage}\hspace{0.35cm}%
+\begin{minipage}[c]{\dimexpr\linewidth-2.4cm\relax}
+  \universidad\\
+  \escuela\\
+  \curso
+\end{minipage}
+
+\begin{center}
+  {\large \titulo\par}
+  \vspace{6pt}
+  \hrule
+  \vspace{8pt}
+  \entrega\par
+  \autores\enspace$\cdot$\enspace\fecha\par
+  \vspace{6pt}
+  \hrule
+\end{center}
+
+\input{content.tex}
+\end{document}

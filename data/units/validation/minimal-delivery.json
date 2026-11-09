@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-09",
+  "scope": "minimum course deliverables: report, harness, tasks and SFT/DPO; no experimental runs",
+  "files": 35,
+  "zip_bytes": 474469,
+  "zip_sha256": "3066116975de405a5c084d2ad6448aa1aa8ff77875d2b1956b7d18ed8dbf0ecb",
+  "offline_bash_blocks_executed": 5,
+  "isolated_fresh_environment": true,
+  "tests": 13,
+  "tasks_regenerated_identical": true,
+  "sft_count": 121,
+  "dpo_count": 35,
+  "sft_dpo_verified_against_train": true,
+  "code_and_dataset_files_unchanged": true,
+  "results_directory_in_zip": false,
+  "validation_json_in_zip": false,
+  "metric_recalculation_requires_repository_backup": true,
+  "pdf_pages": 7,
+  "latex_warnings": 0,
+  "revised_pdf_page_visually_reviewed": 7,
+  "previous_delivery_unchanged": true,
+  "new_inferences": 0
+}

@@ -1,0 +1,208 @@
+{
+  "candidate_version": 2,
+  "source_change": "precisión editorial: tokens reportados; un conteo ausente",
+  "initial_manifest_files": 206,
+  "commands": [
+    {
+      "command": [
+        "/tmp/units-challenge-check-env/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code/tests",
+        "-q"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stdout": "1a585df3e4c87c24268c-easy 0 None None 0.0\n1a585df3e4c87c24268c-easy 1 None None 0.0\n1a585df3e4c87c24268c-easy 2 None None 0.0\n1a585df3e4c87c24268c-easy 0 4 stop 0.0\n1a585df3e4c87c24268c-easy 1 4 stop 0.0\n1a585df3e4c87c24268c-easy 2 4 stop 0.0\n8d48f42b0e71f3dc9f07-easy 0 8 0.001\n8d48f42b0e71f3dc9f07-easy 1 8 0.001\n8d48f42b0e71f3dc9f07-easy 2 8 0.001\n8d48f42b0e71f3dc9f07-easy 0 None 0\n",
+      "stderr": "----------------------------------------------------------------------\nRan 13 tests in 0.099s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/tmp/units-challenge-check-env/bin/python",
+        "-m",
+        "challenge.harness",
+        "check",
+        "--dataset",
+        "data/final-v2"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stdout": "{\"train\": 90, \"eval\": 36, \"test\": 54}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/units-challenge-check-env/bin/python",
+        "-m",
+        "challenge.harness",
+        "freeze",
+        "--out",
+        "/tmp/units-final-proof-aphaeugu/regenerated",
+        "--exclusions",
+        "data/final-v2/exclusions.json",
+        "--models",
+        "data/final-v2/models.json"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/units-challenge-check-env/bin/python",
+        "-m",
+        "challenge.harness",
+        "check-derived",
+        "--dataset",
+        "data/final-v2",
+        "--teacher",
+        "results/train-teacher-v1",
+        "--audits",
+        "data/derived-v3/audits/audit-speed.jsonl",
+        "data/derived-v3/audits/audit-speed-extra.jsonl",
+        "data/derived-v3/audits/audit-energy.jsonl",
+        "data/derived-v3/audits/audit-luminosity.jsonl",
+        "--negative-tasks",
+        "data/negative-tasks.jsonl",
+        "--negative-run",
+        "results/train-negatives-v1",
+        "--out",
+        "data/derived-v3"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stdout": "{\"sft\": 121, \"dpo\": 35}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/units-challenge-check-env/bin/python",
+        "-m",
+        "challenge.harness",
+        "derive",
+        "--dataset",
+        "data/final-v2",
+        "--teacher",
+        "results/train-teacher-v1",
+        "--audits",
+        "data/derived-v3/audits/audit-speed.jsonl",
+        "data/derived-v3/audits/audit-speed-extra.jsonl",
+        "data/derived-v3/audits/audit-energy.jsonl",
+        "data/derived-v3/audits/audit-luminosity.jsonl",
+        "--negative-tasks",
+        "data/negative-tasks.jsonl",
+        "--negative-run",
+        "results/train-negatives-v1",
+        "--out",
+        "/tmp/units-final-proof-aphaeugu/derived"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stdout": "{\"sft\": 121, \"dpo\": 35}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/units-challenge-check-env/bin/python",
+        "-m",
+        "challenge.harness",
+        "compare",
+        "--dataset",
+        "data/final-v2",
+        "--runs",
+        "results/baseline-v1",
+        "--out",
+        "/tmp/units-final-proof-aphaeugu/comparison.json"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stdout": "{\"llama3.2:1b\": {\"tasks\": 54, \"responses\": 162, \"n\": 3, \"statuses\": {\"numeric\": 68, \"unparsed\": 90, \"correct\": 4}, \"coverage\": 0.4444444444444444, \"pass_at_k\": {\"1\": 0.02469135802469136, \"3\": 0.07407407407407407}, \"pass_at_k_upper_bound\": {\"1\": 0.5802469135802469, \"3\": 1.0}, \"backend_incomplete\": 0, \"truncated\": 0}, \"qwen3:1.7b\": {\"tasks\": 54, \"responses\": 162, \"n\": 3, \"statuses\": {\"correct\": 84, \"unparsed\": 7, \"numeric\": 71}, \"coverage\": 0.9567901234567902, \"pass_at_k\": {\"1\": 0.5185185185185185, \"3\": 0.6851851851851852}, \"pass_at_k_upper_bound\": {\"1\": 0.5617283950617284, \"3\": 0.7407407407407407}, \"backend_incomplete\": 0, \"truncated\": 0}, \"qwen3:8b\": {\"tasks\": 54, \"responses\": 162, \"n\": 3, \"statuses\": {\"correct\": 82, \"numeric\": 74, \"unparsed\": 6}, \"coverage\": 0.962962962962963, \"pass_at_k\": {\"1\": 0.5061728395061729, \"3\": 0.7222222222222222}, \"pass_at_k_upper_bound\": {\"1\": 0.54320987654321, \"3\": 0.7777777777777778}, \"backend_incomplete\": 0, \"truncated\": 0}, \"smollm2:1.7b-instruct-q4_K_M\": {\"tasks\": 54, \"responses\": 162, \"n\": 3, \"statuses\": {\"unparsed\": 124, \"numeric\": 33, \"correct\": 5}, \"coverage\": 0.23456790123456794, \"pass_at_k\": {\"1\": 0.030864197530864203, \"3\": 0.07407407407407407}, \"pass_at_k_upper_bound\": {\"1\": 0.7962962962962963, \"3\": 1.0}, \"backend_incomplete\": 1, \"truncated\": 10}}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/units-challenge-check-env/bin/python",
+        "-m",
+        "challenge.frontier",
+        "score",
+        "--tasks",
+        "data/final-v2/private/test.jsonl",
+        "--run",
+        "results/frontier-v1/test",
+        "--out",
+        "/tmp/units-final-proof-aphaeugu/frontier-score"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stdout": "{\"tasks\": 54, \"responses\": 162, \"n\": 3, \"statuses\": {\"unparsed\": 29, \"correct\": 133}, \"coverage\": 0.8209876543209876, \"pass_at_k\": {\"1\": 0.8209876543209877, \"3\": 0.9074074074074074}, \"pass_at_k_upper_bound\": {\"1\": 1.0, \"3\": 1.0}, \"backend_incomplete\": 0, \"truncated\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/units-challenge-check-env/bin/python",
+        "report/render.py",
+        "--comparison",
+        "/tmp/units-final-proof-aphaeugu/comparison.json",
+        "--calibration",
+        "results/calibration/scores/v9/summary.json",
+        "--derived",
+        "data/derived-v3/stats.json",
+        "--frontier",
+        "/tmp/units-final-proof-aphaeugu/frontier-score",
+        "--out",
+        "/tmp/units-final-proof-aphaeugu/assets"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-outdir=/tmp/units-final-proof-aphaeugu/pdf",
+        "main.tex"
+      ],
+      "cwd": "report",
+      "exit_code": 0,
+      "stdout": "m.fd) (/home/spalmam/.TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (/home/spalmam/.TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (./content.tex (/home/spalmam/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd) [1{/home/spalmam/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/spalmam/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/spalmam/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/spalmam/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/spalmam/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./template/escudo-uc.png>] [2] [3 <./final-v2/figures/calibration.pdf>] (./final-v2/tables.tex) [4{/home/spalmam/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [5 <./final-v2/figures/baseline.pdf>] [6]) [7] (/tmp/units-final-proof-aphaeugu/pdf/main.aux) )</home/spalmam/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/spalmam/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></home/spalmam/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/spalmam/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></home/spalmam/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/spalmam/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></home/spalmam/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></home/spalmam/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/spalmam/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></home/spalmam/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>\nOutput written on /tmp/units-final-proof-aphaeugu/pdf/main.pdf (7 pages, 361915 bytes).\nTranscript written on /tmp/units-final-proof-aphaeugu/pdf/main.log.\nLatexmk: Getting log file '/tmp/units-final-proof-aphaeugu/pdf/main.log'\nLatexmk: Examining '/tmp/units-final-proof-aphaeugu/pdf/main.fls'\nLatexmk: Examining '/tmp/units-final-proof-aphaeugu/pdf/main.log'\nLatexmk: Log file says output to '/tmp/units-final-proof-aphaeugu/pdf/main.pdf'\nLatexmk: All targets (/tmp/units-final-proof-aphaeugu/pdf/main.pdf) are up-to-date\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "pdftotext",
+        "/tmp/units-final-proof-aphaeugu/pdf/main.pdf",
+        "/tmp/units-final-proof-aphaeugu/pdf-text.txt"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "pdftotext",
+        "report/informe.pdf",
+        "/tmp/units-final-proof-aphaeugu/original-pdf-text.txt"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "all_checks_passed": true,
+  "generator_files_identical": 15,
+  "derived_files_identical": 8,
+  "local_comparison_identical": true,
+  "external_labels_metrics_metadata_identical": true,
+  "assets_identical": true,
+  "pdf_bytes_identical": true,
+  "inference_or_network_used": false
+}

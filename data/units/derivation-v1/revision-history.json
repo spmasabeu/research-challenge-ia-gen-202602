@@ -1,0 +1,50 @@
+{
+  "v1": {
+    "sft": 122,
+    "dpo": 35,
+    "audited_correct_candidates": 160
+  },
+  "v2": {
+    "sft": 121,
+    "dpo": 35,
+    "audited_correct_candidates": 178,
+    "reason": "revisión de18hardvelocidad previamente cubiertas solo por muestreo,1defecto",
+    "removed_sft": [
+      {
+        "task_id": "1ed14d6a67017130be8c-hard",
+        "completion": "Primero sumamos las distancias: 4.4135 km + 4.4135 km = 8.827 km. Convertimos el tiempo a segundos: 2.8667 min × 60 = 172 s. Aplicamos la fórmula: v = 8.827 km / (172/3600 h) = 183.12 km/h. \n\n{\"value\": 183.12, \"unit\": \"km/h\"}"
+      }
+    ],
+    "removed_pairs": [
+      {
+        "task_id": "1ed14d6a67017130be8c-hard",
+        "chosen": "Primero sumamos las distancias: 4.4135 km + 4.4135 km = 8.827 km. Convertimos el tiempo a segundos: 2.8667 min × 60 = 172 s. Aplicamos la fórmula: v = 8.827 km / (172/3600 h) = 183.12 km/h. \n\n{\"value\": 183.12, \"unit\": \"km/h\"}",
+        "rejected": "Primero sumamos las distancias: 4.4135 km + 4.4135 km = 8.827 km. Convertimos el tiempo a segundos: 2.8667 min × 60 = 172 s. Calculamos la velocidad media: 8.827 km / 0.0172 h ≈ 513.2 km/h. Resultado: {\"value\": 513.2, \"unit\": \"km/h\"}"
+      },
+      {
+        "task_id": "1ed14d6a67017130be8c-hard",
+        "chosen": "Primero, sumamos las distancias: $ d1 + d2 = 4.4135 + 4.4135 = 8.827 \\, \\text{km} $. Luego convertimos el tiempo a segundos: $ 2.86666666666667 \\, \\text{min} \\times 60 = 172 \\, \\text{s} $. Calculamos la velocidad en m/s: $ v = \\frac{8827 \\, \\text{m}}{172 \\, \\text{s}} \\approx 51.32 \\, \\text{m/s} $. Finalmente, convertimos a km/h: $ 51.32 \\times 3.6 \\approx 184.75 \\, \\text{km/h} $.\n\n```json\n{\"value\": 184.75, \"unit\": \"km/h\"}\n```",
+        "rejected": "1. Calcula la distancia total: $ d1 + d2 = 4.4135 + 4.4135 = 8.827 $ km.  \n2. Divide por el tiempo total: $ v = \\frac{8.827}{2.86666666666667} \\approx 3.07 $ km/h.  \n3. Resultado final: {\"value\": 3.07, \"unit\": \"km/h\"}"
+      }
+    ],
+    "added_pairs": [
+      {
+        "task_id": "1ed14d6a67017130be8c-hard",
+        "chosen": "Primero, sumamos las distancias: $ d1 + d2 = 4.4135 + 4.4135 = 8.827 \\, \\text{km} $. Luego convertimos el tiempo a segundos: $ 2.86666666666667 \\, \\text{min} \\times 60 = 172 \\, \\text{s} $. Calculamos la velocidad en m/s: $ v = \\frac{8827 \\, \\text{m}}{172 \\, \\text{s}} \\approx 51.32 \\, \\text{m/s} $. Finalmente, convertimos a km/h: $ 51.32 \\times 3.6 \\approx 184.75 \\, \\text{km/h} $.\n\n```json\n{\"value\": 184.75, \"unit\": \"km/h\"}\n```",
+        "rejected": "Primero sumamos las distancias: 4.4135 km + 4.4135 km = 8.827 km. Convertimos el tiempo a segundos: 2.8667 min × 60 = 172 s. Calculamos la velocidad media: 8.827 km / 0.0172 h ≈ 513.2 km/h. Resultado: {\"value\": 513.2, \"unit\": \"km/h\"}"
+      },
+      {
+        "task_id": "1ed14d6a67017130be8c-hard",
+        "chosen": "Primero sumamos las distancias: $ d1 + d2 = 4.4135 + 4.4135 = 8.827 $ km. Convertimos el tiempo a segundos: $ 2.8667 \\times 60 = 172 $ s. Calculamos la velocidad media en m/s: $ v = \\frac{8827}{172} \\approx 51.32 $ m/s. Convertimos a km/h: $ 51.32 \\times 3.6 \\approx 184.75 $. \n\n{\"value\": 184.75, \"unit\": \"km/h\"}",
+        "rejected": "1. Calcula la distancia total: $ d1 + d2 = 4.4135 + 4.4135 = 8.827 $ km.  \n2. Divide por el tiempo total: $ v = \\frac{8.827}{2.86666666666667} \\approx 3.07 $ km/h.  \n3. Resultado final: {\"value\": 3.07, \"unit\": \"km/h\"}"
+      }
+    ]
+  },
+  "v3": {
+    "sft": 121,
+    "dpo": 35,
+    "reason": "verifierv9 tras controles de desarrollo; contenido idéntico av2, solo versión/hash del evaluador en metadatos"
+  },
+  "raw_responses_changed": false,
+  "test_results_used": false
+}

@@ -1,0 +1,378 @@
+{
+  "all": {
+    "tasks": 90,
+    "responses": 360,
+    "n": 4,
+    "statuses": {
+      "correct": 193,
+      "numeric": 154,
+      "unparsed": 13
+    },
+    "coverage": 0.9638888888888889,
+    "pass_at_k": {
+      "1": 0.5361111111111111,
+      "3": 0.6805555555555556
+    },
+    "pass_at_k_upper_bound": {
+      "1": 0.5722222222222222,
+      "3": 0.7166666666666667
+    },
+    "backend_incomplete": 0,
+    "truncated": 0
+  },
+  "family": {
+    "energy": {
+      "tasks": 30,
+      "responses": 120,
+      "n": 4,
+      "statuses": {
+        "correct": 68,
+        "numeric": 40,
+        "unparsed": 12
+      },
+      "coverage": 0.9,
+      "pass_at_k": {
+        "1": 0.5666666666666667,
+        "3": 0.7333333333333333
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.6666666666666666,
+        "3": 0.8333333333333334
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "luminosity": {
+      "tasks": 30,
+      "responses": 120,
+      "n": 4,
+      "statuses": {
+        "correct": 35,
+        "numeric": 84,
+        "unparsed": 1
+      },
+      "coverage": 0.9916666666666667,
+      "pass_at_k": {
+        "1": 0.2916666666666667,
+        "3": 0.4166666666666667
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.3,
+        "3": 0.425
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "speed": {
+      "tasks": 30,
+      "responses": 120,
+      "n": 4,
+      "statuses": {
+        "correct": 90,
+        "numeric": 30
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.75,
+        "3": 0.8916666666666667
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.75,
+        "3": 0.8916666666666667
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  },
+  "level": {
+    "easy": {
+      "tasks": 30,
+      "responses": 120,
+      "n": 4,
+      "statuses": {
+        "correct": 86,
+        "numeric": 34
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.7166666666666667,
+        "3": 0.8416666666666667
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.7166666666666667,
+        "3": 0.8416666666666667
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "hard": {
+      "tasks": 30,
+      "responses": 120,
+      "n": 4,
+      "statuses": {
+        "numeric": 71,
+        "correct": 36,
+        "unparsed": 13
+      },
+      "coverage": 0.8916666666666666,
+      "pass_at_k": {
+        "1": 0.3,
+        "3": 0.4666666666666667
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.4083333333333333,
+        "3": 0.575
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "medium": {
+      "tasks": 30,
+      "responses": 120,
+      "n": 4,
+      "statuses": {
+        "correct": 71,
+        "numeric": 49
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.5916666666666667,
+        "3": 0.7333333333333333
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.5916666666666667,
+        "3": 0.7333333333333333
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  },
+  "structure": {
+    "direct": {
+      "tasks": 45,
+      "responses": 180,
+      "n": 4,
+      "statuses": {
+        "correct": 104,
+        "numeric": 67,
+        "unparsed": 9
+      },
+      "coverage": 0.95,
+      "pass_at_k": {
+        "1": 0.5777777777777777,
+        "3": 0.6888888888888889
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.6277777777777778,
+        "3": 0.7388888888888889
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "sum": {
+      "tasks": 45,
+      "responses": 180,
+      "n": 4,
+      "statuses": {
+        "numeric": 87,
+        "correct": 89,
+        "unparsed": 4
+      },
+      "coverage": 0.9777777777777777,
+      "pass_at_k": {
+        "1": 0.49444444444444446,
+        "3": 0.6722222222222223
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.5166666666666667,
+        "3": 0.6944444444444444
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  },
+  "family_level": {
+    "energy/easy": {
+      "tasks": 10,
+      "responses": 40,
+      "n": 4,
+      "statuses": {
+        "correct": 33,
+        "numeric": 7
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.825,
+        "3": 0.975
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.825,
+        "3": 0.975
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "energy/hard": {
+      "tasks": 10,
+      "responses": 40,
+      "n": 4,
+      "statuses": {
+        "unparsed": 12,
+        "numeric": 18,
+        "correct": 10
+      },
+      "coverage": 0.7,
+      "pass_at_k": {
+        "1": 0.25,
+        "3": 0.45
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.55,
+        "3": 0.75
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "energy/medium": {
+      "tasks": 10,
+      "responses": 40,
+      "n": 4,
+      "statuses": {
+        "numeric": 15,
+        "correct": 25
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.625,
+        "3": 0.775
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.625,
+        "3": 0.775
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "luminosity/easy": {
+      "tasks": 10,
+      "responses": 40,
+      "n": 4,
+      "statuses": {
+        "correct": 20,
+        "numeric": 20
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.5,
+        "3": 0.65
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.5,
+        "3": 0.65
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "luminosity/hard": {
+      "tasks": 10,
+      "responses": 40,
+      "n": 4,
+      "statuses": {
+        "correct": 1,
+        "numeric": 38,
+        "unparsed": 1
+      },
+      "coverage": 0.975,
+      "pass_at_k": {
+        "1": 0.025,
+        "3": 0.075
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.05,
+        "3": 0.1
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "luminosity/medium": {
+      "tasks": 10,
+      "responses": 40,
+      "n": 4,
+      "statuses": {
+        "correct": 14,
+        "numeric": 26
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.35,
+        "3": 0.525
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.35,
+        "3": 0.525
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "speed/easy": {
+      "tasks": 10,
+      "responses": 40,
+      "n": 4,
+      "statuses": {
+        "correct": 33,
+        "numeric": 7
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.825,
+        "3": 0.9
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.825,
+        "3": 0.9
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "speed/hard": {
+      "tasks": 10,
+      "responses": 40,
+      "n": 4,
+      "statuses": {
+        "numeric": 15,
+        "correct": 25
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.625,
+        "3": 0.875
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.625,
+        "3": 0.875
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "speed/medium": {
+      "tasks": 10,
+      "responses": 40,
+      "n": 4,
+      "statuses": {
+        "correct": 32,
+        "numeric": 8
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.8,
+        "3": 0.9
+      },
+      "pass_at_k_upper_bound": {
+        "1": 0.8,
+        "3": 0.9
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  }
+}

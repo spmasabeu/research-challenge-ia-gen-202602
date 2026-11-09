@@ -1,0 +1,18 @@
+{
+  "reviewer": "Codex auxiliar audit_c2; no certificación humana",
+  "candidate": "candidato previo a precisión editorial de tokens",
+  "checks": [
+    "13 pruebas",
+    "check_dataset 90/36/54",
+    "compare idéntico a matriz local incluida",
+    "check-derived 121/35",
+    "frontier score idéntico 133 correct/29 unparsed",
+    "202 hashes más manifest propio, sin symlinks/entornos/pesos/credenciales",
+    "conciliación API USD0.0935116 y reserva USD3.36",
+    "R1–R10/E1–E4 con evidencia coherente",
+    "PDF7páginas/autores correctos, revisión visual página5"
+  ],
+  "material_findings": [],
+  "pending": "sellado y revalidación de corrección editorial: tokens reportados frente a conteo faltante en un intento Smol",
+  "api_or_inference_calls": false
+}

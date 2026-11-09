@@ -1,0 +1,11 @@
+$ rtk proxy git status --short
+exit=0
+ M .gitignore
+ M README.md
+ D docs/2026-10-29_093018_decisiones.md
+ D docs/2026-10-29_093018_temas.md
+ D docs/2026-11-05_160708_prompts_spikes.md
+ M spikes/units/README.md
+?? ProyectoCurso-2026.pdf
+?? docs/contexto/
+?? docs/plans/

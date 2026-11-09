@@ -1,0 +1,10 @@
+{
+  "reason": "vincular ledger a configuración en reanudaciones; score verifica snapshot real del runner",
+  "old_score": "scores/v9",
+  "new_score": "scores/v9-adapter3",
+  "changed_labels": 0,
+  "changed_metrics": false,
+  "new_inference": false,
+  "verifier": "verifier-9",
+  "preserved_inference_source": "runs/frontier-v1/test/runner.py"
+}
