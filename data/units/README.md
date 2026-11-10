@@ -79,6 +79,20 @@ PYTHONPATH=src uv run python -m challenge.harness check --dataset data/units/fin
 PYTHONPATH=src uv run python -m challenge.harness freeze --out /tmp/units-regenerated --exclusions data/units/final-v2/exclusions.json --models data/units/final-v2/models.json
 ```
 
+Desde verifier-10 (catálogo de seis familias), `check`, `compare` y `score`
+sobre `final-v2` exigen el código con el que se congeló: usar el commit
+`e99f9e9` o el paquete de `deliveries/challenge-clean/`. El código actual
+regenera byte a byte las tareas de `final-v2` (prueba en `tests/test_families.py`),
+y las 1.969 respuestas guardadas con etiqueta v9 conservan estado y recompensa.
+
+Para generar tareas de las familias nuevas (`density`, `pressure`, `voltage`):
+
+```bash
+PYTHONPATH=src uv run python -m challenge.harness generate --seed 5000 --groups 10 --families density pressure voltage --out /tmp/units-new/tasks.jsonl
+```
+
+Primer piloto de las seis familias con Qwen3-1.7B: [`pilot-families-v1/`](pilot-families-v1/README.md).
+
 Comprobado desde copia aislada: diez pruebas, referencias, disjunción, celdas y
 regeneración de 15 archivos idénticos. Evidencia `validation/c4-isolated.json`.
 El código actual tiene además pruebas del exportador SFT/DPO (once en total).

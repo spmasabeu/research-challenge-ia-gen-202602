@@ -4,7 +4,7 @@ import json
 import math
 import re
 
-VERSION = "verifier-9"
+VERSION = "verifier-10"
 NUMBER = r"[+-]?(?:\d+(?:[.,]\d*)?|[.,]\d+)(?:[eE][+-]?\d+)?"
 SCALAR = rf"({NUMBER})(?:\s*[×x*]\s*10\^([+-]?\d+))?"
 FINAL = r"(?:\d+[.)]\s*)?(?:(?:FINAL|valor(?:\s+final)?|(?:La\s+)?respuesta(?:\s+final)?|(?:El\s+)?resultado(?:\s+final)?)(?:\s+es)?\s*[:=]\s*|(?:La respuesta(?: final)? es|El resultado(?: final)? es)\s+)"
@@ -13,8 +13,25 @@ UNITS = {
     "J": ("energy", 1), "kJ": ("energy", 1000), "erg": ("energy", 1e-7),
     "W": ("luminosity", 1), "kW": ("luminosity", 1000),
     "erg/s": ("luminosity", 1e-7), "Lsun": ("luminosity", 3.828e26),
+    "kg/m^3": ("density", 1), "g/cm^3": ("density", 1000),
+    "Pa": ("pressure", 1), "kPa": ("pressure", 1000),
+    "V": ("voltage", 1), "mV": ("voltage", .001), "kV": ("voltage", 1000),
 }
-ALIASES = {"metros por segundo": "m/s", "vatios": "W", "Watts": "W", "watts": "W", "julios": "J", "L☉": "Lsun"}
+ALIASES = {"metros por segundo": "m/s", "vatios": "W", "Watts": "W", "watts": "W", "julios": "J", "L☉": "Lsun",
+           "kg/m³": "kg/m^3", "g/cm³": "g/cm^3", "pascales": "Pa", "voltios": "V"}
+# Comprobador independiente del generador: factores a SI y fórmula por familia.
+INPUT_FACTORS = {"m": 1, "km": 1000, "s": 1, "min": 60, "kg": 1, "g": .001,
+                 "m/s": 1, "km/h": 1 / 3.6, "W/m^2": 1, "erg/s/cm^2": .001,
+                 "m^3": 1, "L": .001, "N": 1, "kN": 1000, "m^2": 1, "cm^2": 1e-4,
+                 "A": 1, "mA": .001, "ohm": 1, "kohm": 1000}
+REFERENCES = {
+    "speed": ({"d": {"m", "km"}, "t": {"s", "min"}}, lambda d, t: d / t),
+    "energy": ({"m": {"kg", "g"}, "v": {"m/s", "km/h"}}, lambda m, v: .5 * m * v * v),
+    "luminosity": ({"d": {"m", "km"}, "F": {"W/m^2", "erg/s/cm^2"}}, lambda d, f: (4 * 3.141592653589793) * d * d * f),
+    "density": ({"m": {"kg", "g"}, "V": {"m^3", "L"}}, lambda m, v: m / v),
+    "pressure": ({"F": {"N", "kN"}, "A": {"m^2", "cm^2"}}, lambda f, a: f / a),
+    "voltage": ({"I": {"A", "mA"}, "R": {"ohm", "kohm"}}, lambda i, r: i * r),
+}
 _TASKS: dict[str, dict] = {}
 
 
@@ -42,7 +59,7 @@ def quantity(text):
     text = text.replace(r"\times", "×").replace(r"\approx", "≈").replace(r"\,", " ").replace("$", "").strip()
     text = re.sub("^" + FINAL, "", text, flags=re.IGNORECASE)
     text = re.sub(r"^aproximadamente\s+", "", text, flags=re.IGNORECASE)
-    text = re.sub(r"^(?:(?:v|E|L)\s*[=≈]\s*)", "", text)
+    text = re.sub(r"^(?:(?:v|E|L|rho|ρ|P|V)\s*[=≈]\s*)", "", text)
     text = text.rstrip(" .")
     match = re.fullmatch(rf"{SCALAR}\s+([\w/^☉]+(?: por segundo)?)\.?", text)
     if not match:
@@ -135,31 +152,30 @@ def verify(task, completion):
 
 def reference_from_prompt(prompt, family):
     """Comprobador independiente: datos visibles y factores propios, sin answer_si."""
+    if family not in REFERENCES:
+        raise ValueError("familia desconocida")
+    permitted, formula = REFERENCES[family]
     data = re.search(r"^Datos: (.+)$", prompt, re.MULTILINE)
     if data is None:
         raise ValueError("faltan datos visibles")
-    factors = {"m": 1, "km": 1000, "s": 1, "min": 60, "kg": 1, "g": .001,
-               "m/s": 1, "km/h": 1 / 3.6, "W/m^2": 1, "erg/s/cm^2": .001}
-    permitted = {"d": {"m", "km"}, "t": {"s", "min"}, "m": {"kg", "g"},
-                 "v": {"m/s", "km/h"}, "F": {"W/m^2", "erg/s/cm^2"}}
     values = {}
     for field in data[1].split("; "):
-        match = re.fullmatch(rf"([dmvtF][12]?)=({NUMBER}) (\S+)", field)
-        if match is None or match[1] in values or match[3] not in permitted[match[1][0]]:
+        match = re.fullmatch(rf"([A-Za-z])([12]?)=({NUMBER}) (\S+)", field)
+        if match is None or match[1] + match[2] in values or match[4] not in permitted.get(match[1], ()):
             raise ValueError("dato visible inválido")
-        values[match[1]] = number(match[2]) * factors[match[3]]
+        values[match[1] + match[2]] = number(match[3]) * INPUT_FACTORS[match[4]]
     if any(not math.isfinite(v) or v <= 0 for v in values.values()):
         raise ValueError("dato fuera de alcance")
-    if family == "speed":
-        distance = values["d"] if "d" in values else values["d1"] + values["d2"]
-        return distance / values["t"]
-    if family == "energy":
-        mass = values["m"] if "m" in values else values["m1"] + values["m2"]
-        return .5 * mass * values["v"] * values["v"]
-    if family == "luminosity":
-        flux = values["F"] if "F" in values else values["F1"] + values["F2"]
-        return (4 * 3.141592653589793) * values["d"] * values["d"] * flux
-    raise ValueError("familia desconocida")
+    inputs = []
+    for name in permitted:
+        parts = [key for key in (name, name + "1", name + "2") if key in values]
+        if parts == [name]:
+            inputs.append(values[name])
+        elif parts == [name + "1", name + "2"]:
+            inputs.append(values[name + "1"] + values[name + "2"])
+        else:
+            raise ValueError("datos visibles incompletos o mezclados")
+    return formula(*inputs)
 
 
 def load_tasks(tasks):
