@@ -76,3 +76,10 @@ las instrucciones del ZIP se limitan al uso, regeneración de tareas y
 comprobación de datos finales. Las rutas parten de `challenge/`; README e informe
 solo ofrecen el enlace general del repositorio como consulta complementaria
 para solicitar al equipo más detalle de iteraciones y resultados.
+
+Precisión terminológica 2026-11-09: Qwen3-8B se define como modelo generador
+de soluciones candidatas para SFT/DPO; el verificador las filtra con referencias
+calculadas por código. Ambos informes, tablas, gráficos, guías y paquetes del
+desafío se actualizan, conservando siete páginas y los datos y métricas. Las
+copias históricas de código de las corridas se preservan para mantener sus
+huellas. Comprobación: `data/units/validation/generator-terminology.json`.

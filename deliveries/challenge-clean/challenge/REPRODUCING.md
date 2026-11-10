@@ -2,7 +2,7 @@
 
 Trabajar desde la carpeta `challenge/` extraída. Los pasos 1–3 usan archivos
 incluidos y no realizan inferencias. Las nuevas salidas se guardan en un
-directorio temporal para conservar intacta la datos entregados.
+directorio temporal para conservar intactos los datos entregados.
 
 ## 1. Comprobar integridad y preparar Python
 

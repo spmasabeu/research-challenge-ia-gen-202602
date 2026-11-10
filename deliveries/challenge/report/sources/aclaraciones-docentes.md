@@ -6,10 +6,10 @@ Fuente: respuesta atribuida al equipo docente, transcrita por el usuario en esta
 ## Interpretación para ejecutar el plan
 
 - Obligatorio: SFT generado mediante inferencia de un modelo abierto mayor y filtrado por el verificador; las trazas programáticas son un complemento.
-- Obligatorio: referencias de tareas calculadas por código; el profesor genera respuestas, no valida ni reemplaza esas referencias.
+- Obligatorio: referencias de tareas calculadas por código; el modelo generador produce respuestas candidatas, no valida ni reemplaza esas referencias.
 - Obligatorio según esta aclaración: al menos tres modelos pequeños de aproximadamente 1–2B en la línea base, incluido el objetivo; preferiblemente de familias distintas.
 - Recomendado: muestrear 4–8 respuestas por problema de train y apuntar a unas 4.000 trazas correctas SFT y 2.000 pares DPO, cubriendo dificultad. Son metas orientativas; menos datos requieren justificación y análisis.
-- Permitido: usar respuestas incorrectas de un modelo pequeño como rechazadas cuando el profesor casi no falla, identificando su procedencia.
+- Permitido: usar respuestas incorrectas de un modelo pequeño como rechazadas cuando el modelo generador casi no falla, identificando su procedencia.
 - Ampliación ideal: evaluar también un mediano y un grande, privilegiando abiertos; si no es viable, justificarlo. La lectura anterior de una referencia de frontera incondicional se actualiza con esta indicación.
 - Se mantiene: solo inferencia en el desafío, pass@1/pass@k por dificultad y evidencia de zona aprendible del objetivo.
 

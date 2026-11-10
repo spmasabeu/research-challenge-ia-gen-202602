@@ -39,17 +39,17 @@ nuevas puede cambiar métricas y cantidades aun con las mismas semillas.
 variantes queda unido. Semillas 4301/4302; 95 claves físicas de desarrollo excluidas.
 Por dificultad fácil/media/difícil: train 30/30/30; eval 12/12/12; test 18/18/18.
 121 SFT de 46 tareas/20 grupos y 35 DPO de 25 tareas/17 grupos.
-SFT por dificultad 51/46/24; DPO 7/15/13. De 360 respuestas del profesor,
+SFT por dificultad 51/46/24; DPO 7/15/13. De 360 respuestas del modelo generador,
 193 pasan resultado, 178 son correctas distintas y todas fueron auditadas:
 121 retenidas, 57 excluidas por calidad contextual. Auditoría de agentes,
-no certificación humana. Rechazadas DPO: 22 profesor, 13 objetivo; cero unparsed.
+no certificación humana. Rechazadas DPO: 22 modelo generador, 13 objetivo; cero unparsed.
 
 | Modelo | pass@1 | pass@3 | Cobertura |
 | --- | ---: | ---: | ---: |
 | Qwen3-1.7B Q4_K_M | 51,85% | 68,52% | 95,68% |
 | Llama 3.2-1B Q8_0 | 2,47% | 7,41% | 44,44% |
 | SmolLM2-1.7B Q4_K_M | 3,09% | 7,41% | 23,46% |
-| Qwen3-8B Q4_K_M, profesor abierto | 50,62% | 72,22% | 96,30% |
+| Qwen3-8B Q4_K_M, modelo generador abierto | 50,62% | 72,22% | 96,30% |
 | DeepSeek-V4-Pro-0813, OpenRouter/DeepInfra FP8 | 82,10% | 90,74% | 82,10% |
 
 162 respuestas por modelo, mismo test y verificador 9; n=k=3 para pass@3.
@@ -57,7 +57,14 @@ Unparsed no demuestra error matemático. El informe y CSV incluyen cotas optimis
 conteos, truncamientos y resultados por dificultad. Algunos aciertos finales
 contienen pasos incorrectos; la tolerancia del 1% no valida explicaciones.
 Tríos y plantillas compartidas limitan independencia y generalización.
-Qwen3-8B es profesor abierto mayor, no modelo de frontera. No se entrenó.
+Qwen3-8B es el modelo generador: produce soluciones candidatas para construir
+las trazas SFT y las respuestas preferidas de DPO destinadas a Qwen3-1.7B.
+El verificador filtra estas candidatas con referencias calculadas por código.
+Es un modelo abierto de mayor tamaño que el objetivo. No se entrenó.
+Los nombres `teacher` y la opción `--teacher` identifican este papel de
+Qwen3-8B; `negatives` identifica las respuestas adicionales de Qwen3-1.7B.
+Las copias de código en `results/` preservan el estado de las ejecuciones
+originales y pueden conservar la denominación histórica en sus mensajes.
 
 ## Decisión tras revisión del equipo, 9 de noviembre
 
@@ -65,7 +72,7 @@ Se mantiene `verifier-9`, las tareas, respuestas, métricas y los 121 SFT/35 DPO
 El informe amplía las limitaciones confirmadas en el PR #3: registro previo de
 prompts, unidad equivalente distinta de la solicitada, ambigüedad decimal/miles,
 ausencia de tope propio de longitud y formatos equivalentes no reconocidos.
-También documenta tres falsos negativos del objetivo y cuatro del profesor
+También documenta tres falsos negativos del objetivo y cuatro del modelo generador
 cuyo JSON terminal pasa la comprobación numérica; no se cambian sus etiquetas
 oficiales ni se certifica la coherencia de sus explicaciones.
 
@@ -87,7 +94,7 @@ driver595.71.05, Ollama0.18.0. CUDA13.2 es compatibilidad anunciada por NVIDIA-S
 no versión del runtime comprobada. GGUF/digests/templates/licencias en metadata.
 Todos los locales solicitan temperatura0,7/top_p0,9/top_k40/min_p0,
 contexto2048/batch128/num_gpu99/máximo1024/think=false; semillas42–44.
-Profesor train: cuatro muestras42–45. API externa: mismo muestreo y máximo1024,
+Generación de train: cuatro muestras42–45. API externa: mismo muestreo y máximo1024,
 reasoning.enabled=false, ruta fija DeepInfra FP8, contexto anunciado1M; cuantización
 remota procede del catálogo. Defaults/motores distintos impiden atribuir solo tamaño.
 
@@ -186,7 +193,7 @@ misma ejecución; no borrar ni reiniciar para eludir presupuesto.
 
 El historial completo de trabajo se conserva en el repositorio; el paquete incluye
 resultados finales y evidencia mínima de recálculos, fuentes y errores operativos.
-Envío previsto por correo al profesor a cargo del equipo, sin envío automático.
+Envío previsto por correo al docente a cargo del equipo, sin envío automático.
 Plazo informado por equipo:12/11/2026 23:59 Santiago; esa fecha cae jueves, aunque
 se comunicó como viernes. Intención de entrega alrededor del martes10.
 

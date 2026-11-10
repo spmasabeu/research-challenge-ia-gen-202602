@@ -9,4 +9,5 @@ Las métricas se presentan en el informe. Todas las rutas de uso apuntan a los
 archivos del ZIP. Para consultar iteraciones y resultados completos, el README
 incluido ofrece el enlace general del repositorio y cómo solicitar acceso al equipo.
 
-El paquete anterior de `deliveries/challenge/` y su ZIP se conservan intactos.
+El paquete anterior de `deliveries/challenge/` y su ZIP se conservan; ambos
+usan la misma definición de modelo generador, con sus informes actualizados.

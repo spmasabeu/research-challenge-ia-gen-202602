@@ -1,0 +1,33 @@
+{
+  "scope": "Definir Qwen3-8B como modelo generador de soluciones candidatas para SFT/DPO y sustituir la denominación ambigua en los documentos, figuras y código de uso de ambas entregas.",
+  "scientific_data_files_unchanged": 127,
+  "metrics_csvs_byte_identical": true,
+  "new_inference": false,
+  "training": false,
+  "unit_tests_passed": 13,
+  "extracted_clean_zip_offline_blocks_passed": 5,
+  "pdf_pages": {
+    "challenge": 7,
+    "challenge-clean": 7
+  },
+  "latex_warnings": 0,
+  "pdf_visual_review": [
+    "introduction",
+    "tables",
+    "baseline_figure",
+    "references"
+  ],
+  "checks": [
+    "ruff",
+    "mypy",
+    "bandit (sin hallazgos medios o altos)",
+    "both ZIPs: CRC, file contents and manifests"
+  ],
+  "preserved": "Identificadores técnicos teacher y copias históricas de código de las corridas conservados para mantener procedencia y hashes originales.",
+  "artifacts_sha256": {
+    "deliveries/challenge-2026-11-07.zip": "89d9bd98c812861af405f808baa9025a6db9b55f74e1b038060c5b77e77ac897",
+    "deliveries/challenge-clean/challenge.zip": "acc9e8070a66efe33c1d6baabd2e4150134798bacd905df0c0367a26d3985e50",
+    "deliveries/challenge/report/informe.pdf": "41627b243a2b803207d98eb99ede59f57a76288a5db226f4e6c776a7a469147a",
+    "deliveries/challenge-clean/challenge/informe.pdf": "8c0753001f4f0dd5728ca648dba780fbc63ac235cade97225e9606bb08475af0"
+  }
+}

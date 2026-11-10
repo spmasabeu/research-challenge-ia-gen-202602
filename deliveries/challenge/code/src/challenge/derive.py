@@ -69,7 +69,7 @@ def build(dataset, teacher_run, audit_paths, negative_tasks=None, negative_run=N
     tasks, teacher_rows, config = checked_run(train_path, teacher_run, protocol, models)
     train_by_id = {t["id"]: t for t in tasks}
     if config["model"] != "qwen3:8b" or not 4 <= config["samples"] <= 8:
-        raise ValueError("profesor debe ser Qwen3-8B con4–8muestras")
+        raise ValueError("modelo generador debe ser Qwen3-8B con 4–8 muestras")
     teacher, teacher_summary = collect(tasks, teacher_rows, teacher_run.name)
     candidates = {r["candidate_id"]: r for r in teacher if r["status"] == "correct"}
     audits = {}

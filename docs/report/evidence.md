@@ -10,7 +10,7 @@ README y manifiesto. `deliveries/challenge/` conserva el paquete anterior.
 | E1: tareas y particiones, R3 | `data/units/final-v2/{public,private}`, `protocol.json`, `units.json`, `exclusions.json`, `manifest.json`, `frozen-code/` | `harness check`; regeneración de quince archivos idénticos; 90/36/54 tareas, sin claves físicas cruzadas |
 | E2: problema y diseño, R1/R3/R8 | `docs/report/content.tex`, especificación y calibración en `docs/contexto/` | Tres familias, dos estructuras, tres variantes agrupadas; límites de dificultad y originalidad explícitos |
 | E3: SFT/DPO, R4/R5 | `data/units/derived-v3/{sft,dpo}.jsonl`, `stats.json`, `manifest.json`, `audits/` | `harness check-derived`; 121 SFT y 35 DPO solo de train; preferred aceptadas y rejected con error numérico |
-| E3: procedencia y calidad | `data/units/runs/{train-teacher-v1,train-negatives-v1}`, `data/units/derivation-v1/negative-tasks.jsonl`, cuatro archivos `audit-*.jsonl` | 360 respuestas profesor, 114 objetivo; 178 candidatas auditadas, 121 keep/57 reject; máximo dos pares sin reutilización |
+| E3: procedencia y calidad | `data/units/runs/{train-teacher-v1,train-negatives-v1}`, `data/units/derivation-v1/negative-tasks.jsonl`, cuatro archivos `audit-*.jsonl` | 360 respuestas de Qwen3-8B, 114 de Qwen3-1.7B; 178 candidatas auditadas, 121 keep/57 reject; máximo dos pares sin reutilización |
 | E4: calibración, R1/R9 | `data/units/pilot-calibrated/`, `data/units/pilot-v{1,2,3}/`, corridas piloto, informe C3 | Respuestas anteriores preservadas; 132/270 aciertos en composición calibrada; luminosidad difícil cerca del suelo |
 | E4: línea base, R6/R9 | `data/units/runs/baseline-v1/{qwen17,llama,smol,qwen8}/` | Cada corrida completa debe tener 162 respuestas y `scores/v9`; `harness compare` reconstruye matriz, etiquetas y huellas |
 | E4: ejemplos y límites | `baseline-v1/*/qualitative.jsonl`, `docs/report/content.tex` | Ejemplos con ID, muestra y hash; revisión auxiliar identificada; no alteran las métricas automáticas |
@@ -36,7 +36,7 @@ USD0,0935116. No se entrenó ni se enviaron correos.
 Plazo informado por el usuario el 7 de noviembre: 12 de noviembre de 2026,
 23:59; intención de entregar alrededor del martes 10. La palabra viernes
 no coincide con esa fecha (jueves); se registra la fecha numérica explícita.
-Canal previsto informado por el usuario: correo al profesor, envío a cargo del equipo.
+Canal previsto informado por el usuario: correo al docente, envío a cargo del equipo.
 
 Reconciliación de formato 2026-11-08: única entrega definitiva `deliveries/challenge/` y `challenge-2026-11-07.zip`; PDF con espaciado revisado. Validación de esta revisión: `data/units/validation/report-format.json`.
 

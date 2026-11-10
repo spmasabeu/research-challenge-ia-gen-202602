@@ -118,7 +118,7 @@ independiente y documentar versiones antes de evaluar la nueva condición.
 Los parámetros están fijados en `code/src/challenge/models.py` y
 `data/final-v2/protocol.json`; no hay que introducirlos manualmente.
 En el equipo original la línea base local sumó unos 46,5 minutos de solicitudes.
-Otros equipos pueden requerir más tiempo o no alojar íntegro el profesor en GPU.
+Otros equipos pueden requerir más tiempo o no alojar íntegro el modelo generador en GPU.
 
 Para reanudar una inferencia, repetir **su comando run** con la misma carpeta,
 archivo de tareas, modelo, backend y configuración; no volver a ejecutar `mktemp`.
@@ -151,9 +151,9 @@ uv run --no-sync python -m challenge.harness run --tasks data/final-v2/private/t
 uv run --no-sync python -m challenge.harness run --tasks data/negative-tasks.jsonl --out "$units_runs/train-negatives" --model qwen3:1.7b --samples 3
 ```
 
-Son 360 respuestas del profesor y 114 sobre el subconjunto original de 38 tareas
+Son 360 respuestas del modelo generador y 114 sobre el subconjunto original de 38 tareas
 de train para negativos. Repite ese subconjunto; no vuelve a seleccionar tareas
-según las nuevas respuestas. El profesor original tomó unos 42,3 minutos.
+según las nuevas respuestas. La inferencia original de Qwen3-8B tomó unos 42,3 minutos.
 
 **Las auditorías incluidas corresponden a los hashes de las respuestas originales**.
 No reutilizarlas como si certificaran respuestas nuevas. Para revisar todas las

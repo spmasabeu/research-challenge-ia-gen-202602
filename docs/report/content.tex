@@ -7,13 +7,14 @@ Qwen3-1.7B, sin realizar entrenamiento en esta entrega. Cada problema proporcion
 fórmulas y equivalencias de unidades para evaluar cálculo y composición de
 operaciones, en lugar de memoria de conocimientos físicos.
 
-El estudio utiliza 180 tareas repartidas entre entrenamiento, validación y
-prueba. Primero se define cómo generarlas y verificarlas, luego se calibra su
-dificultad con el modelo objetivo y finalmente se producen datos de entrenamiento
-y se mide el desempeño inicial. Se comparan Qwen3-1.7B, Llama 3.2-1B y
-SmolLM2-1.7B-Instruct con Qwen3-8B, que también genera soluciones como modelo
-profesor, y con DeepSeek-V4-Pro-0813 como referencia externa. Todos responden
-en un turno, sin calculadora, intérprete ni otras herramientas.
+Las 180 tareas se reparten entre entrenamiento, validación y prueba. Tras
+calibrar su dificultad con Qwen3-1.7B, se generan datos de entrenamiento y se
+compara su desempeño inicial con Llama 3.2-1B, SmolLM2-1.7B-Instruct y Qwen3-8B,
+además de DeepSeek-V4-Pro-0813 como referencia externa. Qwen3-8B actúa como
+\emph{modelo generador}: produce soluciones candidatas para construir las
+trazas SFT y los pares DPO destinados al entrenamiento posterior de Qwen3-1.7B.
+El verificador las filtra con respuestas de referencia calculadas por código.
+Todos responden en un turno, sin calculadora, intérprete ni otras herramientas.
 
 \section{Diseño del dataset}
 Llamamos \emph{familia} a un tipo de problema definido por sus magnitudes y
@@ -126,7 +127,7 @@ superíndices y expresiones LaTeX quedan sin interpretar. Tercero, aunque la
 inferencia limita la salida a 1024 tokens, la función de recompensa no impone
 su propio máximo de longitud.
 
-También se confirmaron siete falsos negativos entre el objetivo y el profesor
+También se confirmaron siete falsos negativos entre el objetivo y Qwen3-8B
 por líneas intermedias que invalidan un JSON final numéricamente correcto.
 Este diagnóstico posterior a test no cambia las métricas ni valida el razonamiento. Para mostrar cuánto podría afectar la extracción, las tablas
 incluyen una cota optimista que supone correctas todas las respuestas no
@@ -183,7 +184,7 @@ de 1024, con batch de 128, solicitud de 99 capas en GPU y
 \texttt{think=false} para desactivar el modo de pensamiento. Cada petición
 contenía un mensaje de usuario y no forzaba JSON. Las semillas 42, 43 y 44
 controlaron el muestreo de las tres respuestas por tarea en la evaluación,
-y 42--45 las cuatro del profesor para entrenamiento. Se conservaron respuestas,
+y 42--45 las cuatro de Qwen3-8B para entrenamiento. Se conservaron respuestas,
 tiempos y tokens para poder recalcular métricas sin nuevas inferencias,
 aunque las semillas no garantizan igualdad entre motores o versiones.
 
@@ -208,14 +209,14 @@ retenidas cubren 46 tareas y 20 problemas físicos.
 
 Para DPO se emparejó una solución retenida con una respuesta inequívocamente
 incorrecta del mismo enunciado, con hasta dos pares distintos por tarea para
-limitar la repetición de ejemplos. Cuando el profesor no aportaba suficientes
+limitar la repetición de ejemplos. Cuando Qwen3-8B no aportaba suficientes
 respuestas incorrectas para ese emparejamiento, se consultó al objetivo. Esa
 condición seleccionó 38 tareas de train y tres muestras por tarea produjeron
 $38\times3=114$ respuestas adicionales: 89 correctas, 19 errores numéricos y
 6 no interpretadas. Solo los errores explícitos podían actuar como respuestas
 rechazadas, y al aplicar el límite de pares sin reutilizar sus miembros quedaron
 35 pares de 25 tareas y 17 problemas físicos. De las 35 rechazadas, 22 proceden
-del profesor y 13 del objetivo. Las cantidades finales son resultado del
+de Qwen3-8B y 13 del objetivo. Las cantidades finales son resultado del
 filtrado y los emparejamientos disponibles, no cuotas rellenadas artificialmente.
 
 \begin{table}[ht]
@@ -241,9 +242,9 @@ Una tarea puede aportar más de una solución o par.}
 
 El volumen queda por debajo de las metas orientativas de 4000 SFT y 2000 DPO
 porque se priorizó revisar la calidad de una generación local acotada. Los 360
-intentos del profesor tomaron 2537,21 s y 56563 tokens, con 7,05 s por respuesta.
+intentos de Qwen3-8B tomaron 2537,21 s y 56563 tokens, con 7,05 s por respuesta.
 A la tasa de retención observada, alcanzar 4000 SFT exigiría unas 23,30 horas
-solo de inferencia del profesor. La escasez de una única solución en energía
+solo de inferencia de Qwen3-8B. La escasez de una única solución en energía
 y luminosidad difíciles limita el entrenamiento posterior, por lo que estos
 datos preparan el experimento pero no demuestran suficiencia para aprender.
 La siguiente evaluación mide el desempeño previo a cualquier entrenamiento.

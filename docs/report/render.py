@@ -13,7 +13,7 @@ MODELS = {
     "qwen3:1.7b": "Qwen3-1.7B",
     "llama3.2:1b": "Llama 3.2-1B",
     "smollm2:1.7b-instruct-q4_K_M": "SmolLM2-1.7B",
-    "qwen3:8b": "Qwen3-8B (profesor)",
+    "qwen3:8b": "Qwen3-8B (generador)",
     "deepseek/deepseek-v4-pro-0813": "DeepSeek-V4-Pro-0813",
 }
 

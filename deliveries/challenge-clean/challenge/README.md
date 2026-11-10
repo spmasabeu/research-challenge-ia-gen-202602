@@ -56,14 +56,18 @@ registrado con `load_tasks` produce un error de integración.
 
 SFT contiene `task_id`, `prompt`, `completion` y procedencia. DPO contiene
 `task_id`, `prompt`, `chosen`, `rejected` y procedencia de ambas respuestas.
-Los identificadores enlazan con las tareas de train. El modelo generador,
-filtrado, auditorías y cantidades se describen en el informe y en
-`data/training/stats.json`.
+Los identificadores enlazan con las tareas de train. Qwen3-8B es el **modelo
+generador**: produce soluciones candidatas que se filtran con el verificador
+y se revisan para construir las trazas SFT y las respuestas preferidas de DPO,
+destinadas al entrenamiento posterior de Qwen3-1.7B. Las respuestas de referencia
+las calcula el código. El procedimiento, las auditorías y las cantidades se
+describen en el informe y en `data/training/stats.json`.
 
 [REPRODUCING.md](REPRODUCING.md) permite regenerar tareas, evaluar respuestas
 y comprobar los SFT/DPO entregados usando los archivos de esta carpeta. Los
 nombres `teacher` y `negatives` en los metadatos identifican la procedencia de
-las respuestas y no son rutas que deban abrirse.
+las respuestas: `teacher` corresponde a Qwen3-8B y `negatives` a la generación
+adicional de respuestas de Qwen3-1.7B. No son rutas que deban abrirse.
 
 La entrega incluye los datasets finales y el informe de resultados, sin las
 corridas experimentales. No se entrenaron modelos.
