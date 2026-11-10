@@ -10,6 +10,12 @@ Para revisar lo implementado por responsabilidad: [guía del equipo](contexto/20
 Para reconstruir cómo se llegó al resultado: [bitácora](contexto/2026-11-07_200958_bitacora_ejecucion_desafio_units.md).
 Para comprobar requisitos contra archivos: [mapa de evidencia](report/evidence.md).
 
+Proyecto, entrega 1: [requisitos y decisiones](contexto/2026-11-09_202333_requisitos_entrega_1_proyecto.md),
+[plan de ejecución](plans/2026-11-09_202333_entrega_1_proyecto.md) y
+[propuesta PDF y fuentes](../deliveries/project-1-proposal/README.md).
+Estado: propuesta redactada y validada, tres páginas de contenido más referencias;
+[PR #4 a main](https://github.com/spmasabeu/research-challenge-ia-gen-202602/pull/4) abierto para revisión.
+
 Los enunciados están en la raíz: [Desafío](../DesafioInvestigacion-2026.pdf) y
 [Proyecto posterior](../ProyectoCurso-2026.pdf). El segundo se comparte como
 referencia; en esta entrega no se ejecutaron entrenamientos del proyecto.

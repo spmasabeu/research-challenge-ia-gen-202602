@@ -1,0 +1,195 @@
+\section{Problema y pregunta de investigación}
+El proyecto estudiará cómo mejorar Qwen3-1.7B en problemas cuantitativos con
+unidades mediante postentrenamiento. Partimos del entorno construido en el
+desafío, que genera tareas en español y verifica sus resultados automáticamente,
+para comparar ajuste supervisado (SFT), aprendizaje por refuerzo con recompensa
+verificable (RL) y optimización directa de preferencias (DPO). Esta entrega
+formula la investigación y su protocolo tentativo, sin presentar entrenamientos
+del proyecto como ejecutados.
+
+La pregunta principal es: \emph{¿cómo influye realizar SFT antes de RL en la
+eficiencia de aprendizaje, frente a solo RL, solo SFT y DPO, bajo un presupuesto
+de cómputo comparable?} SFT podría facilitar que el modelo produzca soluciones
+válidas para recibir recompensa, aunque también podría consumir presupuesto
+sin mejorar la generalización. Por eso distinguiremos adaptación al formato,
+exactitud numérica y calidad del razonamiento.
+
+La hipótesis de trabajo es que SFT previo mejora el rendimiento de validación
+por unidad de cómputo frente a iniciar directamente con RL. Se contrastará
+también la alternativa de que la mejora se concentre en el formato o desaparezca
+al contabilizar el costo de SFT. La revisión siguiente fundamenta esa comparación
+y delimita lo que sus antecedentes permiten esperar.
+
+\section{Antecedentes y relación con la propuesta}
+Stojanovski et al. (2025) presentan Reasoning Gym~\cite{reasoninggym}, una
+biblioteca de tareas generadas por código con dificultad controlable y
+verificación automática. Su diseño respalda utilizar un entorno propio para
+producir señal de recompensa y estudiar aprendizaje por dificultad, pero sus
+resultados no demuestran que nuestro conjunto de unidades tenga volumen o
+calibración suficientes para entrenar.
+
+GSM-Symbolic, de Mirzadeh et al. (2024)~\cite{gsmsymbolic}, muestra variación
+del desempeño al cambiar valores y condiciones de problemas matemáticos.
+Esto motiva conservar variantes relacionadas en la misma partición y evaluar
+por familia y nivel, evitando atribuir generalización a un promedio global.
+Nuestro experimento compartirá fórmulas entre particiones, por lo que estudiará
+nuevas magnitudes y representaciones, no nuevos dominios de razonamiento.
+
+Rafailov et al. (2023)~\cite{dpo} formulan DPO como entrenamiento directo con
+pares preferidos y rechazados, sin ajustar un modelo explícito de recompensa
+ni muestrear nuevas respuestas durante la actualización. Sus experimentos de
+preferencias motivan esta alternativa a RL, pero no establecen superioridad en
+tareas con verificación numérica. Aquí las preferencias procederán de soluciones
+verificadas y revisadas, y el reducido número inicial de pares será una limitación
+a controlar.
+
+DeepSeekMath, de Shao et al. (2024)~\cite{deepseekmath}, introduce GRPO, que
+compara las recompensas de varias respuestas al mismo problema y prescinde del
+modelo de valor adicional de PPO. Sus resultados de RL parten de un modelo
+previamente ajustado con SFT, de modo que no resuelven directamente nuestra
+comparación con RL desde el checkpoint inicial. Proponemos GRPO para ambas
+ramas de RL, sujeto a comprobar memoria y tiempo en el hardware disponible.
+La menor carga respecto de PPO no garantiza que quepa en una GPU de 6 GiB.
+
+Finalmente, Aleithan et al. (2024)~\cite{swebenchplus} muestran mediante revisión
+manual que superar pruebas automáticas de programación puede ocultar soluciones
+problemáticas. Tomamos esa advertencia metodológica, sin trasladar sus tasas a
+nuestro dominio: acompañaremos la recompensa numérica con una auditoría humana
+de respuestas exitosas. Así, el estudio relacionará desempeño medido con la
+validez de las soluciones que el modelo aprende a producir.
+
+\section{Entorno y datos disponibles}
+El entorno del desafío~\cite{challenge} contiene tres familias, entendidas como
+tipos de problema definidos por una fórmula: velocidad $v=d/t$, energía cinética
+$E=mv^2/2$ y luminosidad $L=4\pi d^2F$. Se proporcionan fórmula y equivalencias,
+por lo que el modelo debe componer operaciones y conversiones sin recordar
+constantes ni utilizar herramientas. Cada problema admite datos directos o
+sumas de distancias, masas o flujos y se presenta en tres niveles: sin
+conversiones, con una conversión de entrada o con dos entradas convertidas y,
+en velocidad y energía difíciles, también la salida.
+
+Los 60 problemas físicos generan $60\times3=180$ tareas. Por cada familia se
+asignan 10 problemas a entrenamiento, cuatro a validación y seis a prueba,
+manteniendo juntas sus variantes. Esto produce 90, 36 y 54 tareas respectivamente.
+Por ejemplo, una tarea proporciona distancias de 4,08 y 1,02 km y un tiempo
+de 88 s, y pide $(d_1+d_2)/t$ en m/s. La salida \verb|57.95 m/s| es aceptable
+frente al resultado esperado $5100/88$ m/s.
+
+La función \texttt{reward(prompt, completion)} devuelve 1 si extrae un único
+resultado finito, de magnitud compatible y dentro del 1\% de la referencia,
+tras convertirlo al Sistema Internacional, y 0 en caso contrario. Las referencias
+se calculan por código y no se envían al modelo. El extractor puede rechazar
+formatos correctos y actualmente admite unidades equivalentes distintas de la
+solicitada, por lo que su recompensa no certifica todos los pasos ni obliga
+siempre a realizar la conversión de salida.
+
+Disponemos de 121 soluciones SFT generadas por Qwen3-8B y 35 pares DPO,
+todos de entrenamiento y con procedencia registrada. Su revisión fue realizada
+por agentes, no certificada por humanos, y energía y luminosidad difíciles
+conservan solo una solución SFT cada una. Estos datos servirán como punto de
+partida, sujetos a revalidación y ampliación antes de fijar los experimentos.
+La línea base previa de Qwen3-1.7B fue 51,85\% en pass@1 y 68,52\% en pass@3,
+con cobertura de extracción de 95,68\%. Se obtuvo con Ollama y pesos GGUF
+cuantizados, y deberá repetirse si cambia la configuración para entrenar.
+
+\section{Comparación experimental propuesta}
+Se plantea un estudio de métodos existentes con implementaciones públicas.
+Todas las rutas partirán del mismo checkpoint inicial de Qwen3-1.7B, entendido
+como el modelo antes de nuestro ajuste adicional, y usarán los mismos enunciados,
+particiones y evaluación. La tabla resume qué información recibe cada estrategia
+y evita confundir la comparación de modelos del desafío con esta comparación
+de entrenamientos de un único modelo.
+
+\begin{center}
+\begin{tabular}{lp{.68\linewidth}}
+\toprule
+Ruta & Procedimiento \\
+\midrule
+Control & Evaluar el checkpoint inicial sin ajuste adicional. \\
+Solo SFT & Ajustar con las soluciones correctas de entrenamiento. \\
+SFT $\rightarrow$ RL & Aplicar SFT y continuar con GRPO y recompensa del verificador. \\
+Solo RL & Aplicar GRPO desde el checkpoint inicial, sin SFT propio previo. \\
+DPO & Ajustar desde el checkpoint inicial con pares preferidos/rechazados y referencia inicial fija. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Primero se medirá un piloto de memoria y tiempo, a partir del cual se fijará un
+presupuesto $B$ de entrenamiento por ruta en hardware común. SFT seguido de RL
+contabilizará ambas fases dentro de $B$, mientras el control no consume ese
+presupuesto. Se registrarán horas de GPU, tokens y evaluaciones por separado,
+identificando también el costo compartido de generar datos. Así, una ventaja
+de SFT previo no podrá atribuirse simplemente a disponer de más entrenamiento.
+
+La sensibilidad principal será la fracción de $B$ dedicada al SFT previo:
+se propone comparar 25\% y 50\%, dejando el resto para RL, si el piloto permite
+ejecutar ambas condiciones. Los demás hiperparámetros de RL se mantendrán
+comunes entre las ramas para estudiar el efecto de su inicialización. Los
+checkpoints se seleccionarán con validación, nunca con el conjunto de prueba.
+Si los datos requieren ampliación, se hará antes de fijar la comparación y
+se conservará la separación por problema físico.
+
+\section{Evaluación, recursos y próximos hitos}
+Se medirán pass@1 y pass@3 con tres respuestas por tarea, por familia y nivel.
+Pass@1 estima la proporción de respuestas correctas y pass@3 la proporción de
+tareas resueltas al menos una vez entre tres intentos. Se conservarán cobertura,
+errores numéricos y respuestas no interpretadas para distinguir capacidad de
+cálculo de cumplimiento del formato. El muestreo será común a las cinco rutas,
+con semillas 42--44 y límites de generación fijados con validación.
+
+La hipótesis se contrastará con curvas de pass@1 en validación frente al cómputo
+acumulado, incluyendo el SFT previo, y con el rendimiento final a igual $B$.
+Como complemento se auditará manualmente una muestra de hasta tres éxitos por
+familia, nivel y ruta, elegidos aleatoriamente cuando existan. Se revisarán datos,
+conversiones, operaciones y conclusión, informando por estrato el denominador y
+la proporción de éxitos genuinos sin corregir silenciosamente la recompensa automática.
+
+Antes de entrenar se precisarán y probarán las políticas de formatos, unidades
+y respuestas contradictorias. Se revalidarán SFT y DPO si cambia la recompensa
+y se reservará un test independiente del ajuste, porque el test del desafío ya
+fue observado al diagnosticar límites. Todos los resultados finales se evaluarán
+con la misma versión final del verificador, preservando el historial de problemas,
+correcciones y reentrenamientos. La dependencia entre variantes y la escasez de
+algunas celdas limitarán las conclusiones estadísticas.
+
+El recurso inicial confirmado es una RTX 3050 Laptop de 6 GiB. El piloto probará
+ajuste de pocos parámetros mediante adaptadores LoRA y respuestas acotadas,
+sin asumir que la inferencia previa demuestra viabilidad de RL. Otro colaborador
+podría aportar cómputo, pero no se considera disponible todavía. Si se cambia de
+GPU se repetirá el piloto y se compararán las rutas en condiciones equivalentes,
+sin tratar horas de equipos distintos como recursos idénticos. Las semillas de
+entrenamiento adicionales dependerán del cómputo que quede disponible.
+
+Para el avance del 25 de noviembre se prevén el piloto, la adaptación del entorno,
+la nueva línea base y primeras curvas de entrenamiento. Para el cierre del
+9 de diciembre se completarán las cinco rutas, sensibilidad, auditoría y análisis,
+junto con paper, poster y video. Esta propuesta delimita esos experimentos y
+sus riesgos sin adelantar mejoras que todavía no se han medido.
+
+\clearpage
+\begingroup\raggedright
+\begin{thebibliography}{9}
+\bibitem{reasoninggym} Z. Stojanovski, O. Stanley, J. Sharratt, R. Jones,
+A. Adefioye, J. Kaddour y A. K\"opf. Reasoning Gym: Reasoning Environments
+for Reinforcement Learning with Verifiable Rewards. 2025.
+\url{https://arxiv.org/abs/2505.24760}.
+\bibitem{gsmsymbolic} I. Mirzadeh, K. Alizadeh, H. Shahrokhi, O. Tuzel,
+S. Bengio y M. Farajtabar. GSM-Symbolic: Understanding the Limitations of
+Mathematical Reasoning in Large Language Models. 2024.
+\url{https://arxiv.org/abs/2410.05229}.
+\bibitem{dpo} R. Rafailov, A. Sharma, E. Mitchell, S. Ermon,
+C. D. Manning y C. Finn. Direct Preference Optimization: Your Language Model
+Is Secretly a Reward Model. 2023. \url{https://arxiv.org/abs/2305.18290}.
+\bibitem{deepseekmath} Z. Shao, P. Wang, Q. Zhu, R. Xu, J. Song, X. Bi,
+H. Zhang, M. Zhang, Y. K. Li, Y. Wu y D. Guo. DeepSeekMath: Pushing the Limits
+of Mathematical Reasoning in Open Language Models. 2024.
+\url{https://arxiv.org/abs/2402.03300}.
+\bibitem{swebenchplus} R. Aleithan, H. Xue, M. M. Mohajer, E. Nnorom,
+G. Uddin y S. Wang. SWE-Bench+: Enhanced Coding Benchmark for LLMs. 2024.
+\url{https://arxiv.org/abs/2410.06992}.
+\bibitem{challenge} F. Fajardo, S. Palma, B. Prieto y R. Ugarte.
+Razonamiento cuantitativo con unidades: desafío de investigación. IIC-3694,
+Pontificia Universidad Católica de Chile, 2026. Informe y datos disponibles en
+\href{https://github.com/spmasabeu/research-challenge-ia-gen-202602/tree/e99f9e922b52bb56993d87e683f6a1bc217e7b36/deliveries/challenge-clean}{el repositorio del desafío}.
+\end{thebibliography}
+\endgroup

@@ -6,6 +6,11 @@ Fecha: 2026-11-07, America/Santiago.
 
 Este plan responde qué se pide, cómo desarrollarlo y qué entregar. Distingue requisitos explícitos de propuestas metodológicas. Es solo planificación: no registra entrenamientos ni resultados nuevos. Las casillas permanecen abiertas hasta contar con evidencia de cumplimiento.
 
+Actualización de contexto, 2026-11-09: los pendientes del desafío de la sección 4
+describen el estado exploratorio original y ya no son el estado vigente. Para
+la primera entrega del proyecto, consultar los [requisitos y decisiones actuales](2026-11-09_202333_requisitos_entrega_1_proyecto.md)
+y su [plan de ejecución](../plans/2026-11-09_202333_entrega_1_proyecto.md).
+
 Fuente normativa: [ProyectoCurso-2026.pdf](../../ProyectoCurso-2026.pdf). Las páginas citadas corresponden al PDF, incluida su primera página sin número impreso. Antecedentes: [plan del desafío](2026-11-07_123729_requisitos_metodologia_entregables_units.md), [spike de unidades](../../spikes/units/README.md) e [informe exploratorio](../../spikes/units/report.md).
 
 ## 1 Qué se pide
