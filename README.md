@@ -76,7 +76,7 @@ versionar juntos `pyproject.toml` y `uv.lock`. No subir secretos ni pesos de mod
 
 Informe con el template aportado y comparación de cinco modelos: [fuentes y reproducción](docs/report/README.md). Referencia externa DeepSeek-V4-Pro-0813 vía OpenRouter/DeepInfra FP8: costo reportado USD 0,0935116, bajo el tope autorizado USD 5. No se entrenaron modelos.
 
-Entrega mínima para enviar: [README](deliveries/challenge-clean/challenge/README.md), [PDF](deliveries/challenge-clean/challenge/informe.pdf), [ZIP](deliveries/challenge-clean/challenge.zip). Incluye código, tareas, SFT/DPO e informe, sin corridas experimentales; [comprobación aislada](data/units/validation/self-contained-delivery.json). Los resultados originales y el paquete anterior se conservan en el repositorio.
+Entrega mínima para enviar: [README](deliveries/challenge-clean/challenge/README.md), [PDF](deliveries/challenge-clean/challenge/informe.pdf), [ZIP](deliveries/challenge-clean/challenge.zip). Incluye código, tareas, SFT/DPO e informe, sin corridas experimentales; [comprobación editorial y del ZIP](data/units/validation/editorial-polish.json). Los resultados originales y el paquete anterior se conservan en el repositorio.
 
 
 Revisión anterior de formato (2026-11-08): paquete conservado en `deliveries/challenge/` y su ZIP. Incluye el espaciado corregido del encabezado y tablas; [registro histórico](data/units/validation/report-format.json).

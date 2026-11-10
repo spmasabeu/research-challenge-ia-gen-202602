@@ -1,19 +1,19 @@
 % Informe autocontenido; compilar mediante main.tex.
 \section{Problema y alcance}
-Este trabajo construye un entorno que genera problemas cuantitativos en español
-y comprueba automáticamente las respuestas de modelos de lenguaje. El objetivo
-es preparar datos y una función de recompensa para entrenar posteriormente a
-Qwen3-1.7B, sin realizar entrenamiento en esta entrega. Cada problema proporciona
-fórmulas y equivalencias de unidades para evaluar cálculo y composición de
-operaciones, en lugar de memoria de conocimientos físicos.
+Este entorno genera problemas cuantitativos en español y comprueba automáticamente
+las respuestas de modelos de lenguaje. Prepara datos y una función de recompensa
+para entrenar posteriormente a Qwen3-1.7B, sin realizar entrenamiento en esta
+entrega. Cada problema proporciona fórmulas y equivalencias de unidades para
+evaluar cálculo y composición de operaciones sin exigir conocimientos físicos memorizados.
 
-Las 180 tareas se reparten entre entrenamiento, validación y prueba. Tras
-calibrar su dificultad con Qwen3-1.7B, se generan datos de entrenamiento y se
-compara su desempeño inicial con Llama 3.2-1B, SmolLM2-1.7B-Instruct y Qwen3-8B,
-además de DeepSeek-V4-Pro-0813 como referencia externa. Qwen3-8B actúa como
-\emph{modelo generador}: produce soluciones candidatas para construir las
-trazas SFT y los pares DPO destinados al entrenamiento posterior de Qwen3-1.7B.
-El verificador las filtra con respuestas de referencia calculadas por código.
+El diseño se calibró con Qwen3-1.7B sobre tareas independientes antes de fijar las
+180 tareas de entrenamiento, validación y prueba. Se preparan datos derivados
+y se compara el desempeño inicial de Qwen3-1.7B con Llama 3.2-1B,
+SmolLM2-1.7B-Instruct y Qwen3-8B, además de DeepSeek-V4-Pro-0813 como referencia
+externa. Qwen3-8B actúa como \emph{modelo generador}: produce soluciones
+candidatas para ajuste supervisado (SFT) y optimización por preferencias (DPO).
+El verificador las filtra con referencias calculadas por código para preparar
+los datos de entrenamiento posterior.
 Todos responden en un turno, sin calculadora, intérprete ni otras herramientas.
 
 \section{Diseño del dataset}
@@ -27,14 +27,14 @@ productos, manteniendo respuestas verificables por código.
 
 Cada familia combina dos estructuras: datos directos o suma de dos componentes
 positivos, como $d_1+d_2$, $m_1+m_2$ o $F_1+F_2$. Sobre cada problema físico
-se construyen tres tareas equivalentes: fácil usa unidades del Sistema
-Internacional (SI) sin conversiones, media convierte una entrada y difícil
-convierte dos entradas y, en velocidad y energía, también la salida. En
-luminosidad difícil se mantiene la salida en W, por lo que hay dos conversiones.
+se construyen tres tareas equivalentes. Fácil usa unidades del Sistema
+Internacional (SI); media requiere convertir una magnitud de entrada y difícil,
+ambas. Los componentes de una suma comparten unidad. En velocidad y energía,
+difícil también requiere convertir la salida; en luminosidad se mantiene en W.
 Estos niveles describen operaciones previstas, no garantizan un orden de
 dificultad para todos los modelos.
 
-El generador, incluido en \path{code/src/challenge/generator.py} del paquete,
+El generador de tareas (\path{code/src/challenge/generator.py})
 muestrea distancias de 101--9999 m y tiempos de 7--199 s para velocidad, masas
 de 1,1--49,9 kg y velocidades de 1,1--49,9 m/s para energía, y distancias
 enteras de 2--30 m con flujos de 0,01--0,99 W/m$^2$ para luminosidad. Las
@@ -195,8 +195,8 @@ aunque las semillas no garantizan igualdad entre motores o versiones.
 
 \section{Datos derivados para entrenamiento posterior}
 Con el diseño fijado, se usó exclusivamente train para crear dos productos:
-soluciones verificadas para ajuste supervisado (SFT) y pares de respuesta
-preferida y rechazada para optimización por preferencias (DPO). Las 90 tareas
+soluciones verificadas para SFT y pares de respuesta preferida y rechazada
+para DPO. Las 90 tareas
 de train se distribuyen en nueve combinaciones de familia y nivel, con 10
 tareas por combinación. Qwen3-8B generó cuatro respuestas por tarea, es decir,
 40 por combinación y $90\times4=360$ en total, una escala elegida para muestrear
@@ -258,10 +258,7 @@ La siguiente evaluación mide el desempeño previo a cualquier entrenamiento.
 El conjunto test reúne seis problemas físicos por cada una de las tres familias,
 es decir, 18 problemas. Cada uno tiene tres niveles, de donde surgen las
 54 tareas. Se obtuvieron tres respuestas por tarea y modelo, equivalentes a
-162 intentos por modelo y 648 entre los cuatro locales. Pass@1 estima qué
-proporción de respuestas individuales es correcta, mientras pass@3 indica en
-qué proporción de tareas al menos uno de los tres intentos acierta, mostrando
-el beneficio de disponer de varios intentos.
+162 intentos por modelo y 648 entre los cuatro locales.
 
 Si una tarea tiene $c$ aciertos entre $n=3$ respuestas, el estimador es
 $\widehat{\mathrm{pass@}k}=1-\binom{n-c}{k}/\binom{n}{k}$, promediado sobre
@@ -290,9 +287,8 @@ o intentos incompletos, mientras SmolLM2 registró diez truncamientos y un
 intento incompleto entre sus 162 respuestas. Su cobertura de 23,46\% y cota
 optimista de 79,63\% hacen que el pass@1 automático de 3,09\% describa el
 sistema bajo este formato, sin aislar capacidad matemática. Sus cinco aciertos
-son de velocidad. Por su parte, Qwen3-8B obtuvo 82 aciertos, 74 errores
-numéricos y seis no interpretadas, con pass@1 de 50,62\%, pass@3 de 72,22\%
-y cobertura de 96,30\%, sin truncamientos ni intentos incompletos. La diferencia
+son de velocidad. Qwen3-8B registró 82 aciertos, 74 errores numéricos y seis
+respuestas no interpretadas, sin truncamientos ni intentos incompletos. La diferencia
 frente a los 84 aciertos del objetivo no demuestra superioridad estadística
 sobre esta muestra pequeña y relacionada.
 
@@ -369,13 +365,10 @@ SHA-256 permiten comprobar la integridad de datos, configuración y código,
 y las pruebas cubren referencias independientes, equivalencias, ataques,
 separación de grupos, reanudación y procedencia SFT/DPO.
 
-El archivo README y la guía REPRODUCING del paquete explican cómo comprobar
-esas huellas, regenerar particiones, reconstruir SFT/DPO y recalcular métricas
-y PDF desde una copia aislada sin pesos ni credenciales. Repetir inferencia
-requiere los modelos y motores identificados, sin garantía de respuestas
-idénticas entre versiones o hardware aun usando las mismas semillas. Esta
-reproducción permite contrastar los resultados presentados sin realizar el
-entrenamiento reservado para la siguiente etapa.
+README y REPRODUCING explican cómo comprobar esas huellas, regenerar particiones,
+reconstruir los datos derivados y recalcular métricas y PDF desde una copia aislada sin pesos
+ni credenciales. Repetir inferencia requiere los modelos y motores identificados;
+las respuestas pueden variar entre versiones o hardware aun con las mismas semillas.
 
 \begingroup\raggedright
 \begin{thebibliography}{9}

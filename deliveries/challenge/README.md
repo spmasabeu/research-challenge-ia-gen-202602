@@ -7,6 +7,8 @@ Paquete autocontenido de los cuatro entregables. No contiene pesos, credenciales
 entornos virtuales ni entrenamiento. Informe: [report/informe.pdf](report/informe.pdf).
 Código, referencias privadas y respuestas se entregan para reproducir resultados;
 a cada modelo se envió exclusivamente el prompt público, un turno sin herramientas.
+Los datos derivados preparan el ajuste supervisado (SFT) y la optimización por
+preferencias (DPO) posteriores.
 
 | Entregable | Evidencia |
 | --- | --- |
@@ -39,9 +41,10 @@ nuevas puede cambiar métricas y cantidades aun con las mismas semillas.
 variantes queda unido. Semillas 4301/4302; 95 claves físicas de desarrollo excluidas.
 Por dificultad fácil/media/difícil: train 30/30/30; eval 12/12/12; test 18/18/18.
 121 SFT de 46 tareas/20 grupos y 35 DPO de 25 tareas/17 grupos.
-SFT por dificultad 51/46/24; DPO 7/15/13. De 360 respuestas del modelo generador,
-193 pasan resultado, 178 son correctas distintas y todas fueron auditadas:
-121 retenidas, 57 excluidas por calidad contextual. Auditoría de agentes,
+SFT por dificultad 51/46/24; DPO 7/15/13. De las 360 respuestas del modelo
+generador, 193 superan la verificación del resultado final. Tras eliminar
+duplicados quedan 178 candidatas, todas revisadas contextualmente: se retienen
+121 y se descartan 57 por inconsistencias en el desarrollo. Revisión de agentes,
 no certificación humana. Rechazadas DPO: 22 modelo generador, 13 objetivo; cero unparsed.
 
 | Modelo | pass@1 | pass@3 | Cobertura |

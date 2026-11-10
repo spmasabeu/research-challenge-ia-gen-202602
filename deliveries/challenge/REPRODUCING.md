@@ -2,7 +2,8 @@
 
 Ejecutar desde la carpeta `challenge/` extraída del ZIP. Los comandos de este
 documento presuponen Linux y Bash. El README contiene las recetas offline para
-regenerar tareas, reconstruir SFT/DPO desde las fuentes incluidas y recalcular
+regenerar tareas, reconstruir los datos de ajuste supervisado (SFT) y
+optimización por preferencias (DPO) desde las fuentes incluidas y recalcular
 métricas, figuras y PDF. Esas recetas no necesitan GPU, Ollama ni credenciales.
 
 **Recalcular resultados guardados es determinista. Generar respuestas nuevas

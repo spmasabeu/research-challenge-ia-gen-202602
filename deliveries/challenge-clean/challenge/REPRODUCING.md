@@ -1,8 +1,9 @@
 # Reproducción de la entrega
 
 Trabajar desde la carpeta `challenge/` extraída. Los pasos 1–3 usan archivos
-incluidos y no realizan inferencias. Las nuevas salidas se guardan en un
-directorio temporal para conservar intactos los datos entregados.
+incluidos para comprobar tareas y datos de ajuste supervisado (SFT) y
+optimización por preferencias (DPO), sin realizar inferencias. Las nuevas salidas
+se guardan en un directorio temporal para conservar intactos los datos entregados.
 
 ## 1. Comprobar integridad y preparar Python
 
@@ -22,7 +23,10 @@ print("Integridad correcta")
 PY
 ```
 
-Preparar el entorno sin dependencias externas y un destino nuevo de trabajo:
+Preparar el entorno sin dependencias externas y un destino nuevo de trabajo.
+Los comandos siguientes usan `uv`. Si ya dispone de Python 3.12, omita
+`uv sync`, conserve las variables de entorno y sustituya
+`uv run --no-sync python` por `python3`.
 
 ```bash
 uv sync --locked --python 3.12
@@ -32,9 +36,6 @@ units_check_dir=$(mktemp -d)
 export units_check_dir
 uv run --no-sync python -m unittest discover -s code/tests
 ```
-
-También se puede utilizar directamente Python 3.12 con ese `PYTHONPATH`,
-sustituyendo `uv run --no-sync python` por `python3` en los pasos siguientes.
 
 ## 2. Validar y regenerar las tareas
 

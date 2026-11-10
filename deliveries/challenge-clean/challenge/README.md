@@ -5,7 +5,8 @@ Fernando Fajardo, Sebastian Palma, Benjamin Prieto y Rodrigo Ugarte.
 
 El [informe](informe.pdf) describe el problema, la generación del dataset, sus
 particiones y niveles, los resultados y las limitaciones. Este paquete contiene
-los archivos necesarios para usar el entorno y los datos derivados.
+los archivos necesarios para usar el entorno y los datos para ajuste supervisado
+(SFT) y optimización por preferencias (DPO).
 
 | Contenido | Ubicación |
 | --- | --- |
@@ -24,7 +25,11 @@ Python 3.12 en Linux; el código usa su biblioteca estándar.
 
 ## Uso inicial
 
-Desde esta carpeta, después de extraer el ZIP:
+Trabajar desde esta carpeta después de extraer el ZIP.
+
+Los comandos siguientes usan `uv`. Si ya dispone de Python 3.12, omita
+`uv sync`, conserve las variables de entorno y sustituya
+`uv run --no-sync python` por `python3`.
 
 ```bash
 uv sync --locked --python 3.12

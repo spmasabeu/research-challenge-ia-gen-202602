@@ -1,0 +1,33 @@
+{
+  "scope": "Siete ajustes editoriales en las fuentes, informes y guías de ambas entregas: conversiones por magnitud, ejecución sin uv, calibración independiente, definición inicial de SFT/DPO, candidatas frente a resultados verificados y dos recortes de repeticiones.",
+  "protected_data_code_runs_tables_figures_unchanged": 730,
+  "new_inference": false,
+  "training": false,
+  "extracted_clean_zip_checks": {
+    "uv": {
+      "offline_blocks": 5,
+      "readme_startup": true,
+      "readme_example": true,
+      "unit_tests": 13
+    },
+    "python": {
+      "offline_blocks": 5,
+      "readme_startup": true,
+      "readme_example": true,
+      "unit_tests": 13
+    }
+  },
+  "pdf_pages": {
+    "deliveries/challenge/report/informe.pdf": 7,
+    "deliveries/challenge-clean/challenge/informe.pdf": 7
+  },
+  "latex_warnings": 0,
+  "pdf_visual_review": "Siete páginas del informe principal; secciones afectadas y referencias del informe anterior.",
+  "zip_checks": "Ambos ZIP: CRC, lista y contenido idénticos a sus carpetas, manifiestos SHA-256 actualizados y verificados.",
+  "artifacts_sha256": {
+    "deliveries/challenge-2026-11-07.zip": "8e72af61f5994ea4f989957f52e77ac0da069cd4bcd8f86ddab9e9a6b46fee3a",
+    "deliveries/challenge-clean/challenge.zip": "39985f4f92bc51d947b4128932776643753b63857d08ff1673364e17ea32fcb5",
+    "deliveries/challenge/report/informe.pdf": "402bef50f9c55870ee3e2274553b4bb3f9338f614a16f35bc429692a6c994448",
+    "deliveries/challenge-clean/challenge/informe.pdf": "427bf65e4d5c92e23ba418330333f5f510f59551be15a979c03db1eb0088cad2"
+  }
+}

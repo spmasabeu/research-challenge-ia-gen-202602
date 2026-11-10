@@ -83,3 +83,9 @@ calculadas por código. Ambos informes, tablas, gráficos, guías y paquetes del
 desafío se actualizan, conservando siete páginas y los datos y métricas. Las
 copias históricas de código de las corridas se preservan para mantener sus
 huellas. Comprobación: `data/units/validation/generator-terminology.json`.
+
+Pulido editorial 2026-11-09: ambos informes precisan la calibración independiente,
+las conversiones por magnitud y las siglas SFT/DPO desde su primera aparición.
+Se recortan repeticiones y se aclaran la ejecución sin uv y las fases de selección.
+Ambos PDF conservan siete páginas; guías, manifiestos y ZIP actualizados.
+Comprobación: `data/units/validation/editorial-polish.json`.

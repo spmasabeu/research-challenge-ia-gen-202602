@@ -1,7 +1,7 @@
 {
   "files": {
-    "README.md": "ec3dd9332dabeb4a819d3b9202afee841199c790fdb22d8f6365b6417a612cc7",
-    "REPRODUCING.md": "7a06d3181941ebf8651d3ca4e4abee5c2e5e7402cd1f83a8d7ae5d006e26318b",
+    "README.md": "c8532a76ff3ac3fb87899f8ca88cbfdbd49b9ad4cb2bb4c427ac98c6987dccf7",
+    "REPRODUCING.md": "c9d27dbbf8d4895edb56720756bde3152c8c04591343869262cf203deac38c87",
     "code/src/challenge/__init__.py": "02f1632a912b802498264c62f062274c290e4a852a2d5691b4712de5023c9068",
     "code/src/challenge/derive.py": "117df2d85266b3ad7bfe7a6c3b6c60a7be9971e07f8db8fd810e7bb1d7beab23",
     "code/src/challenge/evaluate.py": "f812a6ec550daccfb881ffc51ee48d28cf9baa10e98370dd8eb4013f2a4c83e2",
@@ -31,7 +31,7 @@
     "data/training/manifest.json": "3f6ca700eb7ee3a28fe96a6466612b39332222ed3a08c025ac5accdf4adb4c0b",
     "data/training/sft.jsonl": "8eee9eba1e17c56cffa9987ce0f12a8323b04f756d3e91db4573919625e7c2d2",
     "data/training/stats.json": "bcbcaf239c3b86933ef209bdcf0381d12f869c12d5bad42afacee6ea82b179ac",
-    "informe.pdf": "8c0753001f4f0dd5728ca648dba780fbc63ac235cade97225e9606bb08475af0",
+    "informe.pdf": "427bf65e4d5c92e23ba418330333f5f510f59551be15a979c03db1eb0088cad2",
     "pyproject.toml": "2fecacc161092e60ac25ac487dfdd4ad4a37bf95b8618efd293cb3aa24b23e44",
     "uv.lock": "bf0cb17a34eef91bd5f9a70f55c788e014f562355d1099f15f041a14649e6977"
   }
