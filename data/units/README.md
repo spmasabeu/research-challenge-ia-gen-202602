@@ -91,6 +91,8 @@ Para generar tareas de las familias nuevas (`density`, `pressure`, `voltage`):
 PYTHONPATH=src uv run python -m challenge.harness generate --seed 5000 --groups 10 --families density pressure voltage --out /tmp/units-new/tasks.jsonl
 ```
 
+Primer piloto de las seis familias con Qwen3-1.7B: [`pilot-families-v1/`](pilot-families-v1/README.md).
+
 Comprobado desde copia aislada: diez pruebas, referencias, disjunción, celdas y
 regeneración de 15 archivos idénticos. Evidencia `validation/c4-isolated.json`.
 El código actual tiene además pruebas del exportador SFT/DPO (once en total).
