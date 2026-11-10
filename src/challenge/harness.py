@@ -7,7 +7,7 @@ from pathlib import Path
 
 from .evaluate import summarize
 from .generator import VERSION as GENERATOR_VERSION
-from .generator import dump, generate, split_groups
+from .generator import FAMILIES, ORIGINAL_FAMILIES, dump, generate, split_groups
 from .models import OPTIONS, read_rows, run, sha256, validate_rows
 from .verifier import UNITS, VERSION, load_tasks
 
@@ -152,6 +152,7 @@ def main():
     gen.add_argument("--seed", type=int, required=True)
     gen.add_argument("--groups", type=int, required=True)
     gen.add_argument("--out", type=Path, required=True)
+    gen.add_argument("--families", nargs="+", choices=FAMILIES, default=list(ORIGINAL_FAMILIES))
     frozen = sub.add_parser("freeze")
     frozen.add_argument("--out", type=Path, required=True)
     frozen.add_argument("--exclusions", type=Path, required=True)
@@ -182,7 +183,7 @@ def main():
         derived.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     if args.command == "generate":
-        tasks = generate(args.seed, args.groups)
+        tasks = generate(args.seed, args.groups, families=args.families)
         load_tasks(tasks)
         args.out.parent.mkdir(parents=True, exist_ok=True)
         dump(args.out, tasks)
