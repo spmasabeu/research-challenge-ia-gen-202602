@@ -503,3 +503,24 @@ manifest y comparación byte a byte con la carpeta correctos. SHA-256:
 3066116975de405a5c084d2ad6448aa1aa8ff77875d2b1956b7d18ed8dbf0ecb. results/ y validation.json no aparecen en el ZIP.
 El paquete antiguo deliveries/challenge/ y su ZIP permanecen intactos.
 Cero inferencias nuevas y cero llamadas pagadas.
+
+## Rutas internas y repositorio opcional, 2026-11-09
+
+El usuario aclara que las rutas del entregable deben ser autocontenidas y
+luego autoriza una nota opcional: solicitar al equipo acceso al enlace general
+del repositorio para conocer iteraciones y resultados completos. Se sustituyen
+los enlaces profundos y las instrucciones de consultar archivos del repositorio
+por esa nota en README e informe. Las fuentes teacher/negatives se explican como
+identificadores de procedencia, no rutas de archivos. Se retiran del JSON de
+exclusiones los nombres de archivos históricos ausentes, conservando todas las
+claves físicas. Se actualizan los manifiestos y se regenera el ZIP de 35 archivos.
+
+Los cinco bloques offline de REPRODUCING pasan desde copia aislada y entorno
+nuevo, incluidas 13 pruebas, regeneración idéntica y comprobación SFT/DPO.
+Sin acceso al repositorio durante estas comprobaciones. Código, textos de datos
+y claves de exclusión sin cambios. PDF de siete páginas sin advertencias y
+sección modificada revisada visualmente; ZIP/manifest verificados byte a byte.
+Evidencia: data/units/validation/self-contained-delivery.json y log.
+ZIP SHA-256: 13a91c6a1cd2e2c6e2c25bf6241a205a37eae35a5275c4fa397e430c6e385a40; 474352 bytes. Cero inferencias.
+Se mantienen citas bibliográficas y enlaces de origen de modelos; no son rutas
+de archivos necesarias para las operaciones offline documentadas.

@@ -61,11 +61,14 @@ filtrado, auditorías y cantidades se describen en el informe y en
 `data/training/stats.json`.
 
 [REPRODUCING.md](REPRODUCING.md) permite regenerar tareas, evaluar respuestas
-y comprobar los SFT/DPO entregados. Las respuestas originales de los experimentos
-se conservan como [respaldo en el repositorio](https://github.com/spmasabeu/research-challenge-ia-gen-202602/tree/33074714d1dada71269c6de57badc06279b30f9c/deliveries/challenge-clean/challenge/results),
-incluidas las fuentes `teacher` y `negatives` citadas en la procedencia. Ese
-respaldo se necesita para recalcular la línea base original o reconstruir la
-selección SFT/DPO desde todas las generaciones.
+y comprobar los SFT/DPO entregados usando los archivos de esta carpeta. Los
+nombres `teacher` y `negatives` en los metadatos identifican la procedencia de
+las respuestas y no son rutas que deban abrirse.
 
 La entrega incluye los datasets finales y el informe de resultados, sin las
 corridas experimentales. No se entrenaron modelos.
+
+Para consultar mayor detalle de las iteraciones, las respuestas experimentales
+y los resultados completos, puede solicitarse al equipo acceso a su
+[repositorio de trabajo](https://github.com/spmasabeu/research-challenge-ia-gen-202602).
+Es información complementaria y no se necesita para usar este paquete.
