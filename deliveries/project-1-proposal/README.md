@@ -1,9 +1,9 @@
 # Proyecto · Entrega 1: propuesta
 
-Entrega: [propuesta.pdf](propuesta.pdf), tres páginas de contenido y una de
+Entrega: [proyecto_entrega_1.pdf](proyecto_entrega_1.pdf), tres páginas de contenido y una de
 referencias. Incluye revisión bibliográfica, investigación tentativa y entorno.
 
-Enviar únicamente `propuesta.pdf` por la casilla de Canvas el **11 de noviembre
+Enviar únicamente `proyecto_entrega_1.pdf` por la casilla de Canvas el **11 de noviembre
 de 2026 a las 23:59**, según confirmación del usuario. Las fuentes LaTeX están
 en `source/` y reutilizan el template del desafío.
 
@@ -37,13 +37,13 @@ export project_proposal_build
 cd source
 latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir="$project_proposal_build" main.tex
 cd ..
-cmp propuesta.pdf "$project_proposal_build/main.pdf"
+cmp proyecto_entrega_1.pdf "$project_proposal_build/main.pdf"
 ```
 
 Con la misma instalación TeX, `cmp` sin salida verifica igualdad byte a byte.
 Otras versiones pueden alterar la maquetación o los bytes sin cambiar contenido.
 Los auxiliares se generan fuera de la entrega. Si se editan las fuentes, revisar
-el nuevo PDF y copiarlo a `propuesta.pdf` después de validar su contenido.
+el nuevo PDF y copiarlo a `proyecto_entrega_1.pdf` después de validar su contenido.
 
 No se ejecutaron entrenamientos ni inferencias nuevas para elaborar la propuesta.
 
