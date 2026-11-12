@@ -19,6 +19,12 @@ comparación de cómputo y auditoría humana. Los límites concretos de entrenam
 dependen de un piloto de memoria y tiempo todavía no realizado. Los resultados
 del desafío se presentan como antecedentes, no como resultados del proyecto.
 
+Revisión editorial del 11 de noviembre: se mejoraron las transiciones y las
+explicaciones del diseño, se explicitaron las curvas de recompensa para el avance
+y se incorporó un párrafo de posibles iteraciones al cierre de la sección 4.
+Las ampliaciones de familias, dificultad o recompensa quedan sujetas al piloto
+y a los recursos disponibles, manteniendo la comparación de las cinco rutas.
+
 ## Compilar
 
 Requiere pdfLaTeX, latexmk y los paquetes del template: lmodern, geometry,
