@@ -9,8 +9,8 @@ import hashlib
 import json
 import math
 import random
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Callable
 
 VERSION = "units-3"
 LEVELS = ("easy", "medium", "hard")

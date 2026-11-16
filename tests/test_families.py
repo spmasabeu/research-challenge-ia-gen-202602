@@ -11,9 +11,23 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from challenge.generator import CATALOG, FAMILIES, LEVELS, ORIGINAL_FAMILIES, generate, split_groups
+from challenge.generator import (
+    CATALOG,
+    FAMILIES,
+    LEVELS,
+    ORIGINAL_FAMILIES,
+    generate,
+    split_groups,
+)
 from challenge.models import read_rows
-from challenge.verifier import UNITS, extract_answer, load_tasks, reference_from_prompt, reward, verify
+from challenge.verifier import (
+    UNITS,
+    extract_answer,
+    load_tasks,
+    reference_from_prompt,
+    reward,
+    verify,
+)
 
 NEW_FAMILIES = tuple(f for f in FAMILIES if f not in ORIGINAL_FAMILIES)
 FROZEN = ROOT / "data/units/final-v2"

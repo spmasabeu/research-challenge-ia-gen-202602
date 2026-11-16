@@ -6,8 +6,8 @@ from collections import Counter
 from pathlib import Path
 
 from .evaluate import summarize
-from .generator import VERSION as GENERATOR_VERSION
 from .generator import FAMILIES, ORIGINAL_FAMILIES, dump, generate, split_groups
+from .generator import VERSION as GENERATOR_VERSION
 from .models import OPTIONS, read_rows, run, sha256, validate_rows
 from .verifier import UNITS, VERSION, load_tasks
 
