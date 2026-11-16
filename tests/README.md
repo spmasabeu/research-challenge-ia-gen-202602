@@ -18,4 +18,5 @@ Bandit se ejecuta con umbral medio/alto; las aserciones de comprobación produce
 avisos bajos. La excepción B310 del runner corresponde a su URL local fija.
 No se entrenan modelos.
 
-Total actual: trece pruebas (once núcleo/SFT/DPO y dos de API externa simulada). Ninguna realiza llamadas pagadas.
+Total actual: veintitrés pruebas (once núcleo/SFT/DPO, dos de API externa simulada y diez del
+catálogo de familias en `test_families.py`). Ninguna realiza llamadas pagadas.
