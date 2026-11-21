@@ -51,3 +51,16 @@ los archivos efectivamente revisados al recibir los dictámenes humanos.
 La calibración contiene 26 casos en `pending/calibration-human-pending.jsonl`,
 con su copia en `reviewed/calibration-human-reviewed.jsonl`. En total hay
 287 casos para revisar en seis archivos.
+
+## Responsables asignados
+
+| Auditor | Archivos en `reviewed/` | Casos |
+| --- | --- | ---: |
+| fernando | `calibration-human-reviewed.jsonl`, `control-human-reviewed.jsonl` | 78 |
+| rodrigo | `grpo-human-reviewed.jsonl`, `hybrid-human-reviewed.jsonl` | 105 |
+| benjamin | `sft-human-reviewed.jsonl`, `sft-data-human-reviewed.jsonl` | 104 |
+
+El campo `auditor` registra la asignación; no acredita revisión completada.
+`reviewer_type`, `judgment` y `reason` permanecen vacíos hasta que el responsable
+compruebe cada caso. Solo entonces debe registrar `reviewer_type: human`, su
+dictamen y motivo. Los originales de `pending/` se conservan intactos.
