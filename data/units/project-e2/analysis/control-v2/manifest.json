@@ -1,0 +1,24 @@
+{
+  "sources": {
+    "data/units/project-e2/runs/control/scores/verifier-11/summary.json": "6fcd3e2e403f22db7e6cab40b338656f23cf93828f4097268bcb06fffb73a7de",
+    "data/units/project-e2/runs/control/metadata.json": "69bdf1509c14a4f613c69b8f492f4d5dbb423dc940c6532fdf901f31297799a0",
+    "data/units/project-e2/runs/control/scores/verifier-11/metadata.json": "29cbb11624cdb866d41dba1660bee76734cd54f0e8da7438cd09e0e6865c9a8a",
+    "data/units/project-e2/runs/control/scores/verifier-11/labels.jsonl": "bd8d84b8d12a7fe3cb96dc2147445f240ea00d573c4a9816b3f0654d004b8226",
+    "data/units/project-e2/runs/control-curves/scores/verifier-11/summary.json": "7c6683e29a17850db97b3557203a2f5b2e1d9cee331d97c7ff1bcc17fd221203",
+    "data/units/project-e2/runs/control-curves/training-point.json": "65613db88f2520c2a43faeabc3eb6e3ff8619c2978d2a9e8bd306dc80020623f",
+    "data/units/project-e2/dataset/private/eval.jsonl": "8f5a1251c7aa13c86661934202fc4255dd5e8aa6ce3df93eddaa67846a4cf08f"
+  },
+  "report_source_sha256": "a24b8ff50c7d31698f5f31be143e7ccd1a35d99d26a3bfd59c07e4bf83ea3ccc",
+  "include_pilots": false,
+  "artifacts": {
+    "checkpoints.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "errors-by-family-level.png": "bc666b55b9690eb1ed7a30ad8d617eb1de258ee7ee1037dcf96f0a9a9757be7a",
+    "evaluation-errors.png": "25f05f41229d877737d94ff2f722f36177641d764492049b59fd87851a3448ca",
+    "evaluation.csv": "7a7315edf9de949393ca5e7dd8f1b33a891a90d75cdd0202c4df6c2de811a68f",
+    "paired-uncertainty.json": "db532abf807b29993ce6798ab40b36804bde52641eac63c2ae745d0c2a12f375",
+    "training-curves.png": "8a0561931326f028e3d5bd0b8e1abda52b2fc8d43e11d154530601cc647c7fdd",
+    "validation-points.json": "cce1a40b550d2ad06bc4928a1ab9efe609b96f93314546580cae104db1d0b230",
+    "validation-vs-compute.png": "9804668f83c5971e5e8bffd827e83ba774180abfc42e4bf1b9fdc5dc78a7d47a"
+  },
+  "limits": "Pilotos no son comparación de rutas. Pérdida/recompensa train no equivalen a validación. Sin suavizado."
+}

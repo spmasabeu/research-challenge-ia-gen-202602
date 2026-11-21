@@ -1,0 +1,29 @@
+{
+  "cell": "speed/hard",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "numeric": 180,
+    "correct": 220
+  },
+  "unique": 357,
+  "correct_unique_before_audit": 202,
+  "sft_eligible_after_audit": 163,
+  "sft_tasks": 67,
+  "dpo_teacher_pairs": 47,
+  "audited": 202,
+  "required_random_audits": 5,
+  "rejected": 39,
+  "expanded": true,
+  "request_seconds": 2742.4126338640162,
+  "output_tokens_known": 59251,
+  "output_tokens_missing_rows": 0,
+  "truncated": 0,
+  "backend_incomplete": 0,
+  "audit_sha256": "cff47ad21c7df6ddc2a19d9fba7898d00eb9a27b5e82089f1c7e1be44c0363ff",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "b671e34c14399464c7e3c1a5406982cbac4e439be7d8ef44f207669a1ef83658",
+  "rows_canonical_encoding": "json.dumps(rows,sort_keys=True,ensure_ascii=False).encode UTF8",
+  "reference_check": "100 referencias recalculadas con Decimal desde distancias en km y tiempo en min; conversión a SI m/s y salida km/h.",
+  "limits": "Revisión de agente de los 202 positivos únicos, ampliada tras dos defectos en muestra aleatoria. Se aceptan redondeos o truncamientos coherentes; se excluyen operaciones falsas incluso dentro de tolerancia final del 1%. No es auditoría humana."
+}

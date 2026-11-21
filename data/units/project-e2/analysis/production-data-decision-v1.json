@@ -1,0 +1,35 @@
+{
+  "created_utc": "2026-11-18T16:59:57.578579+00:00",
+  "sft": 3362,
+  "sft_target": 4000,
+  "dpo": 769,
+  "dpo_target": 2000,
+  "sft_tasks": 1123,
+  "dpo_tasks": 526,
+  "dpo_physical_problems": 351,
+  "sft_task_exceptions": {
+    "energy/hard": 12,
+    "luminosity/hard": 2,
+    "luminosity/medium": 19
+  },
+  "dpo_task_exceptions": {
+    "luminosity/hard": 2
+  },
+  "all18cells_nonempty": true,
+  "dpo_structure_counts": {
+    "sum": 374,
+    "direct": 395
+  },
+  "additional_pairs": 439,
+  "decision": "Close I5 with3362SFT/769DPO and explicit coverage exceptions, before reportable SFT. Keep1800train tasks and original verifier. No duplicate examples, reused pairs, oracle traces, artificial wrong answers or lower-quality preferred responses.",
+  "shortfall_reason": "Full1800×4 generator production and3032agent reviews yielded3362preferred traces. All948tasks with pair shortage received the allowed3supplemental samples:2253correct,557numeric,34unparsed. Valid unique errors plus at most2unreused preferred/wrong pairs per task yield769, below indicative2000. Unparsed and audit-rejected reward1 responses are never negatives.",
+  "coverage_reason": "Energy/hard has12SFT tasks; luminosity/medium19; luminosity/hard2SFT and2DPO tasks. Full100tasks×4 generation/expanded audit and measured low-yield projections retained in earlier decision. Larger totals cannot fix these gaps; interpret family results accordingly.",
+  "impact": "Training corpus concentrates density/pressure/speed; results cannot establish broad learning for energy/luminosity. DPO is an exported dataset, not a trained route in this plan. Human review still pending.",
+  "evidence": {
+    "derived_manifest_sha256": "6fbec51aff58cdd029ea649af98acba991ba7d69be32f5df3303da0763ccbe13",
+    "derived_stats_sha256": "34eb22f60f8fc85ac9ef7d1f3f8bc4bf2842794714f36ecfbdd7e239b0118792",
+    "check_log_sha256": "068b783b3e25a6382c2088bad310675f232ef90eb622324171ebe8fef870dba8",
+    "sft_decision_sha256": "6ad2f747faef97614ae6ba00a9144cb941b51ec630965f9dda35ca4d08e9b81e",
+    "low_coverage_decision_sha256": "895a1de64afb114cea974a22854f703beef0a2b178edb58e860adc1a2397d696"
+  }
+}

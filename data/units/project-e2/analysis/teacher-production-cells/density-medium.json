@@ -1,0 +1,24 @@
+{
+  "cell": "density/medium",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "correct": 399,
+    "numeric": 1
+  },
+  "unique": 368,
+  "sft_eligible_after_audit": 367,
+  "sft_tasks": 100,
+  "dpo_teacher_pairs": 1,
+  "audited": 5,
+  "required_random_audits": 5,
+  "rejected": 0,
+  "expanded": false,
+  "request_seconds": 2282.8164998840043,
+  "output_tokens": 51495,
+  "audit_sha256": "2e76360fd89a9fcb0661be587acf069fbda9b6e46f23e58cf690f6d57469482a",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "27a86a48166013f4b67bb8bff36f2c2f1e52142136f4edd86d3b8ee7a47c8d83",
+  "limits": "Five random agent reviews, no human review; unreviewed traces not individually certified. Additional genuine negatives needed for coverage.",
+  "numeric_example": "7c2d4a0d55fd02e8520b-medium: converts69300g to69.3kg correctly, but gives69.3/.53≈1307.55 rather than130.75471698; factor10 arithmetic error, valid negative."
+}

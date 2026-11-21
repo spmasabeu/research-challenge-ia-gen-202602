@@ -1,0 +1,38 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.07s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.09it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.09s/it]
+df8b89ee45fbfece4856-easy 0 81 eos 4.55
+df8b89ee45fbfece4856-medium 0 87 eos 4.18
+df8b89ee45fbfece4856-hard 0 211 eos 10.2
+a3cbb473896a89b4da50-easy 0 98 eos 4.78
+a3cbb473896a89b4da50-medium 0 143 eos 6.72
+a3cbb473896a89b4da50-hard 0 207 eos 10.02
+2558d2a53febc3d55c72-easy 0 133 eos 6.32
+2558d2a53febc3d55c72-medium 0 153 eos 7.18
+2558d2a53febc3d55c72-hard 0 174 eos 8.27
+60e442177934ce3978ff-easy 0 150 eos 7.02
+60e442177934ce3978ff-medium 0 201 eos 9.72
+60e442177934ce3978ff-hard 0 185 eos 8.59
+c7c2b7066affebdd1d24-easy 0 257 eos 14.4
+c7c2b7066affebdd1d24-medium 0 228 eos 11.06
+c7c2b7066affebdd1d24-hard 0 269 eos 12.31
+3bc389d3a68706a86f52-easy 0 204 eos 9.36
+3bc389d3a68706a86f52-medium 0 174 eos 8.29
+3bc389d3a68706a86f52-hard 0 88 eos 4.27
+7be127563aa3e605725e-easy 0 102 eos 4.81
+7be127563aa3e605725e-medium 0 180 eos 8.61
+7be127563aa3e605725e-hard 0 275 eos 12.78
+f5461b9c3511becf7510-easy 0 99 eos 4.63
+f5461b9c3511becf7510-medium 0 144 eos 7.1
+f5461b9c3511becf7510-hard 0 183 eos 8.61
+06cb1c7a223e3bbb1920-easy 0 90 eos 4.15
+06cb1c7a223e3bbb1920-medium 0 149 eos 7.03
+06cb1c7a223e3bbb1920-hard 0 143 eos 6.55
+39cbd796007daca228bf-easy 0 125 eos 5.89
+39cbd796007daca228bf-medium 0 143 eos 6.75
+39cbd796007daca228bf-hard 0 188 eos 9.24
+e5a256435f4a3a8fec35-easy 0 90 eos 4.28
+e5a256435f4a3a8fec35-medium 0 90 eos 4.2
+e5a256435f4a3a8fec35-hard 0 105 eos 4.83
+5c3e105ff8f9a3b19943-easy 0 122 eos 5.69
+5c3e105ff8f9a3b19943-medium 0 112 eos 5.29
+5c3e105ff8f9a3b19943-hard 0 207 eos 9.66
+{"tasks": 36, "responses": 36, "n": 1, "statuses": {"correct": 26, "numeric": 10}, "coverage": 1.0, "pass_at_k": {"1": 0.7222222222222222}, "equivalent_si_rate": 0.7222222222222222, "requested_unit_rate": 1.0, "pass_at_k_upper_bound": {"1": 0.7222222222222222}, "backend_incomplete": 0, "truncated": 0}

@@ -4,7 +4,8 @@ import json
 import math
 import re
 
-VERSION = "verifier-10"
+VERSION = "verifier-11"
+MAX_CHARS = 4000
 NUMBER = r"[+-]?(?:\d+(?:[.,]\d*)?|[.,]\d+)(?:[eE][+-]?\d+)?"
 SCALAR = rf"({NUMBER})(?:\s*[×x*]\s*10\^([+-]?\d+))?"
 FINAL = r"(?:\d+[.)]\s*)?(?:(?:FINAL|valor(?:\s+final)?|(?:La\s+)?respuesta(?:\s+final)?|(?:El\s+)?resultado(?:\s+final)?)(?:\s+es)?\s*[:=]\s*|(?:La respuesta(?: final)? es|El resultado(?: final)? es)\s+)"
@@ -39,6 +40,8 @@ def number(text):
     match = re.fullmatch(SCALAR, str(text).strip())
     if not match:
         raise ValueError("escalar inválido")
+    if re.fullmatch(r"[+-]?[1-9]\d{0,2},\d{3}", match[1]):
+        raise ValueError("separador decimal o de miles ambiguo")
     value = float(match[1].replace(",", ".")) * 10.0 ** int(match[2] or 0)
     if not math.isfinite(value):
         raise ValueError("escalar no finito")
@@ -70,7 +73,7 @@ def quantity(text):
 
 def extract_answer(completion):
     """Terminal JSON o cantidad; resultados explícitos contradictorios inválidos."""
-    if not isinstance(completion, str):
+    if not isinstance(completion, str) or len(completion) > MAX_CHARS:
         return None
     text = re.sub(r"```(?:json)?", "", completion, flags=re.IGNORECASE)
     text = text.replace("**", "").replace("`", "").strip()
@@ -94,6 +97,7 @@ def extract_answer(completion):
             last_end = match.start() + length
         if objects and text[last_end:].strip(" \n\t."):
             return None
+        json_answer = candidates[-1] if objects else None
         marked = []
         lines = [line.strip() for line in text.splitlines() if line.strip() and line.strip() not in (r"\[", r"\]", "$$")]
         for index, line in enumerate(lines):
@@ -109,6 +113,10 @@ def extract_answer(completion):
                     return None
                 marked.append(q)
         candidates.extend(marked)
+        # Una cantidad aislada también declara un resultado, incluso antes de JSON.
+        candidates.extend(q for line in lines if (q := quantity(line)) is not None)
+        if json_answer is not None:
+            candidates.append(json_answer)
         if not objects:
             if not lines:
                 return None
@@ -134,6 +142,11 @@ def extract_answer(completion):
 
 
 def verify(task, completion):
+    requested = task["requested_unit"]
+    if requested not in UNITS or UNITS[requested][0] != task["family"]:
+        raise ValueError("unidad solicitada inconsistente")
+    if isinstance(completion, str) and len(completion) > MAX_CHARS:
+        return {"status": "too_long", "reward": 0.0}
     answer = extract_answer(completion)
     if answer is None:
         return {"status": "unparsed", "reward": 0.0}
@@ -146,8 +159,11 @@ def verify(task, completion):
     si = value * factor
     if not math.isfinite(si):
         return {"status": "numeric", "reward": 0.0, "value": value, "unit": unit, "reason": "SI no finito"}
-    correct = abs(si - task["answer_si"]) <= .01 * abs(task["answer_si"])
-    return {"status": "correct" if correct else "numeric", "reward": float(correct), "value": value, "unit": unit, "value_si": si}
+    equivalent = abs(si - task["answer_si"]) <= .01 * abs(task["answer_si"])
+    correct = equivalent and unit == requested
+    status = "unit" if unit != requested else ("correct" if correct else "numeric")
+    return {"status": status, "reward": float(correct), "value": value, "unit": unit,
+            "value_si": si, "equivalent_si": equivalent, "requested_unit_correct": unit == requested}
 
 
 def reference_from_prompt(prompt, family):
@@ -183,6 +199,9 @@ def load_tasks(tasks):
     registry = {}
     for task in tasks:
         ref = task["answer_si"]
+        requested = task["requested_unit"]
+        if requested not in UNITS or UNITS[requested][0] != task["family"] or f"Expresa el resultado en {requested}." not in task["prompt"]:
+            raise ValueError("unidad solicitada inconsistente con prompt")
         if not math.isfinite(ref) or ref <= 0 or not math.isclose(ref, reference_from_prompt(task["prompt"], task["family"]), rel_tol=1e-10):
             raise ValueError("referencia inconsistente")
         if task["prompt"] in registry:

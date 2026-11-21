@@ -1,0 +1,38 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.69s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  1.72s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.01s/it]
+df8b89ee45fbfece4856-easy 0 84 eos 4.89
+df8b89ee45fbfece4856-medium 0 86 eos 4.0
+df8b89ee45fbfece4856-hard 0 205 eos 9.54
+a3cbb473896a89b4da50-easy 0 93 eos 4.52
+a3cbb473896a89b4da50-medium 0 137 eos 6.72
+a3cbb473896a89b4da50-hard 0 207 eos 9.68
+2558d2a53febc3d55c72-easy 0 133 eos 6.21
+2558d2a53febc3d55c72-medium 0 181 eos 8.63
+2558d2a53febc3d55c72-hard 0 213 eos 9.94
+60e442177934ce3978ff-easy 0 156 eos 7.85
+60e442177934ce3978ff-medium 0 192 eos 11.16
+60e442177934ce3978ff-hard 0 163 eos 7.78
+c7c2b7066affebdd1d24-easy 0 214 eos 12.78
+c7c2b7066affebdd1d24-medium 0 197 eos 10.35
+c7c2b7066affebdd1d24-hard 0 126 eos 6.03
+3bc389d3a68706a86f52-easy 0 129 eos 6.06
+3bc389d3a68706a86f52-medium 0 180 eos 8.42
+3bc389d3a68706a86f52-hard 0 124 eos 5.81
+7be127563aa3e605725e-easy 0 90 eos 4.26
+7be127563aa3e605725e-medium 0 129 eos 5.97
+7be127563aa3e605725e-hard 0 209 eos 9.6
+f5461b9c3511becf7510-easy 0 193 eos 9.88
+f5461b9c3511becf7510-medium 0 145 eos 14.86
+f5461b9c3511becf7510-hard 0 290 eos 25.59
+06cb1c7a223e3bbb1920-easy 0 108 eos 9.44
+06cb1c7a223e3bbb1920-medium 0 149 eos 11.79
+06cb1c7a223e3bbb1920-hard 0 139 eos 11.52
+39cbd796007daca228bf-easy 0 91 eos 5.88
+39cbd796007daca228bf-medium 0 124 eos 6.74
+39cbd796007daca228bf-hard 0 200 eos 14.23
+e5a256435f4a3a8fec35-easy 0 90 eos 4.64
+e5a256435f4a3a8fec35-medium 0 91 eos 5.75
+e5a256435f4a3a8fec35-hard 0 125 eos 6.5
+5c3e105ff8f9a3b19943-easy 0 122 eos 6.15
+5c3e105ff8f9a3b19943-medium 0 161 eos 9.03
+5c3e105ff8f9a3b19943-hard 0 191 eos 10.58
+{"tasks": 36, "responses": 36, "n": 1, "statuses": {"unparsed": 11, "correct": 14, "numeric": 11}, "coverage": 0.6944444444444444, "pass_at_k": {"1": 0.3888888888888889}, "equivalent_si_rate": 0.3888888888888889, "requested_unit_rate": 0.6944444444444444, "pass_at_k_upper_bound": {"1": 0.6944444444444444}, "backend_incomplete": 0, "truncated": 0}

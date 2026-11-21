@@ -1,0 +1,28 @@
+{
+  "cell": "density/hard",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "correct": 354,
+    "numeric": 45,
+    "unparsed": 1
+  },
+  "unique": 381,
+  "sft_eligible_after_audit": 335,
+  "sft_tasks": 100,
+  "dpo_teacher_pairs": 37,
+  "audited": 5,
+  "required_random_audits": 5,
+  "rejected": 0,
+  "expanded": false,
+  "request_seconds": 2567.476929613007,
+  "output_tokens": 55970,
+  "truncated": 1,
+  "audit_sha256": "664949fdae1d1696be745f26e39b1e9cfdf928ed57d00bab69cac0358129a9d2",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "08432cf3517256691fc1aca1d924c377f6f78647280f0b0b3f61f831bbb56060",
+  "rows_canonical_encoding": "json.dumps(rows,sort_keys=True,ensure_ascii=False).encode UTF8",
+  "limits": "Five random agent reviews, no human review; unreviewed traces not individually certified. Mathematical audit accepts coherent rounding/truncation; intermediate thousands separators noted as formatting noncompliance, not mathematical errors.",
+  "numeric_example": "025bfdfeacb4584629fb-hard sample2: divides g/m³ by1000 instead of1000000 to convert g/cm³; factor1000 error.",
+  "unparsed_example": "9bfaafb8d156e9010d7a-hard sample2: repeating199 until1024token cap, no terminal quantity; not usable as DPO negative."
+}

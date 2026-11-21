@@ -1,0 +1,84 @@
+[
+  {
+    "source": "data/units/project-e2/analysis/historical-llama-v11",
+    "old_version": "verifier-9",
+    "responses": 162,
+    "transitions": {
+      "numeric->numeric": 52,
+      "unparsed->unparsed": 90,
+      "numeric->unparsed": 5,
+      "numeric->unit": 11,
+      "correct->correct": 3,
+      "correct->unit": 1
+    },
+    "new_pass_at_k": {
+      "1": 0.018518518518518517,
+      "3": 0.05555555555555555
+    },
+    "limitations": "Recalificación sobre los mismos crudos; no inferencia nueva ni evidencia de aprendizaje."
+  },
+  {
+    "source": "data/units/project-e2/analysis/historical-qwen17-v11",
+    "old_version": "verifier-9",
+    "responses": 162,
+    "transitions": {
+      "correct->correct": 84,
+      "unparsed->unparsed": 7,
+      "numeric->numeric": 71
+    },
+    "new_pass_at_k": {
+      "1": 0.5185185185185185,
+      "3": 0.6851851851851852
+    },
+    "limitations": "Recalificación sobre los mismos crudos; no inferencia nueva ni evidencia de aprendizaje."
+  },
+  {
+    "source": "data/units/project-e2/analysis/historical-qwen8-v11",
+    "old_version": "verifier-9",
+    "responses": 162,
+    "transitions": {
+      "correct->correct": 82,
+      "numeric->numeric": 74,
+      "unparsed->unparsed": 6
+    },
+    "new_pass_at_k": {
+      "1": 0.5061728395061729,
+      "3": 0.7222222222222222
+    },
+    "limitations": "Recalificación sobre los mismos crudos; no inferencia nueva ni evidencia de aprendizaje."
+  },
+  {
+    "source": "data/units/project-e2/analysis/historical-smol-v11",
+    "old_version": "verifier-9",
+    "responses": 162,
+    "transitions": {
+      "unparsed->unparsed": 124,
+      "numeric->numeric": 28,
+      "correct->correct": 5,
+      "numeric->unit": 2,
+      "numeric->unparsed": 3
+    },
+    "new_pass_at_k": {
+      "1": 0.030864197530864203,
+      "3": 0.07407407407407407
+    },
+    "limitations": "Recalificación sobre los mismos crudos; no inferencia nueva ni evidencia de aprendizaje."
+  },
+  {
+    "source": "data/units/project-e2/analysis/pilot-regrade-v11",
+    "old_version": "verifier-10",
+    "responses": 540,
+    "transitions": {
+      "correct->correct": 327,
+      "numeric->numeric": 186,
+      "unparsed->unparsed": 22,
+      "numeric->unparsed": 2,
+      "correct->unparsed": 3
+    },
+    "new_pass_at_k": {
+      "1": 0.6055555555555555,
+      "3": 0.7833333333333333
+    },
+    "limitations": "Recalificación sobre los mismos crudos; no inferencia nueva ni evidencia de aprendizaje."
+  }
+]

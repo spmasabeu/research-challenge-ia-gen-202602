@@ -1,0 +1,59 @@
+{
+  "source": "data/units/project-e2/runs/sft-grpo-final-eval/responses.jsonl",
+  "source_sha256": "a4624517855aba85aa1d53e6001d7f941f0d99c07e78af35608f3cef9c4c0fbe",
+  "selection": "First programmatic success in hard luminosity/energy/density/voltage in raw label order. Four directed actual agent reviews, not representative population sample or human audit.",
+  "reviews": [
+    {
+      "task_id": "0fb060b329896bb214dd-hard",
+      "sample_index": 0,
+      "reviewer_type": "agent",
+      "auditor": "Codex",
+      "judgment": "reject",
+      "reason": "Omite convertir630erg/s/cm² a0.63W/m², afirma324*630=20412 (debe204120), encadena conversiones dimensionales y potencias de10 falsas. El2583.504W final está dentro1% de2565.0475698W; no certifica la traza.",
+      "reference_requested_unit": "2565.04756980299418864",
+      "unit": "W",
+      "prompt": "Calcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2.\nDatos: d=0.018 km; F1=441 erg/s/cm^2; F2=189 erg/s/cm^2\nFórmula: L=4*pi*d^2*(F1+F2). Usa pi=3.141592653589793.\nEquivalencias: 1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.\nExpresa el resultado en W. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"W\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+      "completion": "Primero convertimos d desde km a m: 0.018 km = 18 m. Luego, sumamos F1 + F2 = 441 + 189 = 630 erg/s/cm². Aplicamos la fórmula L = 4πd²(F1 + F2). Calculamos 4π(18²)(630) = 4 * 3.1416 * 324 * 630 ≈ 4 * 3.1416 * 20412 ≈ 258350.4 erg/s/cm². Convertimos a W: 258350.4 erg/s/cm² × 1000 = 258350400 erg/s/m². Finalmente, 258350400 erg/s/m² × 1e-7 W/erg/s = 258350400 × 1e-7 = 258350400 / 1000000 = 2583.504 W.  \n\n{\"value\": 2583.504, \"unit\": \"W\"}",
+      "completion_sha256": "779c25acab56ca6993793a9335a77ecf5d0078e294f85e65d1b1f93d4b48d60c"
+    },
+    {
+      "task_id": "b0b081550a47ab35fac3-hard",
+      "sample_index": 0,
+      "reviewer_type": "agent",
+      "auditor": "Codex",
+      "judgment": "reject",
+      "reason": "129.96/3.6=36.1, no36.1556. La operación0.5*25.1*1306.5=16396.575, no16357.5. Final16.3575kJ cercano a16.3552855kJ pese a operaciones falsas.",
+      "reference_requested_unit": "16.3552855",
+      "unit": "kJ",
+      "prompt": "Calcula la energía cinética total; las masas indicadas tienen la misma velocidad.\nDatos: m=25100 g; v=129.96 km/h\nFórmula: E=m*v^2/2. Usa pi=3.141592653589793.\nEquivalencias: 1 kg=1000 g; 1 m/s=3.6 km/h; 1 kJ=1000 J.\nExpresa el resultado en kJ. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"kJ\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+      "completion": "Primero convierte la masa de gramos a kilogramos: 25100 g = 25.1 kg. Luego convierte la velocidad de km/h a m/s: 129.96 km/h × (1 m/s / 3.6 km/h) = 36.1556 m/s. Aplica la fórmula de energía cinética: E = ½ * m * v² = 0.5 * 25.1 * (36.1556)². Calcula el resultado: 0.5 * 25.1 * 1306.5 = 16357.5 J. Convierte a kJ: 16.3575 kJ.  \n\n{\"value\": 16.3575, \"unit\": \"kJ\"}",
+      "completion_sha256": "e9a0413b0d82a18366eda58d6eacb27c282a249daa308d515caf4994e6231756"
+    },
+    {
+      "task_id": "e194d8768adcd3a5cd7e-hard",
+      "sample_index": 0,
+      "reviewer_type": "agent",
+      "auditor": "Codex",
+      "judgment": "keep",
+      "reason": "250L=250000cm³;97000/250000=0.388g/cm³. Conversiones y división coherentes.",
+      "reference_requested_unit": "0.388",
+      "unit": "g/cm^3",
+      "prompt": "Calcula la densidad media; si hay m1 y m2, ambas masas ocupan juntas el volumen dado.\nDatos: m=97000 g; V=250 L\nFórmula: rho=m/V. Usa pi=3.141592653589793.\nEquivalencias: 1 kg=1000 g; 1 m^3=1000 L; 1 g/cm^3=1000 kg/m^3.\nExpresa el resultado en g/cm^3. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"g/cm^3\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+      "completion": "Para calcular la densidad media, usamos la fórmula $\\rho = \\frac{m}{V}$. Convertimos el volumen de litros a cm³: $250\\, \\text{L} = 250 \\times 1000 = 250000\\, \\text{cm}^3$. Luego, dividimos la masa en gramos por el volumen en cm³: $\\rho = \\frac{97000}{250000} = 0.388$.  \n\n{\"value\": 0.388, \"unit\": \"g/cm^3\"}",
+      "completion_sha256": "b4aff2129178573f2debb326aa342cab3db06b474f6bb36e1df42f5bfa47aa64"
+    },
+    {
+      "task_id": "4da9bcc45397f345c062-hard",
+      "sample_index": 1,
+      "reviewer_type": "agent",
+      "auditor": "Codex",
+      "judgment": "keep",
+      "reason": "420mA=0.42A;0.731kohm=731ohm; producto307.02V=307020mV, coherente.",
+      "reference_requested_unit": "307020.00",
+      "unit": "mV",
+      "prompt": "Calcula la caída de tensión total; si hay R1 y R2, están en serie y las recorre la misma corriente.\nDatos: I=420 mA; R=0.731 kohm\nFórmula: V=I*R. Usa pi=3.141592653589793.\nEquivalencias: 1 A=1000 mA; 1 kohm=1000 ohm; 1 V=1000 mV.\nExpresa el resultado en mV. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"mV\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+      "completion": "Para calcular la caída de tensión total en una resistencia en serie, usamos la fórmula $ V = I \\times R $. Convertimos la corriente a amperios: $ 420 \\, \\text{mA} = 0.42 \\, \\text{A} $. La resistencia está en ohms: $ 0.731 \\, \\text{k}\\Omega = 731 \\, \\Omega $. Aplicamos la fórmula: $ V = 0.42 \\times 731 = 307.02 \\, \\text{V} $. Convertimos a mV: $ 307.02 \\times 1000 = 307020 \\, \\text{mV} $.  \n\n{\"value\": 307020.0, \"unit\": \"mV\"}",
+      "completion_sha256": "bf5cf310281a5c16f678b2852dc45498d6e4f8e49355d7626a49937a64a03e27"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/sft-checkpoint-280-eval", "--adapter", "data/units/project-e2/runs/sft/checkpoint-280"]}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.30s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.46it/s]
+batch 0 0 8 23.25
+batch 8 0 8 19.99
+batch 16 0 8 23.29
+batch 24 0 8 24.04
+batch 32 0 4 14.82
+{"tasks": 36, "responses": 36, "n": 1, "statuses": {"correct": 25, "numeric": 11}, "coverage": 1.0, "pass_at_k": {"1": 0.6944444444444444}, "equivalent_si_rate": 0.6944444444444444, "requested_unit_rate": 1.0, "pass_at_k_upper_bound": {"1": 0.6944444444444444}, "backend_incomplete": 0, "truncated": 0}
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/sft-checkpoint-280-eval", "--adapter", "data/units/project-e2/runs/sft/checkpoint-280"]}

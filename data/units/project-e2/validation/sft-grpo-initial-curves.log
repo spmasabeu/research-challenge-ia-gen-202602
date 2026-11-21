@@ -1,0 +1,10 @@
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/sft-grpo-initial-curves", "--adapter", "data/units/project-e2/runs/sft/checkpoint-90"]}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.33s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.43it/s]
+batch 0 0 8 23.23
+batch 8 0 8 27.62
+batch 16 0 8 25.81
+batch 24 0 8 23.89
+batch 32 0 4 20.74
+{"tasks": 36, "responses": 36, "n": 1, "statuses": {"correct": 26, "numeric": 10}, "coverage": 1.0, "pass_at_k": {"1": 0.7222222222222222}, "equivalent_si_rate": 0.7222222222222222, "requested_unit_rate": 1.0, "pass_at_k_upper_bound": {"1": 0.7222222222222222}, "backend_incomplete": 0, "truncated": 0}
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/sft-grpo-initial-curves", "--adapter", "data/units/project-e2/runs/sft/checkpoint-90"]}
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/sft-grpo-initial-curves", "--adapter", "data/units/project-e2/runs/sft/checkpoint-90"]}

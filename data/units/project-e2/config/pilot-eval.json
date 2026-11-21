@@ -1,0 +1,14 @@
+{
+  "model": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "quantization": "nf4",
+  "samples": 1,
+  "max_context": 2048,
+  "generation": {
+    "max_new_tokens": 512,
+    "do_sample": true,
+    "temperature": 0.7,
+    "top_k": 40,
+    "top_p": 0.9
+  }
+}

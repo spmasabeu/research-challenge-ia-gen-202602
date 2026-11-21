@@ -1,0 +1,44 @@
+{
+  "cell": "luminosity/medium",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "numeric": 312,
+    "correct": 83,
+    "unparsed": 5
+  },
+  "unique": 399,
+  "correct_unique_before_audit": 82,
+  "sft_eligible_after_audit": 36,
+  "sft_tasks": 19,
+  "dpo_teacher_pairs": 16,
+  "audited": 82,
+  "required_random_audits": 5,
+  "rejected": 46,
+  "expanded": true,
+  "request_seconds": 3052.7860893030083,
+  "output_tokens": 65758,
+  "truncated": 0,
+  "audit_sha256": "68fd35846e5c831d08b770f700af7f485512dae7ae53370a760fd16fc745fc3f",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "4d72d03747bf8542d40531f403391298890fbebed4a814a1d1dd926dd6329343",
+  "rows_canonical_encoding": "json.dumps(rows,sort_keys=True,ensure_ascii=False).encode UTF8",
+  "reference_check": "All100 luminosity references independently recalculated with Decimal from visible km distances converted to m, fluxes and prompt pi; agreement<1e-8W. All36 retained traces reverified reward1.",
+  "limits": "All82 correct unique candidates inspected by agent after directed arithmetic defects in first100responses. Mandatory random five also covered. No human review. Coherent rounding/truncation and machine precision accepted; incorrect arithmetic at displayed precision rejected. Backend incomplete rows preserved as unparsed; not DPO negatives.",
+  "quality_rejection_rate_among_reward1_unique": 0.5609756097560976,
+  "eligible_sft_per_raw": 0.09,
+  "coverage_exception": "Only19/100 tasks retain a mathematically coherent solution after4samples. No duplication or programmatic solution substitution. Below20task internal SFT goal; record exception/impact before training.",
+  "required_random_candidate_ids": [
+    "63c74b27d84ee9674c9e3aa0f1be7fa86940c718456853788edacb2a466e296d",
+    "800bfd4480db4c5289fc1ce2a7f97f6739d9acc3dd311c31a26416e6238381b7",
+    "96e5c059b98a3f4f4beceec41592e7541ac7f938c3e69e68f43cdf23cf7f9fc3",
+    "c04237b9961f29c73a5dd8bd13a98b1fc99b2a7122aa56f417672bde3f187cd6",
+    "d4d7710081bf21ccf918387b8d2a6dd873f3a72eaf1907163597e7e376d3bada"
+  ],
+  "required_random_judgments": {
+    "reject": 5
+  },
+  "output_tokens_missing_rows": 3,
+  "output_tokens_limit": "Known subtotal only; missing backend token counts are unknown, not zero.",
+  "backend_incomplete": 3
+}

@@ -1,0 +1,109 @@
+{
+  "paused_utc": "2026-11-18T18:19:05.281917+00:00",
+  "reason": "User meeting; release local compute",
+  "driver_pid": 140797,
+  "children": [
+    {
+      "pid": 231926,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python -m challenge.train --config data/units/project-e2/config/sft-grpo.json --tasks data/units/project-e2/dataset/private/train.jsonl --out data/units/project-e2/runs/sft-grpo --initial-adapter data/units/project-e2/runs/sft/checkpoint-90"
+    },
+    {
+      "pid": 232017,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python /home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=12 --parent=231926 --read-fd=25 --write-fd=28 --torch-key=H4QweOk00IXhifNSBFt33pU0hqEJ8U7VJTQvH3venIU="
+    },
+    {
+      "pid": 232078,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python /home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=12 --parent=231926 --read-fd=25 --write-fd=28 --torch-key=H4QweOk00IXhifNSBFt33pU0hqEJ8U7VJTQvH3venIU="
+    },
+    {
+      "pid": 232080,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python /home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=12 --parent=231926 --read-fd=25 --write-fd=28 --torch-key=H4QweOk00IXhifNSBFt33pU0hqEJ8U7VJTQvH3venIU="
+    },
+    {
+      "pid": 232082,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python /home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=12 --parent=231926 --read-fd=25 --write-fd=28 --torch-key=H4QweOk00IXhifNSBFt33pU0hqEJ8U7VJTQvH3venIU="
+    },
+    {
+      "pid": 232084,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python /home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=12 --parent=231926 --read-fd=25 --write-fd=28 --torch-key=H4QweOk00IXhifNSBFt33pU0hqEJ8U7VJTQvH3venIU="
+    },
+    {
+      "pid": 232086,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python /home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=12 --parent=231926 --read-fd=25 --write-fd=28 --torch-key=H4QweOk00IXhifNSBFt33pU0hqEJ8U7VJTQvH3venIU="
+    },
+    {
+      "pid": 232088,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python /home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=12 --parent=231926 --read-fd=25 --write-fd=28 --torch-key=H4QweOk00IXhifNSBFt33pU0hqEJ8U7VJTQvH3venIU="
+    },
+    {
+      "pid": 232090,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python /home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=12 --parent=231926 --read-fd=25 --write-fd=28 --torch-key=H4QweOk00IXhifNSBFt33pU0hqEJ8U7VJTQvH3venIU="
+    },
+    {
+      "pid": 232092,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python /home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=12 --parent=231926 --read-fd=25 --write-fd=28 --torch-key=H4QweOk00IXhifNSBFt33pU0hqEJ8U7VJTQvH3venIU="
+    },
+    {
+      "pid": 232094,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python /home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=12 --parent=231926 --read-fd=25 --write-fd=28 --torch-key=H4QweOk00IXhifNSBFt33pU0hqEJ8U7VJTQvH3venIU="
+    },
+    {
+      "pid": 232096,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python /home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=12 --parent=231926 --read-fd=25 --write-fd=28 --torch-key=H4QweOk00IXhifNSBFt33pU0hqEJ8U7VJTQvH3venIU="
+    },
+    {
+      "pid": 232098,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python /home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=12 --parent=231926 --read-fd=25 --write-fd=28 --torch-key=H4QweOk00IXhifNSBFt33pU0hqEJ8U7VJTQvH3venIU="
+    },
+    {
+      "pid": 232100,
+      "command": "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python /home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=12 --parent=231926 --read-fd=25 --write-fd=28 --torch-key=H4QweOk00IXhifNSBFt33pU0hqEJ8U7VJTQvH3venIU="
+    }
+  ],
+  "last_complete_checkpoint": {
+    "path": "data/units/project-e2/runs/sft-grpo/checkpoint-7",
+    "cost": {
+      "method": "grpo",
+      "model": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "quantization": "nf4",
+      "tasks_sha256": "9014ad83b0abf6767201b0590ab19292bd1ddeea4e53fea3e0e441850ce99aeb",
+      "step": 7,
+      "phase_train_seconds": 212.6313934380014,
+      "prior_train_seconds": 288.8793994869993,
+      "cumulative_train_seconds": 501.5107929250007,
+      "phase_train_tokens": 11068,
+      "prior_train_tokens": 121125,
+      "cumulative_train_tokens": 132193,
+      "files": {
+        "README.md": "99e6d10b1627888f966e84a66451131c75378576017f6e1a6dc1d6abdb43c4a2",
+        "adapter_config.json": "3e6be928b5209ad20c0fea20b76bf4855458f1a0ce4abdc8c893ce95c8428db4",
+        "adapter_model.safetensors": "3b77f59a8ff0f57465040697fd0889579ed574dc5bb6c5f3ac37aa7cacc44774",
+        "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+        "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "optimizer.pt": "4f870dbf0c23f6cbcd12b8b6a09d9b15cc87147a3b0e2e0d8b73986bd6376fd8",
+        "rng_state.pth": "f7bc18b600c6643c65bdfd263acaba3bbccdd1c87a57cdf09d74802075ed9b43",
+        "scheduler.pt": "ff7cf8eb124ca6247d7ea36be7ab8fda86159aa593cbe9da4f6dfb2b8ceb5f9a",
+        "special_tokens_map.json": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+        "tokenizer.json": "94b2b680da9b4ffb43847b5a36ca1ad01268879c01c6425725723f6879f1649a",
+        "tokenizer_config.json": "68f2cfe250d0fd2c445bcbeb49183726d6c4dfca493bd10599742410c2fc4a79",
+        "trainer_state.json": "816de15274453c44358486dcaa236bd96de69ee0c5672440170d4759874c698d",
+        "training_args.bin": "69ea4443d44567c27a5f31d1cb72f5f43d92b3473abd3867d477c849716a0d9c",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    }
+  },
+  "mode": "Stopped processes with SIGTERM after verifying checkpoint7; resume from disk, not SIGCONT. GPU memory released.",
+  "warning": "Do not SIGCONT and train: monotonic training budget would include suspension. Resume from saved checkpoint after preserving/reconciling attempt logs.",
+  "checkpoint_verified": true,
+  "stopped_utc": "2026-11-18T18:19:26.351919+00:00",
+  "attempt_backup": "data/units/project-e2/validation/user-pause-20261118",
+  "resume_requirements": [
+    "Preserve this original attempt snapshot.",
+    "Reconcile steps/rollouts beyond checkpoint7 before resume; retain discarded attempts and actual compute separately.",
+    "Resume checkpoint7 with original config/metadata/initial adapter. Do not count meeting duration as training.",
+    "No autonomous restart until user asks to continue."
+  ],
+  "gpu_release_verified_utc": "2026-11-18T18:19:42.687695+00:00"
+}

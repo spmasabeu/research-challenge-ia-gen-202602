@@ -1,0 +1,28 @@
+{
+  "resume_authorization": "User: continua",
+  "utc": "2026-11-18T19:26:49.327084+00:00",
+  "checkpoint": "data/units/project-e2/runs/sft-grpo/checkpoint-7",
+  "checkpoint_cost_sha256": "444c9fbc25ae4a32dd9a881b8dbf7868a78b33802cb1643c43d4a1dda1ad7ffd",
+  "steps": 7,
+  "rollouts": 7,
+  "logs_match_pause_backup": true,
+  "reconciliation": "No rows beyond checkpoint7; no trimming or modification of original logs required. Existing7groups/7steps retained verbatim.",
+  "committed_prior_rl_seconds": 212.6313934380014,
+  "sft_prior_seconds": 288.8793994869993,
+  "remaining_rl_budget_seconds": 698.4892070749993,
+  "discarded_inflight_work": "Generation of next group may have begun; no completed rollout/tokens persisted. Exact interrupted GPU time/tokens unknown. Keep separately from committed trajectory.",
+  "discarded_wall_upper_bound_seconds": 31.275615453720093,
+  "wall_bound_definition": "From last checkpoint cost.json modification to SIGSTOP observation; upper bound includes ordinary IO/monitor overhead, not measured GPU time. Excludes meeting.",
+  "power_profile": "performance",
+  "source_sha256": "ba1cd516c3c1b8b778e98ec1395be16444b37d4d51407bc72a140425d75684cd",
+  "pid": 306717,
+  "command": [
+    "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python",
+    "scripts/run_e2.py",
+    "--stage",
+    "hybrid",
+    "--derived",
+    "data/units/project-e2/derived"
+  ],
+  "log": "data/units/project-e2/validation/production-routes-resume-driver.log"
+}

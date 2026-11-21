@@ -1,0 +1,32 @@
+{
+  "method": "sft",
+  "pilot": true,
+  "steps": 3,
+  "changed_tensors": 112,
+  "adapter_tensors": 112,
+  "max_parameter_delta": 0.0006009928765706718,
+  "weights_finite": true,
+  "reload_weights_equal": true,
+  "reload_logits_equal": true,
+  "phase_train_seconds": 12.617375912999705,
+  "prior_train_seconds": 0.0,
+  "cumulative_train_seconds": 12.617375912999705,
+  "peak_allocated_bytes": 2146743296,
+  "peak_reserved_bytes": 3680501760,
+  "termination": "max_steps",
+  "adapter_files": {
+    "README.md": "cf5b5ad06cb81131b45a950681944a10bb8ab214e2c1d6910df96e0e5b10b127",
+    "adapter_config.json": "3e6be928b5209ad20c0fea20b76bf4855458f1a0ce4abdc8c893ce95c8428db4",
+    "adapter_model.safetensors": "8d4fee5c3ca8a50289727216d579f60c93970c806d2df281d77ae0a6fbb6b643",
+    "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+    "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "cost.json": "77976cf4bf2815d49108331d28120f801fe22547e384c7ee0e16805804bcede0",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "special_tokens_map.json": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+    "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "tokenizer_config.json": "68f2cfe250d0fd2c445bcbeb49183726d6c4dfca493bd10599742410c2fc4a79",
+    "training_args.bin": "079cec4f23640cc716836f61141e8ca6da6c3ee6a7617ee682f11a23c4789ca5",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "initial_adapter": null
+}

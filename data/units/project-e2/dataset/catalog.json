@@ -1,0 +1,410 @@
+{
+  "speed": {
+    "names": [
+      "d",
+      "t"
+    ],
+    "ranges": [
+      [
+        101,
+        9999,
+        1
+      ],
+      [
+        7,
+        199,
+        1
+      ]
+    ],
+    "split": 0,
+    "formulas": [
+      "v=d/t",
+      "v=(d1+d2)/t"
+    ],
+    "units": [
+      {
+        "d": [
+          "m",
+          1
+        ],
+        "t": [
+          "s",
+          1
+        ]
+      },
+      {
+        "d": [
+          "km",
+          0.001
+        ],
+        "t": [
+          "s",
+          1
+        ]
+      },
+      {
+        "d": [
+          "km",
+          0.001
+        ],
+        "t": [
+          "min",
+          0.016666666666666666
+        ]
+      }
+    ],
+    "output": [
+      "m/s",
+      "m/s",
+      "km/h"
+    ],
+    "equivalences": "1 km=1000 m; 1 min=60 s; 1 m/s=3.6 km/h.",
+    "operations": 1,
+    "conversions": [
+      0,
+      1,
+      3
+    ],
+    "context": "Calcula la velocidad media del recorrido con el tiempo total dado."
+  },
+  "energy": {
+    "names": [
+      "m",
+      "v"
+    ],
+    "ranges": [
+      [
+        11,
+        499,
+        10
+      ],
+      [
+        11,
+        499,
+        10
+      ]
+    ],
+    "split": 0,
+    "formulas": [
+      "E=m*v^2/2",
+      "E=(m1+m2)*v^2/2"
+    ],
+    "units": [
+      {
+        "m": [
+          "kg",
+          1
+        ],
+        "v": [
+          "m/s",
+          1
+        ]
+      },
+      {
+        "m": [
+          "g",
+          1000
+        ],
+        "v": [
+          "m/s",
+          1
+        ]
+      },
+      {
+        "m": [
+          "g",
+          1000
+        ],
+        "v": [
+          "km/h",
+          3.6
+        ]
+      }
+    ],
+    "output": [
+      "J",
+      "J",
+      "kJ"
+    ],
+    "equivalences": "1 kg=1000 g; 1 m/s=3.6 km/h; 1 kJ=1000 J.",
+    "operations": 3,
+    "conversions": [
+      0,
+      1,
+      3
+    ],
+    "context": "Calcula la energía cinética total; las masas indicadas tienen la misma velocidad."
+  },
+  "luminosity": {
+    "names": [
+      "d",
+      "F"
+    ],
+    "ranges": [
+      [
+        2,
+        30,
+        1
+      ],
+      [
+        1,
+        99,
+        100
+      ]
+    ],
+    "split": 1,
+    "formulas": [
+      "L=4*pi*d^2*F",
+      "L=4*pi*d^2*(F1+F2)"
+    ],
+    "units": [
+      {
+        "d": [
+          "m",
+          1
+        ],
+        "F": [
+          "W/m^2",
+          1
+        ]
+      },
+      {
+        "d": [
+          "km",
+          0.001
+        ],
+        "F": [
+          "W/m^2",
+          1
+        ]
+      },
+      {
+        "d": [
+          "km",
+          0.001
+        ],
+        "F": [
+          "erg/s/cm^2",
+          1000
+        ]
+      }
+    ],
+    "output": [
+      "W",
+      "W",
+      "W"
+    ],
+    "equivalences": "1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.",
+    "operations": 4,
+    "conversions": [
+      0,
+      1,
+      2
+    ],
+    "context": "Calcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2."
+  },
+  "density": {
+    "names": [
+      "m",
+      "V"
+    ],
+    "ranges": [
+      [
+        11,
+        999,
+        10
+      ],
+      [
+        1,
+        99,
+        100
+      ]
+    ],
+    "split": 0,
+    "formulas": [
+      "rho=m/V",
+      "rho=(m1+m2)/V"
+    ],
+    "units": [
+      {
+        "m": [
+          "kg",
+          1
+        ],
+        "V": [
+          "m^3",
+          1
+        ]
+      },
+      {
+        "m": [
+          "g",
+          1000
+        ],
+        "V": [
+          "m^3",
+          1
+        ]
+      },
+      {
+        "m": [
+          "g",
+          1000
+        ],
+        "V": [
+          "L",
+          1000
+        ]
+      }
+    ],
+    "output": [
+      "kg/m^3",
+      "kg/m^3",
+      "g/cm^3"
+    ],
+    "equivalences": "1 kg=1000 g; 1 m^3=1000 L; 1 g/cm^3=1000 kg/m^3.",
+    "operations": 1,
+    "conversions": [
+      0,
+      1,
+      3
+    ],
+    "context": "Calcula la densidad media; si hay m1 y m2, ambas masas ocupan juntas el volumen dado."
+  },
+  "pressure": {
+    "names": [
+      "F",
+      "A"
+    ],
+    "ranges": [
+      [
+        10,
+        9999,
+        1
+      ],
+      [
+        1,
+        99,
+        100
+      ]
+    ],
+    "split": 0,
+    "formulas": [
+      "P=F/A",
+      "P=(F1+F2)/A"
+    ],
+    "units": [
+      {
+        "F": [
+          "N",
+          1
+        ],
+        "A": [
+          "m^2",
+          1
+        ]
+      },
+      {
+        "F": [
+          "kN",
+          0.001
+        ],
+        "A": [
+          "m^2",
+          1
+        ]
+      },
+      {
+        "F": [
+          "kN",
+          0.001
+        ],
+        "A": [
+          "cm^2",
+          10000
+        ]
+      }
+    ],
+    "output": [
+      "Pa",
+      "Pa",
+      "kPa"
+    ],
+    "equivalences": "1 kN=1000 N; 1 m^2=10000 cm^2; 1 kPa=1000 Pa.",
+    "operations": 1,
+    "conversions": [
+      0,
+      1,
+      3
+    ],
+    "context": "Calcula la presión media; si hay F1 y F2, ambas fuerzas actúan perpendiculares sobre la misma área."
+  },
+  "voltage": {
+    "names": [
+      "I",
+      "R"
+    ],
+    "ranges": [
+      [
+        11,
+        999,
+        1000
+      ],
+      [
+        10,
+        999,
+        1
+      ]
+    ],
+    "split": 1,
+    "formulas": [
+      "V=I*R",
+      "V=I*(R1+R2)"
+    ],
+    "units": [
+      {
+        "I": [
+          "A",
+          1
+        ],
+        "R": [
+          "ohm",
+          1
+        ]
+      },
+      {
+        "I": [
+          "mA",
+          1000
+        ],
+        "R": [
+          "ohm",
+          1
+        ]
+      },
+      {
+        "I": [
+          "mA",
+          1000
+        ],
+        "R": [
+          "kohm",
+          0.001
+        ]
+      }
+    ],
+    "output": [
+      "V",
+      "V",
+      "mV"
+    ],
+    "equivalences": "1 A=1000 mA; 1 kohm=1000 ohm; 1 V=1000 mV.",
+    "operations": 1,
+    "conversions": [
+      0,
+      1,
+      3
+    ],
+    "context": "Calcula la caída de tensión total; si hay R1 y R2, están en serie y las recorre la misma corriente."
+  }
+}

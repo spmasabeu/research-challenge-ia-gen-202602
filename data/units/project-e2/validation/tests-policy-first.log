@@ -1,0 +1,25 @@
+1a585df3e4c87c24268c-easy 0 None None 0.0
+1a585df3e4c87c24268c-easy 1 None None 0.0
+1a585df3e4c87c24268c-easy 2 None None 0.0
+1a585df3e4c87c24268c-easy 0 4 stop 0.0
+1a585df3e4c87c24268c-easy 1 4 stop 0.0
+1a585df3e4c87c24268c-easy 2 4 stop 0.0
+8d48f42b0e71f3dc9f07-easy 0 8 0.001
+8d48f42b0e71f3dc9f07-easy 1 8 0.001
+8d48f42b0e71f3dc9f07-easy 2 8 0.001
+8d48f42b0e71f3dc9f07-easy 0 None 0
+======================================================================
+ERROR: test_sft_dpo_dedup_provenance_and_expanded_audit (test_challenge.ChallengeTests.test_sft_dpo_dedup_provenance_and_expanded_audit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/tests/test_challenge.py", line 223, in test_sft_dpo_dedup_provenance_and_expanded_audit
+    sft, dpo, stats = build(dataset, teacher, [audit_path])
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/src/challenge/derive.py", line 143, in build
+    raise ValueError("faltan datos utilizables SFT/DPO en alguna dificultad")
+ValueError: faltan datos utilizables SFT/DPO en alguna dificultad
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.237s
+
+FAILED (errors=1)

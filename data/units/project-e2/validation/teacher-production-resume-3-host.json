@@ -1,0 +1,7 @@
+{
+  "boot_time_local": "2026-11-18 11:30:49",
+  "last_saved_before_resume_utc": "2026-11-18T11:17:10.073999+00:00",
+  "inference": "A host restart occurred between generation attempts. Its relationship to RemoteDisconnected is unknown: boot is more than3hours after the last saved response. No root cause established.",
+  "python_versions_unchanged": "3.12.13",
+  "training_package_versions_unchanged": true
+}

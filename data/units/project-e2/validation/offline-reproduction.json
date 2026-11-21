@@ -1,0 +1,10 @@
+{
+  "calibration_responses_reproduced": 72,
+  "artifacts_byte_identical": {
+    "evaluation-errors.png": true,
+    "evaluation.csv": true,
+    "training.csv": true,
+    "checkpoints.json": true,
+    "training-curves.png": true
+  }
+}

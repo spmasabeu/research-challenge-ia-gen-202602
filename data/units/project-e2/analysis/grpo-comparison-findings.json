@@ -1,0 +1,92 @@
+{
+  "sources": {
+    "data/units/project-e2/runs/control/scores/verifier-11/summary.json": "6fcd3e2e403f22db7e6cab40b338656f23cf93828f4097268bcb06fffb73a7de",
+    "data/units/project-e2/runs/grpo-final-eval/scores/verifier-11/summary.json": "5aec4824c852cebfc75cdaad215b5f8b9c626e7a10c27c17f8e4f9eed8867444"
+  },
+  "transitions": {
+    "correct->correct": 701,
+    "numeric->correct": 43,
+    "numeric->numeric": 267,
+    "correct->numeric": 44,
+    "unparsed->correct": 5,
+    "correct->unparsed": 5,
+    "unparsed->numeric": 2,
+    "unparsed->unparsed": 9,
+    "numeric->unparsed": 4
+  },
+  "control": {
+    "tasks": 360,
+    "responses": 1080,
+    "n": 3,
+    "statuses": {
+      "correct": 750,
+      "numeric": 314,
+      "unparsed": 16
+    },
+    "coverage": 0.9851851851851852,
+    "pass_at_k": {
+      "1": 0.6944444444444444,
+      "3": 0.8416666666666667
+    },
+    "equivalent_si_rate": 0.6944444444444444,
+    "requested_unit_rate": 0.9851851851851852,
+    "pass_at_k_upper_bound": {
+      "1": 0.7092592592592593,
+      "3": 0.8527777777777777
+    },
+    "backend_incomplete": 0,
+    "truncated": 0
+  },
+  "grpo": {
+    "tasks": 360,
+    "responses": 1080,
+    "n": 3,
+    "statuses": {
+      "correct": 749,
+      "numeric": 313,
+      "unparsed": 18
+    },
+    "coverage": 0.9833333333333333,
+    "pass_at_k": {
+      "1": 0.6935185185185185,
+      "3": 0.8416666666666667
+    },
+    "equivalent_si_rate": 0.6935185185185185,
+    "requested_unit_rate": 0.9833333333333333,
+    "pass_at_k_upper_bound": {
+      "1": 0.7101851851851853,
+      "3": 0.8666666666666667
+    },
+    "backend_incomplete": 0,
+    "truncated": 1
+  },
+  "delta_pass1": -0.0009259259259258856,
+  "delta_by_cell": {
+    "density/easy": 0.03333333333333344,
+    "density/hard": 0.016666666666666635,
+    "density/medium": -0.08333333333333337,
+    "energy/easy": 0.0,
+    "energy/hard": 0.050000000000000044,
+    "energy/medium": -0.050000000000000044,
+    "luminosity/easy": -0.06666666666666665,
+    "luminosity/hard": 0.01666666666666667,
+    "luminosity/medium": 0.0,
+    "pressure/easy": 0.01666666666666672,
+    "pressure/hard": 0.0,
+    "pressure/medium": 0.016666666666666607,
+    "speed/easy": 0.0,
+    "speed/hard": 0.06666666666666676,
+    "speed/medium": 0.0,
+    "voltage/easy": 0.0,
+    "voltage/hard": -0.016666666666666663,
+    "voltage/medium": -0.016666666666666607
+  },
+  "uncertainty": "control-grpo-v1/paired-uncertainty.json",
+  "conclusion": "Sin mejora agregada demostrada con B nominal1200s y una semilla. Diferencia pass@1 -0.0926 puntos porcentuales; IC95 pareado [-1.7593,+1.5764] puntos. pass@3 igual. No prueba equivalencia ni ausencia de mejoras con más entrenamiento.",
+  "limits": [
+    "Solo40 problemas físicos de train visitados; 20/40 grupos tienen señal no constante.",
+    "Cambios de signo por celda descriptivos; no prueba de aprendizaje por celda.",
+    "La recompensa final no certifica operaciones intermedias; inspección de agente detecta éxitos luminosidad difícil con razonamiento inválido.",
+    "Los intervalos no cubren variación entre semillas de entrenamiento."
+  ]
+}

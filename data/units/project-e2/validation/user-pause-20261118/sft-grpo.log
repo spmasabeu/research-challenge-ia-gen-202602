@@ -1,0 +1,3 @@
+{"command": ["-m", "challenge.train", "--config", "data/units/project-e2/config/sft-grpo.json", "--tasks", "data/units/project-e2/dataset/private/train.jsonl", "--out", "data/units/project-e2/runs/sft-grpo", "--initial-adapter", "data/units/project-e2/runs/sft/checkpoint-90"]}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.59s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.20it/s]
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None, 'pad_token_id': 151645}.

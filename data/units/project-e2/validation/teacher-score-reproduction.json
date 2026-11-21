@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python",
+    "-m",
+    "challenge.harness",
+    "score",
+    "--tasks",
+    "data/units/project-e2/config/teacher-production-tasks.jsonl",
+    "--run",
+    "data/units/project-e2/runs/teacher",
+    "--out",
+    "data/units/project-e2/validation/teacher-score-reproduction"
+  ],
+  "stdout": "{\"tasks\": 1800, \"responses\": 7200, \"n\": 4, \"statuses\": {\"correct\": 5083, \"unparsed\": 97, \"numeric\": 2020}, \"coverage\": 0.9865277777777778, \"pass_at_k\": {\"1\": 0.7059722222222222, \"3\": 0.8316666666666667}, \"equivalent_si_rate\": 0.7059722222222222, \"requested_unit_rate\": 0.9865277777777778, \"pass_at_k_upper_bound\": {\"1\": 0.7194444444444444, \"3\": 0.8416666666666667}, \"backend_incomplete\": 3, \"truncated\": 1}\n",
+  "files": {
+    "metadata.json": "d7a8817fd383d4acc3751d37b71b559c434e706b686de0b1200027f759989670",
+    "labels.jsonl": "76ab59bb3d7ed66f935358a43f1db5ce5032269ca7b86c082f6a9f8a247a9dbd",
+    "verifier.py": "45bec4f65b043f7ab250fc2dc069f771c7d8a8b8ebb7d01b21c0af1ee1fc49a3",
+    "evaluate.py": "50bbdbff21fd194d26770036c44518a5d285ebf404b3adc57748ad7c0eadf070",
+    "summary.json": "354373a9dcc194e687ea267d534d1c27af1f3ec91ebd3bd0fe52fdfbbb70c4a6"
+  },
+  "byte_identical": true
+}

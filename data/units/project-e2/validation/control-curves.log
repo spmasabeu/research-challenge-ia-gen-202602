@@ -1,0 +1,13 @@
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/control-curves"]}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.01s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.12it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.06s/it]
+batch 0 0 8 24.32
+batch 8 0 8 25.74
+batch 16 0 8 19.67
+batch 24 0 8 36.01
+batch 32 0 4 33.16
+{"tasks": 36, "responses": 36, "n": 1, "statuses": {"unparsed": 1, "correct": 22, "numeric": 13}, "coverage": 0.9722222222222222, "pass_at_k": {"1": 0.6111111111111112}, "equivalent_si_rate": 0.6111111111111112, "requested_unit_rate": 0.9722222222222222, "pass_at_k_upper_bound": {"1": 0.6388888888888888}, "backend_incomplete": 0, "truncated": 0}
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/control-curves"]}
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/control-curves"]}
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/control-curves"]}
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/control-curves"]}
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/control-curves"]}

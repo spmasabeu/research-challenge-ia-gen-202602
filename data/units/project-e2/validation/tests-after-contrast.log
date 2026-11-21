@@ -1,0 +1,56 @@
+test_attacks_and_ambiguity (test_challenge.ChallengeTests.test_attacks_and_ambiguity) ... ok
+test_backend_incomplete_and_memory_error_preserve_attempts (test_challenge.ChallengeTests.test_backend_incomplete_and_memory_error_preserve_attempts) ... 1a585df3e4c87c24268c-easy 0 None None 0.0
+1a585df3e4c87c24268c-easy 1 None None 0.0
+1a585df3e4c87c24268c-easy 2 None None 0.0
+ok
+test_determinism_pairing_and_reference_from_visible_data (test_challenge.ChallengeTests.test_determinism_pairing_and_reference_from_visible_data) ... ok
+test_equivalences_and_tolerance (test_challenge.ChallengeTests.test_equivalences_and_tolerance) ... ok
+test_fixed_references (test_challenge.ChallengeTests.test_fixed_references) ... ok
+test_frozen_dataset_regenerates_and_detects_tampering (test_challenge.ChallengeTests.test_frozen_dataset_regenerates_and_detects_tampering) ... ok
+test_incremental_run_resume_and_refuse_changed_config (test_challenge.ChallengeTests.test_incremental_run_resume_and_refuse_changed_config) ... 1a585df3e4c87c24268c-easy 0 4 stop 0.0
+1a585df3e4c87c24268c-easy 1 4 stop 0.0
+1a585df3e4c87c24268c-easy 2 4 stop 0.0
+ok
+test_known_metrics_keep_unparsed_separate (test_challenge.ChallengeTests.test_known_metrics_keep_unparsed_separate) ... ok
+test_reward_registration (test_challenge.ChallengeTests.test_reward_registration) ... ok
+test_sft_dpo_dedup_provenance_and_expanded_audit (test_challenge.ChallengeTests.test_sft_dpo_dedup_provenance_and_expanded_audit) ... ok
+test_splits_keep_physical_groups_and_structures (test_challenge.ChallengeTests.test_splits_keep_physical_groups_and_structures) ... ok
+test_catalog_is_consistent_with_verifier (test_families.FamilyCatalogTests.test_catalog_is_consistent_with_verifier) ... ok
+test_cli_generates_selected_families (test_families.FamilyCatalogTests.test_cli_generates_selected_families) ... ok
+test_family_selection_is_validated (test_families.FamilyCatalogTests.test_family_selection_is_validated) ... ok
+test_fixed_references_for_new_families (test_families.FamilyCatalogTests.test_fixed_references_for_new_families) ... ok
+test_new_families_accept_equivalents_and_reject_attacks (test_families.FamilyCatalogTests.test_new_families_accept_equivalents_and_reject_attacks) ... ok
+test_new_families_do_not_change_original_tasks (test_families.FamilyCatalogTests.test_new_families_do_not_change_original_tasks) ... ok
+test_new_families_levels_and_independent_references (test_families.FamilyCatalogTests.test_new_families_levels_and_independent_references) ... ok
+test_original_families_regenerate_frozen_dataset_byte_for_byte (test_families.FamilyCatalogTests.test_original_families_regenerate_frozen_dataset_byte_for_byte) ... ok
+test_reference_rejects_foreign_mixed_or_missing_fields (test_families.FamilyCatalogTests.test_reference_rejects_foreign_mixed_or_missing_fields) ... ok
+test_splits_balance_all_families (test_families.FamilyCatalogTests.test_splits_balance_all_families) ... ok
+test_budget_resume_and_common_evaluator_without_network (test_frontier.FrontierTests.test_budget_resume_and_common_evaluator_without_network) ... 8d48f42b0e71f3dc9f07-easy 0 8 0.001
+8d48f42b0e71f3dc9f07-easy 1 8 0.001
+8d48f42b0e71f3dc9f07-easy 2 8 0.001
+ok
+test_truncation_not_mathematical_error (test_frontier.FrontierTests.test_truncation_not_mathematical_error) ... 8d48f42b0e71f3dc9f07-easy 0 None 0
+ok
+test_audit_never_overwrites_existing_judgments (test_training.ProjectTests.test_audit_never_overwrites_existing_judgments) ... ok
+test_batched_eos_removes_padding_and_accepts_both_qwen_stops (test_training.ProjectTests.test_batched_eos_removes_padding_and_accepts_both_qwen_stops) ... ok
+test_compute_checkpoints_use_measured_time_and_distinct_cuts (test_training.ProjectTests.test_compute_checkpoints_use_measured_time_and_distinct_cuts) ... ok
+test_exhausted_generator_fails (test_training.ProjectTests.test_exhausted_generator_fails) ... ok
+test_hf_and_ollama_score_identically_and_validate_coverage (test_training.ProjectTests.test_hf_and_ollama_score_identically_and_validate_coverage) ... ok
+test_hf_negative_provenance_rejects_other_revision_or_adapter (test_training.ProjectTests.test_hf_negative_provenance_rejects_other_revision_or_adapter) ... ok
+test_hybrid_contrast_uses_grpo_and_the_same_bootstrap_draws (test_training.ProjectTests.test_hybrid_contrast_uses_grpo_and_the_same_bootstrap_draws) ... ok
+test_loss_mask_and_no_silent_truncation (test_training.ProjectTests.test_loss_mask_and_no_silent_truncation) ... ok
+test_orchestrator_records_path_arguments_without_losing_command (test_training.ProjectTests.test_orchestrator_records_path_arguments_without_losing_command) ... ok
+test_policy_boundary_alias_ambiguity_and_si_all_families (test_training.ProjectTests.test_policy_boundary_alias_ambiguity_and_si_all_families) ... ok
+test_project_prompt_changes_only_format_guidance (test_training.ProjectTests.test_project_prompt_changes_only_format_guidance) ... ok
+test_reportable_evaluation_requires_frozen_three_sample_protocol (test_training.ProjectTests.test_reportable_evaluation_requires_frozen_three_sample_protocol) ... ok
+test_resume_rejects_incompatible_signature_and_missing_state (test_training.ProjectTests.test_resume_rejects_incompatible_signature_and_missing_state) ... ok
+test_rewards_unknown_prompt_and_sft_membership (test_training.ProjectTests.test_rewards_unknown_prompt_and_sft_membership) ... ok
+test_rollout_signal_recomputes_rewards_and_retains_unseen_cells (test_training.ProjectTests.test_rollout_signal_recomputes_rewards_and_retains_unseen_cells) ... ok
+test_six_family_freeze_1800_360_360_reproducible (test_training.ProjectTests.test_six_family_freeze_1800_360_360_reproducible) ... ok
+test_token_cost_preserves_sft_prefix_and_legacy_grpo_state (test_training.ProjectTests.test_token_cost_preserves_sft_prefix_and_legacy_grpo_state) ... ok
+test_uncertainty_resamples_physical_blocks_not_answers (test_training.ProjectTests.test_uncertainty_resamples_physical_blocks_not_answers) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 0.616s
+
+OK

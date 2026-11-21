@@ -1,0 +1,27 @@
+{
+  "cell": "pressure/easy",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "correct": 400
+  },
+  "unique": 271,
+  "correct_unique_before_audit": 271,
+  "sft_eligible_after_audit": 271,
+  "sft_tasks": 100,
+  "dpo_teacher_pairs": 0,
+  "audited": 5,
+  "required_random_audits": 5,
+  "rejected": 0,
+  "expanded": false,
+  "request_seconds": 2170.856459763945,
+  "output_tokens": 46510,
+  "truncated": 0,
+  "backend_incomplete": 0,
+  "audit_sha256": "b969bba32d131c61c26c8c64ca2f578eed93e4da9e4619b3a4f83bcc2da2637b",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "eef6fe5a60fe26f622bd2ab02a5e054257a69d9fb0635e111672193f407f8c3f",
+  "rows_canonical_encoding": "json.dumps(rows,sort_keys=True,ensure_ascii=False).encode UTF8",
+  "reference_check": "All100 pressure references independently recalculated with Decimal from visible forces/areas; agreement<1e-8Pa. All eligible traces reverified reward1.",
+  "limits": "Only5 random positive traces inspected by agent, all coherent. Unaudited positives remain eligible under frozen sampling policy; not individually certified. No human review. All400 responses correct leaves no teacher-only negatives; supplemental small-model negatives pending."
+}

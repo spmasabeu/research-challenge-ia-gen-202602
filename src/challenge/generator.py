@@ -99,7 +99,7 @@ def draw(rng, low, high, scale):
     return value if scale == 1 else value / scale
 
 
-def generate(seed, groups_per_family, excluded=(), families=ORIGINAL_FAMILIES):
+def generate(seed, groups_per_family, excluded=(), families=ORIGINAL_FAMILIES, project=False):
     """Un único generador aleatorio recorre las familias en el orden pedido.
 
     Con las familias originales primero, sus tareas no cambian al agregar otras.
@@ -115,12 +115,15 @@ def generate(seed, groups_per_family, excluded=(), families=ORIGINAL_FAMILIES):
     for family in families:
         spec = CATALOG[family]
         for index in range(groups_per_family):
-            while True:
+            # Rechazo acotado: un espacio saturado debe fallar, no bloquear la CLI.
+            for _ in range(100000):
                 a, b = (draw(rng, *bounds) for bounds in spec.ranges)
                 key = physical_key(family, a, b)
                 if key not in seen:
                     seen.add(key)
                     break
+            else:
+                raise ValueError(f"espacio agotado o saturado para {family}")
             structure = "direct" if index % 2 == 0 else "sum"
             fraction = rng.randint(2, 8) / 10
             values = {}
@@ -145,8 +148,10 @@ def generate(seed, groups_per_family, excluded=(), families=ORIGINAL_FAMILIES):
                     'Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, '
                     'en JSON {"value": numero, "unit": "unidad"} o cantidad y unidad. No des alternativas.'
                 )
+                if project:
+                    prompt = prompt.replace('"unidad"', f'"{requested}"') + " Usa punto decimal, sin separadores de miles."
                 tasks.append({"id": f"{pair_id}-{level}", "pair_id": pair_id, "physical_key": key,
-                              "version": VERSION, "seed": seed, "family": family, "level": level,
+                              "version": VERSION + ("-e2" if project else ""), "seed": seed, "family": family, "level": level,
                               "structure": structure, "operations": operations,
                               "conversions": conversions,
                               "representation": "scientific" if any("e" in field.split()[0].lower() for field in fields) else "decimal",

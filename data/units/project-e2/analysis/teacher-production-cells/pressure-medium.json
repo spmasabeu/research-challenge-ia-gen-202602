@@ -1,0 +1,28 @@
+{
+  "cell": "pressure/medium",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "correct": 395,
+    "numeric": 5
+  },
+  "unique": 372,
+  "correct_unique_before_audit": 367,
+  "sft_eligible_after_audit": 367,
+  "sft_tasks": 100,
+  "dpo_teacher_pairs": 3,
+  "audited": 5,
+  "required_random_audits": 5,
+  "rejected": 0,
+  "expanded": false,
+  "request_seconds": 2551.077597235042,
+  "output_tokens": 54953,
+  "truncated": 0,
+  "backend_incomplete": 0,
+  "audit_sha256": "e81c17080dcb5a3f396149fb89ff28350782f17f77fbc475e7e0857dd607247c",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "b9426d13d3bb6c85e78e8c34b4ca5fdba045017d6a6cd0ab7c590a01f0497b07",
+  "rows_canonical_encoding": "json.dumps(rows,sort_keys=True,ensure_ascii=False).encode UTF8",
+  "reference_check": "All100 pressure references independently recalculated with Decimal, including visible forces kN→N and areas; agreement<1e-8Pa. All eligible traces reverified reward1.",
+  "limits": "Only5 random positive traces inspected by agent, all coherent including coarse rounding in one trace. Unaudited positives remain eligible under sampling policy; not individually certified. No human review. Supplemental small-model negatives pending."
+}

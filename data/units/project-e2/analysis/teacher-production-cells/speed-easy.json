@@ -1,0 +1,30 @@
+{
+  "cell": "speed/easy",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "correct": 340,
+    "numeric": 52,
+    "unparsed": 8
+  },
+  "unique": 342,
+  "correct_unique_before_audit": 294,
+  "sft_eligible_after_audit": 263,
+  "sft_tasks": 88,
+  "dpo_teacher_pairs": 13,
+  "audited": 294,
+  "required_random_audits": 5,
+  "rejected": 31,
+  "expanded": true,
+  "request_seconds": 1861.663872994006,
+  "output_tokens_known": 39793,
+  "output_tokens_missing_rows": 0,
+  "truncated": 0,
+  "backend_incomplete": 0,
+  "audit_sha256": "824e0fd5b8520161a65a3bdce51d572a3e97dbad93b602393535236151745d3d",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "0bd9a01cb88c0de870a50783f6f65d8830c582d32258bd0e3df7a9b7d9921e86",
+  "rows_canonical_encoding": "json.dumps(rows,sort_keys=True,ensure_ascii=False).encode UTF8",
+  "reference_check": "All100 references independently recalculated with Decimal from visible distances and time; agreement<1e-8m/s. All eligible traces reverified reward1.",
+  "limits": "One defect among5 required random samples triggered actual review of all294 unique positive traces, including6 early directed reviews. Coherent rounding/truncation and double-precision representation accepted. Incorrect high-precision quotients conservatively rejected even for tiny discrepancies; judgments preserved. No human review. Supplemental negatives pending."
+}

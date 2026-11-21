@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-18T17:26:12.121687+00:00",
+  "tests": 42,
+  "tests_log": "c3f2fc11e9a59c97de5a1b64697c06f40ab7e3c718a7198cbc852186fd55ce5d",
+  "ruff": "passed",
+  "mypy": "passed 1 source file",
+  "bandit": {
+    "medium": 0,
+    "high": 0,
+    "low": 2
+  },
+  "sources": {
+    "scripts/run_e2.py": "ba1cd516c3c1b8b778e98ec1395be16444b37d4d51407bc72a140425d75684cd",
+    "tests/test_training.py": "5b29914b16a0e9579e1739ab1b9908326f77b2c75a4471c8df09f534bdee83b5"
+  },
+  "running_driver_snapshot": "validation/production-routes-driver-source.py",
+  "scope": "Completed-run reuse now checks exact train/SFT/initial-adapter hashes and pilot flag. Running driver source preserved, training/evaluation code unchanged."
+}

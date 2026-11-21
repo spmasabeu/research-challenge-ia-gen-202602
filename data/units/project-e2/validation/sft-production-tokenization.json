@@ -1,0 +1,15 @@
+{
+  "rows": 3362,
+  "min_tokens": 246,
+  "max_tokens": 487,
+  "total_tokens": 1128612,
+  "total_completion_tokens": 458044,
+  "max_length": 1536,
+  "truncated": 0,
+  "completion_masks": "all nonempty prompt and completion; EOS preserved; only completion supervised",
+  "sft_sha256": "012b7a40c8703108722d93d7473afe59b3938ea0733a5e49041f8188d6dd2af8",
+  "config_sha256": "feb536b1f2b792a1281ec0bad328bd41493743efc9f60f391b858b389099b24b",
+  "train_source_sha256": "a7d263c349957162888235f9680e2501f0eb5401f7eb7e380d7bcbaa64530c12",
+  "model": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+}

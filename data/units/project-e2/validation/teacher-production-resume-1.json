@@ -1,0 +1,8 @@
+{
+  "pid": 35680,
+  "prefix_rows": 112,
+  "prefix_bytes": 278517,
+  "prefix_sha256": "22d68a380b82baa0097dff5f0458ddb348aee88883ae4e5bd7d457fbc3972403",
+  "log": "data/units/project-e2/validation/teacher-production-resume-1.log",
+  "reason": "RemoteDisconnected; local Ollama service available again with unchanged0.18.0 version and model digest. Frozen dataset check passed."
+}

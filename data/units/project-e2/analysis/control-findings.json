@@ -1,0 +1,100 @@
+{
+  "control": {
+    "tasks": 360,
+    "responses": 1080,
+    "n": 3,
+    "statuses": {
+      "correct": 750,
+      "numeric": 314,
+      "unparsed": 16
+    },
+    "coverage": 0.9851851851851852,
+    "pass_at_k": {
+      "1": 0.6944444444444444,
+      "3": 0.8416666666666667
+    },
+    "equivalent_si_rate": 0.6944444444444444,
+    "requested_unit_rate": 0.9851851851851852,
+    "pass_at_k_upper_bound": {
+      "1": 0.7092592592592593,
+      "3": 0.8527777777777777
+    },
+    "backend_incomplete": 0,
+    "truncated": 0
+  },
+  "inference_seconds": 3007.1285408130134,
+  "input_tokens": 214737,
+  "output_tokens": 167797,
+  "floor_cells": {
+    "luminosity/hard": {
+      "tasks": 20,
+      "responses": 60,
+      "n": 3,
+      "statuses": {
+        "numeric": 56,
+        "unparsed": 3,
+        "correct": 1
+      },
+      "coverage": 0.95,
+      "pass_at_k": {
+        "1": 0.01666666666666667,
+        "3": 0.05
+      },
+      "equivalent_si_rate": 0.016666666666666666,
+      "requested_unit_rate": 0.95,
+      "pass_at_k_upper_bound": {
+        "1": 0.06666666666666668,
+        "3": 0.2
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  },
+  "ceiling_cells": {
+    "speed/easy": {
+      "tasks": 20,
+      "responses": 60,
+      "n": 3,
+      "statuses": {
+        "correct": 60
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0,
+        "3": 1.0
+      },
+      "equivalent_si_rate": 1.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 1.0,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "speed/medium": {
+      "tasks": 20,
+      "responses": 60,
+      "n": 3,
+      "statuses": {
+        "correct": 59,
+        "numeric": 1
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.9833333333333334,
+        "3": 1.0
+      },
+      "equivalent_si_rate": 0.9833333333333333,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.9833333333333334,
+        "3": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  },
+  "decision": "Mantener dataset congelado; analizar señal GRPO por grupos y células. Luminosidad hard en suelo (1/60), velocidad easy/medium en techo; no cambiar datos a partir del control para elevar puntuación. Si se calibra otra versión, repetir comparación completa.",
+  "limits": "Sin ajuste propio todavía; éxito final no certifica razonamiento. 16 unparsed separados de 314 errores numéricos. Ver inspección agent y muestra humana sin dictamen."
+}

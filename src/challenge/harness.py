@@ -6,20 +6,31 @@ from collections import Counter
 from pathlib import Path
 
 from .evaluate import summarize
-from .generator import FAMILIES, ORIGINAL_FAMILIES, dump, generate, split_groups
+from .generator import (
+    CATALOG,
+    FAMILIES,
+    ORIGINAL_FAMILIES,
+    dump,
+    generate,
+    split_groups,
+)
 from .generator import VERSION as GENERATOR_VERSION
 from .models import OPTIONS, read_rows, run, sha256, validate_rows
 from .verifier import UNITS, VERSION, load_tasks
 
-FROZEN_FILES = ("generator.py", "verifier.py", "evaluate.py", "models.py")
+FROZEN_FILES = ("generator.py", "verifier.py", "evaluate.py", "models.py", "harness.py")
 
 
-def freeze(output, exclusions_path, models_path):
+def freeze(output, exclusions_path, models_path, *, families=ORIGINAL_FAMILIES,
+           train=10, evaluation=4, test=6, generation_seed=4301, split_seed=4302,
+           dataset_version="units-final-1", teacher_samples=4, project=False):
     exclusions = json.loads(exclusions_path.read_text())
     if not isinstance(exclusions["keys"], list) or not all(isinstance(k, str) for k in exclusions["keys"]):
         raise ValueError("exclusiones inválidas")
-    tasks = generate(4301, 20, exclusions["keys"])
-    splits = split_groups(tasks, 10, 4, 6)
+    if not 4 <= teacher_samples <= 8:
+        raise ValueError("profesor requiere 4–8 muestras")
+    tasks = generate(generation_seed, train + evaluation + test, exclusions["keys"], families, project)
+    splits = split_groups(tasks, train, evaluation, test, split_seed)
     load_tasks(tasks)
     output.mkdir(parents=True, exist_ok=False)
     for directory in ("public", "private", "frozen-code"):
@@ -29,13 +40,16 @@ def freeze(output, exclusions_path, models_path):
         dump(output / "public" / f"{split}.jsonl", [{k: v for k, v in t.items() if k not in {"answer_si", "physical_key"}} for t in rows])
     (output / "exclusions.json").write_bytes(exclusions_path.read_bytes())
     (output / "models.json").write_bytes(models_path.read_bytes())
-    protocol = {"dataset_version": "units-final-1", "generator_version": GENERATOR_VERSION, "verifier_version": VERSION,
-                "generation_seed": 4301, "split_seed": 4302, "groups_per_family": 20,
-                "groups": {"train": 10, "eval": 4, "test": 6}, "baseline_samples": 3, "teacher_train_samples": 4,
+    protocol = {"dataset_version": dataset_version, "generator_version": GENERATOR_VERSION, "verifier_version": VERSION,
+                "families": list(families), "project_prompt": project, "generation_seed": generation_seed, "split_seed": split_seed,
+                "groups_per_family": train + evaluation + test,
+                "groups": {"train": train, "eval": evaluation, "test": test}, "baseline_samples": 3, "teacher_train_samples": teacher_samples,
                 "seed_base": 42, "think": False, "options": OPTIONS,
                 "backend_incomplete_policy": "conservar intento como unparsed; no atribuir error matemático"}
     (output / "protocol.json").write_text(json.dumps(protocol, ensure_ascii=False, indent=2) + "\n")
     (output / "units.json").write_text(json.dumps(UNITS, ensure_ascii=False, indent=2) + "\n")
+    catalog = {family: {k: v for k, v in vars(CATALOG[family]).items() if k != "answer"} for family in families}
+    (output / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n")
     for name in FROZEN_FILES:
         (output / "frozen-code" / name).write_bytes(Path(__file__).with_name(name).read_bytes())
     manifest = {"files": {str(p.relative_to(output)): sha256(p) for p in sorted(output.rglob("*")) if p.is_file()},
@@ -62,7 +76,8 @@ def check_dataset(root):
     if protocol["generator_version"] != GENERATOR_VERSION or protocol["verifier_version"] != VERSION or protocol["options"] != OPTIONS:
         raise ValueError("versiones o parámetros inconsistentes")
     excluded = set(json.loads((root / "exclusions.json").read_text())["keys"])
-    regenerated = generate(protocol["generation_seed"], protocol["groups_per_family"], excluded)
+    families = protocol["families"]
+    regenerated = generate(protocol["generation_seed"], protocol["groups_per_family"], excluded, families, protocol["project_prompt"])
     groups = protocol["groups"]
     splits = split_groups(regenerated, groups["train"], groups["eval"], groups["test"], protocol["split_seed"])
     all_tasks = []
@@ -81,7 +96,7 @@ def check_dataset(root):
         seen |= keys
         counts[split] = len(actual_tasks)
         cells = Counter((t["family"], t["level"], t["structure"]) for t in actual_tasks)
-        if len(cells) != 18 or set(cells.values()) != {groups[split] // 2}:
+        if len(cells) != len(families) * 6 or set(cells.values()) != {groups[split] // 2}:
             raise ValueError("celdas familia/nivel/estructura desbalanceadas")
         pairs = Counter(t["pair_id"] for t in actual_tasks)
         if set(pairs.values()) != {3}:
@@ -153,10 +168,20 @@ def main():
     gen.add_argument("--groups", type=int, required=True)
     gen.add_argument("--out", type=Path, required=True)
     gen.add_argument("--families", nargs="+", choices=FAMILIES, default=list(ORIGINAL_FAMILIES))
+    gen.add_argument("--project", action="store_true")
     frozen = sub.add_parser("freeze")
     frozen.add_argument("--out", type=Path, required=True)
     frozen.add_argument("--exclusions", type=Path, required=True)
     frozen.add_argument("--models", type=Path, required=True)
+    frozen.add_argument("--families", nargs="+", choices=FAMILIES, default=list(ORIGINAL_FAMILIES))
+    frozen.add_argument("--train-groups", type=int, default=10)
+    frozen.add_argument("--eval-groups", type=int, default=4)
+    frozen.add_argument("--test-groups", type=int, default=6)
+    frozen.add_argument("--generation-seed", type=int, default=4301)
+    frozen.add_argument("--split-seed", type=int, default=4302)
+    frozen.add_argument("--dataset-version", default="units-final-1")
+    frozen.add_argument("--teacher-samples", type=int, default=4)
+    frozen.add_argument("--project", action="store_true")
     check = sub.add_parser("check")
     check.add_argument("--dataset", type=Path, required=True)
     comparison = sub.add_parser("compare")
@@ -169,6 +194,7 @@ def main():
     infer.add_argument("--model", required=True)
     infer.add_argument("--samples", type=int, required=True)
     infer.add_argument("--max-tokens", type=int, default=1024)
+    infer.add_argument("--max-new-responses", type=int, help="lote reanudable; no cambia el protocolo de muestreo")
     score = sub.add_parser("score")
     score.add_argument("--tasks", type=Path, required=True)
     score.add_argument("--run", type=Path, required=True)
@@ -177,20 +203,24 @@ def main():
         derived = sub.add_parser(name)
         derived.add_argument("--dataset", type=Path, required=True)
         derived.add_argument("--teacher", type=Path, required=True)
+        derived.add_argument("--teacher-tasks", type=Path, help="subconjunto explícito de train; cobertura registrada")
         derived.add_argument("--audits", type=Path, nargs="+", required=True)
         derived.add_argument("--negative-tasks", type=Path)
         derived.add_argument("--negative-run", type=Path)
         derived.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     if args.command == "generate":
-        tasks = generate(args.seed, args.groups, families=args.families)
+        tasks = generate(args.seed, args.groups, families=args.families, project=args.project)
         load_tasks(tasks)
         args.out.parent.mkdir(parents=True, exist_ok=True)
         dump(args.out, tasks)
     elif args.command == "run":
-        run(args.tasks, args.out, args.model, args.samples, args.max_tokens)
+        run(args.tasks, args.out, args.model, args.samples, args.max_tokens, args.max_new_responses)
     elif args.command == "freeze":
-        freeze(args.out, args.exclusions, args.models)
+        freeze(args.out, args.exclusions, args.models, families=args.families,
+               train=args.train_groups, evaluation=args.eval_groups, test=args.test_groups,
+               generation_seed=args.generation_seed, split_seed=args.split_seed,
+               dataset_version=args.dataset_version, teacher_samples=args.teacher_samples, project=args.project)
     elif args.command == "check":
         print(json.dumps(check_dataset(args.dataset)))
     elif args.command == "compare":
@@ -202,7 +232,7 @@ def main():
         from .derive import build
 
         check_dataset(args.dataset)
-        sft, dpo, stats = build(args.dataset, args.teacher, args.audits, args.negative_tasks, args.negative_run)
+        sft, dpo, stats = build(args.dataset, args.teacher, args.audits, args.negative_tasks, args.negative_run, args.teacher_tasks)
         if args.command == "derive":
             args.out.mkdir(parents=True, exist_ok=False)
             dump(args.out / "sft.jsonl", sft)

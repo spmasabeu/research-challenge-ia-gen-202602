@@ -1,0 +1,17 @@
+{
+  "verifier": "verifier-11",
+  "source": "data/units/derived-v3",
+  "input_hashes": {
+    "data/units/final-v2/private/train.jsonl": "d29b5a7462ae381b9b5d3cb57ed0cb0d2dea64bf7572953c0344cf5fe14ed1fd",
+    "data/units/derived-v3/sft.jsonl": "654001e04a63334dbdff0d3d0d187048156a1a791d3a9036e7f45bc7314fb690",
+    "data/units/derived-v3/dpo.jsonl": "d11aad3c71fc38a695dc5b16d918a4339a5ec5638573b9e6c83ebdfd52b82a54",
+    "data/units/derived-v3/stats.json": "bcbcaf239c3b86933ef209bdcf0381d12f869c12d5bad42afacee6ea82b179ac"
+  },
+  "sft_statuses": {
+    "correct": 121
+  },
+  "dpo_validity": {
+    "True": 35
+  },
+  "use": "Diagnóstico separado; datos históricos intactos, no incorporados al corpus E2."
+}

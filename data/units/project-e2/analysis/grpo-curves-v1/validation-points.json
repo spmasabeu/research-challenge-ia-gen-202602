@@ -1,0 +1,57 @@
+[
+  {
+    "evaluation": "data/units/project-e2/runs/control-curves",
+    "tasks_sha256": "c61b09b025861e376bb7f5f453bf67b9bf45c9c542639386f1f93baa75ccd4bb",
+    "config_sha256": "7d84dc59d69d05b81523ef7b1559909ec3aceaafef6c5718cb5ff48ed3f342e2",
+    "adapter": null,
+    "cumulative_train_seconds": 0.0,
+    "step": 0,
+    "run": "control-curves",
+    "pass_at_1": 0.6111111111111112,
+    "cumulative_train_tokens": 0
+  },
+  {
+    "evaluation": "data/units/project-e2/runs/grpo-checkpoint-13-eval",
+    "tasks_sha256": "c61b09b025861e376bb7f5f453bf67b9bf45c9c542639386f1f93baa75ccd4bb",
+    "config_sha256": "7d84dc59d69d05b81523ef7b1559909ec3aceaafef6c5718cb5ff48ed3f342e2",
+    "adapter": "data/units/project-e2/runs/grpo/checkpoint-13",
+    "cumulative_train_seconds": 317.26478311900064,
+    "step": 13,
+    "run": "grpo-checkpoint-13-eval",
+    "pass_at_1": 0.5833333333333334,
+    "cumulative_train_tokens": 18086
+  },
+  {
+    "evaluation": "data/units/project-e2/runs/grpo-checkpoint-25-eval",
+    "tasks_sha256": "c61b09b025861e376bb7f5f453bf67b9bf45c9c542639386f1f93baa75ccd4bb",
+    "config_sha256": "7d84dc59d69d05b81523ef7b1559909ec3aceaafef6c5718cb5ff48ed3f342e2",
+    "adapter": "data/units/project-e2/runs/grpo/checkpoint-25",
+    "cumulative_train_seconds": 657.6555168990017,
+    "step": 25,
+    "run": "grpo-checkpoint-25-eval",
+    "pass_at_1": 0.6388888888888888,
+    "cumulative_train_tokens": 36325
+  },
+  {
+    "evaluation": "data/units/project-e2/runs/grpo-checkpoint-33-eval",
+    "tasks_sha256": "c61b09b025861e376bb7f5f453bf67b9bf45c9c542639386f1f93baa75ccd4bb",
+    "config_sha256": "7d84dc59d69d05b81523ef7b1559909ec3aceaafef6c5718cb5ff48ed3f342e2",
+    "adapter": "data/units/project-e2/runs/grpo/checkpoint-33",
+    "cumulative_train_seconds": 966.7969221120002,
+    "step": 33,
+    "run": "grpo-checkpoint-33-eval",
+    "pass_at_1": 0.5555555555555556,
+    "cumulative_train_tokens": 47996
+  },
+  {
+    "evaluation": "data/units/project-e2/runs/grpo-final-curves",
+    "tasks_sha256": "c61b09b025861e376bb7f5f453bf67b9bf45c9c542639386f1f93baa75ccd4bb",
+    "config_sha256": "7d84dc59d69d05b81523ef7b1559909ec3aceaafef6c5718cb5ff48ed3f342e2",
+    "adapter": "data/units/project-e2/runs/grpo/final",
+    "cumulative_train_seconds": 1297.766086093001,
+    "step": 40,
+    "run": "grpo-final-curves",
+    "pass_at_1": 0.6111111111111112,
+    "cumulative_train_tokens": 58408
+  }
+]

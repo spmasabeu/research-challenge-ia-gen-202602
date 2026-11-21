@@ -1,0 +1,30 @@
+{
+  "cell": "voltage/medium",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "numeric": 83,
+    "correct": 311,
+    "unparsed": 6
+  },
+  "unique": 399,
+  "correct_unique_before_audit": 311,
+  "sft_eligible_after_audit": 141,
+  "sft_tasks": 63,
+  "dpo_teacher_pairs": 40,
+  "audited": 311,
+  "required_random_audits": 5,
+  "rejected": 170,
+  "expanded": true,
+  "request_seconds": 2703.1411094920113,
+  "output_tokens_known": 58430,
+  "output_tokens_missing_rows": 0,
+  "truncated": 0,
+  "backend_incomplete": 0,
+  "audit_sha256": "9db1fa8f0fafa6eae4c0c31faf2c58ccb8dccc6e48db95a1327473d3fcd61ab0",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "590156c0d0bf0e2643963e59c8fec914ab4f0e0dad5cb221cc75eddb442cc131",
+  "rows_canonical_encoding": "json.dumps(rows,sort_keys=True,ensure_ascii=False).encode UTF8",
+  "reference_check": "100 referencias recalculadas con Decimal: corriente mA→A por resistencia total en ohm, resultado en V.",
+  "limits": "Revisión de agente de los 311 positivos únicos, ampliada tras defecto en primer caso dirigido. Incluye los 5 casos aleatorios4303 al cierre. Se excluyen productos incorrectos y supuestos no justificados; redondeos coherentes aceptados. Dos rechazos conservadores por730.0 frente a729.8 documentados en dictámenes. No es auditoría humana."
+}

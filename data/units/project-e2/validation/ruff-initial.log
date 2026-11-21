@@ -1,0 +1,36 @@
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/challenge/harness.py:3:1
+   |
+ 1 |   """CLI del desafío. Ejecutar con PYTHONPATH=src python -m challenge.harness."""
+ 2 |
+ 3 | / import argparse
+ 4 | | import json
+ 5 | | from collections import Counter
+ 6 | | from pathlib import Path
+ 7 | |
+ 8 | | from .evaluate import summarize
+ 9 | | from .generator import CATALOG, FAMILIES, ORIGINAL_FAMILIES, dump, generate, split_groups
+10 | | from .generator import VERSION as GENERATOR_VERSION
+11 | | from .models import OPTIONS, read_rows, run, sha256, validate_rows
+12 | | from .verifier import UNITS, VERSION, load_tasks
+   | |________________________________________________^
+13 |
+14 |   FROZEN_FILES = ("generator.py", "verifier.py", "evaluate.py", "models.py", "harness.py")
+   |
+help: Organize imports
+   |
+8  | from .evaluate import summarize
+   - from .generator import CATALOG, FAMILIES, ORIGINAL_FAMILIES, dump, generate, split_groups
+9  + from .generator import (
+10 +     CATALOG,
+11 +     FAMILIES,
+12 +     ORIGINAL_FAMILIES,
+13 +     dump,
+14 +     generate,
+15 +     split_groups,
+16 + )
+17 | from .generator import VERSION as GENERATOR_VERSION
+   |
+
+Found 1 error.
+[*] 1 fixable with `--fix`.

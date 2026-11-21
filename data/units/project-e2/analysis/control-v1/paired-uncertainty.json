@@ -1,0 +1,42 @@
+{
+  "physical_problems": 120,
+  "tasks": 360,
+  "responses_per_route": 1080,
+  "seed": 7305,
+  "repetitions": 2000,
+  "method": "percentile 95%, paired physical blocks, family/structure strata",
+  "limits": "Incertidumbre sobre problemas; no mide variación entre semillas de entrenamiento ni certifica pasos de razonamiento.",
+  "routes": {
+    "control": {
+      "pass_at_k": {
+        "1": 0.6944444444444444,
+        "3": 0.8416666666666667
+      },
+      "ci95": {
+        "1": [
+          0.6638888888888889,
+          0.7240972222222223
+        ],
+        "3": [
+          0.8111111111111111,
+          0.8694444444444445
+        ]
+      },
+      "delta_control_ci95": {
+        "1": [
+          0.0,
+          0.0
+        ],
+        "3": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "missing_routes": [
+    "grpo",
+    "sft",
+    "sft-grpo"
+  ]
+}

@@ -1,0 +1,9 @@
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/sft-grpo-checkpoint-24-eval", "--adapter", "data/units/project-e2/runs/sft-grpo/checkpoint-24"]}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.32s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.44it/s]
+batch 0 0 8 24.11
+batch 8 0 8 27.74
+batch 16 0 8 25.48
+batch 24 0 8 23.39
+batch 32 0 4 22.15
+{"tasks": 36, "responses": 36, "n": 1, "statuses": {"correct": 24, "numeric": 12}, "coverage": 1.0, "pass_at_k": {"1": 0.6666666666666666}, "equivalent_si_rate": 0.6666666666666666, "requested_unit_rate": 1.0, "pass_at_k_upper_bound": {"1": 0.6666666666666666}, "backend_incomplete": 0, "truncated": 0}
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/sft-grpo-checkpoint-24-eval", "--adapter", "data/units/project-e2/runs/sft-grpo/checkpoint-24"]}

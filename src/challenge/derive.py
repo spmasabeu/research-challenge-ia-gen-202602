@@ -18,7 +18,7 @@ def collect(tasks, rows, run_name):
     records = {}
     for row, label in zip(rows, labels):
         task = by_id[row["task_id"]]
-        completion = row["result"]["message"]["content"]
+        completion = row["completion"] if row.get("backend") == "transformers" else row["result"]["message"]["content"]
         canonical = " ".join(completion.split())
         key = (task["id"], canonical, label["status"])
         source = {"run": run_name, "model": row["model"], "sample_index": row["sample_index"],
@@ -51,7 +51,18 @@ def checked_run(tasks_path, run_dir, protocol, models):
     rows = read_rows(run_dir / "responses.jsonl")
     metadata = json.loads((run_dir / "metadata.json").read_text())
     config = metadata["config"]
-    if config["tasks_sha256"] != sha256(tasks_path) or config["digest"] != models[config["model"]]["digest"]:
+    if config["tasks_sha256"] != sha256(tasks_path):
+        raise ValueError("tareas inconsistentes")
+    model = models[config["model"]]
+    if model.get("backend") == "transformers":
+        from .evaluate_hf import validate_hf_rows
+
+        expected = model["evaluation"]
+        if any(config.get(k) != expected[k] for k in ("model", "revision", "quantization", "generation", "max_context", "batch_size")) or config["adapter"] is not None:
+            raise ValueError("checkpoint o protocolo HF no coincide con modelo congelado")
+        validate_hf_rows(tasks, rows, config)
+        return tasks, rows, config
+    if config["digest"] != model["digest"]:
         raise ValueError("tareas o revisión de modelo inconsistentes")
     if config["options"] != protocol["options"] or config["think"] != protocol["think"]:
         raise ValueError("parámetros no coinciden con protocolo congelado")
@@ -62,12 +73,15 @@ def checked_run(tasks_path, run_dir, protocol, models):
     return tasks, rows, config
 
 
-def build(dataset, teacher_run, audit_paths, negative_tasks=None, negative_run=None):
+def build(dataset, teacher_run, audit_paths, negative_tasks=None, negative_run=None, teacher_tasks=None):
     protocol = json.loads((dataset / "protocol.json").read_text())
     models = json.loads((dataset / "models.json").read_text())
     train_path = dataset / "private/train.jsonl"
-    tasks, teacher_rows, config = checked_run(train_path, teacher_run, protocol, models)
-    train_by_id = {t["id"]: t for t in tasks}
+    train_tasks = read_rows(train_path)
+    train_by_id = {t["id"]: t for t in train_tasks}
+    tasks, teacher_rows, config = checked_run(teacher_tasks or train_path, teacher_run, protocol, models)
+    if any(t != train_by_id.get(t["id"]) for t in tasks):
+        raise ValueError("profesor fuera de train o con prompt diferente")
     if config["model"] != "qwen3:8b" or not 4 <= config["samples"] <= 8:
         raise ValueError("modelo generador debe ser Qwen3-8B con 4–8 muestras")
     teacher, teacher_summary = collect(tasks, teacher_rows, teacher_run.name)
@@ -84,6 +98,8 @@ def build(dataset, teacher_run, audit_paths, negative_tasks=None, negative_run=N
                 raise ValueError("auditoría inválida, duplicada o ajena a candidatas correctas")
             if audit["completion_sha256"] != candidate["sources"][0]["completion_sha256"] or not audit["reason"].strip():
                 raise ValueError("auditoría sin evidencia correspondiente")
+            if protocol.get("project_prompt") and (audit.get("reviewer_type") not in {"human", "agent"} or not audit.get("auditor", "").strip()):
+                raise ValueError("auditoría E2 requiere identidad y tipo de revisor")
             audits[audit["candidate_id"]] = audit
     if not required_audits(teacher) <= audits.keys():
         raise ValueError("faltan auditorías muestreadas por celda")
@@ -94,6 +110,8 @@ def build(dataset, teacher_run, audit_paths, negative_tasks=None, negative_run=N
     rejected = [r for r in teacher if r["status"] in {"numeric", "unit"}]
     input_hashes = {"train": sha256(train_path), "teacher_metadata": sha256(teacher_run / "metadata.json"),
                     "teacher_responses": sha256(teacher_run / "responses.jsonl"), "audits": audit_sources}
+    if teacher_tasks:
+        input_hashes["teacher_subset"] = sha256(teacher_tasks)
     negative_summary = None
     if (negative_tasks is None) != (negative_run is None):
         raise ValueError("indicar tareas y corrida de negativos juntas")
@@ -153,4 +171,17 @@ def build(dataset, teacher_run, audit_paths, negative_tasks=None, negative_run=N
              "input_hashes": input_hashes, "derive_source_sha256": sha256(Path(__file__)), "verifier": verifier,
              "deduplication": "task+texto sin diferencias de espacios; fuentes repetidas conservadas; emparejar por orden sin producto cartesiano",
              "audit_limit": "Muestra por celda sin defectos no certifica todas las trazas; celdas con defectos revisadas completas."}
+    stats["audit_reviewer_types"] = dict(Counter(a.get("reviewer_type", "unspecified_historical") for a in audits.values()))
+    stats["cells"] = {}
+    for family, level in sorted({(t["family"], t["level"]) for t in train_tasks}):
+        cell = f"{family}/{level}"
+        selected = [r for r in teacher if (r["family"], r["level"]) == (family, level)]
+        kept = [r for r in sft if (r["metadata"]["family"], r["metadata"]["level"]) == (family, level)]
+        pairs = [r for r in dpo if (r["metadata"]["family"], r["metadata"]["level"]) == (family, level)]
+        stats["cells"][cell] = {"train_tasks": sum((t["family"], t["level"]) == (family, level) for t in train_tasks),
+                 "sampled_tasks": len({r["task_id"] for r in selected}), "candidates": sum(len(r["sources"]) for r in selected),
+                 "unique": len(selected), "correct_before_audit": sum(r["status"] == "correct" for r in selected),
+                 "audited": sum(r["candidate_id"] in audits for r in selected), "sft": len(kept), "dpo": len(pairs),
+                 "sft_tasks": len({r["task_id"] for r in kept}), "dpo_tasks": len({r["task_id"] for r in pairs}),
+                 "statuses": dict(Counter(r["status"] for r in selected))}
     return sft, dpo, stats

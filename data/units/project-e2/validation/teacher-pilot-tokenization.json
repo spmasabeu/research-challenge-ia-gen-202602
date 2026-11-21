@@ -1,0 +1,15 @@
+{
+  "sft_sha256": "d3d024054c103d8eb9ba4df13d541647c94396aae16451837e1aba8779c6499a",
+  "train_source_sha256": "a7d263c349957162888235f9680e2501f0eb5401f7eb7e380d7bcbaa64530c12",
+  "model": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "rows": 111,
+  "min_total_tokens": 249,
+  "max_total_tokens": 430,
+  "min_completion_tokens": 79,
+  "max_completion_tokens": 215,
+  "max_length": 1536,
+  "all_untruncated": true,
+  "all_have_prompt_and_completion": true,
+  "scope": "CPU tokenization/validation of newly generated teacher pilot; no training and no production corpus completeness claim"
+}

@@ -1,0 +1,8 @@
+{
+  "evaluation": "data/units/project-e2/runs/sft-grpo-final-curves",
+  "tasks_sha256": "c61b09b025861e376bb7f5f453bf67b9bf45c9c542639386f1f93baa75ccd4bb",
+  "config_sha256": "7d84dc59d69d05b81523ef7b1559909ec3aceaafef6c5718cb5ff48ed3f342e2",
+  "adapter": "data/units/project-e2/runs/sft-grpo/final",
+  "cumulative_train_seconds": 1236.849408569,
+  "step": 31
+}

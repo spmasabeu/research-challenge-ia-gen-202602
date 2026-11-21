@@ -1,0 +1,137 @@
+{
+  "reviewer_type": "agent",
+  "auditor": "Codex",
+  "selection": "Casos dirigidos: primera transición de tres tipos, único truncado y todos los dos éxitos luminosidad/hard. No muestra aleatoria ni auditoría humana.",
+  "response_sha256": "3e4333ec85a24411390afdf94f52900f375d782cd112c7d063b687391080eb94",
+  "cases": [
+    {
+      "task_id": "a7480052c5b5fb489f43-hard",
+      "sample_index": 0,
+      "assessment": "final_within_tolerance",
+      "reason": "Convierte unidades correctamente, pero 5618/164=34.2561, no34.05; final122.58 está dentro del1%. No certifica aritmética exacta.",
+      "completion": "Primero convertimos la distancia del km a metros: 5.618 km = 5618 m. Luego, convertimos el tiempo del minuto a segundos: 2.73333333333333 min = 164 seconds. Luego calculamos la velocidad en m/s: 5618 / 164 ≈ 34.05 m/s. Finalmente convertimos a km/h: 34.05 m/s * 3.6 = 122.58 km/h.\n\n{\"value\": 122.58, \"unit\": \"km/h\"}",
+      "label": {
+        "task_id": "a7480052c5b5fb489f43-hard",
+        "sample_index": 0,
+        "family": "speed",
+        "level": "hard",
+        "structure": "direct",
+        "status": "correct",
+        "reward": 1.0,
+        "value": 122.58,
+        "unit": "km/h",
+        "value_si": 34.050000000000004,
+        "equivalent_si": true,
+        "requested_unit_correct": true,
+        "backend_incomplete": false,
+        "truncated": false
+      }
+    },
+    {
+      "task_id": "2d0c72a3609c17297e8a-hard",
+      "sample_index": 1,
+      "assessment": "numeric_error",
+      "reason": "Unidades correctas;1842/143=12.8811, no12.74. Final45.86 difiere más del1% del46.3720 esperado.",
+      "completion": "Primero convertimos la distancia de km a metros: 1.842 km = 1842 m. Luego convertimos el tiempo de minutos a segundos: 2.38333333333333 min = 143.0 segundos. Dividimos la distancia por el tiempo: 1842 / 143 ≈ 12.74 m/s. Finalmente, convertimos a km/h: 12.74 m/s × 3.6 ≈ 45.86 km/h.\n\n{\"value\": 45.86, \"unit\": \"km/h\"}",
+      "label": {
+        "task_id": "2d0c72a3609c17297e8a-hard",
+        "sample_index": 1,
+        "family": "speed",
+        "level": "hard",
+        "structure": "direct",
+        "status": "numeric",
+        "reward": 0.0,
+        "value": 45.86,
+        "unit": "km/h",
+        "value_si": 12.738888888888889,
+        "equivalent_si": false,
+        "requested_unit_correct": true,
+        "backend_incomplete": false,
+        "truncated": false
+      }
+    },
+    {
+      "task_id": "d5493d459f00b6eedadf-medium",
+      "sample_index": 2,
+      "assessment": "format_rejected",
+      "reason": "Escapa las llaves JSON con barras en LaTeX. Además49.2*1823.29=89705.868, no89343.448. El valor final estaría dentro del1%, pero no cumple la extracción conservadora.",
+      "completion": "Primero, convertimos la masa de gramos a kilogramos: $ m = 49200 \\, \\text{g} = 49.2 \\, \\text{kg} $. Luego, aplicamos la fórmula de la energía cinética: $ E = \\frac{m \\cdot v^2}{2} $. Calculamos $ v^2 = (42.7)^2 = 1823.29 $. Multiplicamos: $ 49.2 \\cdot 1823.29 = 89343.448 $. Finalmente, dividimos por 2: $ \\frac{89343.448}{2} = 44671.724 $. El resultado es $ \\{ \"value\": 44671.724, \"unit\": \"J\" \\} $.",
+      "label": {
+        "task_id": "d5493d459f00b6eedadf-medium",
+        "sample_index": 2,
+        "family": "energy",
+        "level": "medium",
+        "structure": "direct",
+        "status": "unparsed",
+        "reward": 0.0,
+        "backend_incomplete": false,
+        "truncated": false
+      }
+    },
+    {
+      "task_id": "7ceb590d10605d8bb2de-hard",
+      "sample_index": 2,
+      "assessment": "truncated",
+      "reason": "Omite conversión de flujo, tiene errores aritméticos y bucle repetitivo;512 tokens sin resultado terminal. Recompensa0.",
+      "completion": "Primero, convertimos los datos a unidades adecuadas. El diámetro es 0.026 km = 0.026 * 1000 = 26 m. La luminosidad isotrópica se calcula con la fórmula L = 4 * π * d² * F. Substituyendo los valores: L = 4 * 3.141592653589793 * (26)^2 * 320. Calculamos: 26² = 676; 4 * 3.141592653589793 = 12.566377913919172; 12.566377913919172 * 676 = 84547.3255621917; 84547.3255621917 * 320 = 27055144.175897344. Luego, convertimos a W: 27055144.175897344 * 1000 = 27055144175.897344 erg/s/cm² * 1000 = 27055144175897.34 erg/s/m². Finalmente, 27055144175897.34 erg/s/m² * 1e-7 = 27055144175897.34 * 1e-7 = 27055144175897.34 * 0.0000001 = 27055144175897.34 * 0.0000001 = 27055144175897.34 * 0.0000001 = 27055144175897.34 * 0.0",
+      "label": {
+        "task_id": "7ceb590d10605d8bb2de-hard",
+        "sample_index": 2,
+        "family": "luminosity",
+        "level": "hard",
+        "structure": "direct",
+        "status": "unparsed",
+        "reward": 0.0,
+        "backend_incomplete": false,
+        "truncated": true
+      }
+    },
+    {
+      "task_id": "d2449ac6aac7d5101497-hard",
+      "sample_index": 2,
+      "assessment": "not_genuine_reasoning",
+      "reason": "Multiplica flujo770 por1000 conservando erg/s/cm², mezcla luminosidad con área y equipara multiplicar1e-7 con dividir1e6. La cancelación accidental deja4252.3572 dentro del1% de4267.16247.",
+      "completion": "Primero convertimos los datos a unidades consistentes: d = 0.021 km = 21 m; F = 770 erg/s/cm² = 770 * 1000 = 770000 erg/s/cm². L = 4 * π * d² * F = 4 * 3.141592653589793 * (21)^2 * 770000. Calculamos: 4 * 3.141592653589793 ≈ 12.56637061436077; (21)^2 = 441; 12.56637061436077 * 441 ≈ 5524.56; 5524.56 * 770000 ≈ 4252357200. L ≈ 4252357200 erg/s/m². Convertimos a W: 4252357200 erg/s/m² = 4252357200 * 1e-7 W/m² = 4252357200 / 1000000 = 4252.3572 W. Resultado: {\"value\": 4252.3572, \"unit\": \"W\"}",
+      "label": {
+        "task_id": "d2449ac6aac7d5101497-hard",
+        "sample_index": 2,
+        "family": "luminosity",
+        "level": "hard",
+        "structure": "direct",
+        "status": "correct",
+        "reward": 1.0,
+        "value": 4252.3572,
+        "unit": "W",
+        "value_si": 4252.3572,
+        "equivalent_si": true,
+        "requested_unit_correct": true,
+        "backend_incomplete": false,
+        "truncated": false
+      }
+    },
+    {
+      "task_id": "5cf54b19f3af7d942b09-hard",
+      "sample_index": 0,
+      "assessment": "not_genuine_reasoning",
+      "reason": "Suma110 erg/s/cm² pero no explicita convertir a0.11W/m²;58,190*pi se reduce erróneamente unas1000veces. El resultado733.037 cae dentro del1% de731.2371 por cancelación de errores.",
+      "completion": "Primero, convertimos las distancias y los flujos de energía a unidades consistentes. La distancia d = 0.023 km = 23 m. Luego, sumamos los flujos de energía F1 + F2 = 88 + 22 = 110 erg/s/cm². Utilizamos la fórmula L = 4 * π * d² * (F1 + F2). Calculamos:\n\nL = 4 * 3.141592653589793 * (23)^2 * 110\n\nL = 4 * 3.141592653589793 * 529 * 110\n\nL ≈ 4 * 3.141592653589793 * 58,190\n\nL ≈ 4 * 183.2592653589793\n\nL ≈ 733.0370614359172\n\nEl resultado final es:\n\n{\"value\": 733.0370614359172, \"unit\": \"W\"}",
+      "label": {
+        "task_id": "5cf54b19f3af7d942b09-hard",
+        "sample_index": 0,
+        "family": "luminosity",
+        "level": "hard",
+        "structure": "sum",
+        "status": "correct",
+        "reward": 1.0,
+        "value": 733.0370614359172,
+        "unit": "W",
+        "value_si": 733.0370614359172,
+        "equivalent_si": true,
+        "requested_unit_correct": true,
+        "backend_incomplete": false,
+        "truncated": false
+      }
+    }
+  ],
+  "decision": "Conservar verifier-11 y resultados congelados; éxito final con tolerancia no equivale a razonamiento certificado. Auditoría humana pendiente; sin evidencia de explotación intencional."
+}

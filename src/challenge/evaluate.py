@@ -30,7 +30,9 @@ def metrics(rows):
         lower[str(k)] = sum(scores) / len(scores)
         upper[str(k)] = sum(bounds) / len(bounds)
     return {"tasks": len(grouped), "responses": len(rows), "n": n, "statuses": dict(statuses),
-            "coverage": 1 - statuses["unparsed"] / len(rows), "pass_at_k": lower,
+            "coverage": 1 - (statuses["unparsed"] + statuses["too_long"]) / len(rows), "pass_at_k": lower,
+            "equivalent_si_rate": sum(r.get("equivalent_si", False) for r in rows) / len(rows),
+            "requested_unit_rate": sum(r.get("requested_unit_correct", False) for r in rows) / len(rows),
             "pass_at_k_upper_bound": upper,
             "backend_incomplete": sum(row.get("backend_incomplete", False) for row in rows),
             "truncated": sum(row.get("truncated", False) for row in rows)}
@@ -41,13 +43,15 @@ def summarize(tasks, responses):
     scored = []
     for row in responses:
         task = by_id[row["task_id"]]
-        result = verify(task, row["result"]["message"]["content"])
-        if not row["result"]["done"]:
+        hf = row.get("backend") == "transformers"
+        result = verify(task, row["completion"] if hf else row["result"]["message"]["content"])
+        done = row["finish_reason"] in {"eos", "length"} if hf else row["result"]["done"]
+        if not done:
             result = {"status": "unparsed", "reward": 0.0, "reason": "backend sin done:true"}
         scored.append({"task_id": row["task_id"], "sample_index": row["sample_index"],
                        "family": task["family"], "level": task["level"], "structure": task["structure"],
-                       **result, "backend_incomplete": not row["result"]["done"],
-                       "truncated": row["result"].get("done_reason") == "length"})
+                       **result, "backend_incomplete": not done,
+                       "truncated": (row["finish_reason"] if hf else row["result"].get("done_reason")) == "length"})
     summary = {"all": metrics(scored)}
     for field in ("family", "level", "structure"):
         summary[field] = {value: metrics([r for r in scored if r[field] == value]) for value in sorted({r[field] for r in scored})}

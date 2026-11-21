@@ -1,0 +1,8 @@
+{
+  "pid": 567219,
+  "waits_for_pid": 522139,
+  "requires_proof": "gpu-check-v3-gpu.json",
+  "samples": 4,
+  "tasks": 1800,
+  "expected_responses": 7200
+}

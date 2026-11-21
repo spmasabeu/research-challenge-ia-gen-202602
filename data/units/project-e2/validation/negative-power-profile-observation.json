@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-11-18T15:18:30.971409+00:00",
+  "profile": "power-saver",
+  "platform_profile": "quiet",
+  "cpu0": {
+    "scaling_governor": "powersave",
+    "scaling_cur_freq": "1000000",
+    "scaling_max_freq": "4800000",
+    "energy_performance_preference": "power"
+  },
+  "mains_online": "1",
+  "gpu": "1717 MHz, 5501 MHz, 29.93 W, 44 %",
+  "completed_rows": 120,
+  "generation_seconds": 586.3091730509996,
+  "observed_seconds_per_response": 4.885909775424996,
+  "control_generation_seconds_per_response": 2.7843782785305677,
+  "limits": "Different task mixes and batching lengths; this observation does not isolate power-profile causality. Earlier training/control power profile was not captured, so timing comparability has this limitation. Tokens provide an additional measured work axis.",
+  "user_preference": "Asked whether temporary performance profile is desired; no change made pending response."
+}

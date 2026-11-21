@@ -1,0 +1,29 @@
+{
+  "cell": "density/medium",
+  "summary": {
+    "tasks": 100,
+    "responses": 300,
+    "n": 3,
+    "statuses": {
+      "correct": 251,
+      "numeric": 47,
+      "unparsed": 2
+    },
+    "coverage": 0.9933333333333333,
+    "pass_at_k": {
+      "1": 0.8366666666666667,
+      "3": 0.97
+    },
+    "equivalent_si_rate": 0.8366666666666667,
+    "requested_unit_rate": 0.9933333333333333,
+    "pass_at_k_upper_bound": {
+      "1": 0.8433333333333333,
+      "3": 0.97
+    },
+    "backend_incomplete": 0,
+    "truncated": 0
+  },
+  "unique_error_responses": 47,
+  "unique_error_tasks": 34,
+  "scope": "Complete supplemental cell; final corpus pending. Only numeric/unit can serve as negatives."
+}

@@ -1,0 +1,15 @@
+{
+  "training_budget_seconds_per_route": 1200,
+  "sft_fraction_hybrid": 0.25,
+  "hardware": "RTX 3050 Laptop 6 GiB",
+  "measured_sft_seconds_per_step": 4.205791970999901,
+  "measured_grpo_seconds_per_step": 39.50146347187501,
+  "rationale": "Primer avance: aproximadamente 30 pasos GRPO con margen de señal y >=3 checkpoints; SFT previo se suma al costo. Límite revisable únicamente con nueva configuración y evidencia.",
+  "excludes_from_route_training_budget": [
+    "generación compartida profesor",
+    "calibración",
+    "evaluación",
+    "pruebas infraestructura"
+  ],
+  "limits": "Tiempo límite se comprueba al completar un paso; registrar sobrepaso real. No equiparar GPU diferentes."
+}

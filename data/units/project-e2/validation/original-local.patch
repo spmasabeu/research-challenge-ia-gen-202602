@@ -1,0 +1,20 @@
+diff --git a/docs/README.md b/docs/README.md
+index c505939..3dfb77a 100644
+--- a/docs/README.md
++++ b/docs/README.md
+@@ -13,8 +13,13 @@ Para comprobar requisitos contra archivos: [mapa de evidencia](report/evidence.m
+ Proyecto, entrega 1: [requisitos y decisiones](contexto/2026-11-09_202333_requisitos_entrega_1_proyecto.md),
+ [plan de ejecución](plans/2026-11-09_202333_entrega_1_proyecto.md) y
+ [propuesta PDF y fuentes](../deliveries/project-1-proposal/README.md).
+-Estado: propuesta redactada y validada, tres páginas de contenido más referencias;
+-[PR #4 a main](https://github.com/spmasabeu/research-challenge-ia-gen-202602/pull/4) abierto para revisión.
++Estado: E1 entregada según confirmación del equipo, tres páginas de contenido más referencias;
++[PR #4](https://github.com/spmasabeu/research-challenge-ia-gen-202602/pull/4) integrado en main.
++
++Proyecto, entrega 2: [requisitos, entregable, implementación por dependencias, pruebas y análisis](plans/2026-11-16_095503_entrega_2_proyecto.md).
++PR #6 integrado: seis familias disponibles y 23 pruebas verificadas. El plan cubre
++congelamiento y ampliación de datos, entrenamiento, evaluación y aceptación de E2;
++los entrenamientos siguen pendientes.
+ 
+ Los enunciados están en la raíz: [Desafío](../DesafioInvestigacion-2026.pdf) y
+ [Proyecto posterior](../ProyectoCurso-2026.pdf). El segundo se comparte como

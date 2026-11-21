@@ -1,0 +1,19 @@
+{
+  "sources": {
+    "data/units/project-e2/runs/control/scores/verifier-11/summary.json": "6fcd3e2e403f22db7e6cab40b338656f23cf93828f4097268bcb06fffb73a7de",
+    "data/units/project-e2/runs/control/metadata.json": "69bdf1509c14a4f613c69b8f492f4d5dbb423dc940c6532fdf901f31297799a0",
+    "data/units/project-e2/runs/control/scores/verifier-11/metadata.json": "29cbb11624cdb866d41dba1660bee76734cd54f0e8da7438cd09e0e6865c9a8a",
+    "data/units/project-e2/runs/control/scores/verifier-11/labels.jsonl": "bd8d84b8d12a7fe3cb96dc2147445f240ea00d573c4a9816b3f0654d004b8226",
+    "data/units/project-e2/dataset/private/eval.jsonl": "8f5a1251c7aa13c86661934202fc4255dd5e8aa6ce3df93eddaa67846a4cf08f"
+  },
+  "report_source_sha256": "b8fd318b9ecfe9b63edc5dd1ce7f75dbbe82dec9b91b67dda4e2f5d2b57c1b83",
+  "include_pilots": false,
+  "artifacts": {
+    "checkpoints.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "evaluation-errors.png": "230d27e91ea378d620f15874a5bdeba52399c72de729a6928354559b3bc402d3",
+    "evaluation.csv": "bdc718ed56ac1aa44f9cb0955b9acfb29a4454c9a668f96e6230fdffc7642e41",
+    "paired-uncertainty.json": "db532abf807b29993ce6798ab40b36804bde52641eac63c2ae745d0c2a12f375",
+    "training-curves.png": "8a0561931326f028e3d5bd0b8e1abda52b2fc8d43e11d154530601cc647c7fdd"
+  },
+  "limits": "Pilotos no son comparación de rutas. Pérdida/recompensa train no equivalen a validación. Sin suavizado."
+}

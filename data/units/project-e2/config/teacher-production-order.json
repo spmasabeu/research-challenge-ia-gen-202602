@@ -1,0 +1,8 @@
+{
+  "train_sha256": "9014ad83b0abf6767201b0590ab19292bd1ddeea4e53fea3e0e441850ce99aeb",
+  "tasks_sha256": "a1983a0c7914d264866d16bb4da9a13cbe8de301dafcc82d092c0645106a7da6",
+  "tasks": 1800,
+  "membership": "all1800 original train rows, identical dictionaries; only order differs",
+  "order": "family, level easy/medium/hard, task_id; deterministic, no resampling",
+  "reason": "Close family/level cells sequentially to inspect required audit while other cells generate. Does not modify frozen partitions."
+}

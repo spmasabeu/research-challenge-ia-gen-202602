@@ -1,0 +1,134 @@
+{
+  "utc": "2026-11-18T18:13:45.967974+00:00",
+  "sources": {
+    "data/units/project-e2/runs/sft/result.json": "46e100c6b88a957c1718664e3a9638aad327cca2d9b4a79f68989251708802dd",
+    "data/units/project-e2/runs/sft/steps.jsonl": "47bbb651c74b8578d9e5ed6498e2462258dd9836ff3254f77bbb7da1ecb8fc45",
+    "data/units/project-e2/runs/sft-final-eval/scores/verifier-11/summary.json": "83900496f74d1684f006ac10c6238a053b4b380b5e43b803975860142ac20a89",
+    "data/units/project-e2/runs/control/scores/verifier-11/summary.json": "6fcd3e2e403f22db7e6cab40b338656f23cf93828f4097268bcb06fffb73a7de",
+    "data/units/project-e2/analysis/control-sft-grpo-v1/paired-uncertainty.json": "a964d567e61558a8cb354d156db50d10e3c258641caa1d24dd37712d44328039",
+    "data/units/project-e2/derived/stats.json": "34eb22f60f8fc85ac9ef7d1f3f8bc4bf2842794714f36ecfbdd7e239b0118792"
+  },
+  "train": {
+    "method": "sft",
+    "pilot": false,
+    "steps": 377,
+    "changed_tensors": 112,
+    "adapter_tensors": 112,
+    "max_parameter_delta": 0.029371047392487526,
+    "weights_finite": true,
+    "reload_weights_equal": true,
+    "reload_logits_equal": true,
+    "phase_train_seconds": 1201.811328791,
+    "prior_train_seconds": 0.0,
+    "cumulative_train_seconds": 1201.811328791,
+    "phase_train_tokens": 506829,
+    "prior_train_tokens": 0,
+    "cumulative_train_tokens": 506829,
+    "peak_allocated_bytes": 2371680256,
+    "peak_reserved_bytes": 5595201536,
+    "termination": "time_budget",
+    "adapter_files": {
+      "README.md": "cf5b5ad06cb81131b45a950681944a10bb8ab214e2c1d6910df96e0e5b10b127",
+      "adapter_config.json": "3e6be928b5209ad20c0fea20b76bf4855458f1a0ce4abdc8c893ce95c8428db4",
+      "adapter_model.safetensors": "9eaa57ef0106f43648d542906e0bd56c61ac8e915836bb4ec969f4e0ff1a559e",
+      "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+      "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "cost.json": "1512a3dde7dbd034e00057e8395fd11a0567b765523581498c70e967a5613af4",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "special_tokens_map.json": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+      "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "tokenizer_config.json": "68f2cfe250d0fd2c445bcbeb49183726d6c4dfca493bd10599742410c2fc4a79",
+      "training_args.bin": "61be4778b0249e9190bf648f64ddad6f2d337673903a52479bc5fdd517999623",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "initial_adapter": null
+  },
+  "train_loss": {
+    "first": 0.4783,
+    "last": 0.0875,
+    "first10_mean": 0.40667,
+    "last10_mean": 0.10865,
+    "final_epoch": 0.44854253420582985,
+    "limit": "Different mini-batches; loss reduction is not heldout performance."
+  },
+  "evaluation": {
+    "tasks": 360,
+    "responses": 1080,
+    "n": 3,
+    "statuses": {
+      "correct": 827,
+      "numeric": 245,
+      "unparsed": 8
+    },
+    "coverage": 0.9925925925925926,
+    "pass_at_k": {
+      "1": 0.7657407407407408,
+      "3": 0.8611111111111112
+    },
+    "equivalent_si_rate": 0.7657407407407407,
+    "requested_unit_rate": 0.9925925925925926,
+    "pass_at_k_upper_bound": {
+      "1": 0.7731481481481481,
+      "3": 0.8722222222222222
+    },
+    "backend_incomplete": 0,
+    "truncated": 0
+  },
+  "delta_control_pass1": 0.07129629629629641,
+  "delta_by_cell": {
+    "density/easy": 0.13333333333333341,
+    "density/hard": 0.7666666666666667,
+    "density/medium": 0.09999999999999998,
+    "energy/easy": 0.0,
+    "energy/hard": -0.26666666666666666,
+    "energy/medium": -0.2666666666666667,
+    "luminosity/easy": -0.36666666666666664,
+    "luminosity/hard": -0.01666666666666667,
+    "luminosity/medium": -0.2333333333333334,
+    "pressure/easy": 0.21666666666666667,
+    "pressure/hard": 0.33333333333333326,
+    "pressure/medium": 0.06666666666666665,
+    "speed/easy": 0.0,
+    "speed/hard": 0.31666666666666665,
+    "speed/medium": 0.0,
+    "voltage/easy": 0.016666666666666607,
+    "voltage/hard": 0.44999999999999996,
+    "voltage/medium": 0.03333333333333344
+  },
+  "bootstrap": {
+    "pass_at_k": {
+      "1": 0.7657407407407407,
+      "3": 0.861111111111111
+    },
+    "ci95": {
+      "1": [
+        0.7416666666666667,
+        0.788912037037037
+      ],
+      "3": [
+        0.8360416666666668,
+        0.8861111111111111
+      ]
+    },
+    "delta_control_ci95": {
+      "1": [
+        0.04166666666666663,
+        0.10092592592592586
+      ],
+      "3": [
+        -0.013958333333333392,
+        0.0527777777777777
+      ]
+    }
+  },
+  "conclusions": [
+    "SFT improves aggregate pass@1 by7.1296pp; paired physical95%CI[4.1667,10.0926]pp. This one training seed shows a heldout signal, not multi-seed robustness.",
+    "Pass@3 gains1.9444pp, paired95%CI[-1.3958,5.2778]pp includes zero.",
+    "Selective gains: density hard+76.67pp,voltage hard+45pp,pressure hard+33.33pp,speed hard+31.67pp. Degradation: luminosity easy-36.67pp,energy medium/hard-26.67pp,luminosity medium-23.33pp. Cell contrasts descriptive,20tasks/60responses each.",
+    "Correct+77, numeric errors-69, unparsed-8. Parser coverage gain0.7407pp cannot alone explain7.1296pp totalgain. No unit-class errors or truncations.",
+    "SFT data are strongly skewed by quality retention: density1076,pressure910,speed702,voltage424,energy154,luminosity96. Consistent with selective changes, not causal proof; no balanced-data ablation.",
+    "Loss decline does not prove all reasoning steps correct: directed curve review shows an accepted result with false arithmetic within1%tolerance.",
+    "No checkpoint picked using full eval; endpoint determined by time budget, hybrid start fixedquarter before outcomes. Test untouched."
+  ],
+  "human_audit": "51 pending samples; luminosity hard has no successes, so that stratum contributes zero. No human judgments."
+}

@@ -1,0 +1,42 @@
+{
+  "cell": "luminosity/easy",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "correct": 177,
+    "numeric": 217,
+    "unparsed": 6
+  },
+  "unique": 399,
+  "correct_unique_before_audit": 177,
+  "sft_eligible_after_audit": 58,
+  "sft_tasks": 28,
+  "dpo_teacher_pairs": 20,
+  "audited": 177,
+  "required_random_audits": 5,
+  "rejected": 119,
+  "expanded": true,
+  "request_seconds": 3207.134826782005,
+  "output_tokens": 69585,
+  "truncated": 0,
+  "audit_sha256": "9a8b467342882c25f0a79cd6c49331ee8e0b94f70f724273e94a7d53c362bc27",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "fff5e2f56c24dcafe76e80c0c02be683af88ca60da264fe1effece2d24199ff5",
+  "rows_canonical_encoding": "json.dumps(rows,sort_keys=True,ensure_ascii=False).encode UTF8",
+  "reference_check": "All100 luminosity references independently recalculated with Decimal from visible distances/fluxes and prompt pi; agreement<1e-8W. All58 retained traces reverified reward1.",
+  "limits": "All177 correct unique candidates inspected by agent after directed defects in first six distinct tasks. Mandatory random five also covered. No human review. Coherent rounding/truncation and machine precision accepted; incorrect arithmetic at displayed precision rejected, including very small errors. Final reward unchanged; quality-rejected reward1 traces excluded from both DPO pools.",
+  "quality_rejection_rate_among_reward1_unique": 0.672316384180791,
+  "eligible_sft_per_raw": 0.145,
+  "coverage_exception": "28/100 tasks retain a mathematically coherent solution after4samples. No duplication or programmatic solution substitution; final corpus reports actual coverage.",
+  "required_random_candidate_ids": [
+    "24489025b8f88607ae0e6f60fa8ebd698eba8f85eb66f88bdc4adde7e5149067",
+    "2e53905e4da07ac982d7fe64aaee8239c8ea2030dd469d104691554c30c33d89",
+    "4666dbf087b3f0ece656db4d3af03802154bd7c525fe8b11c857321e722702c3",
+    "6fad1cc10681ceadddb89ea123e09b5d210f5cf39345659ec73a73795939d6d5",
+    "8edaa93d903baaa9fa6bbee07d69136c9d3aabf1fce6838b1a8c56722f6c545a"
+  ],
+  "required_random_judgments": {
+    "reject": 3,
+    "keep": 2
+  }
+}

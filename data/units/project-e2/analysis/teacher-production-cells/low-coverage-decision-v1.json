@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-11-18T07:34:58.812894+00:00",
+  "decision": "Retain frozen1800train tasks and4samples/task for this experiment; record sparse-cell exceptions before SFT. No duplication, answer replacement or acceptance of incorrect intermediate operations.",
+  "evidence": {
+    "energy/hard": {
+      "source": "analysis/teacher-production-cells/energy-hard.json",
+      "sha256": "370a5c07b1499ca5be538c5d83ad1085f21c667d5ea853da518cef434043799f",
+      "sampled_tasks": 100,
+      "samples_per_task": 4,
+      "raw_responses": 400,
+      "retained": 28,
+      "retained_tasks": 12,
+      "positive_quality_rejects": 124,
+      "observed_retention_per_response": 0.07,
+      "request_seconds": 2675.728877852982,
+      "heuristic_extra_responses_for_222_traces": 2771.428571428571,
+      "heuristic_extra_request_hours_for_222_traces": 5.149716292693239
+    },
+    "luminosity/medium": {
+      "source": "analysis/teacher-production-cells/luminosity-medium.json",
+      "sha256": "6ba6d2b736a4288a34fbea2319a8aae072dfd8c6df6b582c61322e534839a12c",
+      "sampled_tasks": 100,
+      "samples_per_task": 4,
+      "raw_responses": 400,
+      "retained": 36,
+      "retained_tasks": 19,
+      "positive_quality_rejects": 46,
+      "observed_retention_per_response": 0.09,
+      "request_seconds": 3052.7860893030083,
+      "heuristic_extra_responses_for_222_traces": 2066.666666666667,
+      "heuristic_extra_request_hours_for_222_traces": 4.3813133689070956
+    },
+    "luminosity/hard": {
+      "source": "analysis/teacher-production-cells/luminosity-hard.json",
+      "sha256": "037aa02ba826149f3c18dfd6919ea7f654ebfcf3978b86983ab832e8b7066115",
+      "sampled_tasks": 100,
+      "samples_per_task": 4,
+      "raw_responses": 400,
+      "retained": 2,
+      "retained_tasks": 2,
+      "positive_quality_rejects": 8,
+      "observed_retention_per_response": 0.005,
+      "request_seconds": 3865.554132327994,
+      "heuristic_extra_responses_for_222_traces": 44000.0,
+      "heuristic_extra_request_hours_for_222_traces": 118.11415404335537
+    }
+  },
+  "scope": "Production expands pilot2tasks/cell to100tasks/cell. All1800tasks sampled, including low-yield cells; no selective omission.",
+  "target_note": "222traces/cell is a diagnostic equal allocation of4000/18, not a formal minimum. Internal coverage goals remain20SFTtasks and10DPOtasks/cell.",
+  "projection_limit": "Linear extrapolation of observed retention only; task coverage does not scale linearly and responses within task are dependent. These projections are not generated results or guarantees.",
+  "rationale": "Observed low retention persists after expanding to100tasks/cell and complete agent inspection of positive traces. Extra samples on the same tasks cannot guarantee the missing unique-task coverage. Expanding physical train problems would change the frozen training distribution after the reportable GRPO run and require repeating comparable routes. Preserve this experimental cut and expose imbalance as a limitation.",
+  "impact": "SFT may learn mainly higher-retention families; compare family/level validation separately and do not generalize aggregate improvements to scarce cells. Luminosity/hard DPO cannot cover10tasks with only2eligible preferred tasks.",
+  "remaining": "Finish remaining6cells; construct full corpus, generate actual small-model negatives, publish final counts/exceptions before SFT. I5 not complete.",
+  "human_review": "All described quality reviews are by agent; human audit remains pending."
+}

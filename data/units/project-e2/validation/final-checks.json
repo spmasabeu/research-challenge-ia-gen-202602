@@ -1,0 +1,61 @@
+{
+  "utc": "2026-11-18T20:03:43.532142+00:00",
+  "commit": "061ca0892c9327b43ee2a04307eeec4d0c35f811",
+  "branch": "feat/project-e2",
+  "cpu_suite": {
+    "count": 42,
+    "result": "passed",
+    "log": "tests-after-lengths.log"
+  },
+  "static": {
+    "ruff": "0.17.4 passed",
+    "mypy": "2.4.1 passed23sourcefiles",
+    "bandit": "1.9.4 medium0/high0/low41"
+  },
+  "dataset": {
+    "train": 1800,
+    "eval": 360,
+    "test": 360,
+    "check": "passed"
+  },
+  "derived": {
+    "sft": 3362,
+    "dpo": 769,
+    "check": "passed"
+  },
+  "gpu": "gpu-check-v3-gpu.json plus real production update/reload evidence",
+  "logs": {
+    "tests-after-lengths.log": "8c3568240e22814445f845c31534a2e172bb6e1106019dc8d1a727dab3b840d7",
+    "final-ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "final-mypy.log": "7f43e759c997a0af903a210f4a10fd709457c5a5125336929ab037d3ed6702ce",
+    "final-bandit.log": "6874728c3182ee7e5eacd4837712d39559d3c6bc310a1a100cec13589082fb1b",
+    "final-derived-check.log": "068b783b3e25a6382c2088bad310675f232ef90eb622324171ebe8fef870dba8"
+  },
+  "sources": {
+    "src/challenge/frontier.py": "165fb2fb85940eb18183f251662d2e06bb5648b99b44972385b51086845e23fc",
+    "src/challenge/evaluate_hf.py": "ceeee168a8d97fe2bbbe69b0a680c7193120c0794e2f4fe4ddc866455b769b67",
+    "src/challenge/train.py": "a7d263c349957162888235f9680e2501f0eb5401f7eb7e380d7bcbaa64530c12",
+    "src/challenge/harness.py": "e9bcbb1ee4fa2a4a28433b62f4d12f00b20125474740d02f9dba5de5aa8cd970",
+    "src/challenge/generator.py": "84419df0b8ee0e23da40676bf3d52612f07c8abad11e1beea5924fb18e5f79a3",
+    "src/challenge/verifier.py": "45bec4f65b043f7ab250fc2dc069f771c7d8a8b8ebb7d01b21c0af1ee1fc49a3",
+    "src/challenge/derive.py": "fc683d617d717618b3ef7e5ed9efcdabd09753fd0811ac5e1f6701037ec280f5",
+    "src/challenge/evaluate.py": "50bbdbff21fd194d26770036c44518a5d285ebf404b3adc57748ad7c0eadf070",
+    "src/challenge/__init__.py": "02f1632a912b802498264c62f062274c290e4a852a2d5691b4712de5023c9068",
+    "src/challenge/models.py": "92473a272836d48adee6632cf390858299adf1b5564a05533c2ac4f4d68cf919",
+    "scripts/report_spikes.py": "c9f44015458b12241d3ad7250cf4e04ac7b358da625b249f81417343dc9b138e",
+    "scripts/check_training_gpu.py": "45c4386458cc85dd440d854aa60d79975ea03bdc13c1c942923c63e984df1462",
+    "scripts/run_spikes.py": "0a3192ddced3bc8b07aa161ae102f93150a5dfcdfabf735ca8475960f52a1c74",
+    "scripts/run_e2.py": "ba1cd516c3c1b8b778e98ec1395be16444b37d4d51407bc72a140425d75684cd",
+    "scripts/test_run_spikes.py": "4e4b10b65036488a09dff3d4faf4f6d8c6e215ab665dae42f02f5618892db6f7",
+    "scripts/report_training.py": "8e505d62db8748c1bdbe5a591c7d23afdc4cd78f755c2b2184116223727a7982",
+    "scripts/test_report_spikes.py": "44bb1cdf6e2d6387383dda6faa9b98534c5fc6765d4830dd7c75f477a1adae79",
+    "scripts/prepare_e2.py": "2c18df777d2c41f98bdd28309851dd23e6ff290c0ae3a5579b1f4afdd04b70ef",
+    "tests/test_families.py": "f728a9d2931c4204667186f7c14d87d6506fd3e08a47feb00b19192c681d1b40",
+    "tests/test_frontier.py": "aafdc7758f165db05cd0bef33718502c1a8e3fd82c79f55c0327596152787598",
+    "tests/test_challenge.py": "23ff2e480e20e48e480217cdd8f156f8f2aba065fc3180ebf9a838033dca2043",
+    "tests/test_training.py": "5b29914b16a0e9579e1739ab1b9908326f77b2c75a4471c8df09f534bdee83b5",
+    "pyproject.toml": "b40ea8c03440431aa52195d5f76f5b682b0489c7f6ab9a32e7b582a670f8ddfa",
+    "uv.lock": "76a61d1b4b34a5ee40e626340941ac705a069a7a3bf41b67b4454a194a4ecc31"
+  },
+  "limits": "No PDF/editorial validation; no completed human audit. Final hybrid evaluation still running at this checkpoint."
+}

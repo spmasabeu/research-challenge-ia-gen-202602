@@ -1,0 +1,17 @@
+{
+  "sources": {
+    "data/units/project-e2/runs/calibration-explicit-v1/scores/verifier-11/summary.json": "a6b2110da3a9f33e61f9b233189a3d87fe1e53cba96f16b6fc3f1583c2e420c3",
+    "data/units/project-e2/runs/calibration-nf4-v1/scores/verifier-11/summary.json": "6711fdf4f93e9bfe458f120666de913ce795963b01b7e8c314593c61d691113e",
+    "data/units/project-e2/runs/smoke-grpo-v2/result.json": "4296fde8b1ee71c3bf70a4f7b8352d94837e7dc1f4a0f6478f4148afb4ac7552",
+    "data/units/project-e2/runs/smoke-grpo-v2/steps.jsonl": "95e57203bd11eacf093d12e204cbae7126fbee5aaa4f20da6da43fb933350323",
+    "data/units/project-e2/runs/smoke-sft-v1/result.json": "b5f5df9d91e6f67dfe52e87ef4e31802e4fedcd2243721e99e8dfdf47237c344",
+    "data/units/project-e2/runs/smoke-sft-v1/steps.jsonl": "8fab35c1e0d6a7fec54e83e978fea1104f8c47e2ef63c4a2dee414b96277e5a4"
+  },
+  "artifacts": {
+    "evaluation-errors.png": "7fddacc592fad80412de9c9f55fdd7fcd883f020513d7fb8db090747a50066aa",
+    "evaluation.csv": "d778c7840fa218fc94b0c687e5555c4c4a254155b70366a7d6c8be1f5ede5bf2",
+    "training-curves.png": "dc33478aa81231a0144d0c909b6016ce8e52f8f12a8282794847af2c12bb0d1e",
+    "training.csv": "773251f236026ed2f7e549616aa04ec950a95672833e71542fe06523eee6c529"
+  },
+  "limits": "Pilotos no son comparación de rutas. Pérdida/recompensa train no equivalen a validación. Sin suavizado."
+}

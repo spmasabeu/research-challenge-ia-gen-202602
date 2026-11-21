@@ -1,0 +1,9 @@
+{
+  "tasks": 1,
+  "responses": 6,
+  "seconds_including_load": 44.777984124000795,
+  "output_tokens": 834,
+  "steady_seconds_per_response": 6.32867406400037,
+  "projection_10800_responses_hours_easy_only": 18.98602219200111,
+  "limits": "Una tarea fácil de densidad; no extrapolar retención/dificultad ni tiempos de celdas difíciles. Falta piloto completo de 18 celdas."
+}

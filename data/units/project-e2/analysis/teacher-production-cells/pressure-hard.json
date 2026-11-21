@@ -1,0 +1,28 @@
+{
+  "cell": "pressure/hard",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "numeric": 70,
+    "correct": 330
+  },
+  "unique": 365,
+  "correct_unique_before_audit": 296,
+  "sft_eligible_after_audit": 272,
+  "sft_tasks": 92,
+  "dpo_teacher_pairs": 32,
+  "audited": 296,
+  "required_random_audits": 5,
+  "rejected": 24,
+  "expanded": true,
+  "request_seconds": 2891.86390246699,
+  "output_tokens": 62501,
+  "truncated": 0,
+  "backend_incomplete": 0,
+  "audit_sha256": "689a52837b57b15de8efa222d8e39e880b932dd00977de08647dbb0a4524c146",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "aa959584eec9310e3d77cbb11b72af60c74efc34b0efaf6a74f8661d793415d6",
+  "rows_canonical_encoding": "json.dumps(rows,sort_keys=True,ensure_ascii=False).encode UTF8",
+  "reference_check": "All100 references independently recalculated with Decimal from visible forces kN→N and areas cm²→m²; agreement<1e-8Pa. All eligible traces reverified reward1.",
+  "limits": "Random5 contained1 arithmetic defect, triggering actual inspection of all296 unique reward1 traces by agent. Coherent rounding/truncation accepted; incorrect quotients within1% rejected. No human review. Supplemental negatives pending."
+}

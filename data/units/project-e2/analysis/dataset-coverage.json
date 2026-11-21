@@ -1,0 +1,49 @@
+{
+  "totals": {
+    "final-v2": {
+      "train": {
+        "tasks": 90,
+        "physical_problems": 30,
+        "families": 3
+      },
+      "eval": {
+        "tasks": 36,
+        "physical_problems": 12,
+        "families": 3
+      },
+      "test": {
+        "tasks": 54,
+        "physical_problems": 18,
+        "families": 3
+      }
+    },
+    "project-e2/dataset": {
+      "train": {
+        "tasks": 1800,
+        "physical_problems": 600,
+        "families": 6
+      },
+      "eval": {
+        "tasks": 360,
+        "physical_problems": 120,
+        "families": 6
+      },
+      "test": {
+        "tasks": 360,
+        "physical_problems": 120,
+        "families": 6
+      }
+    }
+  },
+  "sources": {
+    "data/units/final-v2/private/train.jsonl": "d29b5a7462ae381b9b5d3cb57ed0cb0d2dea64bf7572953c0344cf5fe14ed1fd",
+    "data/units/final-v2/private/eval.jsonl": "5121edd001aeb2cd5798b67dc5d0559822f0e2558434d8712b7c7c0f692b56a8",
+    "data/units/final-v2/private/test.jsonl": "a43cb708c74d20b89c399762b881d39eaea402e64b7f9077730eee9bca490344",
+    "data/units/project-e2/dataset/private/train.jsonl": "9014ad83b0abf6767201b0590ab19292bd1ddeea4e53fea3e0e441850ce99aeb",
+    "data/units/project-e2/dataset/private/eval.jsonl": "8f5a1251c7aa13c86661934202fc4255dd5e8aa6ce3df93eddaa67846a4cf08f",
+    "data/units/project-e2/dataset/private/test.jsonl": "911e3a5203f954c6bb7c0753092effc09b76fd702a10f8da3a20a50121208193"
+  },
+  "table_sha256": "b63a1f6e91050c2cb1b11eeb48381b5a2a96849eca5278830298c8a89106ed03",
+  "procedure": "Read frozen private splits; group by family, level, structure; count rows/distinct physical_key and min/max conversions/operations. Assert unique IDs and exactly3 task variants per physical problem globally.",
+  "interpretation": "Historical final-v2 is the previous challenge dataset, not a trained E1 model. More tasks/families does not establish a performance effect. Test read only for structural counts, no inference or scoring."
+}

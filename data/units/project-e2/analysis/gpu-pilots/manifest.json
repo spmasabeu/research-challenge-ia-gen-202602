@@ -1,0 +1,32 @@
+{
+  "sources": {
+    "data/units/project-e2/runs/calibration-explicit-v1/scores/verifier-11/summary.json": "a6b2110da3a9f33e61f9b233189a3d87fe1e53cba96f16b6fc3f1583c2e420c3",
+    "data/units/project-e2/runs/calibration-nf4-v1/scores/verifier-11/summary.json": "6711fdf4f93e9bfe458f120666de913ce795963b01b7e8c314593c61d691113e",
+    "data/units/project-e2/runs/gpu-check-v1-resume/result.json": "6e45d767bb61e3bec9c2ec819a4df4dd4763f6949ed30175e8a758b70c5ca408",
+    "data/units/project-e2/runs/gpu-check-v1-resume/steps.jsonl": "bd38278ea3af090c339680e20d34331ee9bc8dc241d6b79c4b86933c57eb555b",
+    "data/units/project-e2/runs/gpu-check-v1-sft/result.json": "0b5da7a1539d1912311342ea0afcb6e546cfaa7432359d7abb631f0253af19fd",
+    "data/units/project-e2/runs/gpu-check-v1-sft/steps.jsonl": "e51edbb1d9d2ec12157ef4521eae4aa5431f2acaa9a03dab2d3356bc3f947e17",
+    "data/units/project-e2/runs/gpu-check-v2-grpo/result.json": "6c81602eec571dccd8942a5322bc042354148f600d406d7652ca8860eed1ab26",
+    "data/units/project-e2/runs/gpu-check-v2-grpo/steps.jsonl": "0dbfd4c73593f7922ffbe0feda45d6848ed952fffa7a134c3fd1c6c1bc90e262",
+    "data/units/project-e2/runs/gpu-check-v2-resume/result.json": "de2480ec00c7c89e67f537e8957eac91a9dee1041482b5dc9948c559c1e68762",
+    "data/units/project-e2/runs/gpu-check-v2-resume/steps.jsonl": "62f2d09f7ca7a0b4913a2c9f35619bfb79a994924c2d9b5e832cdd92e100e3ef",
+    "data/units/project-e2/runs/gpu-check-v2-sft/result.json": "d13ed8656e703cfd527800ebbaa7347487a8e30fb4d2ab3cbcab19bad645aa2c",
+    "data/units/project-e2/runs/gpu-check-v2-sft/steps.jsonl": "89cd04d7ab073579c5dc02974df9d0ae4853e5b7ca4e3ca31043428805e508e2",
+    "data/units/project-e2/runs/gpu-check-v2-sft-grpo/result.json": "6c965fa305fd294f519209e9e40a56124685ce4b4538e857e84cfd137e0d5652",
+    "data/units/project-e2/runs/gpu-check-v2-sft-grpo/steps.jsonl": "6d546e42f51cc9408f3ae0d9b2b585630b4b981c98e62c4b4ce18f73a51f2368",
+    "data/units/project-e2/runs/smoke-grpo-v2/result.json": "4296fde8b1ee71c3bf70a4f7b8352d94837e7dc1f4a0f6478f4148afb4ac7552",
+    "data/units/project-e2/runs/smoke-grpo-v2/steps.jsonl": "95e57203bd11eacf093d12e204cbae7126fbee5aaa4f20da6da43fb933350323",
+    "data/units/project-e2/runs/smoke-grpo-v3/result.json": "32fe91808a850872e926bcb2d76fbaacd83c89d7c7cfbbe0876d67b1b9c5c280",
+    "data/units/project-e2/runs/smoke-grpo-v3/steps.jsonl": "6edc67974dc5dcf8aeefda1257592d896a8827cd0abf7b57f919ebce48c974cd",
+    "data/units/project-e2/runs/smoke-sft-v1/result.json": "b5f5df9d91e6f67dfe52e87ef4e31802e4fedcd2243721e99e8dfdf47237c344",
+    "data/units/project-e2/runs/smoke-sft-v1/steps.jsonl": "8fab35c1e0d6a7fec54e83e978fea1104f8c47e2ef63c4a2dee414b96277e5a4"
+  },
+  "artifacts": {
+    "checkpoints.json": "9630df49d7a590ffbf139a8a19acc51780da2692308dcd3dace5ce95cccf3b2c",
+    "evaluation-errors.png": "7fddacc592fad80412de9c9f55fdd7fcd883f020513d7fb8db090747a50066aa",
+    "evaluation.csv": "d778c7840fa218fc94b0c687e5555c4c4a254155b70366a7d6c8be1f5ede5bf2",
+    "training-curves.png": "8225bffbcad0037d0b4cff420d0f9934924fdb64abf6c397a5522dae0b069e71",
+    "training.csv": "a70395b0c44112a7027a8d76c65e1cedee852c0d75738a16640a81379b3b9710"
+  },
+  "limits": "Pilotos no son comparación de rutas. Pérdida/recompensa train no equivalen a validación. Sin suavizado."
+}

@@ -1,0 +1,106 @@
+{
+  "R1": {
+    "status": "editorial_pending",
+    "evidence": "I9 no solicitado; PDF no producido"
+  },
+  "R2": {
+    "status": "passed",
+    "evidence": "Entrenamiento real SFT377/GRPO40/híbrido31pasos,112tensores modificados por ruta, recarga exacta; evaluaciones comunes360×3 completas. final-checks.json y final-integrity.json."
+  },
+  "R3": {
+    "status": "passed",
+    "evidence": "runs/control/: 360 eval × 3; pass@1 69.4444%, pass@3 84.1667%; analysis/control-v1/; recálculo offline exacto"
+  },
+  "R4": {
+    "status": "passed",
+    "evidence": "comparison-final-v1/: pérdidaSFT y recompensaGRPO separadas, curvas36×1 por tiempo/tokens;13archivos reproducidos byte a byte."
+  },
+  "R5": {
+    "status": "passed",
+    "evidence": "seis familias, referencias independientes, 18 celdas de desarrollo; n=2/celda"
+  },
+  "R6": {
+    "status": "passed",
+    "evidence": "dataset/ y tests: 1800/360/360, 215 exclusiones, test sin inferencia"
+  },
+  "R7": {
+    "status": "passed_with_coverage_exceptions",
+    "evidence": "derived/:3362SFT/769DPO,1123/526tareas,18celdas.7200generador+2844pequeño;3032revisiones de agente. Metas y excepciones previas a SFT:analysis/production-data-decision-v1.json."
+  },
+  "R8": {
+    "status": "passed",
+    "evidence": "verifier-11, regresiones y recalificación histórica;derived-production-check.log revalida100%3362SFT/769DPO con procedencia y recompensa vigente."
+  },
+  "R9": {
+    "status": "passed_with_compute_limitations",
+    "evidence": "Comparación cuatro rutas y contraste híbrido-GRPO; SFT previo288.879s/121125tokens incluido. production-cost-ledger-v1.json: perfil inicial desconocido e interrupción acotada documentados; no igualdad de FLOPs."
+  },
+  "R10": {
+    "status": "human_pending",
+    "evidence": "208éxitos de salida seleccionados:52control/51SFT/53GRPO/52híbrido; además53trazasSFT y calibración. Cero dictámenes humanos; iteraciones técnicas y revisiones de agente separadas."
+  },
+  "R11": {
+    "status": "technical_passed_editorial_pending",
+    "evidence": "Métricas exactas desde crudos,13artefactos idénticos, bootstrap por120problemas y límites en final-findings-v1.json. Cotejo contra informe/PDF pendienteI9/V12."
+  },
+  "V1": {
+    "status": "passed",
+    "evidence": "42pruebas CPU, Ruff0.17.4 y Mypy2.4.1 (23archivos) aprobados; Bandit1.9.4 0medios/altos. final-checks.json; originales/históricos preservados.",
+    "command_or_procedure": "rtk proxy env PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v; ver tests/README.md para análisis estático fijado."
+  },
+  "V2": {
+    "status": "passed",
+    "evidence": "test_training.py/test_families.py: seis familias, unidades, límites, ataques y prompts desconocidos",
+    "command_or_procedure": "rtk proxy env PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v"
+  },
+  "V3": {
+    "status": "passed",
+    "evidence": "dos freezes 1800/360/360 idénticos; cambio de protocolo detectado",
+    "command_or_procedure": "rtk proxy env PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p test_training.py -v"
+  },
+  "V4": {
+    "status": "passed",
+    "evidence": "split por physical_key, exclusiones, 36 celdas, campos privados fuera del prompt",
+    "command_or_procedure": "rtk proxy env PYTHONPATH=src .venv/bin/python -m challenge.harness check --dataset data/units/project-e2/dataset"
+  },
+  "V5": {
+    "status": "passed",
+    "evidence": "validation/derived-production-check.log:3362SFT/769DPO reproducibles; pertenencia exacta train, recompensa1/0validada, mismo prompt, hashes/auditorías/dedup, máximo2pares sin reutilización. SFTidéntico altokenizado.",
+    "command_or_procedure": "rtk proxy env PYTHONPATH=src .venv/bin/python -m challenge.harness check-derived --dataset data/units/project-e2/dataset --teacher data/units/project-e2/runs/teacher --teacher-tasks data/units/project-e2/config/teacher-production-tasks.jsonl --audits data/units/project-e2/audits/teacher-production/*.jsonl --negative-tasks data/units/project-e2/config/negative-tasks.jsonl --negative-run data/units/project-e2/runs/negatives --out data/units/project-e2/derived"
+  },
+  "V6": {
+    "status": "passed_with_coverage_exceptions",
+    "evidence": "analysis/production-data-coverage.csv y production-data-decision-v1.json:18celdas no vacías;3excepciones SFT y1DPO documentadas antes de entrenar. Auditoría de agente diferenciada;humana pendiente enV11.",
+    "command_or_procedure": "Ver analysis/production-data-coverage.csv, production-data-decision-v1.json y derived/stats.json; comprobar V5."
+  },
+  "V7": {
+    "status": "passed",
+    "evidence": "validation/gpu-check-v3-gpu.json: SFT y GRPO reanudan pesos bit a bit y tokens acumulados; SFT/GRPO/híbrido actualizan112tensores finitos y recargan; sin OOM.",
+    "command_or_procedure": "rtk proxy env PYTHONPATH=src .venv/bin/python scripts/check_training_gpu.py --prefix gpu-check-new (nueva ejecución costosa; evidencia existente gpu-check-v3-gpu.json)"
+  },
+  "V8": {
+    "status": "passed",
+    "evidence": "fixture 1/6 y 1/2, paridad backends, control completo y score-only exacto (validation/control-reproduction.log)",
+    "command_or_procedure": "rtk proxy env PYTHONPATH=src .venv/bin/python -m challenge.evaluate_hf --tasks data/units/project-e2/dataset/private/eval.jsonl --out data/units/project-e2/runs/control --score-only"
+  },
+  "V9": {
+    "status": "passed",
+    "evidence": "Producción híbrida recarga SFTcheckpoint90, retoma checkpoint7 y modifica112tensores vsambos;124recompensas híbridas y160GRPO reproducidas. PrefijoSFT121125tokens/288.879s contabilizado. Sin truncamiento SFT; una completionRL truncada por rama enmascarada.",
+    "command_or_procedure": "rtk proxy env PYTHONPATH=src .venv/bin/python scripts/run_e2.py --stage all --derived data/units/project-e2/derived (corridas completas: verifica/reutiliza, no vuelve a entrenar)"
+  },
+  "V10": {
+    "status": "passed_with_compute_limitations",
+    "evidence": "Control y cuatro puntos por ruta, más inicioSFT híbrido; curvas36×1 y cierres360×3.13artefactos reproducidos exactamente. Tiempos/tokens completos de trayectoria; interrupción y perfil energético limitan inferencia de eficiencia.",
+    "command_or_procedure": "rtk proxy env PYTHONPATH=src .venv/bin/python scripts/report_training.py --runs data/units/project-e2/runs --out /tmp/e2-comparison-new (destino nuevo)"
+  },
+  "V11": {
+    "status": "human_pending",
+    "evidence": "Muestras por ruta reproducibles,208éxitos pendientes. Revisiones de agente incluyen éxitos aritméticamente falsos, fallos ilustrativos y casos coherentes. No se sustituyen dictámenes humanos.",
+    "command_or_procedure": "Revisión por personas siguiendo audits/README.md; no existe comando que sustituya sus dictámenes."
+  },
+  "V12": {
+    "status": "editorial_pending",
+    "evidence": "I9 fuera de alcance de esta ejecución",
+    "command_or_procedure": "Pendiente I9: informe/PDF todavía no creado."
+  }
+}

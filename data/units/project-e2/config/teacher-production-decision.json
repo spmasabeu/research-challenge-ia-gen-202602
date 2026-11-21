@@ -1,0 +1,20 @@
+{
+  "samples": 4,
+  "tasks": 1800,
+  "model": "qwen3:8b",
+  "max_tokens": 1024,
+  "tasks_path": "data/units/project-e2/config/teacher-production-tasks.jsonl",
+  "tasks_sha256": "a1983a0c7914d264866d16bb4da9a13cbe8de301dafcc82d092c0645106a7da6",
+  "pilot_evidence": "data/units/project-e2/analysis/teacher-pilot-cost-retention.json",
+  "pilot_evidence_sha256": "6281039e00815bbdc8bea8495167f3213c5b7147e8f68eb77af5b7049b683bec",
+  "reason": "Section4 permits4–8 after pilot. Four actual samples project~3700 retained SFT, close to indicative4000, at13.216h versus19.627h for6. Retain all1800 train tasks and all18cells. No duplicated traces to meet targets.",
+  "impact": "Approximate volume may remain below4000. Teacher-only DPO projects550, requiring additional genuine small-model errors. Luminosity produced no usable SFT in two problems/cell; full generation tests broader coverage and must quantify remaining deficits before training.",
+  "constraints": [
+    "Frozen train/eval/test unchanged; ordering file contains all identical train rows.",
+    "Frozen protocol teacher_samples6 remains historical initial proposal; actual run samples4 explicit in metadata and this decision.",
+    "Same teacher digest/options/thinkfalse; seeds42–45. No paid services.",
+    "Final coverage exceptions require observed counts/cost/discards and impact, not this projection.",
+    "Audit sample cannot be auto-kept; defect triggers full-cell inspection.",
+    "One GPU job at a time; start after GPU v3 proof."
+  ]
+}

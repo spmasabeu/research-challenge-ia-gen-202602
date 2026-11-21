@@ -1,0 +1,31 @@
+{
+  "cell": "energy/hard",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "correct": 153,
+    "numeric": 212,
+    "unparsed": 35
+  },
+  "unique": 399,
+  "correct_unique_before_audit": 152,
+  "sft_eligible_after_audit": 28,
+  "sft_tasks": 12,
+  "dpo_teacher_pairs": 7,
+  "audited": 152,
+  "required_random_audits": 5,
+  "rejected": 124,
+  "expanded": true,
+  "request_seconds": 2675.728877852982,
+  "output_tokens": 57816,
+  "truncated": 0,
+  "audit_sha256": "349f1a9da1393848d3244925d40b4b4477d2717ecae46f7b4604e08d6b59f386",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "3c72cb3997d4ff7c67c48bf0891fd9e2b2888e3e1820940be6db8860eddd40b2",
+  "rows_canonical_encoding": "json.dumps(rows,sort_keys=True,ensure_ascii=False).encode UTF8",
+  "reference_check": "All100 exact decimal kinetic-energy references independently recalculated from visible masses in grams and velocity in km/h; agreement<1e-8J. All28 retained traces reverified reward1.",
+  "limits": "All152 correct unique candidates inspected by agent after4/5 sampled traces had invalid arithmetic. No human review. Coherent rounding accepted; inaccurate products rejected even within1% reward tolerance. Rejected reward1 traces excluded from both positive and negative DPO pools.",
+  "quality_rejection_rate_among_reward1_unique": 0.8157894736842105,
+  "eligible_sft_per_raw": 0.07,
+  "coverage_exception": "Only 12/100 tasks retain a mathematically coherent solution after4samples. No duplication or programmatic solution substitution; final corpus coverage must report this deficit."
+}

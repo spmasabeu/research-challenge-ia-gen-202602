@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/scripts/check_training_gpu.py", line 56, in <module>
+    check(args.root, args.prefix)
+  File "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/scripts/check_training_gpu.py", line 41, in check
+    assert expected.keys() == actual.keys() and all(torch.equal(expected[k], actual[k]) for k in expected)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

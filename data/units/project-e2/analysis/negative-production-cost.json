@@ -1,0 +1,12 @@
+{
+  "responses": 2844,
+  "tasks": 948,
+  "generation_seconds": 6632.142959124001,
+  "input_tokens": 566718,
+  "output_tokens": 374670,
+  "truncated": 0,
+  "source_responses_sha256": "d338f93c062d573b858650cb4f31781fa648e9a7b0caff15b6953d0b2e04dc1c",
+  "source_batches_sha256": "9dbfb4fe9d2f7bf7365ac3923bd8c00850a3b40e22b66fce6d2e16c256c0f612",
+  "scope": "Synchronized generation time only; excludes model loading/scoring and CPU processing. Both energy profiles retained, no discarded/repeated attempts. Not FLOPs or exclusive GPU time.",
+  "profile_switch": "validation/negative-user-performance-switch.json"
+}

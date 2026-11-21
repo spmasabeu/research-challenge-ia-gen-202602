@@ -1,0 +1,12 @@
+{
+  "old_version": "verifier-9",
+  "new_version": "verifier-11",
+  "old_verifier_sha256": "051c6382ff91ea271fe045da2686450be08f695d59f62f685bfbe349ea43df50",
+  "responses_sha256": "68a4ed8ff4d1c37afac47c007f75c589a82558a4ea9a149eb651becebd1dc248",
+  "tasks_sha256": "a43cb708c74d20b89c399762b881d39eaea402e64b7f9077730eee9bca490344",
+  "transitions": {
+    "correct->correct": 84,
+    "unparsed->unparsed": 7,
+    "numeric->numeric": 71
+  }
+}

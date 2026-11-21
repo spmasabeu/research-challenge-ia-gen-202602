@@ -1,0 +1,1038 @@
+{
+  "utc": "2026-11-18T20:41:32.458915+00:00",
+  "scope": "Technical evidence for I2-I8, not I9 report; test reserved.",
+  "sources": {
+    "data/units/project-e2/runs/control/scores/verifier-11/summary.json": "6fcd3e2e403f22db7e6cab40b338656f23cf93828f4097268bcb06fffb73a7de",
+    "data/units/project-e2/runs/sft-final-eval/scores/verifier-11/summary.json": "83900496f74d1684f006ac10c6238a053b4b380b5e43b803975860142ac20a89",
+    "data/units/project-e2/runs/grpo-final-eval/scores/verifier-11/summary.json": "5aec4824c852cebfc75cdaad215b5f8b9c626e7a10c27c17f8e4f9eed8867444",
+    "data/units/project-e2/runs/sft-grpo-final-eval/scores/verifier-11/summary.json": "edb48234757f5504ad3bb7f3ca988c23c04d77f87019526f89dd8a5403d70484",
+    "data/units/project-e2/analysis/comparison-final-v1/paired-uncertainty.json": "59de27a600542e5e311e8eedb4cbd8f7b68c2116dd67ab24b8c8baad1cb0bdba",
+    "data/units/project-e2/runs/sft/result.json": "46e100c6b88a957c1718664e3a9638aad327cca2d9b4a79f68989251708802dd",
+    "data/units/project-e2/runs/grpo/result.json": "b33901375b1adac30c2e7ba0182d53361a8402754e01dda14aa68d77023f0412",
+    "data/units/project-e2/runs/sft-grpo/result.json": "91da3adc558d126e265def211ae1264724bf4f681616cd15a4f5061af4293141"
+  },
+  "endpoint_summary": {
+    "control": {
+      "tasks": 360,
+      "responses": 1080,
+      "n": 3,
+      "statuses": {
+        "correct": 750,
+        "numeric": 314,
+        "unparsed": 16
+      },
+      "coverage": 0.9851851851851852,
+      "pass_at_k": {
+        "1": 0.6944444444444444,
+        "3": 0.8416666666666667
+      },
+      "equivalent_si_rate": 0.6944444444444444,
+      "requested_unit_rate": 0.9851851851851852,
+      "pass_at_k_upper_bound": {
+        "1": 0.7092592592592593,
+        "3": 0.8527777777777777
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "sft": {
+      "tasks": 360,
+      "responses": 1080,
+      "n": 3,
+      "statuses": {
+        "correct": 827,
+        "numeric": 245,
+        "unparsed": 8
+      },
+      "coverage": 0.9925925925925926,
+      "pass_at_k": {
+        "1": 0.7657407407407408,
+        "3": 0.8611111111111112
+      },
+      "equivalent_si_rate": 0.7657407407407407,
+      "requested_unit_rate": 0.9925925925925926,
+      "pass_at_k_upper_bound": {
+        "1": 0.7731481481481481,
+        "3": 0.8722222222222222
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "grpo": {
+      "tasks": 360,
+      "responses": 1080,
+      "n": 3,
+      "statuses": {
+        "correct": 749,
+        "numeric": 313,
+        "unparsed": 18
+      },
+      "coverage": 0.9833333333333333,
+      "pass_at_k": {
+        "1": 0.6935185185185185,
+        "3": 0.8416666666666667
+      },
+      "equivalent_si_rate": 0.6935185185185185,
+      "requested_unit_rate": 0.9833333333333333,
+      "pass_at_k_upper_bound": {
+        "1": 0.7101851851851853,
+        "3": 0.8666666666666667
+      },
+      "backend_incomplete": 0,
+      "truncated": 1
+    },
+    "sft-grpo": {
+      "tasks": 360,
+      "responses": 1080,
+      "n": 3,
+      "statuses": {
+        "correct": 798,
+        "numeric": 278,
+        "unparsed": 4
+      },
+      "coverage": 0.9962962962962963,
+      "pass_at_k": {
+        "1": 0.7388888888888889,
+        "3": 0.8694444444444445
+      },
+      "equivalent_si_rate": 0.7388888888888889,
+      "requested_unit_rate": 0.9962962962962963,
+      "pass_at_k_upper_bound": {
+        "1": 0.7425925925925926,
+        "3": 0.8694444444444445
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  },
+  "cell_results": {
+    "control": {
+      "density/easy": {
+        "pass1": 0.8666666666666666,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 52,
+          "unparsed": 3,
+          "numeric": 5
+        }
+      },
+      "density/hard": {
+        "pass1": 0.2166666666666667,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "numeric": 46,
+          "correct": 13,
+          "unparsed": 1
+        }
+      },
+      "density/medium": {
+        "pass1": 0.8833333333333334,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 53,
+          "numeric": 7
+        }
+      },
+      "energy/easy": {
+        "pass1": 0.8833333333333334,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 53,
+          "unparsed": 2,
+          "numeric": 5
+        }
+      },
+      "energy/hard": {
+        "pass1": 0.5833333333333334,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 35,
+          "numeric": 25
+        }
+      },
+      "energy/medium": {
+        "pass1": 0.8833333333333334,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 53,
+          "unparsed": 2,
+          "numeric": 5
+        }
+      },
+      "luminosity/easy": {
+        "pass1": 0.6166666666666667,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 37,
+          "numeric": 22,
+          "unparsed": 1
+        }
+      },
+      "luminosity/hard": {
+        "pass1": 0.01666666666666667,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "numeric": 56,
+          "unparsed": 3,
+          "correct": 1
+        }
+      },
+      "luminosity/medium": {
+        "pass1": 0.5333333333333334,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 32,
+          "numeric": 28
+        }
+      },
+      "pressure/easy": {
+        "pass1": 0.7666666666666667,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 46,
+          "numeric": 12,
+          "unparsed": 2
+        }
+      },
+      "pressure/hard": {
+        "pass1": 0.5833333333333334,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 35,
+          "numeric": 25
+        }
+      },
+      "pressure/medium": {
+        "pass1": 0.9333333333333333,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 56,
+          "unparsed": 2,
+          "numeric": 2
+        }
+      },
+      "speed/easy": {
+        "pass1": 1.0,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "speed/hard": {
+        "pass1": 0.6,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "numeric": 24,
+          "correct": 36
+        }
+      },
+      "speed/medium": {
+        "pass1": 0.9833333333333334,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 59,
+          "numeric": 1
+        }
+      },
+      "voltage/easy": {
+        "pass1": 0.9,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "numeric": 6,
+          "correct": 54
+        }
+      },
+      "voltage/hard": {
+        "pass1": 0.4,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "numeric": 36,
+          "correct": 24
+        }
+      },
+      "voltage/medium": {
+        "pass1": 0.85,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "numeric": 9,
+          "correct": 51
+        }
+      }
+    },
+    "sft": {
+      "density/easy": {
+        "pass1": 1.0,
+        "delta_control_pass1": 0.13333333333333341,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "density/hard": {
+        "pass1": 0.9833333333333334,
+        "delta_control_pass1": 0.7666666666666667,
+        "statuses": {
+          "correct": 59,
+          "numeric": 1
+        }
+      },
+      "density/medium": {
+        "pass1": 0.9833333333333334,
+        "delta_control_pass1": 0.09999999999999998,
+        "statuses": {
+          "correct": 59,
+          "numeric": 1
+        }
+      },
+      "energy/easy": {
+        "pass1": 0.8833333333333334,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 53,
+          "numeric": 7
+        }
+      },
+      "energy/hard": {
+        "pass1": 0.3166666666666667,
+        "delta_control_pass1": -0.26666666666666666,
+        "statuses": {
+          "numeric": 40,
+          "correct": 19,
+          "unparsed": 1
+        }
+      },
+      "energy/medium": {
+        "pass1": 0.6166666666666667,
+        "delta_control_pass1": -0.2666666666666667,
+        "statuses": {
+          "numeric": 23,
+          "correct": 37
+        }
+      },
+      "luminosity/easy": {
+        "pass1": 0.25000000000000006,
+        "delta_control_pass1": -0.36666666666666664,
+        "statuses": {
+          "correct": 15,
+          "numeric": 43,
+          "unparsed": 2
+        }
+      },
+      "luminosity/hard": {
+        "pass1": 0.0,
+        "delta_control_pass1": -0.01666666666666667,
+        "statuses": {
+          "numeric": 56,
+          "unparsed": 4
+        }
+      },
+      "luminosity/medium": {
+        "pass1": 0.30000000000000004,
+        "delta_control_pass1": -0.2333333333333334,
+        "statuses": {
+          "correct": 18,
+          "numeric": 42
+        }
+      },
+      "pressure/easy": {
+        "pass1": 0.9833333333333334,
+        "delta_control_pass1": 0.21666666666666667,
+        "statuses": {
+          "correct": 59,
+          "numeric": 1
+        }
+      },
+      "pressure/hard": {
+        "pass1": 0.9166666666666666,
+        "delta_control_pass1": 0.33333333333333326,
+        "statuses": {
+          "correct": 55,
+          "numeric": 5
+        }
+      },
+      "pressure/medium": {
+        "pass1": 1.0,
+        "delta_control_pass1": 0.06666666666666665,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "speed/easy": {
+        "pass1": 1.0,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "speed/hard": {
+        "pass1": 0.9166666666666666,
+        "delta_control_pass1": 0.31666666666666665,
+        "statuses": {
+          "correct": 55,
+          "numeric": 5
+        }
+      },
+      "speed/medium": {
+        "pass1": 0.9833333333333334,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 59,
+          "numeric": 1
+        }
+      },
+      "voltage/easy": {
+        "pass1": 0.9166666666666666,
+        "delta_control_pass1": 0.016666666666666607,
+        "statuses": {
+          "correct": 55,
+          "unparsed": 1,
+          "numeric": 4
+        }
+      },
+      "voltage/hard": {
+        "pass1": 0.85,
+        "delta_control_pass1": 0.44999999999999996,
+        "statuses": {
+          "correct": 51,
+          "numeric": 9
+        }
+      },
+      "voltage/medium": {
+        "pass1": 0.8833333333333334,
+        "delta_control_pass1": 0.03333333333333344,
+        "statuses": {
+          "correct": 53,
+          "numeric": 7
+        }
+      }
+    },
+    "grpo": {
+      "density/easy": {
+        "pass1": 0.9,
+        "delta_control_pass1": 0.03333333333333344,
+        "statuses": {
+          "correct": 54,
+          "unparsed": 1,
+          "numeric": 5
+        }
+      },
+      "density/hard": {
+        "pass1": 0.23333333333333334,
+        "delta_control_pass1": 0.016666666666666635,
+        "statuses": {
+          "numeric": 43,
+          "correct": 14,
+          "unparsed": 3
+        }
+      },
+      "density/medium": {
+        "pass1": 0.8,
+        "delta_control_pass1": -0.08333333333333337,
+        "statuses": {
+          "correct": 48,
+          "numeric": 12
+        }
+      },
+      "energy/easy": {
+        "pass1": 0.8833333333333334,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 53,
+          "numeric": 5,
+          "unparsed": 2
+        }
+      },
+      "energy/hard": {
+        "pass1": 0.6333333333333334,
+        "delta_control_pass1": 0.050000000000000044,
+        "statuses": {
+          "correct": 38,
+          "numeric": 22
+        }
+      },
+      "energy/medium": {
+        "pass1": 0.8333333333333334,
+        "delta_control_pass1": -0.050000000000000044,
+        "statuses": {
+          "correct": 50,
+          "unparsed": 3,
+          "numeric": 7
+        }
+      },
+      "luminosity/easy": {
+        "pass1": 0.55,
+        "delta_control_pass1": -0.06666666666666665,
+        "statuses": {
+          "correct": 33,
+          "numeric": 26,
+          "unparsed": 1
+        }
+      },
+      "luminosity/hard": {
+        "pass1": 0.03333333333333334,
+        "delta_control_pass1": 0.01666666666666667,
+        "statuses": {
+          "numeric": 53,
+          "unparsed": 5,
+          "correct": 2
+        }
+      },
+      "luminosity/medium": {
+        "pass1": 0.5333333333333334,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 32,
+          "numeric": 27,
+          "unparsed": 1
+        }
+      },
+      "pressure/easy": {
+        "pass1": 0.7833333333333334,
+        "delta_control_pass1": 0.01666666666666672,
+        "statuses": {
+          "correct": 47,
+          "numeric": 11,
+          "unparsed": 2
+        }
+      },
+      "pressure/hard": {
+        "pass1": 0.5833333333333334,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 35,
+          "numeric": 25
+        }
+      },
+      "pressure/medium": {
+        "pass1": 0.95,
+        "delta_control_pass1": 0.016666666666666607,
+        "statuses": {
+          "correct": 57,
+          "numeric": 3
+        }
+      },
+      "speed/easy": {
+        "pass1": 1.0,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "speed/hard": {
+        "pass1": 0.6666666666666667,
+        "delta_control_pass1": 0.06666666666666676,
+        "statuses": {
+          "correct": 40,
+          "numeric": 20
+        }
+      },
+      "speed/medium": {
+        "pass1": 0.9833333333333334,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 59,
+          "numeric": 1
+        }
+      },
+      "voltage/easy": {
+        "pass1": 0.9,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "numeric": 6,
+          "correct": 54
+        }
+      },
+      "voltage/hard": {
+        "pass1": 0.38333333333333336,
+        "delta_control_pass1": -0.016666666666666663,
+        "statuses": {
+          "numeric": 37,
+          "correct": 23
+        }
+      },
+      "voltage/medium": {
+        "pass1": 0.8333333333333334,
+        "delta_control_pass1": -0.016666666666666607,
+        "statuses": {
+          "numeric": 10,
+          "correct": 50
+        }
+      }
+    },
+    "sft-grpo": {
+      "density/easy": {
+        "pass1": 0.95,
+        "delta_control_pass1": 0.08333333333333337,
+        "statuses": {
+          "correct": 57,
+          "unparsed": 1,
+          "numeric": 2
+        }
+      },
+      "density/hard": {
+        "pass1": 0.8166666666666667,
+        "delta_control_pass1": 0.6,
+        "statuses": {
+          "correct": 49,
+          "numeric": 11
+        }
+      },
+      "density/medium": {
+        "pass1": 0.95,
+        "delta_control_pass1": 0.06666666666666654,
+        "statuses": {
+          "correct": 57,
+          "unparsed": 1,
+          "numeric": 2
+        }
+      },
+      "energy/easy": {
+        "pass1": 0.8166666666666667,
+        "delta_control_pass1": -0.06666666666666676,
+        "statuses": {
+          "correct": 49,
+          "numeric": 11
+        }
+      },
+      "energy/hard": {
+        "pass1": 0.3,
+        "delta_control_pass1": -0.2833333333333334,
+        "statuses": {
+          "correct": 18,
+          "numeric": 42
+        }
+      },
+      "energy/medium": {
+        "pass1": 0.7,
+        "delta_control_pass1": -0.18333333333333346,
+        "statuses": {
+          "correct": 42,
+          "numeric": 18
+        }
+      },
+      "luminosity/easy": {
+        "pass1": 0.33333333333333337,
+        "delta_control_pass1": -0.2833333333333333,
+        "statuses": {
+          "correct": 20,
+          "numeric": 40
+        }
+      },
+      "luminosity/hard": {
+        "pass1": 0.01666666666666667,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "numeric": 59,
+          "correct": 1
+        }
+      },
+      "luminosity/medium": {
+        "pass1": 0.5,
+        "delta_control_pass1": -0.03333333333333344,
+        "statuses": {
+          "correct": 30,
+          "numeric": 30
+        }
+      },
+      "pressure/easy": {
+        "pass1": 1.0,
+        "delta_control_pass1": 0.23333333333333328,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "pressure/hard": {
+        "pass1": 0.8333333333333334,
+        "delta_control_pass1": 0.25,
+        "statuses": {
+          "correct": 50,
+          "numeric": 9,
+          "unparsed": 1
+        }
+      },
+      "pressure/medium": {
+        "pass1": 0.9333333333333333,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 56,
+          "numeric": 4
+        }
+      },
+      "speed/easy": {
+        "pass1": 1.0,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "speed/hard": {
+        "pass1": 0.65,
+        "delta_control_pass1": 0.050000000000000044,
+        "statuses": {
+          "correct": 39,
+          "numeric": 20,
+          "unparsed": 1
+        }
+      },
+      "speed/medium": {
+        "pass1": 1.0,
+        "delta_control_pass1": 0.016666666666666607,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "voltage/easy": {
+        "pass1": 0.9,
+        "delta_control_pass1": 0.0,
+        "statuses": {
+          "correct": 54,
+          "numeric": 6
+        }
+      },
+      "voltage/hard": {
+        "pass1": 0.6833333333333333,
+        "delta_control_pass1": 0.2833333333333333,
+        "statuses": {
+          "numeric": 19,
+          "correct": 41
+        }
+      },
+      "voltage/medium": {
+        "pass1": 0.9166666666666666,
+        "delta_control_pass1": 0.06666666666666665,
+        "statuses": {
+          "correct": 55,
+          "numeric": 5
+        }
+      }
+    }
+  },
+  "transitions_vs_control": {
+    "sft": {
+      "correct->correct": 638,
+      "numeric->correct": 179,
+      "correct->numeric": 109,
+      "numeric->numeric": 131,
+      "unparsed->correct": 10,
+      "unparsed->numeric": 5,
+      "correct->unparsed": 3,
+      "numeric->unparsed": 4,
+      "unparsed->unparsed": 1
+    },
+    "grpo": {
+      "correct->correct": 701,
+      "numeric->correct": 43,
+      "numeric->numeric": 267,
+      "correct->numeric": 44,
+      "unparsed->correct": 5,
+      "correct->unparsed": 5,
+      "unparsed->numeric": 2,
+      "unparsed->unparsed": 9,
+      "numeric->unparsed": 4
+    },
+    "sft-grpo": {
+      "correct->correct": 624,
+      "numeric->correct": 163,
+      "numeric->numeric": 150,
+      "correct->numeric": 123,
+      "numeric->unparsed": 1,
+      "unparsed->correct": 11,
+      "unparsed->numeric": 5,
+      "correct->unparsed": 3
+    }
+  },
+  "training": {
+    "sft": {
+      "method": "sft",
+      "pilot": false,
+      "steps": 377,
+      "changed_tensors": 112,
+      "adapter_tensors": 112,
+      "max_parameter_delta": 0.029371047392487526,
+      "weights_finite": true,
+      "reload_weights_equal": true,
+      "reload_logits_equal": true,
+      "phase_train_seconds": 1201.811328791,
+      "prior_train_seconds": 0.0,
+      "cumulative_train_seconds": 1201.811328791,
+      "phase_train_tokens": 506829,
+      "prior_train_tokens": 0,
+      "cumulative_train_tokens": 506829,
+      "peak_allocated_bytes": 2371680256,
+      "peak_reserved_bytes": 5595201536,
+      "termination": "time_budget",
+      "adapter_files": {
+        "README.md": "cf5b5ad06cb81131b45a950681944a10bb8ab214e2c1d6910df96e0e5b10b127",
+        "adapter_config.json": "3e6be928b5209ad20c0fea20b76bf4855458f1a0ce4abdc8c893ce95c8428db4",
+        "adapter_model.safetensors": "9eaa57ef0106f43648d542906e0bd56c61ac8e915836bb4ec969f4e0ff1a559e",
+        "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+        "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+        "cost.json": "1512a3dde7dbd034e00057e8395fd11a0567b765523581498c70e967a5613af4",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "special_tokens_map.json": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "68f2cfe250d0fd2c445bcbeb49183726d6c4dfca493bd10599742410c2fc4a79",
+        "training_args.bin": "61be4778b0249e9190bf648f64ddad6f2d337673903a52479bc5fdd517999623",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      "initial_adapter": null
+    },
+    "grpo": {
+      "method": "grpo",
+      "pilot": false,
+      "steps": 40,
+      "changed_tensors": 112,
+      "adapter_tensors": 112,
+      "max_parameter_delta": 0.00025291580823250115,
+      "weights_finite": true,
+      "reload_weights_equal": true,
+      "reload_logits_equal": true,
+      "phase_train_seconds": 1297.766086093001,
+      "prior_train_seconds": 0.0,
+      "cumulative_train_seconds": 1297.766086093001,
+      "peak_allocated_bytes": 2792026624,
+      "peak_reserved_bytes": 4106223616,
+      "termination": "time_budget",
+      "adapter_files": {
+        "README.md": "99e6d10b1627888f966e84a66451131c75378576017f6e1a6dc1d6abdb43c4a2",
+        "adapter_config.json": "3e6be928b5209ad20c0fea20b76bf4855458f1a0ce4abdc8c893ce95c8428db4",
+        "adapter_model.safetensors": "5008391215c82147b81dc07dbbae3b590116620767737af0338314c87462c2b2",
+        "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+        "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+        "cost.json": "67868f78455026a093e94b2c42b07b9cea3075c7b57e97e6458391d1bc0277b0",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "special_tokens_map.json": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+        "tokenizer.json": "94b2b680da9b4ffb43847b5a36ca1ad01268879c01c6425725723f6879f1649a",
+        "tokenizer_config.json": "68f2cfe250d0fd2c445bcbeb49183726d6c4dfca493bd10599742410c2fc4a79",
+        "training_args.bin": "b03ad8e4541efef1321c58ada987c62cfa548f90b9493b5bea3ca3e1d7f590eb",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      "initial_adapter": null
+    },
+    "sft-grpo": {
+      "method": "grpo",
+      "pilot": false,
+      "steps": 31,
+      "changed_tensors": 112,
+      "adapter_tensors": 112,
+      "max_parameter_delta": 0.00015395693480968475,
+      "weights_finite": true,
+      "reload_weights_equal": true,
+      "reload_logits_equal": true,
+      "phase_train_seconds": 947.9700090820006,
+      "prior_train_seconds": 288.8793994869993,
+      "cumulative_train_seconds": 1236.849408569,
+      "phase_train_tokens": 48030,
+      "prior_train_tokens": 121125,
+      "cumulative_train_tokens": 169155,
+      "peak_allocated_bytes": 2788023296,
+      "peak_reserved_bytes": 4271898624,
+      "termination": "time_budget",
+      "adapter_files": {
+        "README.md": "99e6d10b1627888f966e84a66451131c75378576017f6e1a6dc1d6abdb43c4a2",
+        "adapter_config.json": "3e6be928b5209ad20c0fea20b76bf4855458f1a0ce4abdc8c893ce95c8428db4",
+        "adapter_model.safetensors": "949401fd3be60839bf885321404d4be1dcb409782c2a370d2712ea7dfdd9d897",
+        "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+        "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+        "cost.json": "4920c5215273096802b5c6b04a3405a329df5a75030a161765e84f3eb127bf8b",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "special_tokens_map.json": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+        "tokenizer.json": "94b2b680da9b4ffb43847b5a36ca1ad01268879c01c6425725723f6879f1649a",
+        "tokenizer_config.json": "68f2cfe250d0fd2c445bcbeb49183726d6c4dfca493bd10599742410c2fc4a79",
+        "training_args.bin": "c8e7a772b3b20caca1760925a98dd488113e5cca0432673808c4f893aebc0f27",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      "initial_adapter": "data/units/project-e2/runs/sft/checkpoint-90"
+    }
+  },
+  "uncertainty": {
+    "physical_problems": 120,
+    "tasks": 360,
+    "responses_per_route": 1080,
+    "seed": 7305,
+    "repetitions": 2000,
+    "method": "percentile 95%, paired physical blocks, family/structure strata",
+    "limits": "Incertidumbre sobre problemas; no mide variación entre semillas de entrenamiento ni certifica pasos de razonamiento.",
+    "routes": {
+      "control": {
+        "pass_at_k": {
+          "1": 0.6944444444444444,
+          "3": 0.8416666666666667
+        },
+        "ci95": {
+          "1": [
+            0.6638888888888889,
+            0.7240972222222223
+          ],
+          "3": [
+            0.8111111111111111,
+            0.8694444444444445
+          ]
+        },
+        "delta_control_ci95": {
+          "1": [
+            0.0,
+            0.0
+          ],
+          "3": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "grpo": {
+        "pass_at_k": {
+          "1": 0.6935185185185185,
+          "3": 0.8416666666666667
+        },
+        "ci95": {
+          "1": [
+            0.662037037037037,
+            0.7231481481481481
+          ],
+          "3": [
+            0.8111111111111111,
+            0.8722222222222221
+          ]
+        },
+        "delta_control_ci95": {
+          "1": [
+            -0.017592592592592604,
+            0.015763888888888977
+          ],
+          "3": [
+            -0.02777777777777779,
+            0.02777777777777779
+          ]
+        }
+      },
+      "sft": {
+        "pass_at_k": {
+          "1": 0.7657407407407407,
+          "3": 0.861111111111111
+        },
+        "ci95": {
+          "1": [
+            0.7416666666666667,
+            0.788912037037037
+          ],
+          "3": [
+            0.8360416666666668,
+            0.8861111111111111
+          ]
+        },
+        "delta_control_ci95": {
+          "1": [
+            0.04166666666666663,
+            0.10092592592592586
+          ],
+          "3": [
+            -0.013958333333333392,
+            0.0527777777777777
+          ]
+        }
+      },
+      "sft-grpo": {
+        "pass_at_k": {
+          "1": 0.7388888888888889,
+          "3": 0.8694444444444445
+        },
+        "ci95": {
+          "1": [
+            0.7092592592592593,
+            0.7648148148148148
+          ],
+          "3": [
+            0.8444444444444443,
+            0.8944444444444445
+          ]
+        },
+        "delta_control_ci95": {
+          "1": [
+            0.008333333333333304,
+            0.07780092592592598
+          ],
+          "3": [
+            -0.005555555555555647,
+            0.061111111111111116
+          ]
+        }
+      }
+    },
+    "sft_grpo_minus_grpo": {
+      "pass_at_k_delta": {
+        "1": 0.045370370370370394,
+        "3": 0.02777777777777779
+      },
+      "ci95": {
+        "1": [
+          0.011111111111111072,
+          0.07870370370370372
+        ],
+        "3": [
+          -0.008333333333333304,
+          0.06388888888888888
+        ]
+      }
+    },
+    "missing_routes": []
+  },
+  "human_audit": {
+    "control": {
+      "selected": 52,
+      "human_reviewed": 0,
+      "file": "control-human-pending.jsonl",
+      "sha256": "e2a074af0070cadbf6cc2f5c1e1a4e1a1dcc9099e4ecbc362233ef0ae153fcf0"
+    },
+    "grpo": {
+      "selected": 53,
+      "human_reviewed": 0,
+      "file": "grpo-human-pending.jsonl",
+      "sha256": "99ec0a3008d99b9ac7ef6cd0c21c0a7161f6fc1bae26fe977fcd3fb0c1cdda93"
+    },
+    "sft": {
+      "selected": 51,
+      "human_reviewed": 0,
+      "file": "sft-human-pending.jsonl",
+      "sha256": "b1db54fc0e4185512b441e7747500a44f5e5cf9aae3ad56a34605b0eb0bcdd13"
+    },
+    "sft-grpo": {
+      "selected": 52,
+      "human_reviewed": 0,
+      "file": "hybrid-human-pending.jsonl",
+      "sha256": "65d124fa93f6dde014abbdf161d72ca143733ae9111e1b8e1bcd58015c2aff5c"
+    },
+    "sft-data": {
+      "selected": 53,
+      "human_reviewed": 0,
+      "file": "sft-data-human-pending.jsonl",
+      "sha256": "9767592a73ae0c0996b3c969c911cc586d95d6bc9beca08469ceecb578c6b0a2"
+    }
+  },
+  "conclusions": [
+    "SFT pass@1+7.1296pp vs control, paired95%CI[4.1667,10.0926]pp. Best observed pass@1:76.5741%. One training seed only.",
+    "GRPO40steps yields-0.0926pp vs control; paired95%CI[-1.7593,1.5764]pp. No improvement demonstrated, not equivalence proof.",
+    "Hybrid pass@1+4.4444pp vs control,95%CI[0.8333,7.7801]pp; vs GRPO+4.5370pp,95%CI[1.1111,7.8704]pp. This supports observed aggregate route difference on these problems, not controlled compute efficiency.",
+    "Pass@3: control84.1667%,GRPO84.1667%,SFT86.1111%,hybrid86.9444%. All trained-route delta-control intervals include zero; hybrid-GRPO pass3CI also includes zero.",
+    "Hybrid is2.6852pp below full-budget SFT in observed pass@1; no paired confidence interval for that contrast was computed. Not evidence that RL improved the SFT starting policy: that starting checkpoint only has36x1 curves, not full360x3.",
+    "Fixed36task curves: control.6111; SFT .7222/.7500/.6944/.7222; GRPO .5833/.6389/.5556/.6111; hybrid initialSFT.7222 then .6667/.7222/.6667/.6944. No sustained RL learning trend; do not mix these denominators with full endpoints.",
+    "SFT loss first10mean.40667 to last10mean.10865, with0.44854epoch reached. Train loss is different data/objective from validation; this alone cannot diagnose global overfitting.",
+    "SFT numeric errors314->245 and unparsed16->8. Hybrid numeric errors314->278 and unparsed16->4. Aggregate improvements exceed parser coverage changes; no unit-class errors at endpoints. Requested-unit success and numerical equivalence use all1080responses.",
+    "SFT gains strongest in density/pressure/speed/voltage while energy medium/hard and luminosity decline. Corpus quality filtering retained1076density/910pressure/702speed/424voltage/154energy/96luminosity. Consistent with selective degradation, no causal attribution without controlled balancing ablation.",
+    "RL signal: GRPO20mixed/15all1/5all0 across40physicalproblems and18cells; hybrid12mixed/16all1/3all0 across31physicalproblems and16cells. Same first31prompts: GRPO16mixed/11all1/4all0. SFT prior increases saturation in this prefix, but train-reward averages are not heldout quality.",
+    "Human audits remain pending. Actual directed agent inspection found reward1 outputs with false intermediate arithmetic/units, including hybrid sole luminosity-hard success. Do not claim certified reasoning or intentional reward hacking."
+  ],
+  "limitations": [
+    "Single training seed7303; inference seeds42-44 are not training replications.",
+    "Bootstrap resamples120physical blocks stratified family/structure; cell rates have20tasks and60answers, no multiple-comparison significance claims.",
+    "Low SFT/DPO coverage exceptions fixed before training.",
+    "Control/GRPO power profile not captured; SFT/hybrid performance verified. Measured seconds, tokens and steps available; neither equal FLOPs nor isolated causal efficiency established.",
+    "User pause excluded from training clock; interrupted work exact cost unknown, external upper bound31.276s. Model-loading/evaluation excluded from trainer clock.",
+    "No full learning-curve train/eval generalization gap or additional training seeds; no conclusive overfitting claim.",
+    "Endpoint chosen by predefined time budget, not best validation checkpoint. Test never inferenced."
+  ],
+  "followup_after_human_audit": [
+    "Review sampled traces by humans and record keep/reject/uncertain with denominators; retain sources and original programmatic scores.",
+    "Prepare I9 report/PDF from artifacts, distinguish technical results from scientific generalization.",
+    "For E3: balanced quality corpus, stratified RL signal/greater budget, multiple training seeds and controlled power profile; evaluate full SFT prefix and50%allocation in new version before final reserved test."
+  ]
+}

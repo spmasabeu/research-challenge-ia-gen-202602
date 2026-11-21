@@ -1,0 +1,19 @@
+{
+  "pid": 140797,
+  "command": [
+    "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python",
+    "scripts/run_e2.py",
+    "--stage",
+    "all",
+    "--derived",
+    "data/units/project-e2/derived"
+  ],
+  "log": "data/units/project-e2/validation/production-routes-driver.log",
+  "started_utc": "2026-11-18T17:00:27.293136+00:00",
+  "power_profile": "performance",
+  "source_sha256": "b0a127b21042f6388417c62a206ef1a26eb86375c69ff188b1d558c507917c02",
+  "derived_manifest_sha256": "6fbec51aff58cdd029ea649af98acba991ba7d69be32f5df3303da0763ccbe13",
+  "data_decision_sha256": "b86b0a6b13ecba217f4aa81b308491e720f2a3696498f29c294fb975c6411c4a",
+  "scope": "Serial SFT and SFT→GRPO training, checkpoint curves and full eval. Existing control/GRPO artifacts checked/reused; no test inference.",
+  "tests": "41CPU passed plus priorGPUv3 real update/reload/resume. Production3362traces pass full tokenization; finalSFT bytes unchanged."
+}

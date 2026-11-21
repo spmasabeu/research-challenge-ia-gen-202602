@@ -1,0 +1,21 @@
+{
+  "source": "data/units/project-e2/analysis/comparison-final-v1",
+  "reproduction": "data/units/project-e2/validation/comparison-final-reproduction",
+  "all_byte_identical": true,
+  "files": {
+    "checkpoints.json": "f88e5ce1572f21be68335d10dea387df5be7b7d263fdf3dbc4bce038ac3325b1",
+    "errors-by-family-level.png": "cdf68347d438aedb645f213200c4b7920e96de0fc538c57bf48c71b6c111a80d",
+    "evaluation-errors.png": "5292f67010f850f64b8cd0e47948790a5a1dbe801ade44c33222f01c66327ef8",
+    "evaluation.csv": "b245324a1a42d6236de55013c4090e7dea2954b9851d2d05ae6b041bd0e06ca7",
+    "grpo-signal-by-cell.json": "9ef76153584dd9b60eaa3ca50dcbddba2899d0b6fa9a1ef91a41f0e980f9891a",
+    "manifest.json": "b29823b912937dccb26500cef412a8c1607c0dabd3daed5ce88b5defa7392489",
+    "paired-uncertainty.json": "59de27a600542e5e311e8eedb4cbd8f7b68c2116dd67ab24b8c8baad1cb0bdba",
+    "report-source.py": "8e505d62db8748c1bdbe5a591c7d23afdc4cd78f755c2b2184116223727a7982",
+    "training-curves.png": "322892f6edd4f88326d7e758c42fc40c246f31eb8c462212798bc5273fd71424",
+    "training.csv": "aa89c3be60b2ca7cce3135f492315c012224901b5727691b8af0b7395e466c78",
+    "validation-points.json": "10c412980794f80cb187823a7a2e5f82000231329fe9a5063c2d714fc86f7703",
+    "validation-vs-compute.png": "2cfdc3e5613cfcdab088d60fefef425b8b002f404bacb729e5b3fe35403f961c",
+    "validation-vs-tokens.png": "768eb910a88b4055ad58b1611f6a2eda473c06b07bc9b45267148cdfb6ea9936"
+  },
+  "visual_review": "All five PNGs inspected: labels/legends/axes readable; unsmoothed training loss/reward separate from fixed36task validation; final360x3 endpoint errors shown separately."
+}

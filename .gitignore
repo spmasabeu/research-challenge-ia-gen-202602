@@ -14,6 +14,13 @@ temp/
 personal/
 sandbox/
 
+# Checkpoints locales: versionar manifiestos/checksums, nunca pesos ni optimizador.
+data/units/project-e2/**/checkpoint-*/
+data/units/project-e2/**/final/
+*.safetensors
+*.pt
+*.pth
+
 # Archivos auxiliares de compilación; conservar el PDF del informe.
 docs/report/build/**/*.aux
 docs/report/build/**/*.fdb_latexmk

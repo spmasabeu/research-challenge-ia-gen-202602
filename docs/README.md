@@ -13,12 +13,21 @@ Para comprobar requisitos contra archivos: [mapa de evidencia](report/evidence.m
 Proyecto, entrega 1: [requisitos y decisiones](contexto/2026-11-09_202333_requisitos_entrega_1_proyecto.md),
 [plan de ejecución](plans/2026-11-09_202333_entrega_1_proyecto.md) y
 [propuesta PDF y fuentes](../deliveries/project-1-proposal/README.md).
-Estado: propuesta redactada y validada, tres páginas de contenido más referencias;
-[PR #4 a main](https://github.com/spmasabeu/research-challenge-ia-gen-202602/pull/4) abierto para revisión.
+Estado: E1 entregada según confirmación del equipo, tres páginas de contenido más referencias;
+[PR #4](https://github.com/spmasabeu/research-challenge-ia-gen-202602/pull/4) integrado en main.
+
+Proyecto, entrega 2: [requisitos, entregable, implementación por dependencias, pruebas y análisis](plans/2026-11-16_095503_entrega_2_proyecto.md).
+PR #6 integrado: seis familias disponibles. La ejecución técnica conserva
+verifier-11, dataset1.800/360/360,3.362trazas SFT y769pares DPO con excepciones
+justificadas,42pruebas CPU y pruebas GPU reales. Control, SFT, GRPO y SFT→GRPO
+completaron evaluación común360×3; curvas, intervalos, costos y checkpoints están
+en el [respaldo técnico](../data/units/project-e2/README.md). I2–I7 ejecutadas;
+I8 tiene análisis técnico y muestras, pero falta revisión humana. I9 (informe/PDF)
+queda para una etapa posterior. E2 todavía no está completa.
 
 Los enunciados están en la raíz: [Desafío](../DesafioInvestigacion-2026.pdf) y
 [Proyecto posterior](../ProyectoCurso-2026.pdf). El segundo se comparte como
-referencia; en esta entrega no se ejecutaron entrenamientos del proyecto.
+referencia; en la entrega del desafío no se ejecutaron entrenamientos del proyecto.
 
 La entrega vigente está en [deliveries/challenge-clean](../deliveries/challenge-clean/README.md),
 con ZIP mínimo de informe, código y datos, y nombres de carpetas sin versiones. El paquete

@@ -1,0 +1,45 @@
+{
+  "cell": "luminosity/hard",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "numeric": 382,
+    "unparsed": 8,
+    "correct": 10
+  },
+  "unique": 400,
+  "correct_unique_before_audit": 10,
+  "sft_eligible_after_audit": 2,
+  "sft_tasks": 2,
+  "dpo_teacher_pairs": 2,
+  "audited": 10,
+  "required_random_audits": 5,
+  "rejected": 8,
+  "expanded": true,
+  "request_seconds": 3865.554132327994,
+  "output_tokens": 84257,
+  "truncated": 0,
+  "audit_sha256": "ab6323984fdc868fe5f83298b4c7e5a855fcbbaed4c686ed72b59efac5ad9e87",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "0d4130b0ad1145d14e606acbaffca3d015a7529e0e2d2694c0df61b188000fec",
+  "rows_canonical_encoding": "json.dumps(rows,sort_keys=True,ensure_ascii=False).encode UTF8",
+  "reference_check": "All100 luminosity references independently recalculated with Decimal: visible km*1000 and erg/s/cm² /1000, prompt pi; agreement<1e-8W. Both retained traces reverified reward1.",
+  "limits": "All10 correct unique candidates inspected by agent after directed defects. Mandatory random five also covered. No human review. Coherent rounding/truncation accepted. Numerically correct final response with incorrect conversion and arithmetic excluded.",
+  "quality_rejection_rate_among_reward1_unique": 0.8,
+  "eligible_sft_per_raw": 0.005,
+  "coverage_exception": "Only2/100 tasks retain coherent solutions after4samples; both SFT20task/DPO10task internal targets missed. Must report scarcity and impact before training; no duplicates or programmatic substitutions.",
+  "required_random_candidate_ids": [
+    "5b65661703d9fb937f5852dc2b5a9c8aaeec1f279cf77d4d0a37e287170de8f2",
+    "d11ad34b2d13315df7a790b01048675293fe2ff2852d9c4156d64abaac6cd4ec",
+    "d17a1011931c2b47841f01d7658edae5ee7a75a2f3807fcae4e70bbebdcc678a",
+    "f0659c255d84bbb295aaeae18c1736564d00e5b4901c5869baf65b6c9d57ab86",
+    "f3ffb5cce980f37d35aed7c0fbcf44d095a2d838230cdec28fb926c9f2a9706e"
+  ],
+  "required_random_judgments": {
+    "reject": 4,
+    "keep": 1
+  },
+  "output_tokens_missing_rows": 0,
+  "output_tokens_limit": "All400 backend output token counts present.",
+  "backend_incomplete": 0
+}

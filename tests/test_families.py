@@ -110,18 +110,21 @@ class FamilyCatalogTests(unittest.TestCase):
             value = si / UNITS[requested][1]
             others = [u for u, (dim, _) in UNITS.items() if dim == task["family"] and u != requested]
             for answer in (f"{value} {requested}", json.dumps({"value": value, "unit": requested}),
-                           f"{si / UNITS[others[0]][1]} {others[0]}", f"{value * 1.005} {requested}"):
+                           f"{value * 1.005} {requested}"):
                 self.assertEqual(reward(task["prompt"], answer), 1.0, answer)
+            equivalent = verify(task, f"{si / UNITS[others[0]][1]} {others[0]}")
+            self.assertEqual(equivalent["status"], "unit")
+            self.assertTrue(equivalent["equivalent_si"])
             for answer in (f"{value * 1000} {requested}", f"{value / 1000} {requested}",  # error de prefijo
                            f"{value * 1.02} {requested}", f"{value} J", f"{value}",
                            f"{value} {requested} o {value * 2} {requested}",
                            f"{value * 2} {requested}\n{value} {requested}"):
                 self.assertEqual(reward(task["prompt"], answer), 0.0, answer)
-        density = {"family": "density", "answer_si": 4}
-        for answer in ("rho = 4 kg/m^3", "ρ = 0.004 g/cm^3", "4 kg/m³", '{"value": 0.004, "unit": "g/cm³"}'):
+        density = {"family": "density", "answer_si": 4, "requested_unit": "kg/m^3"}
+        for answer in ("rho = 4 kg/m^3", "ρ = 4 kg/m^3", "4 kg/m³", '{"value": 4, "unit": "kg/m³"}'):
             self.assertEqual(verify(density, answer)["status"], "correct", answer)
-        self.assertEqual(verify({"family": "pressure", "answer_si": 20}, "P = 0.02 kPa")["status"], "correct")
-        self.assertEqual(verify({"family": "voltage", "answer_si": 5}, "V = 5000 mV")["status"], "correct")
+        self.assertEqual(verify({"family": "pressure", "answer_si": 20, "requested_unit": "kPa"}, "P = 0.02 kPa")["status"], "correct")
+        self.assertEqual(verify({"family": "voltage", "answer_si": 5, "requested_unit": "mV"}, "V = 5000 mV")["status"], "correct")
         self.assertEqual(verify(density, "4 Pa")["status"], "unit")
         self.assertIsNone(extract_answer("4 kg/m^3\n0 kg/m^3"))
 

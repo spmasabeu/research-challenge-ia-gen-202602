@@ -1,0 +1,51 @@
+{
+  "inspections": [
+    {
+      "candidate_id": "016d614dffe428ceac93ffa1cc8262bb7218a313b3221e27d0cf90c9a2e904a7",
+      "task_id": "1933a68fe2ca76203eb5-easy",
+      "family": "density",
+      "level": "easy",
+      "prompt": "Calcula la densidad media; si hay m1 y m2, ambas masas ocupan juntas el volumen dado.\nDatos: m1=49.68 kg; m2=33.12 kg; V=0.5 m^3\nFórmula: rho=(m1+m2)/V. Usa pi=3.141592653589793.\nEquivalencias: 1 kg=1000 g; 1 m^3=1000 L; 1 g/cm^3=1000 kg/m^3.\nExpresa el resultado en kg/m^3. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"kg/m^3\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+      "completion": "Primero convertimos las masas a gramos: m1 = 49.68 kg × 1000 = 49680 g, m2 = 33.12 kg × 1000 = 33120 g. Sumamos: 49680 + 33120 = 82800 g. La densidad media es 82800 g / 5000 L = 16.56 g/L. Convertimos a kg/m³: 16.56 g/L = 16.56 kg/m³.\n\n{\"value\": 16.56, \"unit\": \"kg/m³\"}",
+      "status": "numeric",
+      "reference_si": 165.6,
+      "sources": [
+        {
+          "run": "negatives",
+          "model": "Qwen/Qwen3-1.7B",
+          "sample_index": 0,
+          "completion_sha256": "c11505352ab8f7d7fb000fcb156eb71ecaa2e9d53b9c27cda99e372aab52feb7"
+        }
+      ],
+      "reviewer_type": "agent",
+      "auditor": "Codex",
+      "finding": "confirmed_numeric_negative",
+      "reason": "0.5m³ son500L, no5000L. Masa82.8kg y densidad165.6kg/m³; salida16.56 tiene error de factor10.",
+      "selection": "directed_first_two_numeric_errors_of_first_completed_cell"
+    },
+    {
+      "candidate_id": "bf81b394289513074d88e253d4cf09d1e5cb2ed4b360ef0e2b08b4dc9dc6fa53",
+      "task_id": "1933a68fe2ca76203eb5-easy",
+      "family": "density",
+      "level": "easy",
+      "prompt": "Calcula la densidad media; si hay m1 y m2, ambas masas ocupan juntas el volumen dado.\nDatos: m1=49.68 kg; m2=33.12 kg; V=0.5 m^3\nFórmula: rho=(m1+m2)/V. Usa pi=3.141592653589793.\nEquivalencias: 1 kg=1000 g; 1 m^3=1000 L; 1 g/cm^3=1000 kg/m^3.\nExpresa el resultado en kg/m^3. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"kg/m^3\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+      "completion": "Primero convertimos las masas a gramos: $ m_1 = 49.68 \\, \\text{kg} \\times 1000 = 49680 \\, \\text{g} $ y $ m_2 = 33.12 \\, \\text{kg} \\times 1000 = 33120 \\, \\text{g} $. La masa total es $ 49680 + 33120 = 82800 \\, \\text{g} $. Usamos la fórmula de densidad: $ \\rho = \\frac{82800}{0.5} = 165600 \\, \\text{kg/m}^3 $. \n\nResultado: {\"value\": 165600, \"unit\": \"kg/m³\"}",
+      "status": "numeric",
+      "reference_si": 165.6,
+      "sources": [
+        {
+          "run": "negatives",
+          "model": "Qwen/Qwen3-1.7B",
+          "sample_index": 2,
+          "completion_sha256": "899842e4d843144f19500f3858245f8896f788e92b95886345a75e5eb9922c1c"
+        }
+      ],
+      "reviewer_type": "agent",
+      "auditor": "Codex",
+      "finding": "confirmed_numeric_negative",
+      "reason": "Usa82800g/0.5m³ y etiqueta165600 como kg/m³; falta convertir gramos a kilogramos. Referencia165.6kg/m³, error de factor1000.",
+      "selection": "directed_first_two_numeric_errors_of_first_completed_cell"
+    }
+  ],
+  "limits": "Two directed inspections, one physical task. Not human review or a random estimate of all negatives."
+}

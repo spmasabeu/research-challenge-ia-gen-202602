@@ -1,0 +1,20 @@
+{
+  "eval-curves": {
+    "path": "data/units/project-e2/config/eval-curves.jsonl",
+    "sha256": "c61b09b025861e376bb7f5f453bf67b9bf45c9c542639386f1f93baa75ccd4bb",
+    "parent_split": "eval",
+    "parent_sha256": "8f5a1251c7aa13c86661934202fc4255dd5e8aa6ce3df93eddaa67846a4cf08f",
+    "tasks": 36,
+    "physical_groups": 12,
+    "seed": 7304
+  },
+  "teacher-pilot": {
+    "path": "data/units/project-e2/config/teacher-pilot.jsonl",
+    "sha256": "8528acb47e680d344a5092db1d1654cd74bceee72da96f493eb5d6a6794bb7b6",
+    "parent_split": "train",
+    "parent_sha256": "9014ad83b0abf6767201b0590ab19292bd1ddeea4e53fea3e0e441850ce99aeb",
+    "tasks": 36,
+    "physical_groups": 12,
+    "seed": 7304
+  }
+}

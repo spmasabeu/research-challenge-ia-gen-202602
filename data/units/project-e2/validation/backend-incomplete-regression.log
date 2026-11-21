@@ -1,0 +1,12 @@
+Command: [".venv/bin/python", "-m", "unittest", "discover", "-s", "tests", "-p", "test_challenge.py", "-k", "backend_incomplete", "-v"]
+1a585df3e4c87c24268c-easy 0 None None 0.0
+1a585df3e4c87c24268c-easy 1 None None 0.0
+1a585df3e4c87c24268c-easy 2 None None 0.0
+test_backend_incomplete_and_memory_error_preserve_attempts (test_challenge.ChallengeTests.test_backend_incomplete_and_memory_error_preserve_attempts) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.011s
+
+OK
+
+exit_code=0

@@ -1,0 +1,2 @@
+run,method,pilot,steps,changed_tensors,phase_train_seconds,prior_train_seconds,cumulative_train_seconds,peak_allocated_bytes,termination,cumulative_train_tokens
+grpo,grpo,False,40,112,1297.766086093001,0.0,1297.766086093001,2792026624,time_budget,58408

@@ -16,6 +16,7 @@ from challenge.generator import dump, generate, split_groups
 from challenge.harness import check_dataset, compare_local, freeze
 from challenge.models import OPTIONS, read_rows, run, sha256, validate_rows
 from challenge.verifier import (
+    UNITS,
     extract_answer,
     load_tasks,
     reference_from_prompt,
@@ -62,23 +63,23 @@ class ChallengeTests(unittest.TestCase):
                     self.assertEqual(sum(t["structure"] == "sum" for t in cell), len(cell) // 2, name)
 
     def test_equivalences_and_tolerance(self):
-        task = {"family": "speed", "answer_si": 22}
-        for answer in ('22 m/s', '79,2 km/h', 'FINAL: 2.2e1 m/s', '22 × 10^0 m/s',
-                       '```json\n{"value": "79,2", "unit": "km/h"}\n```',
-                       '22 m/s\n79.2 km/h', '{"value":22,"unit":"m/s"}\n{"value":79.2,"unit":"km/h"}'):
+        task = {"family": "speed", "answer_si": 22, "requested_unit": "m/s"}
+        for answer in ('22 m/s', 'FINAL: 2.2e1 m/s', '22 × 10^0 m/s',
+                       '```json\n{"value": "22,0", "unit": "m/s"}\n```',
+                       '79.2 km/h\n22 m/s', '{"value":79.2,"unit":"km/h"}\n{"value":22,"unit":"m/s"}'):
             self.assertEqual(verify(task, answer)["reward"], 1, answer)
         self.assertEqual(verify(task, '22.21 m/s')["status"], "correct")
         self.assertEqual(verify(task, '22.23 m/s')["status"], "numeric")
         self.assertEqual(verify(task, '22 J')["status"], "unit")
         self.assertEqual(verify(task, '22 kWh')["status"], "unparsed")
         self.assertEqual(verify(task, 'Valor final = 22 m/s')["status"], "correct")
-        self.assertEqual(verify({"family": "luminosity", "answer_si": 1}, '{"value":1,"unit":"Watts"}')["status"], "correct")
+        self.assertEqual(verify({"family": "luminosity", "answer_si": 1, "requested_unit": "W"}, '{"value":1,"unit":"Watts"}')["status"], "correct")
         self.assertEqual(verify(task, r'3. El resultado es $ \boxed{22} $ m/s.')["status"], "correct")
         self.assertEqual(verify(task, '3. El resultado es aproximadamente 22 m/s.\n{"value":22,"unit":"m/s"}')["status"], "correct")
-        self.assertEqual(verify({"family": "energy", "answer_si": 9}, r'4. Resultado: $ E \approx 9 \, \text{J} $.' + '\n{"value":9,"unit":"J"}')["status"], "correct")
+        self.assertEqual(verify({"family": "energy", "answer_si": 9, "requested_unit": "J"}, r'4. Resultado: $ E \approx 9 \, \text{J} $.' + '\n{"value":9,"unit":"J"}')["status"], "correct")
         for family, answer, reference in (("energy", '0.009 kJ', 9), ("energy", '9e7 erg', 9),
                                           ("luminosity", '1 kW', 1000), ("luminosity", '1 Lsun', 3.828e26)):
-            self.assertEqual(verify({"family": family, "answer_si": reference}, answer)["reward"], 1)
+            self.assertEqual(verify({"family": family, "answer_si": reference, "requested_unit": answer.split()[-1]}, answer)["reward"], 1)
 
     def test_attacks_and_ambiguity(self):
         for text in ('22 m/s\n0 m/s', 'FINAL: 22 m/s\nFINAL: 0 m/s',
@@ -102,8 +103,8 @@ class ChallengeTests(unittest.TestCase):
                      'Valor final = 0 m/s\n{"value":22,"unit":"m/s"}',
                      '{"value":22,"unit":"m/s"}\n0 m/s'):
             self.assertIsNone(extract_answer(text), text)
-        self.assertEqual(verify({"family": "speed", "answer_si": 22}, 'Desarrollo: 22 m/s\nFINAL: 0 m/s')["status"], "numeric")
-        json.dumps(verify({"family": "luminosity", "answer_si": 1}, '1e308 kW'), allow_nan=False)
+        self.assertEqual(verify({"family": "speed", "answer_si": 22, "requested_unit": "m/s"}, 'Desarrollo: 22 m/s\nFINAL: 0 m/s')["status"], "numeric")
+        json.dumps(verify({"family": "luminosity", "answer_si": 1, "requested_unit": "W"}, '1e308 kW'), allow_nan=False)
         with self.assertRaises(ValueError):
             reference_from_prompt('Datos: d=110 s; t=5 m', 'speed')
 
@@ -138,6 +139,8 @@ class ChallengeTests(unittest.TestCase):
             root = Path(folder)
             tasks = generate(4300, 1)[:1]
             dump(root / "tasks.jsonl", tasks)
+            run(root / "tasks.jsonl", root / "run", "fixture", 3, max_new_responses=1)
+            self.assertEqual(len(read_rows(root / "run/responses.jsonl")), 1)
             run(root / "tasks.jsonl", root / "run", "fixture", 3)
             saved = (root / "run/responses.jsonl").read_bytes()
             run(root / "tasks.jsonl", root / "run", "fixture", 3)
@@ -206,9 +209,10 @@ class ChallengeTests(unittest.TestCase):
             (teacher / "metadata.json").write_text(json.dumps({"config": config}))
             rows = []
             for task in tasks:
-                value = task["answer_si"]
-                texts = [f'Pasos fixture {i}.\n{value} m/s' for i in range(3)]
-                texts += [f'{value * 1.5} m/s', f'{value * 1.5}  m/s', f'{value * 2} m/s', 'sin resultado', 'sin  resultado']
+                unit = task["requested_unit"]
+                value = task["answer_si"] / UNITS[unit][1]
+                texts = [f'Pasos fixture {i}.\n{value} {unit}' for i in range(3)]
+                texts += [f'{value * 1.5} {unit}', f'{value * 1.5}  {unit}', f'{value * 2} {unit}', 'sin resultado', 'sin  resultado']
                 for index, text in enumerate(texts):
                     rows.append({"model": "qwen3:8b", "task_id": task["id"], "prompt": task["prompt"], "sample_index": index,
                                  "request": {"model": "qwen3:8b", "messages": [{"role": "user", "content": task["prompt"]}], "think": False, "options": {**OPTIONS, "seed": 42 + index}},
@@ -222,6 +226,20 @@ class ChallengeTests(unittest.TestCase):
             dump(audit_path, audits)
             sft, dpo, stats = build(dataset, teacher, [audit_path])
             self.assertEqual((len(sft), len(dpo)), (12, 8))
+            subset_path = root / "teacher-subset.jsonl"
+            dump(subset_path, tasks)
+            self.assertEqual(build(dataset, teacher, [audit_path], teacher_tasks=subset_path)[:2], (sft, dpo))
+            original_train = (dataset / "private/train.jsonl").read_text()
+            (dataset / "private/train.jsonl").write_text(json.dumps(tasks[0]) + "\n")
+            with self.assertRaisesRegex(ValueError, "profesor fuera de train"):
+                build(dataset, teacher, [audit_path], teacher_tasks=subset_path)
+            (dataset / "private/train.jsonl").write_text(original_train)
+            protocol_path = dataset / "protocol.json"
+            old_protocol = protocol_path.read_text()
+            protocol_path.write_text(json.dumps({**json.loads(old_protocol), "project_prompt": True}))
+            with self.assertRaisesRegex(ValueError, "tipo de revisor"):
+                build(dataset, teacher, [audit_path])
+            protocol_path.write_text(old_protocol)
             self.assertEqual(stats["teacher_unique_responses"], 24)
             self.assertEqual(stats["dpo_max_pairs_per_task"], 2)
             self.assertEqual(stats["dpo_reused_chosen"], 0)

@@ -51,9 +51,11 @@ def validate_rows(tasks, rows, model, samples, complete=True):
     return seen
 
 
-def run(tasks_path, output, model, samples, max_tokens=1024):
+def run(tasks_path, output, model, samples, max_tokens=1024, max_new_responses=None):
     if samples < 1 or max_tokens < 1:
         raise ValueError("muestras y límite deben ser positivos")
+    if max_new_responses is not None and max_new_responses < 1:
+        raise ValueError("lote debe ser positivo")
     output.mkdir(parents=True, exist_ok=True)
     tasks = read_rows(tasks_path)
     if not tasks or len({t["id"] for t in tasks}) != len(tasks) or len({t["prompt"] for t in tasks}) != len(tasks):
@@ -92,6 +94,7 @@ def run(tasks_path, output, model, samples, max_tokens=1024):
             if row["request"]["options"] != {**options, "seed": 42 + row["sample_index"]} or row["request"]["think"] is not False:
                 raise ValueError("parámetros históricos inconsistentes")
         with path.open("a", encoding="utf-8") as stream:
+            generated = 0
             for task in tasks:
                 for index in range(samples):
                     if (task["id"], index) in seen:
@@ -113,5 +116,9 @@ def run(tasks_path, output, model, samples, max_tokens=1024):
                     os.fsync(stream.fileno())
                     validate_rows([task], [row], model, samples, complete=False)
                     print(task["id"], index, result.get("eval_count"), result.get("done_reason"), round(row["seconds"], 2), flush=True)
+                    generated += 1
+                    if max_new_responses is not None and generated >= max_new_responses:
+                        api("generate", {"model": model, "keep_alive": 0})
+                        return
         api("generate", {"model": model, "keep_alive": 0})
     validate_rows(tasks, read_rows(path), model, samples)

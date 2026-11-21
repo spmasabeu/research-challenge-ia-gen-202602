@@ -1,0 +1,12 @@
+{
+  "event": "runner process ended with exit143 during GRPO final evaluation",
+  "known_cause": "SIGTERM; issuing source not determined",
+  "preserved_responses": 928,
+  "recovery": "same run_e2 --stage grpo; row identity and model protocol validation on resume; no retraining or historical changes",
+  "queue": "validation/resume-queue.py",
+  "pending": [
+    "remaining evaluation",
+    "teacher pilot",
+    "GPU token-accounting and GRPO resume proof"
+  ]
+}

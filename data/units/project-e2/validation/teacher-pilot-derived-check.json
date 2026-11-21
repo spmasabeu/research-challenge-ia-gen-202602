@@ -1,0 +1,8 @@
+{
+  "command": "PYTHONPATH=src .venv/bin/python -m challenge.harness check-derived --dataset data/units/project-e2/dataset --teacher data/units/project-e2/runs/teacher-pilot --teacher-tasks data/units/project-e2/config/teacher-pilot.jsonl --audits data/units/project-e2/audits/teacher-pilot-agent.jsonl --out data/units/project-e2/analysis/teacher-pilot-derived",
+  "exit_code": 0,
+  "sft": 111,
+  "dpo": 16,
+  "manifest_sha256": "506fcf3f737fb5865d71b6667e46dfbf5182973722eb2d0fac6041d16e8dfed6",
+  "scope": "pilot only, not I5 expanded production completion"
+}

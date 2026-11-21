@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-11-18T15:29:08.541952+00:00",
+  "actor": "user",
+  "user_message": "ya lo cambie a performance",
+  "profile": "performance",
+  "platform_profile": "performance",
+  "cpu0": {
+    "scaling_cur_freq": "400000",
+    "energy_performance_preference": "performance"
+  },
+  "completed_rows_at_observation": 288,
+  "completed_batches_at_observation": 36,
+  "cumulative_generation_seconds_at_observation": 1249.933836186,
+  "limits": "Exact switch instant unknown; in-flight batch may straddle switch. Compare later batches separately. Keep measured costs from both regimes; do not rewrite or normalize earlier timings."
+}

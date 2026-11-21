@@ -1,0 +1,8 @@
+{
+  "evaluation": "data/units/project-e2/runs/sft-final-eval",
+  "tasks_sha256": "8f5a1251c7aa13c86661934202fc4255dd5e8aa6ce3df93eddaa67846a4cf08f",
+  "config_sha256": "4135f23b2c807ce42b63e36053dfb235493e77bc958c59d047f2295153395978",
+  "adapter": "data/units/project-e2/runs/sft/final",
+  "cumulative_train_seconds": 1201.811328791,
+  "step": 377
+}

@@ -1,0 +1,37 @@
+{
+  "complete_supplemental_tasks": 275,
+  "responses": 825,
+  "cells": {
+    "pressure/easy": {
+      "supplemental_tasks": 100,
+      "supplemental_statuses": {
+        "correct": 244,
+        "numeric": 50,
+        "unparsed": 6
+      },
+      "dpo_pairs_with_teacher": 40,
+      "dpo_tasks_with_teacher": 27
+    },
+    "pressure/medium": {
+      "supplemental_tasks": 98,
+      "supplemental_statuses": {
+        "numeric": 39,
+        "correct": 251,
+        "unparsed": 4
+      },
+      "dpo_pairs_with_teacher": 34,
+      "dpo_tasks_with_teacher": 20
+    },
+    "pressure/hard": {
+      "supplemental_tasks": 77,
+      "supplemental_statuses": {
+        "correct": 141,
+        "numeric": 90
+      },
+      "dpo_pairs_with_teacher": 102,
+      "dpo_tasks_with_teacher": 66
+    }
+  },
+  "limits": "Completed pressure family only; final build/check-derived remains required. Error scarcity does not justify artificial corruptions or duplicates.",
+  "teacher_derived_stats_sha256": "092a31e2e37ad3d4c90da5cf0d4ecced7cb7737a7574285c1b2c7980f8a8fae8"
+}

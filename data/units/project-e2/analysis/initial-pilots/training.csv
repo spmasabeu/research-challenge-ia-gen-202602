@@ -1,0 +1,3 @@
+run,method,pilot,steps,changed_tensors,phase_train_seconds,prior_train_seconds,cumulative_train_seconds,peak_allocated_bytes,termination
+smoke-grpo-v2,grpo,True,3,0,86.28394352000032,0.0,86.28394352000032,2540222976,max_steps
+smoke-sft-v1,sft,True,3,112,10.628181395000865,0.0,10.628181395000865,2132400128,max_steps

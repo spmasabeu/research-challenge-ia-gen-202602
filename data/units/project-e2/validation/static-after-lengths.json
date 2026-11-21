@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-18T17:41:24.622883+00:00",
+  "tests": 42,
+  "tests_log": "tests-after-lengths.log",
+  "ruff": "passed",
+  "mypy": "passed",
+  "bandit": {
+    "medium": 0,
+    "high": 0,
+    "low": 3
+  },
+  "source_sha256": "8e505d62db8748c1bdbe5a591c7d23afdc4cd78f755c2b2184116223727a7982",
+  "real_data_assertions": [
+    {
+      "route": "control",
+      "responses": 1080,
+      "tokens_mean": "155.3675925925926",
+      "chars_mean": "295.4324074074074",
+      "seconds": "3007.1285408130134"
+    },
+    {
+      "route": "grpo-final-eval",
+      "responses": 1080,
+      "tokens_mean": "154.65740740740742",
+      "chars_mean": "293.76574074074074",
+      "seconds": "5099.603057776996"
+    },
+    {
+      "route": "sft-final-curves",
+      "responses": 36,
+      "tokens_mean": "149.88888888888889",
+      "chars_mean": "297.5",
+      "seconds": "102.271991960999"
+    }
+  ],
+  "scope": "Length/token/time aggregates independently reconciled with raw responses; partial report explicitly incomplete, final comparison pending."
+}

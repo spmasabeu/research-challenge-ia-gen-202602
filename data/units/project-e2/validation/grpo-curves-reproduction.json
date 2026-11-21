@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "artifacts": {
+    "training.csv": "b111b7009cd70a0dab263087989bc34286bd557d4e187f4340af5cd65590a395",
+    "report-source.py": "07a9e65491f80a3fed938c00a0200c9094bbd03ae86d10bf2cd8db851bbecd03",
+    "training-curves.png": "2dae0587db8371356ebdbfa6bd4a7fd68793c0dccb0a75fcec7bda459bb87125",
+    "evaluation.csv": "d2d85dde2bc1dfb6f9459ade7b9d3cf1a55ccedf238ec4e03592c9c224d71583",
+    "validation-vs-tokens.png": "0ac1ec843850c89d4f79a3b2ca715c268977e2a7308def84a49fad32568408c2",
+    "validation-vs-compute.png": "165bfd62f305c7e0a3b4cc405db7b578584cae5f01d91610928bf36b75311372",
+    "errors-by-family-level.png": "bc666b55b9690eb1ed7a30ad8d617eb1de258ee7ee1037dcf96f0a9a9757be7a",
+    "paired-uncertainty.json": "db532abf807b29993ce6798ab40b36804bde52641eac63c2ae745d0c2a12f375",
+    "evaluation-errors.png": "230d27e91ea378d620f15874a5bdeba52399c72de729a6928354559b3bc402d3",
+    "validation-points.json": "b864dca2f16244a95c8acaf8445c62a71f6f50668599ca10e348bfce5ab260b2",
+    "checkpoints.json": "910f443f007ce48a803b1679c6a7dfbf6dd0066be309aff85afb617bfb8960e5",
+    "manifest.json": "420f6dbd28c563fbcb6557a9f3ed4813ad598642b71744899dec29039cd0e28d"
+  },
+  "method": "regenerate offline from saved inputs; byte-identical files including plots and manifest"
+}

@@ -1,0 +1,11 @@
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/grpo-checkpoint-13-eval", "--adapter", "data/units/project-e2/runs/grpo/checkpoint-13"]}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.01s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.36s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.61s/it]
+batch 0 0 8 34.45
+batch 8 0 8 28.38
+batch 16 0 8 26.83
+batch 24 0 8 47.5
+batch 32 0 4 35.13
+{"tasks": 36, "responses": 36, "n": 1, "statuses": {"unparsed": 1, "correct": 21, "numeric": 14}, "coverage": 0.9722222222222222, "pass_at_k": {"1": 0.5833333333333334}, "equivalent_si_rate": 0.5833333333333334, "requested_unit_rate": 0.9722222222222222, "pass_at_k_upper_bound": {"1": 0.6111111111111112}, "backend_incomplete": 0, "truncated": 0}
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/grpo-checkpoint-13-eval", "--adapter", "data/units/project-e2/runs/grpo/checkpoint-13"]}
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/grpo-checkpoint-13-eval", "--adapter", "data/units/project-e2/runs/grpo/checkpoint-13"]}
+{"command": ["-m", "challenge.evaluate_hf", "--tasks", "data/units/project-e2/config/eval-curves.jsonl", "--config", "data/units/project-e2/config/curve-evaluation.json", "--out", "data/units/project-e2/runs/grpo-checkpoint-13-eval", "--adapter", "data/units/project-e2/runs/grpo/checkpoint-13"]}

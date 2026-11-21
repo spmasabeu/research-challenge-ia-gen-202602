@@ -1,0 +1,69 @@
+{
+  "snapshot_rows": 3162,
+  "snapshot_bytes": 7881280,
+  "snapshot_sha256": "cec74d416eb8ae8af86dc131d37fb740dcb4a530777ea314c1fb8462d4bdc8d4",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "incomplete_responses": [
+    {
+      "task_id": "b0d43e431bde4d190270-medium",
+      "sample_index": 3,
+      "seconds": 5.594101996999598,
+      "done": false,
+      "eval_count": null,
+      "label": {
+        "task_id": "b0d43e431bde4d190270-medium",
+        "sample_index": 3,
+        "family": "luminosity",
+        "level": "medium",
+        "structure": "sum",
+        "status": "unparsed",
+        "reward": 0.0,
+        "reason": "backend sin done:true",
+        "backend_incomplete": true,
+        "truncated": false
+      },
+      "completion_sha256": "774b4081541c9011f7e7f2da3fb8fd1cc22e322a0ae76c7969f7fefa2c635dd0"
+    },
+    {
+      "task_id": "b6ab7d1085107be49e4c-medium",
+      "sample_index": 2,
+      "seconds": 5.40172829400035,
+      "done": false,
+      "eval_count": null,
+      "label": {
+        "task_id": "b6ab7d1085107be49e4c-medium",
+        "sample_index": 2,
+        "family": "luminosity",
+        "level": "medium",
+        "structure": "sum",
+        "status": "unparsed",
+        "reward": 0.0,
+        "reason": "backend sin done:true",
+        "backend_incomplete": true,
+        "truncated": false
+      },
+      "completion_sha256": "4016bf5466419c2e3059bd9f2017d88447331393d95e77d5250ef96a388c1cf3"
+    },
+    {
+      "task_id": "d65ed51050d920a22479-medium",
+      "sample_index": 2,
+      "seconds": 5.432019814999876,
+      "done": false,
+      "eval_count": null,
+      "label": {
+        "task_id": "d65ed51050d920a22479-medium",
+        "sample_index": 2,
+        "family": "luminosity",
+        "level": "medium",
+        "structure": "sum",
+        "status": "unparsed",
+        "reward": 0.0,
+        "reason": "backend sin done:true",
+        "backend_incomplete": true,
+        "truncated": false
+      },
+      "completion_sha256": "8fcbe9409c25af2421f2d485a23e51306f7515bda36af8de35d7755959147723"
+    }
+  ],
+  "policy": "Preserve raw responses; existing summarize marks done:false as unparsed/reward0; excluded from both SFT and DPO. Request seconds measured; output token counts unknown, not zero. No replacement or retry changes these rows. This is a prefix diagnostic, not final totals."
+}

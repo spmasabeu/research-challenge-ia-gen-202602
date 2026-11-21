@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-11-18T15:09:39.785314+00:00",
+  "sft_target": 4000,
+  "sft_actual": 3362,
+  "shortfall": 638,
+  "unique_tasks": 1123,
+  "physical_problems": 443,
+  "sft_by_family": {
+    "density": 1076,
+    "energy": 154,
+    "luminosity": 96,
+    "pressure": 910,
+    "speed": 702,
+    "voltage": 424
+  },
+  "sft_by_structure": {
+    "direct": 1682,
+    "sum": 1680
+  },
+  "reviewed_retained": 1678,
+  "not_individually_reviewed_retained": 1684,
+  "agent_reviews": 3032,
+  "agent_rejections": 1354,
+  "human_reviews": 0,
+  "sft_task_coverage_exceptions": {
+    "energy/hard": 12,
+    "luminosity/hard": 2,
+    "luminosity/medium": 19
+  },
+  "decision": "Use all3362 unique eligible traces from full1800train×4 production. Do not duplicate, relax audit criteria, add oracle traces, or use eval/test. Target4000 is indicative; full declared generation and quality gate are complete.",
+  "evidence": "6788unique responses,4716programmatic positives,1354agent rejections leave3362. Full generation measured13.72h. Cell-specific low-yield costs and exceptions recorded in low-coverage-decision-v1.json.",
+  "impact": "Corpus is strongly imbalanced toward density, pressure and speed; energy/luminosity remain sparse. Compare validation by cell and do not attribute improvement to all families or claim controlled curriculum. Unsampled traces in defect-free cells are eligible under declared sampling, not individually certified.",
+  "dpo": "330teacher pairs provisional;2844supplemental responses running. Final DPO counts/exceptions must be recorded before reportable training.",
+  "source_stats_sha256": "092a31e2e37ad3d4c90da5cf0d4ecced7cb7737a7574285c1b2c7980f8a8fae8",
+  "source_sft_sha256": "012b7a40c8703108722d93d7473afe59b3938ea0733a5e49041f8188d6dd2af8",
+  "source_coverage_decision_sha256": "895a1de64afb114cea974a22854f703beef0a2b178edb58e860adc1a2397d696"
+}

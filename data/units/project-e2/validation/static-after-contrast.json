@@ -1,0 +1,35 @@
+{
+  "versions": {
+    "ruff": "ruff 0.17.5",
+    "mypy": "mypy 2.4.1 (compiled: yes)",
+    "bandit": "bandit 1.9.4\n  python version = 3.12.13 (main, May  8 2026, 18:32:55) [Clang 22.1.3 ]"
+  },
+  "ruff": {
+    "command": "uvx ruff check scripts/report_training.py tests/test_training.py",
+    "exit_code": 0,
+    "result": "All checks passed!"
+  },
+  "mypy": {
+    "command": "uvx mypy --ignore-missing-imports scripts/report_training.py",
+    "exit_code": 0,
+    "result": "Success: no issues found in1source file"
+  },
+  "bandit": {
+    "command": "uvx bandit scripts/report_training.py -ll",
+    "exit_code": 0,
+    "low": 2,
+    "medium": 0,
+    "high": 0
+  },
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "passed": 41,
+    "log": "tests-after-contrast.log"
+  },
+  "source_hashes": {
+    "scripts/report_training.py": "b50fa4a4542171f134116d1cc604a021e526a7391ae574beafc8fd97f217cb0e",
+    "tests/test_training.py": "51599b52b12d2a52b3e030ea1be1e1dd066901cbf427423fe5d473087ab2ab42"
+  },
+  "scope": "Only report contrast and its CPU regression changed; model training/evaluation code, data and historical outputs unchanged. Linters run in isolated uvx environments."
+}

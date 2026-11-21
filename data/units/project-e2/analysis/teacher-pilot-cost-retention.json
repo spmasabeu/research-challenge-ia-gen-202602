@@ -1,0 +1,217 @@
+{
+  "views": {
+    "4": {
+      "responses": 144,
+      "unique": 135,
+      "sft_after_known_audits": 74,
+      "dpo_possible": 11,
+      "sft_tasks": 28,
+      "seconds": 951.5555581780063,
+      "projected_hours_1800": 13.216049419138976,
+      "projected_sft_1800": 3699.9999999999995,
+      "projected_dpo_1800": 550.0,
+      "cells": {
+        "density/easy": {
+          "sft": 8,
+          "sft_tasks": 2,
+          "mean_seconds": 6.774022502000207
+        },
+        "density/hard": {
+          "sft": 3,
+          "sft_tasks": 1,
+          "mean_seconds": 6.1355219127503915
+        },
+        "density/medium": {
+          "sft": 8,
+          "sft_tasks": 2,
+          "mean_seconds": 5.5862505438749395
+        },
+        "energy/easy": {
+          "sft": 4,
+          "sft_tasks": 2,
+          "mean_seconds": 8.420600929250213
+        },
+        "energy/hard": {
+          "sft": 1,
+          "sft_tasks": 1,
+          "mean_seconds": 6.166534622000654
+        },
+        "energy/medium": {
+          "sft": 4,
+          "sft_tasks": 2,
+          "mean_seconds": 7.6334124242494
+        },
+        "luminosity/easy": {
+          "sft": 0,
+          "sft_tasks": 0,
+          "mean_seconds": 7.568678490750244
+        },
+        "luminosity/hard": {
+          "sft": 0,
+          "sft_tasks": 0,
+          "mean_seconds": 8.275089382124861
+        },
+        "luminosity/medium": {
+          "sft": 0,
+          "sft_tasks": 0,
+          "mean_seconds": 7.724454831750336
+        },
+        "pressure/easy": {
+          "sft": 5,
+          "sft_tasks": 2,
+          "mean_seconds": 5.328013165124048
+        },
+        "pressure/hard": {
+          "sft": 5,
+          "sft_tasks": 2,
+          "mean_seconds": 6.945668917625426
+        },
+        "pressure/medium": {
+          "sft": 7,
+          "sft_tasks": 2,
+          "mean_seconds": 6.480223634124741
+        },
+        "speed/easy": {
+          "sft": 5,
+          "sft_tasks": 2,
+          "mean_seconds": 4.499297860250863
+        },
+        "speed/hard": {
+          "sft": 5,
+          "sft_tasks": 2,
+          "mean_seconds": 6.815102212000511
+        },
+        "speed/medium": {
+          "sft": 7,
+          "sft_tasks": 2,
+          "mean_seconds": 5.262927833874528
+        },
+        "voltage/easy": {
+          "sft": 2,
+          "sft_tasks": 2,
+          "mean_seconds": 5.9739275512492895
+        },
+        "voltage/hard": {
+          "sft": 4,
+          "sft_tasks": 2,
+          "mean_seconds": 7.254203117749967
+        },
+        "voltage/medium": {
+          "sft": 6,
+          "sft_tasks": 2,
+          "mean_seconds": 6.100514841500171
+        }
+      }
+    },
+    "6": {
+      "responses": 216,
+      "unique": 196,
+      "sft_after_known_audits": 111,
+      "dpo_possible": 16,
+      "sft_tasks": 30,
+      "seconds": 1413.1383195830167,
+      "projected_hours_1800": 19.626921105319678,
+      "projected_sft_1800": 5550.0,
+      "projected_dpo_1800": 800.0,
+      "cells": {
+        "density/easy": {
+          "sft": 11,
+          "sft_tasks": 2,
+          "mean_seconds": 6.407493039750382
+        },
+        "density/hard": {
+          "sft": 6,
+          "sft_tasks": 2,
+          "mean_seconds": 6.164837035667006
+        },
+        "density/medium": {
+          "sft": 10,
+          "sft_tasks": 2,
+          "mean_seconds": 5.575322515333634
+        },
+        "energy/easy": {
+          "sft": 5,
+          "sft_tasks": 2,
+          "mean_seconds": 8.059618251167194
+        },
+        "energy/hard": {
+          "sft": 2,
+          "sft_tasks": 2,
+          "mean_seconds": 6.162433904083628
+        },
+        "energy/medium": {
+          "sft": 7,
+          "sft_tasks": 2,
+          "mean_seconds": 7.585003656249985
+        },
+        "luminosity/easy": {
+          "sft": 0,
+          "sft_tasks": 0,
+          "mean_seconds": 7.4494713659169065
+        },
+        "luminosity/hard": {
+          "sft": 0,
+          "sft_tasks": 0,
+          "mean_seconds": 7.834805320167106
+        },
+        "luminosity/medium": {
+          "sft": 0,
+          "sft_tasks": 0,
+          "mean_seconds": 7.994643936666459
+        },
+        "pressure/easy": {
+          "sft": 9,
+          "sft_tasks": 2,
+          "mean_seconds": 5.280727629665914
+        },
+        "pressure/hard": {
+          "sft": 7,
+          "sft_tasks": 2,
+          "mean_seconds": 6.8684531154170445
+        },
+        "pressure/medium": {
+          "sft": 11,
+          "sft_tasks": 2,
+          "mean_seconds": 6.373921936750169
+        },
+        "speed/easy": {
+          "sft": 7,
+          "sft_tasks": 2,
+          "mean_seconds": 4.407110344500325
+        },
+        "speed/hard": {
+          "sft": 7,
+          "sft_tasks": 2,
+          "mean_seconds": 6.733565393583679
+        },
+        "speed/medium": {
+          "sft": 10,
+          "sft_tasks": 2,
+          "mean_seconds": 5.171132424416403
+        },
+        "voltage/easy": {
+          "sft": 3,
+          "sft_tasks": 2,
+          "mean_seconds": 6.148438122416034
+        },
+        "voltage/hard": {
+          "sft": 7,
+          "sft_tasks": 2,
+          "mean_seconds": 7.391424498916422
+        },
+        "voltage/medium": {
+          "sft": 9,
+          "sft_tasks": 2,
+          "mean_seconds": 6.153124141249767
+        }
+      }
+    }
+  },
+  "source_hashes": {
+    "data/units/project-e2/config/teacher-pilot.jsonl": "8528acb47e680d344a5092db1d1654cd74bceee72da96f493eb5d6a6794bb7b6",
+    "data/units/project-e2/runs/teacher-pilot/responses.jsonl": "a69dd1ca33a7dd2ff1a313628786f305d00300f447dd5d1aaf7f825e07db9744",
+    "data/units/project-e2/audits/teacher-pilot-agent.jsonl": "821caa067aa3b62ec225dd3a77d0d4bc1a047baac6f662c9f98d9fb651aea458"
+  },
+  "limits": "Only2tasks/cell;4sample view uses first4 actual samples and same inspected judgments, not a new run or completed audit selection for4samples. Extrapolation not guaranteed. No human review. Strict audit rejects arithmetic errors even when final within1%.",
+  "audit_policy": "Keep correct data, formulas, unit conversions, operations and coherent rounding. Reject incorrect stated operations despite1% final tolerance. Sampling5/cell; any defect expands all correct candidates in cell."
+}

@@ -1,0 +1,24 @@
+{
+  "cell": "density/easy",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "correct": 399,
+    "unparsed": 1
+  },
+  "unique": 375,
+  "sft_eligible_after_audit": 374,
+  "sft_tasks": 100,
+  "dpo_teacher_pairs": 0,
+  "audited": 10,
+  "required_random_audits": 5,
+  "rejected": 0,
+  "expanded": false,
+  "request_seconds": 2565.0502852779773,
+  "output_tokens": 53981,
+  "audit_sha256": "60e945bd2742a7edb8fb83ad80f8afa8eabfa1c680f9277b27165a7ff5e0d0d6",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "8e2147e65ce6c60b3cbf3e33f3981dd250e49f7362ec96a82655bb75eb0827cb",
+  "limits": "Agent review:5required random+6directed with1overlap; no human audit. Does not certify every unreviewed trace. No numeric/unit teacher errors, so additional genuine negatives required.",
+  "format_discard": "d2831f2395fc4e6e09fe-easy: correct final JSON but preceding explicit result uses ellipsis61.555... outside conservative quantity grammar; retain unparsed and do not use as DPO negative."
+}

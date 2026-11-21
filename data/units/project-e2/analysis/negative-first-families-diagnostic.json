@@ -1,0 +1,101 @@
+{
+  "complete_supplemental_tasks": 361,
+  "responses": 1083,
+  "cells": {
+    "density/easy": {
+      "supplemental_tasks": 100,
+      "supplemental_statuses": {
+        "unparsed": 9,
+        "correct": 257,
+        "numeric": 34
+      },
+      "supplemental_unique_errors": 34,
+      "dpo_pairs_with_teacher": 32,
+      "dpo_tasks_with_teacher": 22
+    },
+    "density/medium": {
+      "supplemental_tasks": 100,
+      "supplemental_statuses": {
+        "correct": 251,
+        "numeric": 47,
+        "unparsed": 2
+      },
+      "supplemental_unique_errors": 47,
+      "dpo_pairs_with_teacher": 45,
+      "dpo_tasks_with_teacher": 35
+    },
+    "density/hard": {
+      "supplemental_tasks": 87,
+      "supplemental_statuses": {
+        "correct": 98,
+        "numeric": 157,
+        "unparsed": 6
+      },
+      "supplemental_unique_errors": 155,
+      "dpo_pairs_with_teacher": 159,
+      "dpo_tasks_with_teacher": 93
+    },
+    "energy/easy": {
+      "supplemental_tasks": 27,
+      "supplemental_statuses": {
+        "unparsed": 4,
+        "correct": 76,
+        "numeric": 1
+      },
+      "supplemental_unique_errors": 1,
+      "dpo_pairs_with_teacher": 11,
+      "dpo_tasks_with_teacher": 10
+    },
+    "energy/medium": {
+      "supplemental_tasks": 14,
+      "supplemental_statuses": {
+        "correct": 41,
+        "numeric": 1
+      },
+      "supplemental_unique_errors": 1,
+      "dpo_pairs_with_teacher": 18,
+      "dpo_tasks_with_teacher": 13
+    },
+    "energy/hard": {
+      "supplemental_tasks": 7,
+      "supplemental_statuses": {
+        "numeric": 7,
+        "correct": 14
+      },
+      "supplemental_unique_errors": 6,
+      "dpo_pairs_with_teacher": 13,
+      "dpo_tasks_with_teacher": 10
+    },
+    "luminosity/easy": {
+      "supplemental_tasks": 18,
+      "supplemental_statuses": {
+        "numeric": 18,
+        "correct": 35,
+        "unparsed": 1
+      },
+      "supplemental_unique_errors": 18,
+      "dpo_pairs_with_teacher": 34,
+      "dpo_tasks_with_teacher": 21
+    },
+    "luminosity/medium": {
+      "supplemental_tasks": 8,
+      "supplemental_statuses": {
+        "correct": 16,
+        "numeric": 8
+      },
+      "supplemental_unique_errors": 8,
+      "dpo_pairs_with_teacher": 23,
+      "dpo_tasks_with_teacher": 17
+    },
+    "luminosity/hard": {
+      "supplemental_tasks": 0,
+      "supplemental_statuses": {},
+      "supplemental_unique_errors": 0,
+      "dpo_pairs_with_teacher": 2,
+      "dpo_tasks_with_teacher": 2
+    }
+  },
+  "limits": "Three completed families only. Counts apply the same whitespace dedup and min(2,preferred,wrong) rule as derive; final build/check-derived remains required. Luminosity/hard already has both available preferred tasks paired, so no additional prompts were selected.",
+  "teacher_derived_stats_sha256": "092a31e2e37ad3d4c90da5cf0d4ecced7cb7737a7574285c1b2c7980f8a8fae8",
+  "negative_config_sha256": "4135f23b2c807ce42b63e36053dfb235493e77bc958c59d047f2295153395978"
+}

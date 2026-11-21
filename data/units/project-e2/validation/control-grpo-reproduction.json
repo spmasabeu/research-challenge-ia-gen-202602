@@ -1,0 +1,18 @@
+{
+  "identical_artifacts": {
+    "training.csv": true,
+    "report-source.py": true,
+    "training-curves.png": true,
+    "evaluation.csv": true,
+    "validation-vs-tokens.png": true,
+    "validation-vs-compute.png": true,
+    "errors-by-family-level.png": true,
+    "paired-uncertainty.json": true,
+    "grpo-signal-by-cell.json": true,
+    "evaluation-errors.png": true,
+    "validation-points.json": true,
+    "checkpoints.json": true,
+    "manifest.json": true
+  },
+  "visual_inspection": "validation-vs-compute.png and errors-by-family-level.png: axes/legends readable; unsmoothed real points, 0–1 ordinate; fixed36task curve sample documented in README"
+}

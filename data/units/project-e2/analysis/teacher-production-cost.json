@@ -1,0 +1,33 @@
+{
+  "responses": 7200,
+  "request_seconds": 49384.64542907297,
+  "request_hours": 13.71795706363138,
+  "known_output_tokens": 1063102,
+  "missing_output_token_rows": 3,
+  "known_backend_prompt_eval_tokens": 1459643,
+  "missing_prompt_token_rows": 3,
+  "interrupted_request_cost": null,
+  "interrupted_request_cost_limit": "Three RemoteDisconnected attempts have no returned timing/tokens. Sum includes only saved API calls, including3done:false rows. Not total project wall time, energy, FLOPs, or exclusive GPU time.",
+  "prefix_checks": [
+    {
+      "source": "validation/teacher-production-resume-1.json",
+      "rows": 112,
+      "sha256": "22d68a380b82baa0097dff5f0458ddb348aee88883ae4e5bd7d457fbc3972403",
+      "unchanged": true
+    },
+    {
+      "source": "validation/teacher-production-resume-2.json",
+      "rows": 1144,
+      "sha256": "278ffcc3d163b16235870081d566a3bd9b3a3f942836e13660ef924d7dad8bc9",
+      "unchanged": true
+    },
+    {
+      "source": "validation/teacher-production-resume-3.json",
+      "rows": 7083,
+      "sha256": "3542395994a0b5c10f79a1f67e34b048c48f03bc9bf50ca9a00a6e7986b2329c",
+      "unchanged": true
+    }
+  ],
+  "source_responses_sha256": "1d48321aa86b91ebe2cbd873b39ea07c5a884442a1ffe1e6457ce27b610bd8ef",
+  "source_metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2"
+}

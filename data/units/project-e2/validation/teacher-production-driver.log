@@ -1,0 +1,158 @@
+{"command": ["/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python", "-m", "challenge.harness", "run", "--tasks", "data/units/project-e2/config/teacher-production-tasks.jsonl", "--model", "qwen3:8b", "--samples", "4", "--max-tokens", "1024", "--out", "data/units/project-e2/runs/teacher"], "gpu_proof": "gpu-check-v3-gpu.json"}
+025bfdfeacb4584629fb-easy 0 152 stop 10.12
+025bfdfeacb4584629fb-easy 1 130 stop 5.57
+025bfdfeacb4584629fb-easy 2 160 stop 6.83
+025bfdfeacb4584629fb-easy 3 176 stop 7.63
+02a53903653470882340-easy 0 117 stop 5.34
+02a53903653470882340-easy 1 117 stop 5.15
+02a53903653470882340-easy 2 145 stop 6.35
+02a53903653470882340-easy 3 144 stop 6.29
+02df36579a52ff7eb01e-easy 0 113 stop 5.15
+02df36579a52ff7eb01e-easy 1 117 stop 5.14
+02df36579a52ff7eb01e-easy 2 113 stop 4.96
+02df36579a52ff7eb01e-easy 3 117 stop 5.17
+067b3ba6e97d1be2db75-easy 0 132 stop 6.0
+067b3ba6e97d1be2db75-easy 1 149 stop 6.52
+067b3ba6e97d1be2db75-easy 2 132 stop 5.81
+067b3ba6e97d1be2db75-easy 3 121 stop 5.32
+06af1ca27c9e9c0fb5dc-easy 0 133 stop 6.0
+06af1ca27c9e9c0fb5dc-easy 1 137 stop 5.99
+06af1ca27c9e9c0fb5dc-easy 2 130 stop 5.71
+06af1ca27c9e9c0fb5dc-easy 3 119 stop 5.22
+0761a28545c3d0569147-easy 0 135 stop 6.08
+0761a28545c3d0569147-easy 1 130 stop 5.72
+0761a28545c3d0569147-easy 2 135 stop 5.92
+0761a28545c3d0569147-easy 3 156 stop 6.81
+0e69577de90ddc8383fb-easy 0 122 stop 5.53
+0e69577de90ddc8383fb-easy 1 128 stop 5.59
+0e69577de90ddc8383fb-easy 2 132 stop 5.76
+0e69577de90ddc8383fb-easy 3 130 stop 5.69
+1420110e28f4fac3e7c4-easy 0 141 stop 6.34
+1420110e28f4fac3e7c4-easy 1 137 stop 6.02
+1420110e28f4fac3e7c4-easy 2 139 stop 6.08
+1420110e28f4fac3e7c4-easy 3 129 stop 5.65
+1458e955a475c936fe23-easy 0 126 stop 5.72
+1458e955a475c936fe23-easy 1 119 stop 5.23
+1458e955a475c936fe23-easy 2 154 stop 6.73
+1458e955a475c936fe23-easy 3 142 stop 6.2
+1933a68fe2ca76203eb5-easy 0 117 stop 5.33
+1933a68fe2ca76203eb5-easy 1 138 stop 6.05
+1933a68fe2ca76203eb5-easy 2 124 stop 5.44
+1933a68fe2ca76203eb5-easy 3 135 stop 5.91
+19e79274e9c54e11518c-easy 0 134 stop 6.03
+19e79274e9c54e11518c-easy 1 133 stop 5.81
+19e79274e9c54e11518c-easy 2 129 stop 5.65
+19e79274e9c54e11518c-easy 3 130 stop 5.69
+1a66343a5e9a5c31ea65-easy 0 159 stop 7.13
+1a66343a5e9a5c31ea65-easy 1 119 stop 5.27
+1a66343a5e9a5c31ea65-easy 2 115 stop 5.09
+1a66343a5e9a5c31ea65-easy 3 115 stop 5.06
+1a7a654f23604ebe334a-easy 0 129 stop 5.83
+1a7a654f23604ebe334a-easy 1 130 stop 5.7
+1a7a654f23604ebe334a-easy 2 111 stop 4.88
+1a7a654f23604ebe334a-easy 3 115 stop 5.05
+1eb687b19195bf001e62-easy 0 127 stop 5.75
+1eb687b19195bf001e62-easy 1 135 stop 5.91
+1eb687b19195bf001e62-easy 2 139 stop 6.08
+1eb687b19195bf001e62-easy 3 141 stop 6.17
+24c807f99fdaa3a99814-easy 0 141 stop 6.37
+24c807f99fdaa3a99814-easy 1 134 stop 5.89
+24c807f99fdaa3a99814-easy 2 139 stop 6.08
+24c807f99fdaa3a99814-easy 3 141 stop 6.19
+261dd855e7b8b623f12a-easy 0 125 stop 5.73
+261dd855e7b8b623f12a-easy 1 143 stop 6.26
+261dd855e7b8b623f12a-easy 2 133 stop 5.84
+261dd855e7b8b623f12a-easy 3 143 stop 6.28
+263f5f6384373469ef61-easy 0 125 stop 5.71
+263f5f6384373469ef61-easy 1 131 stop 5.73
+263f5f6384373469ef61-easy 2 135 stop 5.9
+263f5f6384373469ef61-easy 3 131 stop 5.75
+2a50c7d3645a273e06f5-easy 0 111 stop 5.05
+2a50c7d3645a273e06f5-easy 1 135 stop 5.94
+2a50c7d3645a273e06f5-easy 2 111 stop 4.88
+2a50c7d3645a273e06f5-easy 3 135 stop 5.89
+2c5e2a52612e6b0f9b7f-easy 0 159 stop 7.12
+2c5e2a52612e6b0f9b7f-easy 1 127 stop 5.57
+2c5e2a52612e6b0f9b7f-easy 2 131 stop 5.73
+2c5e2a52612e6b0f9b7f-easy 3 134 stop 5.87
+31a6621e2b7f8451c551-easy 0 140 stop 6.33
+31a6621e2b7f8451c551-easy 1 160 stop 6.98
+31a6621e2b7f8451c551-easy 2 137 stop 6.0
+31a6621e2b7f8451c551-easy 3 131 stop 5.79
+3501e35c05b278d144cf-easy 0 117 stop 5.34
+3501e35c05b278d144cf-easy 1 152 stop 6.67
+3501e35c05b278d144cf-easy 2 150 stop 6.55
+3501e35c05b278d144cf-easy 3 150 stop 6.54
+387e224ac131f80e3493-easy 0 158 stop 7.08
+387e224ac131f80e3493-easy 1 155 stop 6.76
+387e224ac131f80e3493-easy 2 154 stop 6.7
+387e224ac131f80e3493-easy 3 155 stop 6.76
+389b6f328bb8fcb3a2eb-easy 0 152 stop 6.8
+389b6f328bb8fcb3a2eb-easy 1 147 stop 6.42
+389b6f328bb8fcb3a2eb-easy 2 146 stop 6.37
+389b6f328bb8fcb3a2eb-easy 3 147 stop 6.44
+3b03a0e63b86aedd7ecd-easy 0 154 stop 6.91
+3b03a0e63b86aedd7ecd-easy 1 129 stop 5.66
+3b03a0e63b86aedd7ecd-easy 2 163 stop 7.1
+3b03a0e63b86aedd7ecd-easy 3 143 stop 6.25
+40b3e11d4d64d55efa59-easy 0 138 stop 6.22
+40b3e11d4d64d55efa59-easy 1 125 stop 5.48
+40b3e11d4d64d55efa59-easy 2 146 stop 6.37
+40b3e11d4d64d55efa59-easy 3 134 stop 5.86
+40c2e477b556fa58e825-easy 0 108 stop 4.94
+40c2e477b556fa58e825-easy 1 114 stop 5.02
+40c2e477b556fa58e825-easy 2 138 stop 6.03
+40c2e477b556fa58e825-easy 3 134 stop 5.89
+42816aa2a84963670f95-easy 0 128 stop 5.78
+42816aa2a84963670f95-easy 1 129 stop 5.64
+42816aa2a84963670f95-easy 2 132 stop 5.79
+42816aa2a84963670f95-easy 3 129 stop 5.65
+4980c7f545912e9ccb4a-easy 0 133 stop 6.02
+4980c7f545912e9ccb4a-easy 1 132 stop 6.72
+4980c7f545912e9ccb4a-easy 2 148 stop 7.15
+4980c7f545912e9ccb4a-easy 3 134 stop 6.41
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/src/challenge/harness.py", line 284, in <module>
+    main()
+  File "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/src/challenge/harness.py", line 218, in main
+    run(args.tasks, args.out, args.model, args.samples, args.max_tokens, args.max_new_responses)
+  File "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/src/challenge/models.py", line 105, in run
+    result = api("chat", request)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/src/challenge/models.py", line 23, in api
+    with urllib.request.urlopen(req, timeout=600) as response:  # nosec B310
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/spalmam/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/spalmam/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/spalmam/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/spalmam/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/home/spalmam/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/spalmam/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 1348, in do_open
+    r = h.getresponse()
+        ^^^^^^^^^^^^^^^
+  File "/home/spalmam/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/client.py", line 1450, in getresponse
+    response.begin()
+  File "/home/spalmam/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/spalmam/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/client.py", line 305, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+Traceback (most recent call last):
+  File "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/data/units/project-e2/validation/teacher-production-queue.py", line 16, in <module>
+    subprocess.run(args,env={**os.environ,"PYTHONPATH":"src"},check=True)
+  File "/home/spalmam/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python', '-m', 'challenge.harness', 'run', '--tasks', 'data/units/project-e2/config/teacher-production-tasks.jsonl', '--model', 'qwen3:8b', '--samples', '4', '--max-tokens', '1024', '--out', 'data/units/project-e2/runs/teacher']' returned non-zero exit status 1.

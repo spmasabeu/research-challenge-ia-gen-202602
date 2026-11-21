@@ -1,0 +1,241 @@
+{
+  "route_training_seconds": {
+    "sft": {
+      "phase": 1201.811328791,
+      "sft_prior": 0.0,
+      "cumulative": 1201.811328791,
+      "budget": 1200,
+      "overshoot": 1.8113287910000508
+    },
+    "grpo": {
+      "phase": 1297.766086093001,
+      "sft_prior": 0.0,
+      "cumulative": 1297.766086093001,
+      "budget": 1200,
+      "overshoot": 97.76608609300092
+    },
+    "sft-grpo": {
+      "phase": 947.9700090820006,
+      "sft_prior": 288.8793994869993,
+      "cumulative": 1236.849408569,
+      "budget": 1200,
+      "overshoot": 36.849408568999934
+    }
+  },
+  "actual_unique_training_seconds": 3447.5474239660016,
+  "training_sum_note": "Unique executed phases count SFT checkpoint90 once as part of full SFT; per-route hybrid correctly includes its SFT prefix. Do not sum cumulative route times as actual unique compute.",
+  "shared_generator_preparation": {
+    "responses": 7200,
+    "request_seconds": 49384.64542907297,
+    "request_hours": 13.71795706363138,
+    "known_output_tokens": 1063102,
+    "missing_output_token_rows": 3,
+    "known_backend_prompt_eval_tokens": 1459643,
+    "missing_prompt_token_rows": 3,
+    "interrupted_request_cost": null,
+    "interrupted_request_cost_limit": "Three RemoteDisconnected attempts have no returned timing/tokens. Sum includes only saved API calls, including3done:false rows. Not total project wall time, energy, FLOPs, or exclusive GPU time.",
+    "prefix_checks": [
+      {
+        "source": "validation/teacher-production-resume-1.json",
+        "rows": 112,
+        "sha256": "22d68a380b82baa0097dff5f0458ddb348aee88883ae4e5bd7d457fbc3972403",
+        "unchanged": true
+      },
+      {
+        "source": "validation/teacher-production-resume-2.json",
+        "rows": 1144,
+        "sha256": "278ffcc3d163b16235870081d566a3bd9b3a3f942836e13660ef924d7dad8bc9",
+        "unchanged": true
+      },
+      {
+        "source": "validation/teacher-production-resume-3.json",
+        "rows": 7083,
+        "sha256": "3542395994a0b5c10f79a1f67e34b048c48f03bc9bf50ca9a00a6e7986b2329c",
+        "unchanged": true
+      }
+    ],
+    "source_responses_sha256": "1d48321aa86b91ebe2cbd873b39ea07c5a884442a1ffe1e6457ce27b610bd8ef",
+    "source_metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2"
+  },
+  "additional_DPO_negative_collection": {
+    "responses": 2844,
+    "tasks": 948,
+    "generation_seconds": 6632.142959124001,
+    "input_tokens": 566718,
+    "output_tokens": 374670,
+    "truncated": 0,
+    "source_responses_sha256": "d338f93c062d573b858650cb4f31781fa648e9a7b0caff15b6953d0b2e04dc1c",
+    "source_batches_sha256": "9dbfb4fe9d2f7bf7365ac3923bd8c00850a3b40e22b66fce6d2e16c256c0f612",
+    "scope": "Synchronized generation time only; excludes model loading/scoring and CPU processing. Both energy profiles retained, no discarded/repeated attempts. Not FLOPs or exclusive GPU time.",
+    "profile_switch": "validation/negative-user-performance-switch.json"
+  },
+  "DPO_scope": "769pairs exported; no DPO training route. Additional negatives do not change SFT traces and are not charged exclusively to SFT/GRPO training.",
+  "evaluation": [
+    {
+      "run": "control",
+      "responses": 1080,
+      "generation_seconds": 3007.1285408130134,
+      "input_tokens": 214737,
+      "output_tokens": 167797,
+      "responses_sha256": "0c51d2882b0ec8268b29dd3b636bef1a73dc5aae041c8fb5dac06331f84be0cd"
+    },
+    {
+      "run": "control-curves",
+      "responses": 36,
+      "generation_seconds": 138.8897427319971,
+      "input_tokens": 7162,
+      "output_tokens": 5627,
+      "responses_sha256": "110ab963b0ca4a841e87a1c43486519fa4d16a5dbdb630bb717e41664966f087"
+    },
+    {
+      "run": "grpo-checkpoint-13-eval",
+      "responses": 36,
+      "generation_seconds": 172.28303348699774,
+      "input_tokens": 7162,
+      "output_tokens": 5650,
+      "responses_sha256": "52f5e0c7f93aa82190738e94a7cea7ac9228f74b193ea1aec04087704f6d9043"
+    },
+    {
+      "run": "grpo-checkpoint-25-eval",
+      "responses": 36,
+      "generation_seconds": 169.6114705980035,
+      "input_tokens": 7162,
+      "output_tokens": 5728,
+      "responses_sha256": "223816950be04a5d30ee56d61a97b912a55c003fd725893bfb9e1e96f1a8fed6"
+    },
+    {
+      "run": "grpo-checkpoint-33-eval",
+      "responses": 36,
+      "generation_seconds": 198.8145072150037,
+      "input_tokens": 7162,
+      "output_tokens": 5774,
+      "responses_sha256": "865e95772e53dd5dea2050c28ad93584b157ae7b99d04726a9c863fd361d6006"
+    },
+    {
+      "run": "grpo-final-curves",
+      "responses": 36,
+      "generation_seconds": 162.20034280000618,
+      "input_tokens": 7162,
+      "output_tokens": 5603,
+      "responses_sha256": "864f2400041188dda7929cd8dbd25bef22eca88d7e3e45b26f56a5fd6c0ac709"
+    },
+    {
+      "run": "grpo-final-eval",
+      "responses": 1080,
+      "generation_seconds": 5099.603057776996,
+      "input_tokens": 214737,
+      "output_tokens": 167030,
+      "responses_sha256": "3e4333ec85a24411390afdf94f52900f375d782cd112c7d063b687391080eb94"
+    },
+    {
+      "run": "sft-checkpoint-190-eval",
+      "responses": 36,
+      "generation_seconds": 107.61965496800076,
+      "input_tokens": 7162,
+      "output_tokens": 5293,
+      "responses_sha256": "8b4380799c1521d62251eaac396c7a2086bbf22d320a571e6f133af58911127f"
+    },
+    {
+      "run": "sft-checkpoint-280-eval",
+      "responses": 36,
+      "generation_seconds": 105.37996672400004,
+      "input_tokens": 7162,
+      "output_tokens": 5701,
+      "responses_sha256": "ee3cdffef59d6dde558f3a6d9af183856ac5df0c6e5997a90ca01bfc67f4a106"
+    },
+    {
+      "run": "sft-checkpoint-90-eval",
+      "responses": 36,
+      "generation_seconds": 120.7389507969965,
+      "input_tokens": 7162,
+      "output_tokens": 6085,
+      "responses_sha256": "c07ae09a672636e389cef7fb597e742b6882ff594ad216d0fefe1d23afa9c3c6"
+    },
+    {
+      "run": "sft-final-curves",
+      "responses": 36,
+      "generation_seconds": 102.271991960999,
+      "input_tokens": 7162,
+      "output_tokens": 5396,
+      "responses_sha256": "4df20398b461425f7c668aa42b25af598cc0af33bcedcd65ae96d3a7515d00f7"
+    },
+    {
+      "run": "sft-final-eval",
+      "responses": 1080,
+      "generation_seconds": 2646.6020128599976,
+      "input_tokens": 214737,
+      "output_tokens": 164013,
+      "responses_sha256": "9598d62ec1a082d7136d93a7a48eacd861ad1a6b35a1e118639cd49b2a807c3c"
+    },
+    {
+      "run": "sft-grpo-checkpoint-17-eval",
+      "responses": 36,
+      "generation_seconds": 123.20270011499451,
+      "input_tokens": 7162,
+      "output_tokens": 6210,
+      "responses_sha256": "7109fb194c165c44797183211c22153fbf9530113f06dd7e336a87164e59b180"
+    },
+    {
+      "run": "sft-grpo-checkpoint-24-eval",
+      "responses": 36,
+      "generation_seconds": 122.8782447750018,
+      "input_tokens": 7162,
+      "output_tokens": 6197,
+      "responses_sha256": "dce86fa0320c4984c47745e7bb47357a7b868dd7253f8a54cfdb2f3ee791d7ed"
+    },
+    {
+      "run": "sft-grpo-checkpoint-8-eval",
+      "responses": 36,
+      "generation_seconds": 121.69851840100091,
+      "input_tokens": 7162,
+      "output_tokens": 6142,
+      "responses_sha256": "26ebccb08c9c61e298e3c3808f47fd2a0e1eed0b7e006670a0c4dd1b7099788c"
+    },
+    {
+      "run": "sft-grpo-final-curves",
+      "responses": 36,
+      "generation_seconds": 124.93863963499825,
+      "input_tokens": 7162,
+      "output_tokens": 6220,
+      "responses_sha256": "93d6ae9114471b4fda1ed5e0436d2db45a223e061687a1ea2917eec2a594f738"
+    },
+    {
+      "run": "sft-grpo-final-eval",
+      "responses": 1080,
+      "generation_seconds": 3003.4219578769807,
+      "input_tokens": 214737,
+      "output_tokens": 183527,
+      "responses_sha256": "a4624517855aba85aa1d53e6001d7f941f0d99c07e78af35608f3cef9c4c0fbe"
+    },
+    {
+      "run": "sft-grpo-initial-curves",
+      "responses": 36,
+      "generation_seconds": 121.27998630099864,
+      "input_tokens": 7162,
+      "output_tokens": 6085,
+      "responses_sha256": "9703280b1ebc4959b3111cbf6f074086e768b608d3f216c100a5eb471f62304e"
+    }
+  ],
+  "evaluation_generation_seconds_total": 15648.563319835986,
+  "interruption": {
+    "discarded_hybrid_seconds_exact": null,
+    "discarded_hybrid_wall_upper_bound_seconds": 31.275615453720093,
+    "meeting_seconds_included": false,
+    "generator_interrupted_requests": 3,
+    "generator_interrupted_request_seconds": null
+  },
+  "scope_limits": [
+    "Measured clocks have different stated scopes, not exclusive GPU hours, energy or FLOPs.",
+    "Includes reportable training/evaluations and productiondata; excludes calibration, GPU pilots, loading/download, CPU audit and plotting; not total project elapsed time.",
+    "No paid services used. Electrical cost not measured.",
+    "Initial power profile unknown; no retroactive normalization.",
+    "All saved batch timings reconcile against per-response timing sums."
+  ],
+  "sources": {
+    "data/units/project-e2/analysis/comparison-final-v1/training.csv": "aa89c3be60b2ca7cce3135f492315c012224901b5727691b8af0b7395e466c78",
+    "data/units/project-e2/analysis/comparison-final-v1/evaluation.csv": "b245324a1a42d6236de55013c4090e7dea2954b9851d2d05ae6b041bd0e06ca7",
+    "data/units/project-e2/analysis/teacher-production-cost.json": "27d522bdcfcd2b8d6bde9c94446c534d39687f43da6030bd287bc10aa2f34a2c",
+    "data/units/project-e2/analysis/negative-production-cost.json": "8c9e4a11a1ddcc5b067801acc234bd038d5bee3609b7bd5775fb63f8d717f584",
+    "data/units/project-e2/validation/production-routes-resume.json": "66bd9e0496130c7c093191a6c9ca56a873e6b258ec757a7987a83d2dab02f664"
+  }
+}

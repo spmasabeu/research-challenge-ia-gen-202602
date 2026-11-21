@@ -1,0 +1,261 @@
+{
+  "selection": "casos diagnósticos dirigidos, no muestra aleatoria ni revisión humana",
+  "responses_sha256": "0c51d2882b0ec8268b29dd3b636bef1a73dc5aae041c8fb5dac06331f84be0cd",
+  "cases": [
+    {
+      "task": {
+        "id": "8468b57c55ba2ab8fe03-hard",
+        "pair_id": "8468b57c55ba2ab8fe03",
+        "physical_key": "luminosity:19:0.17",
+        "version": "units-3-e2",
+        "seed": 7301,
+        "family": "luminosity",
+        "level": "hard",
+        "structure": "direct",
+        "operations": 4,
+        "conversions": 2,
+        "representation": "decimal",
+        "prompt": "Calcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2.\nDatos: d=0.019 km; F=170 erg/s/cm^2\nFórmula: L=4*pi*d^2*F. Usa pi=3.141592653589793.\nEquivalencias: 1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.\nExpresa el resultado en W. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"W\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+        "answer_si": 771.1981646032224,
+        "requested_unit": "W"
+      },
+      "response": {
+        "backend": "transformers",
+        "model": "Qwen/Qwen3-1.7B",
+        "task_id": "8468b57c55ba2ab8fe03-hard",
+        "prompt": "Calcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2.\nDatos: d=0.019 km; F=170 erg/s/cm^2\nFórmula: L=4*pi*d^2*F. Usa pi=3.141592653589793.\nEquivalencias: 1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.\nExpresa el resultado en W. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"W\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+        "rendered_prompt": "<|im_start|>user\nCalcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2.\nDatos: d=0.019 km; F=170 erg/s/cm^2\nFórmula: L=4*pi*d^2*F. Usa pi=3.141592653589793.\nEquivalencias: 1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.\nExpresa el resultado en W. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"W\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+        "sample_index": 0,
+        "seed": 42,
+        "generation": {
+          "max_new_tokens": 512,
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_k": 40,
+          "top_p": 0.9
+        },
+        "completion": "Primero convertimos los datos a unidades adecuadas: d = 0.019 km = 0.019 * 1000 = 19 m. Luego calculamos la luminosidad isotrópica con la fórmula L = 4 * π * d² * F. \n\nL = 4 * 3.141592653589793 * (19)^2 * 170\n\nL = 4 * 3.141592653589793 * 361 * 170\n\nL = 4 * 3.141592653589793 * 61370\n\nL ≈ 4 * 192103.5755\n\nL ≈ 768414.302\n\nEl resultado final es:\n\n{\"value\": 768414.302, \"unit\": \"W\"}",
+        "input_tokens": 201,
+        "output_tokens": 232,
+        "seconds": 3.237110816125096,
+        "batch_offset": 120,
+        "batch_size": 8,
+        "finish_reason": "eos",
+        "eos_token_ids": [
+          151645,
+          151643
+        ],
+        "peak_allocated_bytes": 1900662784
+      },
+      "verifier_label": {
+        "task_id": "8468b57c55ba2ab8fe03-hard",
+        "sample_index": 0,
+        "family": "luminosity",
+        "level": "hard",
+        "structure": "direct",
+        "status": "numeric",
+        "reward": 0.0,
+        "value": 768414.302,
+        "unit": "W",
+        "value_si": 768414.302,
+        "equivalent_si": false,
+        "requested_unit_correct": true,
+        "backend_incomplete": false,
+        "truncated": false
+      },
+      "reviewer_type": "agent",
+      "auditor": "Codex",
+      "reason": "Omisión de conversión F=170 erg/s/cm² a 0.17 W/m²; resultado cercano a 1000 veces la referencia. Además hay error aritmético."
+    },
+    {
+      "task": {
+        "id": "8468b57c55ba2ab8fe03-hard",
+        "pair_id": "8468b57c55ba2ab8fe03",
+        "physical_key": "luminosity:19:0.17",
+        "version": "units-3-e2",
+        "seed": 7301,
+        "family": "luminosity",
+        "level": "hard",
+        "structure": "direct",
+        "operations": 4,
+        "conversions": 2,
+        "representation": "decimal",
+        "prompt": "Calcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2.\nDatos: d=0.019 km; F=170 erg/s/cm^2\nFórmula: L=4*pi*d^2*F. Usa pi=3.141592653589793.\nEquivalencias: 1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.\nExpresa el resultado en W. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"W\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+        "answer_si": 771.1981646032224,
+        "requested_unit": "W"
+      },
+      "response": {
+        "backend": "transformers",
+        "model": "Qwen/Qwen3-1.7B",
+        "task_id": "8468b57c55ba2ab8fe03-hard",
+        "prompt": "Calcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2.\nDatos: d=0.019 km; F=170 erg/s/cm^2\nFórmula: L=4*pi*d^2*F. Usa pi=3.141592653589793.\nEquivalencias: 1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.\nExpresa el resultado en W. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"W\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+        "rendered_prompt": "<|im_start|>user\nCalcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2.\nDatos: d=0.019 km; F=170 erg/s/cm^2\nFórmula: L=4*pi*d^2*F. Usa pi=3.141592653589793.\nEquivalencias: 1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.\nExpresa el resultado en W. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"W\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+        "sample_index": 1,
+        "seed": 43,
+        "generation": {
+          "max_new_tokens": 512,
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_k": 40,
+          "top_p": 0.9
+        },
+        "completion": "Primero convertimos los datos a unidades consistentes: d = 0.019 km = 0.019 * 1000 = 19 m. Luego calculamos la luminosidad isotrópica con la fórmula L = 4 * π * d² * F. Con π = 3.141592653589793, d² = 19² = 361, y F = 170 erg/s/cm². Convertimos F a W/m²: 170 erg/s/cm² = 170 * 1000 = 170000 W/m². Luego calculamos L = 4 * 3.141592653589793 * 361 * 170000. El resultado es 768768000 W.\n\n{\"value\": 768768000, \"unit\": \"W\"}",
+        "input_tokens": 201,
+        "output_tokens": 232,
+        "seconds": 3.5904044316250747,
+        "batch_offset": 120,
+        "batch_size": 8,
+        "finish_reason": "eos",
+        "eos_token_ids": [
+          151645,
+          151643
+        ],
+        "peak_allocated_bytes": 1900662784
+      },
+      "verifier_label": {
+        "task_id": "8468b57c55ba2ab8fe03-hard",
+        "sample_index": 1,
+        "family": "luminosity",
+        "level": "hard",
+        "structure": "direct",
+        "status": "numeric",
+        "reward": 0.0,
+        "value": 768768000.0,
+        "unit": "W",
+        "value_si": 768768000.0,
+        "equivalent_si": false,
+        "requested_unit_correct": true,
+        "backend_incomplete": false,
+        "truncated": false
+      },
+      "reviewer_type": "agent",
+      "auditor": "Codex",
+      "reason": "Invierte conversión de flujo: multiplica por 1000 en vez de dividir; error cercano a 10^6."
+    },
+    {
+      "task": {
+        "id": "13701bfbd461f67e0652-easy",
+        "pair_id": "13701bfbd461f67e0652",
+        "physical_key": "luminosity:9:0.16",
+        "version": "units-3-e2",
+        "seed": 7301,
+        "family": "luminosity",
+        "level": "easy",
+        "structure": "direct",
+        "operations": 4,
+        "conversions": 0,
+        "representation": "decimal",
+        "prompt": "Calcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2.\nDatos: d=9 m; F=0.16 W/m^2\nFórmula: L=4*pi*d^2*F. Usa pi=3.141592653589793.\nEquivalencias: 1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.\nExpresa el resultado en W. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"W\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+        "answer_si": 162.86016316209486,
+        "requested_unit": "W"
+      },
+      "response": {
+        "backend": "transformers",
+        "model": "Qwen/Qwen3-1.7B",
+        "task_id": "13701bfbd461f67e0652-easy",
+        "prompt": "Calcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2.\nDatos: d=9 m; F=0.16 W/m^2\nFórmula: L=4*pi*d^2*F. Usa pi=3.141592653589793.\nEquivalencias: 1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.\nExpresa el resultado en W. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"W\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+        "rendered_prompt": "<|im_start|>user\nCalcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2.\nDatos: d=9 m; F=0.16 W/m^2\nFórmula: L=4*pi*d^2*F. Usa pi=3.141592653589793.\nEquivalencias: 1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.\nExpresa el resultado en W. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"W\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+        "sample_index": 0,
+        "seed": 42,
+        "generation": {
+          "max_new_tokens": 512,
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_k": 40,
+          "top_p": 0.9
+        },
+        "completion": "Primero calculamos la luminosidad isotrópica con la fórmula L = 4 * π * d² * F. Con d = 9 m y F = 0.16 W/m²:\n\nL = 4 * 3.141592653589793 * 9² * 0.16\n\nCalculamos paso a paso:\n- 9² = 81\n- 4 * 3.141592653589793 = 12.56696901475917\n- 12.56696901475917 * 81 = 1017.355344320727\n- 1017.355344320727 * 0.16 = 162.77685509131632\n\nEl resultado es de aproximadamente 162.78 W.\n\n{\"value\": 162.78, \"unit\": \"W\"}",
+        "input_tokens": 197,
+        "output_tokens": 261,
+        "seconds": 5.153131145249972,
+        "batch_offset": 144,
+        "batch_size": 8,
+        "finish_reason": "eos",
+        "eos_token_ids": [
+          151645,
+          151643
+        ],
+        "peak_allocated_bytes": 2008890880
+      },
+      "verifier_label": {
+        "task_id": "13701bfbd461f67e0652-easy",
+        "sample_index": 0,
+        "family": "luminosity",
+        "level": "easy",
+        "structure": "direct",
+        "status": "unparsed",
+        "reward": 0.0,
+        "backend_incomplete": false,
+        "truncated": false
+      },
+      "reviewer_type": "agent",
+      "auditor": "Codex",
+      "reason": "JSON final numéricamente dentro de tolerancia. Declaración anterior «El resultado es de aproximadamente ...» no admitida por gramática conservadora: unparsed. Limitación de cobertura documentada; no se cambia política después del freeze."
+    },
+    {
+      "task": {
+        "id": "13701bfbd461f67e0652-hard",
+        "pair_id": "13701bfbd461f67e0652",
+        "physical_key": "luminosity:9:0.16",
+        "version": "units-3-e2",
+        "seed": 7301,
+        "family": "luminosity",
+        "level": "hard",
+        "structure": "direct",
+        "operations": 4,
+        "conversions": 2,
+        "representation": "decimal",
+        "prompt": "Calcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2.\nDatos: d=0.009 km; F=160 erg/s/cm^2\nFórmula: L=4*pi*d^2*F. Usa pi=3.141592653589793.\nEquivalencias: 1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.\nExpresa el resultado en W. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"W\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+        "answer_si": 162.86016316209486,
+        "requested_unit": "W"
+      },
+      "response": {
+        "backend": "transformers",
+        "model": "Qwen/Qwen3-1.7B",
+        "task_id": "13701bfbd461f67e0652-hard",
+        "prompt": "Calcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2.\nDatos: d=0.009 km; F=160 erg/s/cm^2\nFórmula: L=4*pi*d^2*F. Usa pi=3.141592653589793.\nEquivalencias: 1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.\nExpresa el resultado en W. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"W\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.",
+        "rendered_prompt": "<|im_start|>user\nCalcula la luminosidad isotrópica; suma los flujos de las dos bandas si hay F1 y F2.\nDatos: d=0.009 km; F=160 erg/s/cm^2\nFórmula: L=4*pi*d^2*F. Usa pi=3.141592653589793.\nEquivalencias: 1 km=1000 m; 1 W/m^2=1000 erg/s/cm^2; 1 W=1e7 erg/s.\nExpresa el resultado en W. Explica en español los pasos en hasta 80 palabras. Termina con un único resultado, en JSON {\"value\": numero, \"unit\": \"W\"} o cantidad y unidad. No des alternativas. Usa punto decimal, sin separadores de miles.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+        "sample_index": 2,
+        "seed": 44,
+        "generation": {
+          "max_new_tokens": 512,
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_k": 40,
+          "top_p": 0.9
+        },
+        "completion": "Primero convertimos las unidades: d = 0.009 km = 0.009 * 1000 = 9 m. Luego calculamos la luminosidad isotrópica con la fórmula L = 4 * π * d² * F. Substituimos los valores: L = 4 * 3.141592653589793 * (9)^2 * 160. Calculamos: 4 * 3.141592653589793 ≈ 12.56637061436, (9)^2 = 81, 12.56637061436 * 81 ≈ 1018.257, 1018.257 * 160 ≈ 162921.12. Luego convertimos a W: 162921.12 erg/s/cm² * 1000 erg/s/m² * 1e-3 W/m² = 162921.12 * 1e-3 = 162.92112 W. \n\n{\"value\": 162.92112, \"unit\": \"W\"}",
+        "input_tokens": 201,
+        "output_tokens": 306,
+        "seconds": 3.8722566705000645,
+        "batch_offset": 144,
+        "batch_size": 8,
+        "finish_reason": "eos",
+        "eos_token_ids": [
+          151645,
+          151643
+        ],
+        "peak_allocated_bytes": 2008890880
+      },
+      "verifier_label": {
+        "task_id": "13701bfbd461f67e0652-hard",
+        "sample_index": 2,
+        "family": "luminosity",
+        "level": "hard",
+        "structure": "direct",
+        "status": "correct",
+        "reward": 1.0,
+        "value": 162.92112,
+        "unit": "W",
+        "value_si": 162.92112,
+        "equivalent_si": true,
+        "requested_unit_correct": true,
+        "backend_incomplete": false,
+        "truncated": false
+      },
+      "reviewer_type": "agent",
+      "auditor": "Codex",
+      "reason": "Recompensa 1 por error final 0.0374% <1%; justificación de unidades inconsistente. La expresión de conversión mezcla dimensiones y 1000×10^-3 no justifica el factor final 10^-3. No certifica razonamiento genuino; revisión humana pendiente."
+    }
+  ]
+}

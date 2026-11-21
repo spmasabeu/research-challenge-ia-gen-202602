@@ -1,0 +1,29 @@
+{
+  "cell": "voltage/hard",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "correct": 301,
+    "numeric": 99
+  },
+  "unique": 397,
+  "correct_unique_before_audit": 299,
+  "sft_eligible_after_audit": 139,
+  "sft_tasks": 56,
+  "dpo_teacher_pairs": 34,
+  "audited": 299,
+  "required_random_audits": 5,
+  "rejected": 160,
+  "expanded": true,
+  "request_seconds": 3355.9537854929636,
+  "output_tokens_known": 71502,
+  "output_tokens_missing_rows": 0,
+  "truncated": 0,
+  "backend_incomplete": 0,
+  "audit_sha256": "24fe0b374e77317ce3978d98c2a2fac8831d38e9b94c5986f63f468d4edae1f2",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "bf67d48d187575732170b5f0642639e1a3ee1b1e067a845b5a3b4d54b1bd32ab",
+  "rows_canonical_encoding": "json.dumps(rows,sort_keys=True,ensure_ascii=False).encode UTF8",
+  "reference_check": "100 referencias recalculadas con Decimal: corriente mA→A por suma de resistencias kohm→ohm; resultado SI en V, respuesta solicitada en mV.",
+  "limits": "Revisión de agente de todos los positivos únicos, ampliada tras defecto dirigido. Incluye los5 casos aleatorios4303 al cierre. Productos incorrectos y supuestos físicos falsos excluidos; redondeos coherentes aceptados. No es auditoría humana."
+}

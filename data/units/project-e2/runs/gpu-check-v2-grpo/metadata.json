@@ -1,0 +1,73 @@
+{
+  "signature": {
+    "config": {
+      "model": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "quantization": "nf4",
+      "method": "grpo",
+      "seed": 7303,
+      "max_steps": 12,
+      "save_steps": 1,
+      "budget_seconds": 300,
+      "group_size": 4,
+      "lora_rank": 8,
+      "learning_rate": 1e-05,
+      "max_length": 1536,
+      "max_completion_length": 512
+    },
+    "tasks_sha256": "b8b3cf44a1bcbc75b6cca32f09416de3d7e35b581b74de5546948effd3ea3f73",
+    "pilot": true,
+    "sft_sha256": null,
+    "initial_adapter": null,
+    "code": {
+      "__init__.py": "02f1632a912b802498264c62f062274c290e4a852a2d5691b4712de5023c9068",
+      "derive.py": "88bcc7b7f2fcafaaa4af8683c4c48d8544fcc24be020a1367f206cdbd6d8a3b9",
+      "evaluate.py": "50bbdbff21fd194d26770036c44518a5d285ebf404b3adc57748ad7c0eadf070",
+      "evaluate_hf.py": "659818ea65d065598a117b4ef4f66f4bf167344fb3bcb4358f2487fd5c24fc8b",
+      "frontier.py": "165fb2fb85940eb18183f251662d2e06bb5648b99b44972385b51086845e23fc",
+      "generator.py": "84419df0b8ee0e23da40676bf3d52612f07c8abad11e1beea5924fb18e5f79a3",
+      "harness.py": "e9bcbb1ee4fa2a4a28433b62f4d12f00b20125474740d02f9dba5de5aa8cd970",
+      "models.py": "92473a272836d48adee6632cf390858299adf1b5564a05533c2ac4f4d68cf919",
+      "train.py": "76d260b0bdd337a6bfed1d970418224aab91cf6c67d4130004fa8d80a63d87b2",
+      "verifier.py": "45bec4f65b043f7ab250fc2dc069f771c7d8a8b8ebb7d01b21c0af1ee1fc49a3"
+    },
+    "versions": {
+      "torch": "2.8.0",
+      "transformers": "4.57.1",
+      "trl": "0.24.0",
+      "peft": "0.17.1",
+      "accelerate": "1.11.0",
+      "datasets": "4.3.0",
+      "bitsandbytes": "0.48.2"
+    }
+  },
+  "prior_train_seconds": 0.0,
+  "reference_policy": "beta=0; sin modelo de referencia ni KL; optimizador nuevo entre fases",
+  "created_at": "2026-11-17T15:55:39.828824+00:00",
+  "versions": {
+    "torch": "2.8.0",
+    "transformers": "4.57.1",
+    "trl": "0.24.0",
+    "peft": "0.17.1",
+    "accelerate": "1.11.0",
+    "datasets": "4.3.0",
+    "bitsandbytes": "0.48.2"
+  },
+  "python": "3.12.13",
+  "verifier": "verifier-11",
+  "code": {
+    "__init__.py": "02f1632a912b802498264c62f062274c290e4a852a2d5691b4712de5023c9068",
+    "derive.py": "88bcc7b7f2fcafaaa4af8683c4c48d8544fcc24be020a1367f206cdbd6d8a3b9",
+    "evaluate.py": "50bbdbff21fd194d26770036c44518a5d285ebf404b3adc57748ad7c0eadf070",
+    "evaluate_hf.py": "659818ea65d065598a117b4ef4f66f4bf167344fb3bcb4358f2487fd5c24fc8b",
+    "frontier.py": "165fb2fb85940eb18183f251662d2e06bb5648b99b44972385b51086845e23fc",
+    "generator.py": "84419df0b8ee0e23da40676bf3d52612f07c8abad11e1beea5924fb18e5f79a3",
+    "harness.py": "e9bcbb1ee4fa2a4a28433b62f4d12f00b20125474740d02f9dba5de5aa8cd970",
+    "models.py": "92473a272836d48adee6632cf390858299adf1b5564a05533c2ac4f4d68cf919",
+    "train.py": "76d260b0bdd337a6bfed1d970418224aab91cf6c67d4130004fa8d80a63d87b2",
+    "verifier.py": "45bec4f65b043f7ab250fc2dc069f771c7d8a8b8ebb7d01b21c0af1ee1fc49a3"
+  },
+  "commit": "061ca0892c9327b43ee2a04307eeec4d0c35f811",
+  "git_status": " M .gitignore\n M docs/README.md\n M pyproject.toml\n M src/challenge/derive.py\n M src/challenge/evaluate.py\n M src/challenge/generator.py\n M src/challenge/harness.py\n M src/challenge/models.py\n M src/challenge/verifier.py\n M tests/test_challenge.py\n M tests/test_families.py\n M uv.lock\n?? data/units/project-e2/\n?? docs/plans/2026-11-16_095503_entrega_2_proyecto.md\n?? scripts/check_training_gpu.py\n?? scripts/prepare_e2.py\n?? scripts/report_training.py\n?? src/challenge/evaluate_hf.py\n?? src/challenge/train.py\n?? tests/test_training.py\n",
+  "gpu": "Tue Nov 17 12:55:39 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 595.71.05              Driver Version: 595.71.05      CUDA Version: 13.2     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 3050 ...    Off |   00000000:01:00.0  On |                  N/A |\n| N/A   48C    P8              9W /   50W |     101MiB /   6144MiB |      8%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            3311      G   /usr/bin/gnome-shell                     81MiB |\n+-----------------------------------------------------------------------------------------+\n"
+}

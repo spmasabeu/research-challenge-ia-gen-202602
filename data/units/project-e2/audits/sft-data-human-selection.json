@@ -1,0 +1,29 @@
+{
+  "seed": 7304,
+  "selection": "Up to3 unique retained SFT candidates per family/level; sorted candidate_id and independent Random7304 per cell. Same sampling rule as prepare_e2 audit; population filtered to actual SFT.",
+  "rows": 53,
+  "cells": {
+    "density/easy": 3,
+    "density/medium": 3,
+    "density/hard": 3,
+    "energy/easy": 3,
+    "energy/medium": 3,
+    "energy/hard": 3,
+    "luminosity/easy": 3,
+    "luminosity/medium": 3,
+    "luminosity/hard": 2,
+    "pressure/easy": 3,
+    "pressure/medium": 3,
+    "pressure/hard": 3,
+    "speed/easy": 3,
+    "speed/medium": 3,
+    "speed/hard": 3,
+    "voltage/easy": 3,
+    "voltage/medium": 3,
+    "voltage/hard": 3
+  },
+  "source_sft_sha256": "012b7a40c8703108722d93d7473afe59b3938ea0733a5e49041f8188d6dd2af8",
+  "source_responses_sha256": "1d48321aa86b91ebe2cbd873b39ea07c5a884442a1ffe1e6457ce27b610bd8ef",
+  "sample_sha256": "9767592a73ae0c0996b3c969c911cc586d95d6bc9beca08469ceecb578c6b0a2",
+  "human_reviews_completed": 0
+}

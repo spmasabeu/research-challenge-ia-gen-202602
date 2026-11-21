@@ -1,0 +1,275 @@
+{
+  "cells": {
+    "density/easy": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 374,
+      "sft_tasks": 100,
+      "sft_physical_problems": 100,
+      "sft_rows_by_structure": {
+        "direct": 183,
+        "sum": 191
+      },
+      "sft_tasks_by_structure": {
+        "direct": 50,
+        "sum": 50
+      }
+    },
+    "density/hard": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 335,
+      "sft_tasks": 100,
+      "sft_physical_problems": 100,
+      "sft_rows_by_structure": {
+        "direct": 154,
+        "sum": 181
+      },
+      "sft_tasks_by_structure": {
+        "direct": 50,
+        "sum": 50
+      }
+    },
+    "density/medium": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 367,
+      "sft_tasks": 100,
+      "sft_physical_problems": 100,
+      "sft_rows_by_structure": {
+        "direct": 189,
+        "sum": 178
+      },
+      "sft_tasks_by_structure": {
+        "sum": 50,
+        "direct": 50
+      }
+    },
+    "energy/easy": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 76,
+      "sft_tasks": 33,
+      "sft_physical_problems": 33,
+      "sft_rows_by_structure": {
+        "direct": 45,
+        "sum": 31
+      },
+      "sft_tasks_by_structure": {
+        "direct": 19,
+        "sum": 14
+      }
+    },
+    "energy/hard": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 28,
+      "sft_tasks": 12,
+      "sft_physical_problems": 12,
+      "sft_rows_by_structure": {
+        "direct": 15,
+        "sum": 13
+      },
+      "sft_tasks_by_structure": {
+        "direct": 7,
+        "sum": 5
+      }
+    },
+    "energy/medium": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 50,
+      "sft_tasks": 25,
+      "sft_physical_problems": 25,
+      "sft_rows_by_structure": {
+        "direct": 27,
+        "sum": 23
+      },
+      "sft_tasks_by_structure": {
+        "direct": 15,
+        "sum": 10
+      }
+    },
+    "luminosity/easy": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 58,
+      "sft_tasks": 28,
+      "sft_physical_problems": 28,
+      "sft_rows_by_structure": {
+        "sum": 45,
+        "direct": 13
+      },
+      "sft_tasks_by_structure": {
+        "sum": 22,
+        "direct": 6
+      }
+    },
+    "luminosity/hard": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 2,
+      "sft_tasks": 2,
+      "sft_physical_problems": 2,
+      "sft_rows_by_structure": {
+        "sum": 2
+      },
+      "sft_tasks_by_structure": {
+        "sum": 2
+      }
+    },
+    "luminosity/medium": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 36,
+      "sft_tasks": 19,
+      "sft_physical_problems": 19,
+      "sft_rows_by_structure": {
+        "sum": 20,
+        "direct": 16
+      },
+      "sft_tasks_by_structure": {
+        "sum": 9,
+        "direct": 10
+      }
+    },
+    "pressure/easy": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 271,
+      "sft_tasks": 100,
+      "sft_physical_problems": 100,
+      "sft_rows_by_structure": {
+        "sum": 137,
+        "direct": 134
+      },
+      "sft_tasks_by_structure": {
+        "direct": 50,
+        "sum": 50
+      }
+    },
+    "pressure/hard": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 272,
+      "sft_tasks": 92,
+      "sft_physical_problems": 92,
+      "sft_rows_by_structure": {
+        "sum": 123,
+        "direct": 149
+      },
+      "sft_tasks_by_structure": {
+        "sum": 44,
+        "direct": 48
+      }
+    },
+    "pressure/medium": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 367,
+      "sft_tasks": 100,
+      "sft_physical_problems": 100,
+      "sft_rows_by_structure": {
+        "sum": 182,
+        "direct": 185
+      },
+      "sft_tasks_by_structure": {
+        "direct": 50,
+        "sum": 50
+      }
+    },
+    "speed/easy": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 263,
+      "sft_tasks": 88,
+      "sft_physical_problems": 88,
+      "sft_rows_by_structure": {
+        "sum": 166,
+        "direct": 97
+      },
+      "sft_tasks_by_structure": {
+        "sum": 50,
+        "direct": 38
+      }
+    },
+    "speed/hard": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 163,
+      "sft_tasks": 67,
+      "sft_physical_problems": 67,
+      "sft_rows_by_structure": {
+        "sum": 39,
+        "direct": 124
+      },
+      "sft_tasks_by_structure": {
+        "sum": 25,
+        "direct": 42
+      }
+    },
+    "speed/medium": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 276,
+      "sft_tasks": 84,
+      "sft_physical_problems": 84,
+      "sft_rows_by_structure": {
+        "sum": 124,
+        "direct": 152
+      },
+      "sft_tasks_by_structure": {
+        "direct": 44,
+        "sum": 40
+      }
+    },
+    "voltage/easy": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 144,
+      "sft_tasks": 54,
+      "sft_physical_problems": 54,
+      "sft_rows_by_structure": {
+        "direct": 72,
+        "sum": 72
+      },
+      "sft_tasks_by_structure": {
+        "direct": 33,
+        "sum": 21
+      }
+    },
+    "voltage/hard": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 139,
+      "sft_tasks": 56,
+      "sft_physical_problems": 56,
+      "sft_rows_by_structure": {
+        "sum": 79,
+        "direct": 60
+      },
+      "sft_tasks_by_structure": {
+        "sum": 25,
+        "direct": 31
+      }
+    },
+    "voltage/medium": {
+      "train_tasks": 100,
+      "train_physical_problems": 100,
+      "sft_rows": 141,
+      "sft_tasks": 63,
+      "sft_physical_problems": 63,
+      "sft_rows_by_structure": {
+        "sum": 74,
+        "direct": 67
+      },
+      "sft_tasks_by_structure": {
+        "direct": 37,
+        "sum": 26
+      }
+    }
+  },
+  "limits": "Physical problems recur across easy/medium/hard variants; do not sum physical counts across levels. Overall unique443 of600train physical problems. DPO final coverage pending supplemental negatives.",
+  "sft_sha256": "012b7a40c8703108722d93d7473afe59b3938ea0733a5e49041f8188d6dd2af8",
+  "train_sha256": "9014ad83b0abf6767201b0590ab19292bd1ddeea4e53fea3e0e441850ce99aeb"
+}

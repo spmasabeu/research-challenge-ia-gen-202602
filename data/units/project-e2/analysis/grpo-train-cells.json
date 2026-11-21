@@ -1,0 +1,210 @@
+{
+  "tasks_seen": 40,
+  "physical_problems_seen": 40,
+  "available_train_tasks": 1800,
+  "sources": {
+    "data/units/project-e2/dataset/private/train.jsonl": "9014ad83b0abf6767201b0590ab19292bd1ddeea4e53fea3e0e441850ce99aeb",
+    "data/units/project-e2/runs/grpo/rollouts.jsonl": "f43b619e7073efb90d0a032a7f11f40c0a47d713f09bb5fd961b1429a6e8c5f7"
+  },
+  "cells": [
+    {
+      "cell": "density/easy",
+      "groups": 4,
+      "tasks": 4,
+      "physical_problems": 4,
+      "responses": 16,
+      "mean_train_reward": 0.875,
+      "groups_zero": 0,
+      "groups_one": 2,
+      "groups_mixed": 2
+    },
+    {
+      "cell": "density/hard",
+      "groups": 1,
+      "tasks": 1,
+      "physical_problems": 1,
+      "responses": 4,
+      "mean_train_reward": 0.0,
+      "groups_zero": 1,
+      "groups_one": 0,
+      "groups_mixed": 0
+    },
+    {
+      "cell": "density/medium",
+      "groups": 1,
+      "tasks": 1,
+      "physical_problems": 1,
+      "responses": 4,
+      "mean_train_reward": 0.5,
+      "groups_zero": 0,
+      "groups_one": 0,
+      "groups_mixed": 1
+    },
+    {
+      "cell": "energy/easy",
+      "groups": 3,
+      "tasks": 3,
+      "physical_problems": 3,
+      "responses": 12,
+      "mean_train_reward": 1.0,
+      "groups_zero": 0,
+      "groups_one": 3,
+      "groups_mixed": 0
+    },
+    {
+      "cell": "energy/hard",
+      "groups": 3,
+      "tasks": 3,
+      "physical_problems": 3,
+      "responses": 12,
+      "mean_train_reward": 0.5833333333333334,
+      "groups_zero": 0,
+      "groups_one": 0,
+      "groups_mixed": 3
+    },
+    {
+      "cell": "energy/medium",
+      "groups": 3,
+      "tasks": 3,
+      "physical_problems": 3,
+      "responses": 12,
+      "mean_train_reward": 1.0,
+      "groups_zero": 0,
+      "groups_one": 3,
+      "groups_mixed": 0
+    },
+    {
+      "cell": "luminosity/easy",
+      "groups": 4,
+      "tasks": 4,
+      "physical_problems": 4,
+      "responses": 16,
+      "mean_train_reward": 0.375,
+      "groups_zero": 1,
+      "groups_one": 0,
+      "groups_mixed": 3
+    },
+    {
+      "cell": "luminosity/hard",
+      "groups": 2,
+      "tasks": 2,
+      "physical_problems": 2,
+      "responses": 8,
+      "mean_train_reward": 0.0,
+      "groups_zero": 2,
+      "groups_one": 0,
+      "groups_mixed": 0
+    },
+    {
+      "cell": "luminosity/medium",
+      "groups": 3,
+      "tasks": 3,
+      "physical_problems": 3,
+      "responses": 12,
+      "mean_train_reward": 0.3333333333333333,
+      "groups_zero": 0,
+      "groups_one": 0,
+      "groups_mixed": 3
+    },
+    {
+      "cell": "pressure/easy",
+      "groups": 1,
+      "tasks": 1,
+      "physical_problems": 1,
+      "responses": 4,
+      "mean_train_reward": 1.0,
+      "groups_zero": 0,
+      "groups_one": 1,
+      "groups_mixed": 0
+    },
+    {
+      "cell": "pressure/hard",
+      "groups": 4,
+      "tasks": 4,
+      "physical_problems": 4,
+      "responses": 16,
+      "mean_train_reward": 0.5625,
+      "groups_zero": 0,
+      "groups_one": 0,
+      "groups_mixed": 4
+    },
+    {
+      "cell": "pressure/medium",
+      "groups": 2,
+      "tasks": 2,
+      "physical_problems": 2,
+      "responses": 8,
+      "mean_train_reward": 0.875,
+      "groups_zero": 0,
+      "groups_one": 1,
+      "groups_mixed": 1
+    },
+    {
+      "cell": "speed/easy",
+      "groups": 2,
+      "tasks": 2,
+      "physical_problems": 2,
+      "responses": 8,
+      "mean_train_reward": 1.0,
+      "groups_zero": 0,
+      "groups_one": 2,
+      "groups_mixed": 0
+    },
+    {
+      "cell": "speed/hard",
+      "groups": 1,
+      "tasks": 1,
+      "physical_problems": 1,
+      "responses": 4,
+      "mean_train_reward": 1.0,
+      "groups_zero": 0,
+      "groups_one": 1,
+      "groups_mixed": 0
+    },
+    {
+      "cell": "speed/medium",
+      "groups": 1,
+      "tasks": 1,
+      "physical_problems": 1,
+      "responses": 4,
+      "mean_train_reward": 1.0,
+      "groups_zero": 0,
+      "groups_one": 1,
+      "groups_mixed": 0
+    },
+    {
+      "cell": "voltage/easy",
+      "groups": 2,
+      "tasks": 2,
+      "physical_problems": 2,
+      "responses": 8,
+      "mean_train_reward": 0.5,
+      "groups_zero": 1,
+      "groups_one": 1,
+      "groups_mixed": 0
+    },
+    {
+      "cell": "voltage/hard",
+      "groups": 2,
+      "tasks": 2,
+      "physical_problems": 2,
+      "responses": 8,
+      "mean_train_reward": 0.625,
+      "groups_zero": 0,
+      "groups_one": 0,
+      "groups_mixed": 2
+    },
+    {
+      "cell": "voltage/medium",
+      "groups": 1,
+      "tasks": 1,
+      "physical_problems": 1,
+      "responses": 4,
+      "mean_train_reward": 0.75,
+      "groups_zero": 0,
+      "groups_one": 0,
+      "groups_mixed": 1
+    }
+  ],
+  "limits": "Recompensa on-policy sobre prompts sucesivos, no curva de generalización. Celdas no visitadas quedan con cero grupos y media null."
+}

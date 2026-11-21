@@ -1,0 +1,594 @@
+{
+  "all": {
+    "tasks": 36,
+    "responses": 36,
+    "n": 1,
+    "statuses": {
+      "correct": 24,
+      "numeric": 12
+    },
+    "coverage": 1.0,
+    "pass_at_k": {
+      "1": 0.6666666666666666
+    },
+    "equivalent_si_rate": 0.6666666666666666,
+    "requested_unit_rate": 1.0,
+    "pass_at_k_upper_bound": {
+      "1": 0.6666666666666666
+    },
+    "backend_incomplete": 0,
+    "truncated": 0
+  },
+  "family": {
+    "density": {
+      "tasks": 6,
+      "responses": 6,
+      "n": 1,
+      "statuses": {
+        "correct": 6
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0
+      },
+      "equivalent_si_rate": 1.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "energy": {
+      "tasks": 6,
+      "responses": 6,
+      "n": 1,
+      "statuses": {
+        "numeric": 5,
+        "correct": 1
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.16666666666666666
+      },
+      "equivalent_si_rate": 0.16666666666666666,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.16666666666666666
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "luminosity": {
+      "tasks": 6,
+      "responses": 6,
+      "n": 1,
+      "statuses": {
+        "numeric": 5,
+        "correct": 1
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.16666666666666666
+      },
+      "equivalent_si_rate": 0.16666666666666666,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.16666666666666666
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "pressure": {
+      "tasks": 6,
+      "responses": 6,
+      "n": 1,
+      "statuses": {
+        "correct": 6
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0
+      },
+      "equivalent_si_rate": 1.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "speed": {
+      "tasks": 6,
+      "responses": 6,
+      "n": 1,
+      "statuses": {
+        "correct": 5,
+        "numeric": 1
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.8333333333333334
+      },
+      "equivalent_si_rate": 0.8333333333333334,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.8333333333333334
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "voltage": {
+      "tasks": 6,
+      "responses": 6,
+      "n": 1,
+      "statuses": {
+        "correct": 5,
+        "numeric": 1
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.8333333333333334
+      },
+      "equivalent_si_rate": 0.8333333333333334,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.8333333333333334
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  },
+  "level": {
+    "easy": {
+      "tasks": 12,
+      "responses": 12,
+      "n": 1,
+      "statuses": {
+        "correct": 8,
+        "numeric": 4
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.6666666666666666
+      },
+      "equivalent_si_rate": 0.6666666666666666,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.6666666666666666
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "hard": {
+      "tasks": 12,
+      "responses": 12,
+      "n": 1,
+      "statuses": {
+        "correct": 6,
+        "numeric": 6
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.5
+      },
+      "equivalent_si_rate": 0.5,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.5
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "medium": {
+      "tasks": 12,
+      "responses": 12,
+      "n": 1,
+      "statuses": {
+        "correct": 10,
+        "numeric": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.8333333333333334
+      },
+      "equivalent_si_rate": 0.8333333333333334,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.8333333333333334
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  },
+  "structure": {
+    "direct": {
+      "tasks": 18,
+      "responses": 18,
+      "n": 1,
+      "statuses": {
+        "correct": 11,
+        "numeric": 7
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.6111111111111112
+      },
+      "equivalent_si_rate": 0.6111111111111112,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.6111111111111112
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "sum": {
+      "tasks": 18,
+      "responses": 18,
+      "n": 1,
+      "statuses": {
+        "correct": 13,
+        "numeric": 5
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.7222222222222222
+      },
+      "equivalent_si_rate": 0.7222222222222222,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.7222222222222222
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  },
+  "family_level": {
+    "density/easy": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "correct": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0
+      },
+      "equivalent_si_rate": 1.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "density/hard": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "correct": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0
+      },
+      "equivalent_si_rate": 1.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "density/medium": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "correct": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0
+      },
+      "equivalent_si_rate": 1.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "energy/easy": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "numeric": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.0
+      },
+      "equivalent_si_rate": 0.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "energy/hard": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "numeric": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.0
+      },
+      "equivalent_si_rate": 0.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "energy/medium": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "numeric": 1,
+        "correct": 1
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.5
+      },
+      "equivalent_si_rate": 0.5,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.5
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "luminosity/easy": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "numeric": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.0
+      },
+      "equivalent_si_rate": 0.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "luminosity/hard": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "numeric": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.0
+      },
+      "equivalent_si_rate": 0.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "luminosity/medium": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "numeric": 1,
+        "correct": 1
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.5
+      },
+      "equivalent_si_rate": 0.5,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.5
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "pressure/easy": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "correct": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0
+      },
+      "equivalent_si_rate": 1.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "pressure/hard": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "correct": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0
+      },
+      "equivalent_si_rate": 1.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "pressure/medium": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "correct": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0
+      },
+      "equivalent_si_rate": 1.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "speed/easy": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "correct": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0
+      },
+      "equivalent_si_rate": 1.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "speed/hard": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "correct": 1,
+        "numeric": 1
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.5
+      },
+      "equivalent_si_rate": 0.5,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.5
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "speed/medium": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "correct": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0
+      },
+      "equivalent_si_rate": 1.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "voltage/easy": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "correct": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0
+      },
+      "equivalent_si_rate": 1.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "voltage/hard": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "numeric": 1,
+        "correct": 1
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 0.5
+      },
+      "equivalent_si_rate": 0.5,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 0.5
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    },
+    "voltage/medium": {
+      "tasks": 2,
+      "responses": 2,
+      "n": 1,
+      "statuses": {
+        "correct": 2
+      },
+      "coverage": 1.0,
+      "pass_at_k": {
+        "1": 1.0
+      },
+      "equivalent_si_rate": 1.0,
+      "requested_unit_rate": 1.0,
+      "pass_at_k_upper_bound": {
+        "1": 1.0
+      },
+      "backend_incomplete": 0,
+      "truncated": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "pid": 34015,
+  "command": [
+    "/home/spalmam/Documents/repositories/msc-cs-uc/ia-generativa/research-challenge-ia-gen-202602/.venv/bin/python",
+    "-m",
+    "challenge.evaluate_hf",
+    "--tasks",
+    "data/units/project-e2/config/negative-tasks.jsonl",
+    "--config",
+    "data/units/project-e2/config/evaluation.json",
+    "--out",
+    "data/units/project-e2/runs/negatives"
+  ],
+  "log": "data/units/project-e2/validation/negatives.log",
+  "started_utc": "2026-11-18T15:07:47.434079+00:00",
+  "teacher_complete": 7200,
+  "teacher_only_derived_check": "passed3362SFT330DPO",
+  "ollama_unloaded": true
+}

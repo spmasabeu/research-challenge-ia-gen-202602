@@ -1,0 +1,29 @@
+{
+  "cell": "density/easy",
+  "summary": {
+    "tasks": 100,
+    "responses": 300,
+    "n": 3,
+    "statuses": {
+      "unparsed": 9,
+      "correct": 257,
+      "numeric": 34
+    },
+    "coverage": 0.97,
+    "pass_at_k": {
+      "1": 0.8566666666666667,
+      "3": 0.98
+    },
+    "equivalent_si_rate": 0.8566666666666667,
+    "requested_unit_rate": 0.97,
+    "pass_at_k_upper_bound": {
+      "1": 0.8866666666666667,
+      "3": 0.98
+    },
+    "backend_incomplete": 0,
+    "truncated": 0
+  },
+  "unique_error_responses": 34,
+  "unique_error_tasks": 22,
+  "scope": "First complete supplemental cell; final corpus not yet built. Only numeric/unit can serve as negatives; no forced errors."
+}

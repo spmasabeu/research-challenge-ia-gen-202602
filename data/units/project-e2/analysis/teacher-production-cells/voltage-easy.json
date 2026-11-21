@@ -1,0 +1,30 @@
+{
+  "cell": "voltage/easy",
+  "tasks": 100,
+  "responses": 400,
+  "statuses": {
+    "correct": 301,
+    "unparsed": 23,
+    "numeric": 76
+  },
+  "unique": 400,
+  "correct_unique_before_audit": 301,
+  "sft_eligible_after_audit": 144,
+  "sft_tasks": 54,
+  "dpo_teacher_pairs": 39,
+  "audited": 301,
+  "required_random_audits": 5,
+  "rejected": 157,
+  "expanded": true,
+  "request_seconds": 2555.5704605320207,
+  "output_tokens_known": 55134,
+  "output_tokens_missing_rows": 0,
+  "truncated": 0,
+  "backend_incomplete": 0,
+  "audit_sha256": "dd76e7121d13403295d9cd7e6ba1b5b8cefe38b965212382193b9f77fad37ab3",
+  "metadata_sha256": "1e10356042f35eabb3eba9812c2e79ec6f3d24745abf7c395c7c258d95b39bb2",
+  "rows_canonical_sha256": "f1774c3df485dc07bd4a19fcfb1f23f4ce4dffe958fcf76c5c17a7e5c65beae0",
+  "rows_canonical_encoding": "json.dumps(rows,sort_keys=True,ensure_ascii=False).encode UTF8",
+  "reference_check": "100 referencias recalculadas con Decimal: corriente en A por resistencia total en ohm, resultado en V.",
+  "limits": "Revisión de agente de los 301 positivos únicos, ampliada tras defectos en muestra dirigida temprana de 5 tareas. Incluye los 5 casos de muestra aleatoria4303 al cierre. Se excluyen productos incorrectos y tres supuestos no justificados de resistencias iguales; redondeos coherentes aceptados. No es auditoría humana."
+}

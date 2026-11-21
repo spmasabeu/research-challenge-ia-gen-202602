@@ -1,0 +1,6 @@
+{
+  "source": "data/units/derived-v3/sft.jsonl",
+  "sha256": "654001e04a63334dbdff0d3d0d187048156a1a791d3a9036e7f45bc7314fb690",
+  "purpose": "infraestructura; trazas hist\u00f3ricas reales, excluidas del dataset E2",
+  "rows": 8
+}
