@@ -64,3 +64,34 @@ El campo `auditor` registra la asignación; no acredita revisión completada.
 `reviewer_type`, `judgment` y `reason` permanecen vacíos hasta que el responsable
 compruebe cada caso. Solo entonces debe registrar `reviewer_type: human`, su
 dictamen y motivo. Los originales de `pending/` se conservan intactos.
+
+## Criterio acordado para operaciones
+
+El 1 % es la tolerancia del verificador automático; la revisión humana comprueba
+además cada operación escrita. Un redondeo o truncamiento coherente se acepta
+(`10/3 ≈ 3.33` → `keep`). Un dígito que no proviene de redondear el valor
+correcto es un error aritmético aunque el resultado final pase el 1 %
+(`10/3 ≈ 3.31` → `reject`). El motivo distingue el tipo de error, por ejemplo
+`Planteamiento correcto, error aritmético: 0.222 * 827 = 184.586 (correcto: 183.594)`,
+para que el informe pueda reportar por separado errores aritméticos y de
+procedimiento. El rechazo humano no cambia la recompensa automática.
+
+## Herramienta de revisión
+
+`scripts/audit_review_server.py` abre una interfaz local que muestra cada caso
+con el prompt, la respuesta renderizada y una calculadora determinista
+(`scripts/audit_calc.py`). La calculadora recalcula el valor esperado a partir
+de los datos del prompt y comprueba cada igualdad y conversión escrita:
+`OK` (redondeo coherente), `≈ trunc.` (truncamiento exacto), `⚠️ DESVÍO`
+(< 0.5 %, no proviene de redondear) y `❌ ERROR` (≥ 0.5 %). No emite dictámenes:
+no evalúa la elección de fórmula, los datos copiados ni la coherencia conceptual,
+y puede omitir pasos escritos solo en prosa.
+
+```bash
+python scripts/audit_review_server.py grpo hybrid   # prefijos de reviewed/
+```
+
+La interfaz solo escribe `reviewer_type`, `judgment` y `reason` en la línea
+correspondiente, comprueba que el resto del registro no cambie y reescribe el
+archivo de forma atómica. `python scripts/audit_calc.py <archivo.jsonl>` genera
+la misma información como hoja Markdown.
