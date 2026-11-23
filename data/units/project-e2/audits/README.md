@@ -85,7 +85,8 @@ de los datos del prompt y comprueba cada igualdad y conversión escrita:
 `OK` (redondeo coherente), `≈ trunc.` (truncamiento exacto), `⚠️ DESVÍO`
 (< 0.5 %, no proviene de redondear) y `❌ ERROR` (≥ 0.5 %). No emite dictámenes:
 no evalúa la elección de fórmula, los datos copiados ni la coherencia conceptual,
-y puede omitir pasos escritos solo en prosa.
+y puede omitir operaciones no reconocidas, incluso fórmulas explícitas. La ausencia
+de alertas no acredita que los pasos estén comprobados.
 
 ```bash
 python scripts/audit_review_server.py grpo hybrid   # prefijos de reviewed/
@@ -95,3 +96,29 @@ La interfaz solo escribe `reviewer_type`, `judgment` y `reason` en la línea
 correspondiente, comprueba que el resto del registro no cambie y reescribe el
 archivo de forma atómica. `python scripts/audit_calc.py <archivo.jsonl>` genera
 la misma información como hoja Markdown.
+
+## Correcciones de revisión del PR #8 — 23 de noviembre de 2026
+
+Se corrigen 8 registros tras contrastar las operaciones. Sus dictámenes
+humanos originales permanecen en el commit `6904833092b4ae8c52e5d34286646cf0ca3e5975`.
+Los registros modificados llevan `auditor: codex` y `reviewer_type: agent`: son
+correcciones asistidas, **pendientes de confirmación humana**, incluso cuando
+solo cambia el motivo. No se atribuyen al auditor original ni cambian la
+recompensa automática. El resto de los dictámenes humanos se conserva intacto.
+
+| Archivo (prefijo) | Línea | Dictamen original → corrección |
+| --- | ---: | --- |
+| `grpo` | 16 | keep → reject |
+| `grpo` | 18 | keep → reject |
+| `grpo` | 19 | keep → reject |
+| `grpo` | 21 | keep → reject |
+| `grpo` | 24 | keep → reject |
+| `grpo` | 25 | keep → reject |
+| `hybrid` | 1 | keep → reject |
+| `hybrid` | 2 | keep → keep |
+
+La calculadora contempla ahora cadenas de una misma variable entre líneas y
+cantidades intermedias en km/s; reconoce separadores de miles para inspeccionar
+la aritmética, sin cambiar la política de formato del verificador. Sus 11 pruebas
+incluyen regresiones de las operaciones omitidas. Evalúa solo un árbol de
+números y operadores, sin `eval`. No produce ni confirma dictámenes humanos.

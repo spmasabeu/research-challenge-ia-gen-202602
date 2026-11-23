@@ -16,7 +16,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-import audit_calc as calc  # noqa: E402
+import audit_calc as calc
 
 _args = argparse.ArgumentParser(description="Interfaz local de auditoría humana E2")
 _args.add_argument("names", nargs="+", help="prefijos de reviewed/, p. ej. grpo hybrid")
@@ -127,7 +127,7 @@ class H(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8765))
+    port = int(os.environ.get("PORT", "8765"))
     for p in range(port, port + 50):
         try:
             srv = ThreadingHTTPServer(("127.0.0.1", p), H)

@@ -1,3 +1,4 @@
+import ast
 import unittest
 
 import audit_calc
@@ -49,6 +50,21 @@ class AuditCalcTests(unittest.TestCase):
     def test_final_answer_reads_last_json(self):
         text = 'x {"value": 1, "unit": "J"} y {"value": 0.0874, "unit": "kJ"}'
         self.assertEqual(audit_calc.final_answer(text), (0.0874, "kJ"))
+
+    def test_numeric_steps_across_lines_do_not_hide_arithmetic_errors(self):
+        text = "E = 5.1 * 219.04 / 2\n\nE = 1125.104 / 2\nE = 562.552 J"
+        self.assertIn("ERROR", flags(text))
+        self.assertIn("DESVIO", flags("E = 20.5 * 486.72\nE = 10,000.00 J"))
+
+    def test_fraction_with_km_per_second_detects_wrong_division(self):
+        text = r"\frac{3.859 \, \text{km}}{145 \, \text{s}} \approx 0.02659 \, \text{km/s}"
+        self.assertIn("DESVIO", flags(text))
+
+    def test_arithmetic_rejects_calls_and_attributes(self):
+        for text in ("__import__('os')", "(1).__class__"):
+            with self.subTest(text=text), self.assertRaises(ValueError):
+                audit_calc.arithmetic(ast.parse(text, mode="eval"))
+        self.assertEqual(audit_calc.arithmetic(ast.parse("-(2 + 3) ** 2 / 5", mode="eval")), -5)
 
 
 if __name__ == "__main__":

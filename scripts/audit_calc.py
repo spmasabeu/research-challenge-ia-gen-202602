@@ -7,8 +7,10 @@ respuesta del modelo. Lee JSONL por stdin o por ruta; escribe Markdown.
 
 Uso: python scripts/audit_calc.py archivo.jsonl [...] > hoja.md
 """
+import ast
 import json
 import math
+import operator
 import re
 import sys
 
@@ -16,7 +18,7 @@ PI = math.pi
 # factor a SI de cada unidad
 U = {
     "km": 1e3, "m": 1.0, "cm": 1e-2, "s": 1.0, "min": 60.0, "h": 3600.0,
-    "kg": 1.0, "g": 1e-3, "m/s": 1.0, "km/h": 1 / 3.6,
+    "kg": 1.0, "g": 1e-3, "m/s": 1.0, "km/h": 1 / 3.6, "km/s": 1e3,
     "m^3": 1.0, "L": 1e-3, "cm^3": 1e-6, "kg/m^3": 1.0, "g/cm^3": 1e3, "g/L": 1.0,
     "m^2": 1.0, "cm^2": 1e-4, "N": 1.0, "kN": 1e3, "Pa": 1.0, "kPa": 1e3,
     "J": 1.0, "kJ": 1e3, "W": 1.0, "erg/s": 1e-7, "W/m^2": 1.0, "erg/s/cm^2": 1e-3,
@@ -24,7 +26,7 @@ U = {
 }
 DIM = {  # dimensión, para comparar conversiones solo entre unidades compatibles
     "km": "L", "m": "L", "cm": "L", "s": "T", "min": "T", "h": "T", "kg": "M", "g": "M",
-    "m/s": "v", "km/h": "v", "m^3": "V", "L": "V", "cm^3": "V", "kg/m^3": "rho",
+    "m/s": "v", "km/h": "v", "km/s": "v", "m^3": "V", "L": "V", "cm^3": "V", "kg/m^3": "rho",
     "g/cm^3": "rho", "g/L": "rho", "m^2": "A", "cm^2": "A", "N": "F", "kN": "F", "Pa": "P",
     "kPa": "P", "J": "E", "kJ": "E", "W": "Pw", "erg/s": "Pw", "W/m^2": "flux",
     "erg/s/cm^2": "flux", "A": "I", "mA": "I", "ohm": "R", "kohm": "R", "V": "U", "mV": "U",
@@ -80,6 +82,7 @@ def final_answer(c):
 # ---------- comprobación de igualdades en la respuesta ----------
 def normalize(c):
     t = c
+    t = re.sub(r"\b\d{1,3}(?:,\d{3})+(?:\.\d+)?\b", lambda m: m[0].replace(",", ""), t)
     t = re.sub(r"\\text\{([^}]*)\}", r"\1", t)
     t = re.sub(r"\\mathrm\{([^}]*)\}", r"\1", t)
     for _ in range(3):
@@ -105,6 +108,21 @@ TOKEN = re.compile(r"\s*(?:(" + NUM + r")|(" + UNIT_RE + r")(?![A-Za-z])|(π|pi)
 
 def chains(text):
     """Devuelve listas de lados [(expr_str, unit_or_None, raw)] separados por = o ≈."""
+    # Una misma variable puede encadenar sus cálculos en líneas separadas.
+    joined, previous = [], None
+    for line in text.splitlines():
+        assignment = re.match(r"\s*([A-Za-z]\w*)\s*([=≈])\s*(.+)", line)
+        if assignment:
+            symbol, operator, expression = assignment.groups()
+            if symbol == previous:
+                joined[-1] += f" {operator} {expression}"
+            else:
+                joined.append(line)
+            previous = symbol
+        elif line.strip():
+            joined.append(line)
+            previous = None
+    text = "\n".join(joined)
     out = []
     for line in re.split(r"[\n;]|(?<=[a-z\)])\.\s|,\s(?=[A-Za-zÁÉÍÓÚáéíóú])", text):
         i = 0
@@ -122,12 +140,11 @@ def chains(text):
             if back and (back[-1] in "*/^" or (back[-1] in "+-" and prev_op and (prev_op[-1].isalnum() or prev_op[-1] == ")"))):
                 i = m.end()  # no empezar a mitad de una expresión con variables (v^2 / 2 = ...)
                 continue
-            sides, cur, raw, j = [], [], "", i
+            sides, cur, j = [], [], i
             while True:
                 m = TOKEN.match(line, j)
                 if not m:
                     break
-                tok = m.group(0)
                 if m.group(1) and m.start(1) > 0 and (line[m.start(1) - 1].isalpha() or line[m.start(1) - 1] == "_"):
                     break  # subíndice pegado a una variable: corta la cadena
                 if m.group(5):
@@ -143,6 +160,22 @@ def chains(text):
                 out.append((sides, line[i:j].strip()))
             i = max(j, i + 1)
     return out
+
+
+def arithmetic(node):
+    """Evalúa solo números y operadores aritméticos, sin ejecutar código."""
+    operations = {ast.Add: operator.add, ast.Sub: operator.sub, ast.Mult: operator.mul,
+                  ast.Div: operator.truediv, ast.Pow: operator.pow}
+    if isinstance(node, ast.Expression):
+        return arithmetic(node.body)
+    if isinstance(node, ast.Constant) and type(node.value) in (int, float):
+        return float(node.value)
+    if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.UAdd, ast.USub)):
+        value = arithmetic(node.operand)
+        return -value if isinstance(node.op, ast.USub) else value
+    if isinstance(node, ast.BinOp) and type(node.op) in operations:
+        return operations[type(node.op)](arithmetic(node.left), arithmetic(node.right))
+    raise ValueError("Solo se admiten números y operadores aritméticos")
 
 
 def side_value(side):
@@ -180,8 +213,8 @@ def side_value(side):
     elif bal < 0:
         expr = "(" * -bal + expr
     try:
-        return float(eval(expr, {"__builtins__": {}})), None, True
-    except Exception:
+        return float(arithmetic(ast.parse(expr, mode="eval"))), None, True
+    except (SyntaxError, ValueError, TypeError, ArithmeticError, RecursionError):
         return None
 
 
@@ -236,9 +269,9 @@ def check_equalities(c):
                 else:
                     continue
             elif not lex and not rex:
-                if lu == ru or lu is None or ru is None:
-                    if abs(lv - rv) <= 1e-12 * max(1, abs(lv)):
-                        continue  # identidad trivial (p. ej. repetir un dato)
+                if ((lu == ru or lu is None or ru is None)
+                        and abs(lv - rv) <= 1e-12 * max(1, abs(lv))):
+                    continue  # identidad trivial (p. ej. repetir un dato)
                 kind = "igualdad"
             else:
                 kind = "operación"
@@ -271,13 +304,13 @@ def fmt(x):
 
 def report(path_label, rows):
     out = [f"# Hoja de cálculo · `{path_label}`\n",
-           "Generada por una calculadora determinista. **No es un dictamen**: "
-           "el auditor debe leer los pasos y decidir `keep`/`reject`/`uncertain`.\n",
-           "Banderas: `OK` coincide dentro del redondeo de los decimales mostrados · "
+           ("Generada por una calculadora determinista. **No es un dictamen**: "
+            "el auditor debe leer los pasos y decidir `keep`/`reject`/`uncertain`.\n"),
+           ("Banderas: `OK` coincide dentro del redondeo de los decimales mostrados · "
            "`DESVÍO` difiere más que ese redondeo pero <0.5 % (decidir si es un truncamiento "
            "coherente de un valor intermedio o una operación mal hecha) · `ERROR` difiere ≥0.5 %. "
            "El analizador puede pasar por alto pasos en prosa o malinterpretar alguno: "
-           "ante la duda, recalcula a mano.\n"]
+           "ante la duda, recalcula a mano.\n")]
     summary = []
     for idx, r in enumerate(rows, 1):
         data, si, target = expected_from_prompt(r)
@@ -320,5 +353,6 @@ def report(path_label, rows):
 
 if __name__ == "__main__":
     for path in sys.argv[1:]:
-        rows = [json.loads(l) for l in open(path, encoding="utf-8") if l.strip()]
+        with open(path, encoding="utf-8") as source:
+            rows = [json.loads(line) for line in source if line.strip()]
         sys.stdout.write(report(path.split("/")[-1], rows))
