@@ -1,0 +1,55 @@
+\begin{table}[ht]
+\centering
+\caption{Validación al cierre por dificultad. Cada nivel tiene 120 tareas y
+360 respuestas por ruta. Las celdas muestran \textit{pass@1} / \textit{pass@3}
+en porcentaje.}
+\begin{tabular}{lrrrr}
+\toprule
+Dificultad & Control & SFT & GRPO & SFT seguido de GRPO \\
+\midrule
+Fácil & 83,89 / 96,67 & 83,89 / 91,67 & 83,61 / 95,83 & 83,33 / 93,33 \\
+Media & 84,44 / 95,00 & 79,44 / 91,67 & 82,22 / 95,00 & 83,33 / 94,17 \\
+Difícil & 40,00 / 60,83 & 66,39 / 75,00 & 42,22 / 61,67 & 55,00 / 73,33 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{\textit{Pass@1} por familia al cierre (\%). Cada familia tiene
+60 tareas y 180 respuestas por ruta.}
+\begin{tabular}{lrrrr}
+\toprule
+Familia & Control & SFT & GRPO & SFT seguido de GRPO \\
+\midrule
+Velocidad & 86,11 & 96,67 & 88,33 & 88,33 \\
+Energía & 78,33 & 60,56 & 78,33 & 60,56 \\
+Luminosidad & 38,89 & 18,33 & 37,22 & 28,33 \\
+Densidad & 65,56 & 98,89 & 64,44 & 90,56 \\
+Presión & 76,11 & 96,67 & 77,22 & 92,22 \\
+Tensión & 71,67 & 88,33 & 70,56 & 83,33 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Resultados de auditoría. Aceptados, rechazados y dudosos son
+dictámenes humanos. La última columna cuenta los casos con una propuesta
+de corrección de un agente.}
+\label{tab:auditoria}
+\begin{tabular}{lrrrrr}
+\toprule
+Muestra & Selección & Aceptados & Rechazados & Dudosos & Corrección de agente \\
+\midrule
+Control & 52 & 11 & 38 & 0 & 3 \\
+SFT & 51 & 21 & 30 & 0 & 0 \\
+GRPO & 53 & 19 & 28 & 0 & 6 \\
+SFT seguido de GRPO & 52 & 19 & 31 & 0 & 2 \\
+Calibración & 26 & 2 & 22 & 0 & 2 \\
+Corpus SFT & 53 & 48 & 5 & 0 & 0 \\
+\midrule
+Total & 287 & 120 & 154 & 0 & 13 \\
+\bottomrule
+\end{tabular}
+\end{table}

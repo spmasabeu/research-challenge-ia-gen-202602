@@ -9,9 +9,10 @@
     "I5 (coverage exceptions documented)",
     "I6",
     "I7 (compute comparison limitations documented)",
-    "I8 technical analysis and audit preparation"
+    "I8 technical analysis and audit preparation",
+    "I9 report/PDF compiled and validated"
   ],
-  "active": "No runs active. PR #7/#8/#9 audit samples integrated; 13 agent corrections await human confirmation. I9 report/PDF/submission pending.",
+  "active": "E2 report compiled and validated. Audit records contain 274 human judgments and 13 agent proposals. Course submission unrecorded.",
   "active_exec_session": null,
   "teacher_pilot": "216responses,111SFT/16DPO after99agent reviews/19rejects; check-derived passed",
   "teacher_first_cost": "analysis/teacher-first-cost.json",
@@ -19,12 +20,12 @@
   "gpu_proof": "validation/gpu-check-v3-gpu.json",
   "not_done": [
     "I8 human confirmation of 13 agent corrections: 5 Fernando, 8 Rodrigo",
-    "I9 report/PDF/submission"
+    "Course submission"
   ],
-  "editorial": "Report/PDF/submission pending",
+  "editorial": "deliveries/project-2-progress/proyecto_entrega_2.pdf",
   "tests": "42CPU + 11audit calculator tests passed; Ruff/Mypy26files passed; Bandit0medium/high. Historical GPU proofs unchanged; no new training.",
   "historical_policy": "all historical datasets/results unchanged; copies only under project-e2; no paid services",
-  "next": "Human confirmation of 13 agent corrections; draft I9 using existing technical artifacts. No training automatically.",
+  "next": "Record course submission when it occurs.",
   "queued_exec_session": null,
   "queued_pid": null,
   "queue": [],
