@@ -5,6 +5,16 @@ No confundir los pilotos `smoke-*` con corridas comparables del proyecto.
 Los respaldos previos están en `validation/plan-original.md` y
 `validation/original-local.patch`. No se modifican datasets ni scores históricos.
 
+## Actualización de auditoría al 23 de noviembre
+
+Muestras de los PR #7/#8/#9 integradas: 274 dictámenes humanos conservados y
+13 correcciones de agente pendientes de confirmación por personas (5 Fernando,
+8 Rodrigo). Los 104 registros de Benjamín no se modifican. El detalle y conteos
+provisionales están en [audits/README.md](audits/README.md). El estado de cero
+dictámenes del cierre técnico del 18 de noviembre que sigue es histórico.
+La auditoría humana no está cerrada; informe/PDF/envío siguen pendientes.
+No se cambiaron entrenamientos, recompensas, resultados automáticos ni test.
+
 ## Estado técnico al 18 de noviembre
 
 I2–I7 ejecutadas; I5 tiene excepciones de cobertura e I7 límites de comparación
@@ -73,7 +83,8 @@ para esa revisión e I9 para redactar/compilar el informe. DPO se exportó como
 769pares; su entrenamiento y sensibilidad50% pertenecen a E3.
 
 Las secciones posteriores conservan decisiones y estados históricos de ejecución;
-el estado vigente es el de esta sección y `validation/work-state.json`.
+el estado vigente de auditoría figura en la actualización del 23 de noviembre
+y en `validation/work-state.json`.
 
 ## Entorno
 

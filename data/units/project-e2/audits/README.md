@@ -1,5 +1,35 @@
 # Auditoría humana de E2
 
+## Estado integrado — 23 de noviembre de 2026
+
+Se incorporan las muestras de los PR #7, #8 y #9. Hay **274 dictámenes humanos
+conservados y 13 correcciones de agente pendientes de confirmación humana**.
+Estas últimas llevan `auditor: codex` y `reviewer_type: agent`; los originales
+humanos se conservan en los commits indicados en las secciones de correcciones.
+No se presenta esta revisión de agente como una nueva auditoría humana.
+
+Los siguientes conteos mezclan dictámenes humanos y propuestas de corrección;
+son **provisionales**, no tasas globales ni un ranking entre modelos:
+
+| Archivo | Casos | keep | reject | Humanos | Correcciones de agente |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `calibration-human-reviewed.jsonl` | 26 | 2 | 24 | 24 | 2 |
+| `control-human-reviewed.jsonl` | 52 | 12 | 40 | 49 | 3 |
+| `grpo-human-reviewed.jsonl` | 53 | 19 | 34 | 47 | 6 |
+| `hybrid-human-reviewed.jsonl` | 52 | 20 | 32 | 50 | 2 |
+| `sft-data-human-reviewed.jsonl` | 53 | 48 | 5 | 53 | 0 |
+| `sft-human-reviewed.jsonl` | 51 | 21 | 30 | 51 | 0 |
+| **Total** | **287** | **122** | **165** | **274** | **13** |
+
+La auditoría sigue abierta hasta que las personas responsables contrasten las
+13 correcciones (5 de Fernando y 8 de Rodrigo). Para confirmarlas deben registrar
+su propio `auditor`, `reviewer_type: human`, el dictamen que determinen y su
+motivo; las correcciones del agente permanecen respaldadas en Git. No confirmar
+en bloque ni copiar dictámenes sin comprobar los casos. Los 104 registros de
+Benjamín se conservaron íntegros. Las 287 filas tienen motivo, pero eso no
+significa 287 dictámenes humanos finales. R10/V11 e I8 siguen parcialmente
+pendientes; I9/informe/PDF/envío no están completados. Test permanece reservado.
+
 ## Estado de la revisión de Benjamín — 22 de noviembre de 2026
 
 Los 104 casos asignados a `benjamin` tienen dictamen y motivo en las copias de
