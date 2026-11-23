@@ -122,3 +122,20 @@ cantidades intermedias en km/s; reconoce separadores de miles para inspeccionar
 la aritmética, sin cambiar la política de formato del verificador. Sus 11 pruebas
 incluyen regresiones de las operaciones omitidas. Evalúa solo un árbol de
 números y operadores, sin `eval`. No produce ni confirma dictámenes humanos.
+
+## Correcciones de revisión del PR #7 — 23 de noviembre de 2026
+
+Se corrigen 5 registros tras contrastar las operaciones. Sus dictámenes
+humanos originales permanecen en el commit `dcf2ead8435c005b49bb211db9a57adf3f24b08b`.
+Los registros modificados llevan `auditor: codex` y `reviewer_type: agent`: son
+correcciones asistidas, **pendientes de confirmación humana**, incluso cuando
+solo cambia el motivo. No se atribuyen al auditor original ni cambian la
+recompensa automática. El resto de los dictámenes humanos se conserva intacto.
+
+| Archivo (prefijo) | Línea | Dictamen original → corrección |
+| --- | ---: | --- |
+| `calibration` | 13 | reject → reject |
+| `calibration` | 23 | reject → reject |
+| `control` | 6 | keep → reject |
+| `control` | 29 | reject → reject |
+| `control` | 33 | reject → keep |
