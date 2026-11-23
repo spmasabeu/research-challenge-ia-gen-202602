@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revisión E2</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<style>
+:root{--bg:#f7f7f5;--panel:#fff;--ink:#1d1d1b;--muted:#6b6b66;--line:#e3e2dd;--accent:#2f5bd3;
+--ok:#1f7a4a;--okbg:#e5f4ec;--warn:#8a5a00;--warnbg:#fdf1d8;--err:#b3261e;--errbg:#fbe3e1;--hl:#fff3b0}
+@media (prefers-color-scheme:dark){:root{--bg:#161615;--panel:#1f1f1d;--ink:#ececea;--muted:#9a9a94;--line:#33332f;
+--accent:#7ea0ff;--ok:#6fd39c;--okbg:#17301f;--warn:#f1c069;--warnbg:#332812;--err:#ff8a80;--errbg:#3a1a18;--hl:#4a4318}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;height:100vh;display:flex}
+aside{width:270px;flex:none;border-right:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column}
+aside .top{padding:12px;border-bottom:1px solid var(--line)}
+aside h1{font-size:15px;margin:0 0 6px}
+.progress{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin:6px 0}
+.progress div{height:100%;background:var(--ok)}
+select{width:100%;margin-top:6px;padding:4px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px}
+#list{overflow:auto;flex:1}
+.item{padding:7px 12px;border-bottom:1px solid var(--line);cursor:pointer;display:flex;gap:8px;align-items:center;font-size:13px}
+.item:hover{background:var(--bg)}.item.sel{background:var(--bg);box-shadow:inset 3px 0 var(--accent)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--line);flex:none}
+.dot.keep{background:var(--ok)}.dot.reject{background:var(--err)}.dot.uncertain{background:var(--warn)}
+.item .meta{flex:1}.item small{color:var(--muted)}
+.badge{font-size:11px;padding:0 5px;border-radius:4px;font-weight:600}
+.b-err{background:var(--errbg);color:var(--err)}.b-warn{background:var(--warnbg);color:var(--warn)}
+main{flex:1;overflow:auto;padding:16px 20px 120px}
+header{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+header h2{margin:0;font-size:18px}header code{color:var(--muted);font-size:12px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+@media (max-width:1100px){.grid{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.card h3{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+pre{white-space:pre-wrap;word-break:break-word;margin:0;font:13px/1.55 ui-monospace,Menlo,monospace}
+.completion{font-size:15px;line-height:1.7;white-space:pre-wrap}
+mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:13px}.kv b{color:var(--muted);font-weight:500}
+.big{font-size:16px;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:8px}
+td,th{padding:4px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.ERROR td{background:var(--errbg)}tr.TRUNC td{color:var(--muted)}tr.DESVIO td{background:var(--warnbg)}
+.chk label{display:block;padding:2px 0;cursor:pointer}
+.bar{position:fixed;left:270px;right:0;bottom:0;background:var(--panel);border-top:1px solid var(--line);padding:10px 20px;display:flex;gap:10px;align-items:flex-start}
+.bar textarea{flex:1;min-height:58px;resize:vertical;padding:6px 8px;font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px}
+.btns{display:flex;flex-direction:column;gap:6px}
+.row{display:flex;gap:6px}
+button{font:inherit;padding:6px 10px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+button.j.on.keep{background:var(--okbg);border-color:var(--ok);color:var(--ok);font-weight:600}
+button.j.on.reject{background:var(--errbg);border-color:var(--err);color:var(--err);font-weight:600}
+button.j.on.uncertain{background:var(--warnbg);border-color:var(--warn);color:var(--warn);font-weight:600}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+#status{font-size:12px;color:var(--muted);min-width:150px}
+.hint{font-size:12px;color:var(--muted)}
+.toggle{float:right;font-size:12px}
+</style>
+</head>
+<body>
+<aside>
+  <div class="top">
+    <h1 id="title">Revisión E2</h1>
+    <div id="prog" class="hint"></div>
+    <div class="progress"><div id="progbar"></div></div>
+    <select id="fFile"><option value="">Todos los archivos</option></select>
+    <select id="fStatus"><option value="">Todos</option><option value="pending">Pendientes</option><option value="done">Revisados</option><option value="flag">Con ERROR/DESVÍO</option><option value="err">Solo con ERROR</option><option value="keeperr">keep con ERROR o DESVÍO</option><option value="short">Motivo corto (&lt;25 car.)</option></select>
+  </div>
+  <div id="list"></div>
+</aside>
+<main id="main"></main>
+<div class="bar">
+  <div class="btns">
+    <div class="row">
+      <button class="j keep" data-j="keep" title="1">✅ keep</button>
+      <button class="j reject" data-j="reject" title="2">❌ reject</button>
+      <button class="j uncertain" data-j="uncertain" title="3">❓ uncertain</button>
+    </div>
+    <div class="row"><button id="ins">Insertar cuentas</button><button id="clr">Vaciar</button></div>
+  </div>
+  <textarea id="reason" placeholder="Motivo: qué comprobaste o qué paso falla exactamente…"></textarea>
+  <div class="btns">
+    <button class="primary" id="save">Guardar y siguiente ⌘↵</button>
+    <div id="status"></div>
+  </div>
+</div>
+<script>
+let cases=[],view=[],cur=0,judg=null,plain=false;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=x=>x==null?'—':Number(x.toPrecision(10)).toString();
+const pct=x=>x==null?'—':(x*100).toFixed(3)+' %';
+const nflag=c=>({e:c.calc.checks.filter(k=>k.flag==='ERROR').length,w:c.calc.checks.filter(k=>k.flag==='DESVIO').length});
+
+async function load(){
+  cases=await (await fetch('/api/cases')).json();
+  const who=[...new Set(cases.map(c=>c.auditor).filter(Boolean))].join(', ');
+  if(who) $('#title').textContent='Revisión E2 · '+who;
+  [...new Set(cases.map(c=>c.file))].forEach(f=>$('#fFile').insertAdjacentHTML('beforeend',`<option>${f}</option>`));
+  const first=cases.findIndex(c=>!c.judgment);
+  filter(); show(Math.max(0,view.indexOf(first)));
+}
+function filter(){
+  const f=$('#fFile').value,s=$('#fStatus').value;
+  view=cases.map((c,i)=>i).filter(i=>{const c=cases[i],n=nflag(c);
+    return (!f||c.file===f)&&(!s||(s==='pending'&&!c.judgment)||(s==='done'&&c.judgment)||(s==='flag'&&(n.e||n.w))||(s==='err'&&n.e)||(s==='keeperr'&&c.judgment==='keep'&&(n.e||n.w))||(s==='short'&&c.judgment&&(c.reason||'').trim().length<25));});
+  renderList();
+}
+function renderList(){
+  const done=cases.filter(c=>c.judgment).length;
+  $('#prog').textContent=`${done} / ${cases.length} revisados`;
+  $('#progbar').style.width=(100*done/cases.length)+'%';
+  $('#list').innerHTML=view.map((i,k)=>{const c=cases[i],n=nflag(c);
+    return `<div class="item ${k===cur?'sel':''}" data-k="${k}"><span class="dot ${c.judgment||''}"></span>
+    <span class="meta">${c.file} #${c.idx+1}<br><small>${c.family} · ${c.level}</small></span>
+    ${n.e?`<span class="badge b-err">${n.e}</span>`:''}${n.w?`<span class="badge b-warn">${n.w}</span>`:''}</div>`}).join('');
+  document.querySelectorAll('.item').forEach(el=>el.onclick=()=>show(+el.dataset.k));
+  const sel=$('.item.sel'); if(sel) sel.scrollIntoView({block:'nearest'});
+}
+function promptNums(p){const d=(p.match(/Datos: (.*)/)||[])[1]||'';return [...d.matchAll(/=([\d.]+)/g)].map(m=>m[1])}
+function highlight(text,nums){
+  let h=esc(text);
+  nums.sort((a,b)=>b.length-a.length).forEach(n=>{h=h.replace(new RegExp('(?<![\\d.])'+n.replace(/\./g,'\\.')+'(?![\\d])','g'),'<mark>$&</mark>')});
+  return h;
+}
+function show(k){
+  if(!view.length){$('#main').innerHTML='<p>Sin casos con este filtro.</p>';return}
+  cur=Math.max(0,Math.min(k,view.length-1));const c=cases[view[cur]],a=c.calc;
+  judg=c.judgment;$('#reason').value=c.reason||'';setJ();$('#status').textContent=c.judgment?'Guardado':'Sin revisar';
+  const checks=a.checks.length?`<table><tr><th></th><th>paso</th><th class="n">izq.</th><th class="n">der.</th><th class="n">dif.</th></tr>${
+    a.checks.map(x=>`<tr class="${x.flag}"><td>${x.flag==='OK'?'OK':x.flag==='TRUNC'?'≈':x.flag==='DESVIO'?'⚠️':'❌'}</td><td><code>${esc(x.frag)}</code><br><small>${x.kind}${x.flag==='TRUNC'?' · truncamiento en el último dígito':''}</small></td>
+    <td class="n">${fmt(x.l)}</td><td class="n">${fmt(x.r)}</td><td class="n">${pct(x.rel)}</td></tr>`).join('')}</table>`
+    :'<p class="hint">No se detectaron igualdades: recalcula a mano.</p>';
+  $('#main').innerHTML=`
+  <header><h2>${c.family} · ${c.level}</h2><span>${c.file} #${c.idx+1} · ${cur+1}/${view.length} en vista</span><code>${c.candidate_id}</code></header>
+  <div class="grid">
+   <div>
+    <div class="card"><h3>Problema</h3><pre>${highlight(c.prompt,promptNums(c.prompt))}</pre></div>
+    <div class="card" style="margin-top:14px"><h3>Calculadora</h3>
+     <div class="kv"><b>Esperado</b><span class="big">${fmt(a.expected)} ${esc(a.target)}${a.ref_ok?'':' ⚠️ ≠ reference_si'}</span>
+     <b>Final modelo</b><span class="big">${fmt(a.final)} ${esc(a.final_unit||'')} ${a.unit_ok?'':'⚠️ unidad'}</span>
+     <b>Error final</b><span>${pct(a.rel)}</span>
+     <b>Datos en SI</b><span>${Object.entries(a.data_si).map(([k,v])=>`${k}=${fmt(v)}`).join(' · ')}</span></div>
+     ${checks}
+    </div>
+   </div>
+   <div>
+    <div class="card"><h3>Respuesta del modelo <a href="#" class="toggle" id="tog">${plain?'ver renderizado':'ver texto plano + datos resaltados'}</a></h3>
+     <div class="completion" id="comp"></div></div>
+    <div class="card chk" style="margin-top:14px"><h3>Traza (ayuda, no se guarda)</h3>
+     ${['Datos copiados bien del prompt (resaltados en texto plano)','Suma de las dos magnitudes si hay 1 y 2','Conversiones necesarias y en la dirección correcta','Fórmula correcta y bien sustituida','Cada operación es verdadera (tabla)','Usa en cada paso el valor del paso anterior','Unidades intermedias y nombres de variables con sentido','Unidad final = la pedida']
+       .map(t=>`<label><input type="checkbox"> ${t}</label>`).join('')}
+    </div>
+   </div>
+  </div>`;
+  const comp=$('#comp');
+  if(plain){comp.innerHTML=highlight(c.completion,promptNums(c.prompt))}
+  else{comp.textContent=c.completion;
+    if(window.renderMathInElement) renderMathInElement(comp,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});}
+  $('#tog').onclick=e=>{e.preventDefault();plain=!plain;show(cur)};
+  renderList();$('#main').scrollTop=0;
+}
+function setJ(){document.querySelectorAll('.j').forEach(b=>b.classList.toggle('on',b.dataset.j===judg))}
+document.querySelectorAll('.j').forEach(b=>b.onclick=()=>{judg=b.dataset.j;setJ()});
+$('#ins').onclick=()=>{const c=cases[view[cur]],a=c.calc;
+  const t=a.checks.map(x=>(x.flag==='OK'||x.flag==='TRUNC')?x.frag:`${x.frag} (${x.flag==='ERROR'?'incorrecto':'desvío'}: correcto ${fmt(x.l)})`).join('; ');
+  const r=$('#reason');r.value=(r.value?r.value+' ':'')+t+(t?'. ':'')+`Final ${fmt(a.final)} ${a.final_unit||''} vs esperado ${fmt(a.expected)} ${a.target}.`;r.focus()};
+$('#clr').onclick=async()=>{await post(null,'');};
+$('#save').onclick=()=>post(judg,$('#reason').value,true);
+async function post(j,reason,next){
+  const c=cases[view[cur]];
+  if(j!==null&&(!j||!reason.trim())){$('#status').textContent='⚠️ Falta dictamen o motivo';return}
+  const res=await fetch('/api/save',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({file:c.file,idx:c.idx,candidate_id:c.candidate_id,judgment:j,reason})});
+  const out=await res.json();
+  if(!res.ok){$('#status').textContent='❌ '+out.error;return}
+  Object.assign(c,out);
+  if(next){const k=cur;filter();const nk=view.indexOf(cases.indexOf(c));show(nk>=0?nk+1:Math.min(k,view.length-1))}
+  else show(cur);
+  $('#status').textContent=j?'✔ Guardado':'Vaciado';
+}
+document.addEventListener('keydown',e=>{
+  if((e.metaKey||e.ctrlKey)&&e.key==='Enter'){e.preventDefault();$('#save').click();return}
+  if(e.target.tagName==='TEXTAREA'||e.target.tagName==='SELECT')return;
+  if(e.key==='1'||e.key==='2'||e.key==='3'){judg=['keep','reject','uncertain'][+e.key-1];setJ()}
+  else if(e.key==='ArrowDown'||e.key==='j')show(cur+1);
+  else if(e.key==='ArrowUp'||e.key==='k')show(cur-1);
+  else if(e.key==='r'){e.preventDefault();$('#reason').focus()}
+});
+$('#fFile').onchange=$('#fStatus').onchange=()=>{filter();show(0)};
+window.addEventListener('load',load);
+</script>
+</body>
+</html>

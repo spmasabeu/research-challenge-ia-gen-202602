@@ -100,3 +100,78 @@ El campo `auditor` registra la asignación; no acredita revisión completada.
 `reviewer_type`, `judgment` y `reason` permanecen vacíos hasta que el responsable
 compruebe cada caso. Solo entonces debe registrar `reviewer_type: human`, su
 dictamen y motivo. Los originales de `pending/` se conservan intactos.
+
+## Criterio acordado para operaciones
+
+El 1 % es la tolerancia del verificador automático; la revisión humana comprueba
+además cada operación escrita. Un redondeo o truncamiento coherente se acepta
+(`10/3 ≈ 3.33` → `keep`). Un dígito que no proviene de redondear el valor
+correcto es un error aritmético aunque el resultado final pase el 1 %
+(`10/3 ≈ 3.31` → `reject`). El motivo distingue el tipo de error, por ejemplo
+`Planteamiento correcto, error aritmético: 0.222 * 827 = 184.586 (correcto: 183.594)`,
+para que el informe pueda reportar por separado errores aritméticos y de
+procedimiento. El rechazo humano no cambia la recompensa automática.
+
+## Herramienta de revisión
+
+`scripts/audit_review_server.py` abre una interfaz local que muestra cada caso
+con el prompt, la respuesta renderizada y una calculadora determinista
+(`scripts/audit_calc.py`). La calculadora recalcula el valor esperado a partir
+de los datos del prompt y comprueba cada igualdad y conversión escrita:
+`OK` (redondeo coherente), `≈ trunc.` (truncamiento exacto), `⚠️ DESVÍO`
+(< 0.5 %, no proviene de redondear) y `❌ ERROR` (≥ 0.5 %). No emite dictámenes:
+no evalúa la elección de fórmula, los datos copiados ni la coherencia conceptual,
+y puede omitir operaciones no reconocidas, incluso fórmulas explícitas. La ausencia
+de alertas no acredita que los pasos estén comprobados.
+
+```bash
+python scripts/audit_review_server.py grpo hybrid   # prefijos de reviewed/
+```
+
+La interfaz solo escribe `reviewer_type`, `judgment` y `reason` en la línea
+correspondiente, comprueba que el resto del registro no cambie y reescribe el
+archivo de forma atómica. `python scripts/audit_calc.py <archivo.jsonl>` genera
+la misma información como hoja Markdown.
+
+## Correcciones de revisión del PR #8 — 23 de noviembre de 2026
+
+Se corrigen 8 registros tras contrastar las operaciones. Sus dictámenes
+humanos originales permanecen en el commit `6904833092b4ae8c52e5d34286646cf0ca3e5975`.
+Los registros modificados llevan `auditor: codex` y `reviewer_type: agent`: son
+correcciones asistidas, **pendientes de confirmación humana**, incluso cuando
+solo cambia el motivo. No se atribuyen al auditor original ni cambian la
+recompensa automática. El resto de los dictámenes humanos se conserva intacto.
+
+| Archivo (prefijo) | Línea | Dictamen original → corrección |
+| --- | ---: | --- |
+| `grpo` | 16 | keep → reject |
+| `grpo` | 18 | keep → reject |
+| `grpo` | 19 | keep → reject |
+| `grpo` | 21 | keep → reject |
+| `grpo` | 24 | keep → reject |
+| `grpo` | 25 | keep → reject |
+| `hybrid` | 1 | keep → reject |
+| `hybrid` | 2 | keep → keep |
+
+La calculadora contempla ahora cadenas de una misma variable entre líneas y
+cantidades intermedias en km/s; reconoce separadores de miles para inspeccionar
+la aritmética, sin cambiar la política de formato del verificador. Sus 11 pruebas
+incluyen regresiones de las operaciones omitidas. Evalúa solo un árbol de
+números y operadores, sin `eval`. No produce ni confirma dictámenes humanos.
+
+## Correcciones de revisión del PR #7 — 23 de noviembre de 2026
+
+Se corrigen 5 registros tras contrastar las operaciones. Sus dictámenes
+humanos originales permanecen en el commit `dcf2ead8435c005b49bb211db9a57adf3f24b08b`.
+Los registros modificados llevan `auditor: codex` y `reviewer_type: agent`: son
+correcciones asistidas, **pendientes de confirmación humana**, incluso cuando
+solo cambia el motivo. No se atribuyen al auditor original ni cambian la
+recompensa automática. El resto de los dictámenes humanos se conserva intacto.
+
+| Archivo (prefijo) | Línea | Dictamen original → corrección |
+| --- | ---: | --- |
+| `calibration` | 13 | reject → reject |
+| `calibration` | 23 | reject → reject |
+| `control` | 6 | keep → reject |
+| `control` | 29 | reject → reject |
+| `control` | 33 | reject → keep |
