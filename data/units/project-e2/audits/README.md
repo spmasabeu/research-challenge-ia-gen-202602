@@ -1,4 +1,40 @@
-# Auditoría humana pendiente de E2
+# Auditoría humana de E2
+
+## Estado de la revisión de Benjamín — 22 de noviembre de 2026
+
+Los 104 casos asignados a `benjamin` tienen dictamen y motivo en las copias de
+`reviewed/`. Los dictámenes se analizaron con apoyo de IA y fueron confirmados
+por Benjamín. Los dos casos inicialmente dudosos se clasificaron como `reject`
+por errores de explicación; no quedan dictámenes `uncertain`.
+
+| Archivo | Casos | `keep` | `reject` | `uncertain` |
+| --- | ---: | ---: | ---: | ---: |
+| [sft-human-reviewed.jsonl](reviewed/sft-human-reviewed.jsonl) | 51 | 21 | 30 | 0 |
+| [sft-data-human-reviewed.jsonl](reviewed/sft-data-human-reviewed.jsonl) | 53 | 48 | 5 | 0 |
+| **Total** | **104** | **69** | **35** | **0** |
+
+Los 35 rechazos se distinguen por tipo de error:
+
+- 30 respuestas con errores aritméticos que pasan el margen automático del 1 %.
+- 3 respuestas con conversiones mal justificadas, aunque su resultado numérico
+  sea correcto.
+- 2 respuestas con errores de explicación: calculan correctamente la tensión,
+  pero afirman que hay dos resistencias cuando el problema proporciona una sola.
+  Corresponden a las líneas 47 y 48 de `sft-data-human-reviewed.jsonl`
+  (casos 98 y 99 de la revisión conjunta).
+
+Se aceptaron redondeos y truncamientos coherentes.
+
+Estos conteos describen las muestras revisadas, no la tasa global de errores del
+modelo o del corpus. Se conservaron los originales de `pending/`, las respuestas
+y las etiquetas automáticas. Este estado solo corresponde a la revisión de
+Benjamín; no declara completada la auditoría del equipo ni la Entrega 2.
+
+## Preparación inicial de las muestras e instrucciones
+
+Las referencias a revisiones pendientes o campos vacíos a continuación describen
+el estado inicial de preparación. Para los dos archivos de Benjamín, prevalece
+el estado actualizado de la sección anterior.
 
 Las muestras `pending/control-human-pending.jsonl` (52 trazas) y
 `pending/grpo-human-pending.jsonl` (53 trazas) están seleccionadas, pero no revisadas por
