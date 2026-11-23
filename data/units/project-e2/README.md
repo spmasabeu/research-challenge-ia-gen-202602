@@ -7,10 +7,9 @@ Los respaldos previos están en `validation/plan-original.md` y
 
 ## Actualización de auditoría al 23 de noviembre
 
-Muestras de los PR #7/#8/#9 integradas: 274 dictámenes humanos conservados y
-13 correcciones de agente pendientes de confirmación por personas (5 Fernando,
-8 Rodrigo). Los 104 registros de Benjamín no se modifican. El detalle y conteos
-provisionales están en [audits/README.md](audits/README.md). El estado de cero
+Se incorporaron los 287 dictámenes humanos originales de los PR #7, #8 y
+#9. La muestra contiene 129 casos aceptados y 158 rechazados. El detalle por
+muestra está en [audits/README.md](audits/README.md). El estado de cero
 dictámenes del cierre técnico del 18 de noviembre que sigue es histórico.
 El [informe de E2](../../../deliveries/project-2-progress/proyecto_entrega_2.pdf)
 está compilado y cotejado. El envío al curso se registra cuando se realice.

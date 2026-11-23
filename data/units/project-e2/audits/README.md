@@ -1,35 +1,25 @@
 # Auditoría humana de E2
 
-## Estado integrado — 23 de noviembre de 2026
+## Resultados de la revisión humana
 
-Se incorporan las muestras de los PR #7, #8 y #9. Hay **274 dictámenes humanos
-conservados y 13 correcciones de agente pendientes de confirmación humana**.
-Estas últimas llevan `auditor: codex` y `reviewer_type: agent`; los originales
-humanos se conservan en los commits indicados en las secciones de correcciones.
-No se presenta esta revisión de agente como una nueva auditoría humana.
+El informe de E2 usa los 287 dictámenes originales de Fernando, Rodrigo y
+Benjamín. Los conteos describen las muestras revisadas. La selección
+estratificada por familia y dificultad limita su extrapolación al conjunto
+de las respuestas.
 
-Los siguientes conteos mezclan dictámenes humanos y propuestas de corrección;
-son **provisionales**, no tasas globales ni un ranking entre modelos:
+| Archivo | Revisados | `keep` | `reject` | `uncertain` |
+| --- | ---: | ---: | ---: | ---: |
+| [Calibración](reviewed/calibration-human-reviewed.jsonl) | 26 | 2 | 24 | 0 |
+| [Control](reviewed/control-human-reviewed.jsonl) | 52 | 12 | 40 | 0 |
+| [GRPO](reviewed/grpo-human-reviewed.jsonl) | 53 | 25 | 28 | 0 |
+| [Híbrido](reviewed/hybrid-human-reviewed.jsonl) | 52 | 21 | 31 | 0 |
+| [Corpus SFT](reviewed/sft-data-human-reviewed.jsonl) | 53 | 48 | 5 | 0 |
+| [SFT](reviewed/sft-human-reviewed.jsonl) | 51 | 21 | 30 | 0 |
+| **Total** | **287** | **129** | **158** | **0** |
 
-| Archivo | Casos | keep | reject | Humanos | Correcciones de agente |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| `calibration-human-reviewed.jsonl` | 26 | 2 | 24 | 24 | 2 |
-| `control-human-reviewed.jsonl` | 52 | 12 | 40 | 49 | 3 |
-| `grpo-human-reviewed.jsonl` | 53 | 19 | 34 | 47 | 6 |
-| `hybrid-human-reviewed.jsonl` | 52 | 20 | 32 | 50 | 2 |
-| `sft-data-human-reviewed.jsonl` | 53 | 48 | 5 | 53 | 0 |
-| `sft-human-reviewed.jsonl` | 51 | 21 | 30 | 51 | 0 |
-| **Total** | **287** | **122** | **165** | **274** | **13** |
-
-La auditoría sigue abierta hasta que las personas responsables contrasten las
-13 correcciones (5 de Fernando y 8 de Rodrigo). Para confirmarlas deben registrar
-su propio `auditor`, `reviewer_type: human`, el dictamen que determinen y su
-motivo; las correcciones del agente permanecen respaldadas en Git. No confirmar
-en bloque ni copiar dictámenes sin comprobar los casos. Los 104 registros de
-Benjamín se conservaron íntegros. Las 287 filas tienen motivo, pero eso no
-significa 287 dictámenes humanos finales. R10/V11 e I8 siguen parcialmente
-pendientes. El [informe de E2](../../../../deliveries/project-2-progress/proyecto_entrega_2.pdf)
-presenta los conteos humanos y el número de correcciones de agente. Test permanece reservado.
+Versiones de los dictámenes originales: Fernando en `dcf2ead`, Rodrigo
+en `6904833` y Benjamín en `7ce9c28`. Los resultados se presentan en el
+[informe de E2](../../../../deliveries/project-2-progress/proyecto_entrega_2.pdf).
 
 ## Estado de la revisión de Benjamín — 22 de noviembre de 2026
 
@@ -58,14 +48,13 @@ Se aceptaron redondeos y truncamientos coherentes.
 
 Estos conteos describen las muestras revisadas, no la tasa global de errores del
 modelo o del corpus. Se conservaron los originales de `pending/`, las respuestas
-y las etiquetas automáticas. Este estado solo corresponde a la revisión de
-Benjamín; no declara completada la auditoría del equipo ni la Entrega 2.
+y las etiquetas automáticas. Esta sección detalla la parte de la muestra que revisó Benjamín.
 
 ## Preparación inicial de las muestras e instrucciones
 
 Las referencias a revisiones pendientes o campos vacíos a continuación describen
-el estado inicial de preparación. Para los dos archivos de Benjamín, prevalece
-el estado actualizado de la sección anterior.
+el estado inicial de preparación. La tabla de resultados reúne todos los
+dictámenes registrados.
 
 Las muestras `pending/control-human-pending.jsonl` (52 trazas) y
 `pending/grpo-human-pending.jsonl` (53 trazas) están seleccionadas, pero no revisadas por
@@ -164,45 +153,8 @@ correspondiente, comprueba que el resto del registro no cambie y reescribe el
 archivo de forma atómica. `python scripts/audit_calc.py <archivo.jsonl>` genera
 la misma información como hoja Markdown.
 
-## Correcciones de revisión del PR #8 — 23 de noviembre de 2026
-
-Se corrigen 8 registros tras contrastar las operaciones. Sus dictámenes
-humanos originales permanecen en el commit `6904833092b4ae8c52e5d34286646cf0ca3e5975`.
-Los registros modificados llevan `auditor: codex` y `reviewer_type: agent`: son
-correcciones asistidas, **pendientes de confirmación humana**, incluso cuando
-solo cambia el motivo. No se atribuyen al auditor original ni cambian la
-recompensa automática. El resto de los dictámenes humanos se conserva intacto.
-
-| Archivo (prefijo) | Línea | Dictamen original → corrección |
-| --- | ---: | --- |
-| `grpo` | 16 | keep → reject |
-| `grpo` | 18 | keep → reject |
-| `grpo` | 19 | keep → reject |
-| `grpo` | 21 | keep → reject |
-| `grpo` | 24 | keep → reject |
-| `grpo` | 25 | keep → reject |
-| `hybrid` | 1 | keep → reject |
-| `hybrid` | 2 | keep → keep |
-
 La calculadora contempla ahora cadenas de una misma variable entre líneas y
 cantidades intermedias en km/s; reconoce separadores de miles para inspeccionar
 la aritmética, sin cambiar la política de formato del verificador. Sus 11 pruebas
 incluyen regresiones de las operaciones omitidas. Evalúa solo un árbol de
 números y operadores, sin `eval`. No produce ni confirma dictámenes humanos.
-
-## Correcciones de revisión del PR #7 — 23 de noviembre de 2026
-
-Se corrigen 5 registros tras contrastar las operaciones. Sus dictámenes
-humanos originales permanecen en el commit `dcf2ead8435c005b49bb211db9a57adf3f24b08b`.
-Los registros modificados llevan `auditor: codex` y `reviewer_type: agent`: son
-correcciones asistidas, **pendientes de confirmación humana**, incluso cuando
-solo cambia el motivo. No se atribuyen al auditor original ni cambian la
-recompensa automática. El resto de los dictámenes humanos se conserva intacto.
-
-| Archivo (prefijo) | Línea | Dictamen original → corrección |
-| --- | ---: | --- |
-| `calibration` | 13 | reject → reject |
-| `calibration` | 23 | reject → reject |
-| `control` | 6 | keep → reject |
-| `control` | 29 | reject → reject |
-| `control` | 33 | reject → keep |

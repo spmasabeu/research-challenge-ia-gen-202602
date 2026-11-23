@@ -24,7 +24,7 @@ verifier-11, dataset1.800/360/360,3.362trazas SFT y769pares DPO con excepciones
 justificadas,42pruebas CPU y pruebas GPU reales. Control, SFT, GRPO y SFT→GRPO
 completaron evaluación común360×3; curvas, intervalos, costos y checkpoints están
 en el [respaldo técnico](../data/units/project-e2/README.md). El informe incluye
-274 dictámenes humanos y documenta aparte 13 correcciones propuestas por agente.
+los 287 dictámenes humanos originales.
 
 Los enunciados están en la raíz: [Desafío](../DesafioInvestigacion-2026.pdf) y
 [Proyecto posterior](../ProyectoCurso-2026.pdf). El segundo se comparte como

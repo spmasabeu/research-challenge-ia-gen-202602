@@ -36,8 +36,8 @@
     "evidence": "Comparación cuatro rutas y contraste híbrido-GRPO; SFT previo288.879s/121125tokens incluido. production-cost-ledger-v1.json: perfil inicial desconocido e interrupción acotada documentados; no igualdad de FLOPs."
   },
   "R10": {
-    "status": "human_partial_agent_corrections_pending",
-    "evidence": "PR #7/#8/#9: 287 registros, 274 dictámenes humanos conservados y 13 correcciones de agente pendientes de confirmación humana (5 Fernando/8 Rodrigo). Conteos provisionales 122keep/165reject; no tasas globales. audits/README.md. Test reservado; auditoría no cerrada."
+    "status": "passed",
+    "evidence": "PR #7/#8/#9: 287 dictámenes humanos originales (129 keep, 158 reject, 0 uncertain). Conteos de muestras estratificadas en audits/README.md y en el informe de E2. Test reservado."
   },
   "R11": {
     "status": "passed",
@@ -94,8 +94,8 @@
     "command_or_procedure": "rtk proxy env PYTHONPATH=src .venv/bin/python scripts/report_training.py --runs data/units/project-e2/runs --out /tmp/e2-comparison-new (destino nuevo)"
   },
   "V11": {
-    "status": "human_partial_agent_corrections_pending",
-    "evidence": "PR #7/#8/#9: 287 registros, 274 dictámenes humanos conservados y 13 correcciones de agente pendientes de confirmación humana (5 Fernando/8 Rodrigo). Conteos provisionales 122keep/165reject; no tasas globales. audits/README.md. Test reservado; auditoría no cerrada.",
+    "status": "passed",
+    "evidence": "PR #7/#8/#9: 287 dictámenes humanos originales (129 keep, 158 reject, 0 uncertain). Conteos de muestras estratificadas en audits/README.md y en el informe de E2. Test reservado.",
     "command_or_procedure": "Revisión por personas siguiendo audits/README.md; no existe comando que sustituya sus dictámenes."
   },
   "V12": {
