@@ -28,7 +28,8 @@ motivo; las correcciones del agente permanecen respaldadas en Git. No confirmar
 en bloque ni copiar dictámenes sin comprobar los casos. Los 104 registros de
 Benjamín se conservaron íntegros. Las 287 filas tienen motivo, pero eso no
 significa 287 dictámenes humanos finales. R10/V11 e I8 siguen parcialmente
-pendientes; I9/informe/PDF/envío no están completados. Test permanece reservado.
+pendientes. El [informe de E2](../../../../deliveries/project-2-progress/proyecto_entrega_2.pdf)
+presenta los conteos humanos y el número de correcciones de agente. Test permanece reservado.
 
 ## Estado de la revisión de Benjamín — 22 de noviembre de 2026
 

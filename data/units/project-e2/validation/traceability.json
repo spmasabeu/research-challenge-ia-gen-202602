@@ -1,7 +1,7 @@
 {
   "R1": {
-    "status": "editorial_pending",
-    "evidence": "I9 no solicitado; PDF no producido"
+    "status": "report_validated_submission_unrecorded",
+    "evidence": "Informe de cuatro páginas compilado y revisado: deliveries/project-2-progress/proyecto_entrega_2.pdf. Envío al curso sin registrar."
   },
   "R2": {
     "status": "passed",
@@ -40,8 +40,8 @@
     "evidence": "PR #7/#8/#9: 287 registros, 274 dictámenes humanos conservados y 13 correcciones de agente pendientes de confirmación humana (5 Fernando/8 Rodrigo). Conteos provisionales 122keep/165reject; no tasas globales. audits/README.md. Test reservado; auditoría no cerrada."
   },
   "R11": {
-    "status": "technical_passed_editorial_pending",
-    "evidence": "Métricas exactas desde crudos,13artefactos idénticos, bootstrap por120problemas y límites en final-findings-v1.json. Cotejo contra informe/PDF pendienteI9/V12."
+    "status": "passed",
+    "evidence": "Métricas exactas desde crudos, 13 artefactos reproducidos y bootstrap por 120 problemas. Cifras y límites cotejados con el informe."
   },
   "V1": {
     "status": "passed",
@@ -99,8 +99,8 @@
     "command_or_procedure": "Revisión por personas siguiendo audits/README.md; no existe comando que sustituya sus dictámenes."
   },
   "V12": {
-    "status": "editorial_pending",
-    "evidence": "I9 fuera de alcance de esta ejecución",
-    "command_or_procedure": "Pendiente I9: informe/PDF todavía no creado."
+    "status": "passed",
+    "evidence": "deliveries/project-2-progress/proyecto_entrega_2.pdf: cuatro páginas revisadas, referencias resueltas y cifras cotejadas. Auditoría humana reportada según procedencia.",
+    "command_or_procedure": "Compilar con latexmk desde una copia limpia de las fuentes y cotejar métricas, figuras y dictámenes contra los registros."
   }
 }

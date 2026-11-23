@@ -1,6 +1,6 @@
-# E2: respaldo técnico, auditoría humana e informe pendientes
+# E2: respaldo técnico, auditoría e informe
 
-Rama `feat/project-e2`, base `061ca08`. I9 (informe) queda fuera de esta ejecución.
+La ejecución técnica partió de la rama `feat/project-e2` con base `061ca08`.
 No confundir los pilotos `smoke-*` con corridas comparables del proyecto.
 Los respaldos previos están en `validation/plan-original.md` y
 `validation/original-local.patch`. No se modifican datasets ni scores históricos.
@@ -12,7 +12,8 @@ Muestras de los PR #7/#8/#9 integradas: 274 dictámenes humanos conservados y
 8 Rodrigo). Los 104 registros de Benjamín no se modifican. El detalle y conteos
 provisionales están en [audits/README.md](audits/README.md). El estado de cero
 dictámenes del cierre técnico del 18 de noviembre que sigue es histórico.
-La auditoría humana no está cerrada; informe/PDF/envío siguen pendientes.
+El [informe de E2](../../../deliveries/project-2-progress/proyecto_entrega_2.pdf)
+está compilado y cotejado. El envío al curso se registra cuando se realice.
 No se cambiaron entrenamientos, recompensas, resultados automáticos ni test.
 
 ## Estado técnico al 18 de noviembre
